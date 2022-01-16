@@ -61,8 +61,38 @@ export const Paragraph = styled.p<TypographyParagraphProps>`
     }
   }
 
+  ul li {
+    list-style-type: none;
+    position: relative;
+    padding-bottom: 50px;
+
+    ::after {
+      position: absolute;
+      top: 0px;
+      left: -20px;
+      content: ' ';
+      width: 2px;
+      height: 100%;
+      background-color: ${THEME.dark.foreground};
+      border-radius: 20px;
+    }
+
+    ::before {
+      position: absolute;
+      top: 12px;
+      left: -24px;
+      content: ' ';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: ${THEME.dark.background};
+      outline: 2px solid ${THEME.dark.foreground};
+      z-index: 9;
+    }
+  }
+
   @media (max-width: 576px) {
     font-size: ${TYPOGRAPHY.size['pSmall']}px;
-    line-height: 30px;
+    line-height: 25px;
   }
 `;
