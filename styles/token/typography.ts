@@ -10,7 +10,7 @@ const TYPOGRAPHY: ITypography = {
     heading2: 35,
     heading3: 25,
     pRegular: 14,
-    pSmall: 12,
+    pSmall: 11.5,
   },
   weight: {
     normal: 400,

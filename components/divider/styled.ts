@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import THEME from '../../styles/token/colors';
 
 const Divider = styled.hr`
   border: none;

@@ -1,5 +1,5 @@
 export interface IHomeProps {
-  heading: {
+  timeline: {
     html: string;
   };
   title: string;

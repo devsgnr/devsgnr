@@ -18,18 +18,18 @@ const Writing = () => {
 
   return (
     <Layout isLoading={FetchPosts.isFetching} isError={FetchPosts.isError}>
-      <Heading className="title" size="heading1" weight="bolder">
+      {/* <Heading className="title" size="heading1" weight="bolder">
         Writing
-      </Heading>
+      </Heading> */}
       <>
         {FetchPosts.isSuccess &&
           FetchPosts.data.posts.map((item: IBlogProps, index: number) => (
             <Link key={index} passHref href={`/writing/${item.slug}`}>
               <StyledInternalA href={`/writing/${item.slug}`}>
                 <BlogItem>
-                  <Heading size="heading3" weight="bolder">
+                  <Paragraph size="pRegular" weight="bolder">
                     {item.title}
-                  </Heading>
+                  </Paragraph>
                   <Paragraph size="pRegular" weight="normal">
                     {item.excerpt}
                   </Paragraph>

@@ -4,7 +4,7 @@ const Homes = gql`
   {
     homes {
       id
-      heading {
+      timeline {
         html
       }
       title

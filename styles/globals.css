@@ -9,9 +9,31 @@ body {
   height: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 55px;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 576px) {
+  lh1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 40px;
+    letter-spacing: -1px;
+  }
+}
+
 * {
   box-sizing: border-box;
-  transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.2s;
 }
 
 svg {

@@ -20,19 +20,23 @@ const Layout = ({ isLoading, isError, children, seo }: LayoutProps) => {
     <>
       {isLoading ? (
         <StyledSplashScreen>
-          <Paragraph size="pRegular" weight="normal">
-            Loading &bull;&bull;&bull;
-          </Paragraph>
+          <Container>
+            <Paragraph size="pRegular" weight="normal">
+              Loading &bull;&bull;&bull;
+            </Paragraph>
+          </Container>
         </StyledSplashScreen>
       ) : isError ? (
         <StyledSplashScreen>
-          <Paragraph size="pRegular" weight="normal">
-            {':('} Oops, did someone plug the cord? If no, please try again or{' '}
-            <a title="contant" href="mailto:ei.watila@gmail.com">
-              contact
-            </a>{' '}
-            me.
-          </Paragraph>
+          <Container>
+            <Paragraph size="pRegular" weight="normal">
+              {':('} Oops, did someone plug the cord? If no, please try again or{' '}
+              <a title="contant" href="mailto:ei.watila@gmail.com">
+                contact
+              </a>{' '}
+              me.
+            </Paragraph>
+          </Container>
         </StyledSplashScreen>
       ) : (
         <>

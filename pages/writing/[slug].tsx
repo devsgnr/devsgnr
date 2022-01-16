@@ -4,14 +4,12 @@ import { FetchPostService } from '../../api/posts';
 import Layout from '../../components/layout';
 import { Heading, Paragraph } from '../../components/typography/styled';
 import { IBlogProps } from '../../types/blog';
-import { IHead } from '../../types/head';
 import { IPostResponse } from '../../types/response';
 import { ISeo } from '../../types/seo';
 import ReactHtmlParser from 'react-html-parser';
 
 const Slug = () => {
   const [seo, setSeo] = useState<ISeo>({} as ISeo);
-  const [head, setHead] = useState<IHead>({} as IHead);
 
   let slug = useRef<string>('');
 
@@ -32,7 +30,6 @@ const Slug = () => {
         description: res.post.excerpt,
         image: res.post.displayPicture.url,
       });
-      setHead({ title: res.post.title });
     }
     return res;
   });
@@ -46,9 +43,9 @@ const Slug = () => {
       <>
         {FetchPost.isSuccess && (
           <>
-            <Heading className="title" size="heading1" weight="bolder">
+            <Paragraph className="title" size="pRegular" weight="bolder">
               {FetchPost.data.post.title}
-            </Heading>
+            </Paragraph>
 
             <Paragraph size="pRegular">
               {ReactHtmlParser(FetchPost.data.post.theProcess.html)}

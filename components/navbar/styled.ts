@@ -29,7 +29,7 @@ const Navigation = styled.div<NavigationProps>`
   margin-bottom: 50px;
   background-color: ${(props) =>
     props.theme === 'dark' ? THEME.dark.opaque : THEME.light.opaque};
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 `;
 
 export default Navigation;
