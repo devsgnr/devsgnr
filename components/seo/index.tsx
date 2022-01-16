@@ -36,7 +36,7 @@ const SEO = ({ seo }: SEOProps) => {
         property="og:image"
         content={seo?.image ? seo.image : 'https://devsgnr.xyz/seo.png'}
       />
-      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:card" content="summary" />
       <meta property="twitter:site" content="@devsgnr_" />
       <meta
         property="twitter:title"
