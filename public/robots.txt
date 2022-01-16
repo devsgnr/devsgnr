@@ -1,10 +1,10 @@
 User-agent: Googlebot
-Disallow:
+Allow: /
 
 User-agent: Googlebot-Image
-Disallow: 
+Allow: /
 
 User-agent: Twitterbot/1.0
-Disallow:
+Allow: /
 
 Sitemap: https://devsgnr.xyz/sitemap.xml
