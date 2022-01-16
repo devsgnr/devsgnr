@@ -1,6 +1,6 @@
 ## **Hi there 👋**
 
-#### I'm Emmanuel. A design engineer, bookworm, and UX writer obsessed with crafting beautiful interfaces and experiences through the combination of writing & design, I'm a whole swiss army knife, I guess. 😄
+### I'm Emmanuel. A design engineer, bookworm, and UX writer obsessed with crafting beautiful interfaces and experiences through the combination of writing & design, I'm a whole swiss army knife, I guess. 😄
 
 - 😄 Pronouns: He/Him
 - ⚡ Fun fact:
@@ -9,7 +9,9 @@
   - Iterating my website design (devsgnr.xyz)[https://devsgnr.xyz]
   - Setting up a side hustle
 - 🌱 I’m currently learning UX Writing & Content Writing
-- 📫 How to reach me: - Twitter: (@devsgnr*)[https://twitter.com/devsgnr*] - Email: (ei.watila@gmail.com)[mailto:ei.watila@gmail.com]
+- 📫 How to reach me
+- Twitter: (@devsgnr*)[https://twitter.com/devsgnr*]
+- Email: (ei.watila@gmail.com)[mailto:ei.watila@gmail.com]
 <!--
 **devsgnr/devsgnr** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 Here are some ideas to get you started:
