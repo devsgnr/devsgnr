@@ -4,7 +4,7 @@
 
 - 😄 Pronouns: He/Him
 - 🔭 I’m currently working on
-  - Building an icon pack of 50+ system icons designed in Figma
+  - Designing an icon pack of 50+ system icons designed in Figma
   - Iterating my website design [devsgnr.xyz](https://devsgnr.xyz)
   - Setting up a side hustle
 - 🌱 I’m currently learning UX Writing & Content Writing
