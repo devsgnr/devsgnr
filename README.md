@@ -10,8 +10,8 @@
   - Setting up a side hustle
 - 🌱 I’m currently learning UX Writing & Content Writing
 - 📫 How to reach me
-- Twitter: (@devsgnr*)[https://twitter.com/devsgnr*]
-- Email: (ei.watila@gmail.com)[mailto:ei.watila@gmail.com]
+- Twitter: [@devsgnr\_](https://twitter.com/devsgnr*)
+- Email: [ei.watila@gmail.com](mailto:ei.watila@gmail.com)
 <!--
 **devsgnr/devsgnr** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 Here are some ideas to get you started:
