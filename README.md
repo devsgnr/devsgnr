@@ -9,7 +9,7 @@ I'm Emmanuel. A design engineer, bookworm, and UX writer obsessed with crafting 
   - Setting up a side hustle
 - 🌱 I’m currently learning UX Writing & Content Writing
 - 📫 How to reach me
-  - Twitter: [@devsgnr\_](https://twitter.com/devsgnr*)
+  - Twitter: [@devsgnr\_](https://twitter.com/devsgnr_)
   - Email: [ei.watila@gmail.com](mailto:ei.watila@gmail.com)
 
 <!--
