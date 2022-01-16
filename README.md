@@ -1,6 +1,6 @@
 ## **Hi there 👋**
 
-### I'm Emmanuel. A design engineer, bookworm, and UX writer obsessed with crafting beautiful interfaces and experiences through the combination of writing & design, I'm a whole swiss army knife, I guess. 😄
+I'm Emmanuel. A design engineer, bookworm, and UX writer obsessed with crafting beautiful interfaces and experiences through the combination of writing & design, I'm a whole swiss army knife, I guess. 😄
 
 - 😄 Pronouns: He/Him
 - 🔭 I’m currently working on
