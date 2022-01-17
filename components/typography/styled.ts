@@ -70,7 +70,7 @@ export const Paragraph = styled.p<TypographyParagraphProps>`
     list-style-type: none;
     position: relative;
     padding-bottom: 50px;
-    padding-left: 10px;
+    padding-left: 15px;
 
     ::after {
       position: absolute;
@@ -94,8 +94,12 @@ export const Paragraph = styled.p<TypographyParagraphProps>`
       background-color: ${THEME.dark.foreground};
       outline: 2px solid ${THEME.dark.foreground};
       outline-offset: 2px;
-      box-shadow: 0 0 20px 4px ${THEME.light.opaque};
+      box-shadow: 0 0 15px 7px ${THEME.light.opaque};
       z-index: 9;
     }
+  }
+
+  @media (max-width: 576px) {
+    line-height: 25px;
   }
 `;
