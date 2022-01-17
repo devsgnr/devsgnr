@@ -51,9 +51,10 @@ export const Paragraph = styled.p<TypographyParagraphProps>`
     text-decoration: underline;
     text-underline-offset: 4px;
     font-weight: ${TYPOGRAPHY.weight.bold};
+    opacity: 0.4;
 
     &:hover {
-      opacity: 0.5;
+      opacity: 1;
     }
   }
 
@@ -90,15 +91,11 @@ export const Paragraph = styled.p<TypographyParagraphProps>`
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background-color: ${THEME.dark.background};
+      background-color: ${THEME.dark.foreground};
       outline: 2px solid ${THEME.dark.foreground};
+      outline-offset: 2px;
       box-shadow: 0 0 20px 4px ${THEME.light.opaque};
       z-index: 9;
     }
-  }
-
-  @media (max-width: 576px) {
-    font-size: ${TYPOGRAPHY.size['pSmall']}px;
-    line-height: 25px;
   }
 `;

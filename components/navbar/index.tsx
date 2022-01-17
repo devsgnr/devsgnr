@@ -29,13 +29,13 @@ const NavigationBar = ({ theme }: NavigationBarProps) => {
               />
             </Paragraph>
             <Paragraph size="pSmall" weight="normal">
-              <a
+              <Anchor
                 href="https://twitter.com/devsgnr_"
                 target="_blank"
                 rel="noreferrer"
               >
                 <Twitter />
-              </a>
+              </Anchor>
             </Paragraph>
           </NavigationLinks>
         </NavigationFlex>
