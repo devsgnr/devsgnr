@@ -39,13 +39,13 @@ export const Heading = styled.p<TypographyHeadingProps>`
   }
 `;
 
-export const Paragraph = styled.p<TypographyParagraphProps>`
+export const Paragraph = styled.div<TypographyParagraphProps>`
   margin: 5px 0;
   font-family: ${TYPOGRAPHY.family.paragraph};
   font-size: ${(props) =>
     props.size ? TYPOGRAPHY.size[props.size] : TYPOGRAPHY.size['pRegular']}px;
   font-weight: ${(props) => props.weight && TYPOGRAPHY.weight[props.weight]};
-  line-height: 30px;
+  line-height: 2.2;
 
   a {
     text-decoration: underline;
@@ -69,7 +69,7 @@ export const Paragraph = styled.p<TypographyParagraphProps>`
   ul li {
     list-style-type: none;
     position: relative;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     padding-left: 15px;
 
     ::after {
@@ -91,15 +91,23 @@ export const Paragraph = styled.p<TypographyParagraphProps>`
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background-color: ${THEME.dark.foreground};
-      outline: 2px solid ${THEME.dark.foreground};
-      outline-offset: 2px;
-      box-shadow: 0 0 15px 7px ${THEME.light.opaque};
+      background-color: ${THEME.light.background};
       z-index: 9;
+      transition: all ease-in-out 0.5s;
     }
   }
 
   @media (max-width: 576px) {
-    line-height: 25px;
+    line-height: 2.2;
+  }
+
+  blockquote {
+    margin: 40px 0;
+    padding-left: 20px;
+    border-left: 3px solid ${THEME.dark.foreground};
+  }
+
+  ol li {
+    margin-bottom: 15px;
   }
 `;
