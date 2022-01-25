@@ -1,13 +1,14 @@
 ## **Hi there 👋**
 
-I'm Emmanuel. A design engineer, bookworm, and UX writer obsessed with crafting beautiful interfaces and experiences through the combination of writing & design, I'm a whole swiss army knife, I guess. 😄
+### I'm Emmanuel. 
+A design engineer (fancy word for designer who can code), bookworm, and writer obsessed with crafting beautiful interfaces and experiences through the combination of writing, design, and code. I'm a whole swiss army knife. 😄
 
 - 😄 Pronouns: He/Him
 - 🔭 I’m currently working on
-  - Designing an icon pack of 50+ system icons designed in Figma
+  - Designing, building, and releasing highly-composable UI components in React and Typescript.
   - Iterating my website design [devsgnr.xyz](https://devsgnr.xyz)
-  - Setting up a side hustle
-- 🌱 I’m currently learning UX Writing & Content Writing
+  - Writing articles
+- 🌱 I’m currently learning Digital Product Design & Content Writing
 - 📫 How to reach me
   - Twitter: [@devsgnr\_](https://twitter.com/devsgnr_)
   - Email: [ei.watila@gmail.com](mailto:ei.watila@gmail.com)
