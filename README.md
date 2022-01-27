@@ -1,6 +1,7 @@
 ## **Hi there 👋**
 
-### I'm Emmanuel. 
+### I'm Emmanuel.
+
 A design engineer (fancy word for designer who can code), bookworm, and writer obsessed with crafting beautiful interfaces and experiences through the combination of writing, design, and code. I'm a whole swiss army knife. 😄
 
 - 😄 Pronouns: He/Him
