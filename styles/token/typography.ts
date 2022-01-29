@@ -2,7 +2,7 @@ import { ITypography } from '../../types/token';
 
 const TYPOGRAPHY: ITypography = {
   family: {
-    heading: 'Lusitana, sans-serif',
+    heading: 'Inter, sans-serif',
     paragraph: 'Inter, sans-serif',
   },
   size: {

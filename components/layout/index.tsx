@@ -29,12 +29,16 @@ const Layout = ({ isLoading, isError, children, seo }: LayoutProps) => {
       ) : isError ? (
         <StyledSplashScreen>
           <Container>
+            <Heading size="heading1" weight="bolder">
+              Oh! No!!!
+            </Heading>
             <Paragraph size="pRegular" weight="normal">
-              {':('} Oops, did someone plug the cord? If no, please try again or{' '}
+              {':('} Oops, did someone unplug the cord? maybe you&apos;re
+              looking for something that doesn&apos;t exist.{' '}
               <a title="contant" href="mailto:ei.watila@gmail.com">
-                contact
+                Contact
               </a>{' '}
-              me.
+              me, if you think it&apos;s my error.
             </Paragraph>
           </Container>
         </StyledSplashScreen>
