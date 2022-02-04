@@ -1,4 +1,4 @@
 User-agent: *
-Allow: *
+Allow: /
 
 Sitemap: https://devsgnr.xyz/sitemap.xml
