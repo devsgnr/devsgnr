@@ -8,6 +8,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.0.0",
+    "@next/mdx": "^12.0.10",
     "babel-eslint": "^10.1.0",
     "cypress": "^7.7.0",
     "graphql": "^15.3.0",
