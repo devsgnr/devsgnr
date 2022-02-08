@@ -11,6 +11,7 @@ import { CollectionMeta, CollectionPhotos } from '../../types/unsplash';
 import Image from 'next/image';
 import {
   StyledMindscapeGrid,
+  StyledMindscapeGridInfiniteScrollLoading,
   StyledMindscapeGridItem,
   StyledMindscapeGridItemCredit,
 } from '../../components/mindscape-grid/styled';
@@ -78,45 +79,55 @@ const Mindscape = () => {
 
       <>
         {images.length > 0 && (
-          <StyledMindscapeGrid>
-            {images.map((image: CollectionPhotos, index: number) => (
-              <StyledMindscapeGridItem key={index}>
-                <Image
-                  placeholder="blur"
-                  src={image.urls.regular}
-                  alt={image.user.name}
-                  blurDataURL={image.blur_hash}
-                  width={'100%'}
-                  height={'100%'}
-                  sizes="50vw"
-                  quality={100}
-                />
-                <StyledMindscapeGridItemCredit>
-                  <Paragraph size="pSmall">
-                    Image by{' '}
-                    <a
-                      href={image.user.links.html}
-                      title={image.user.name}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {image.user.name}
-                    </a>{' '}
-                    on{' '}
-                    <a
-                      href={image.links.html}
-                      title="Unsplash"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Unsplash
-                    </a>
-                  </Paragraph>
-                </StyledMindscapeGridItemCredit>
-              </StyledMindscapeGridItem>
-            ))}
-            <Waypoint onEnter={() => page < pages && setPage(page + 1)} />
-          </StyledMindscapeGrid>
+          <>
+            <StyledMindscapeGrid>
+              {images.map((image: CollectionPhotos, index: number) => (
+                <StyledMindscapeGridItem key={index}>
+                  <Image
+                    placeholder="blur"
+                    src={image.urls.regular}
+                    alt={image.user.name}
+                    blurDataURL={image.blur_hash}
+                    width={'100%'}
+                    height={'100%'}
+                    sizes="50vw"
+                    quality={100}
+                  />
+                  <StyledMindscapeGridItemCredit>
+                    <Paragraph size="pSmall">
+                      Image by{' '}
+                      <a
+                        href={image.user.links.html}
+                        title={image.user.name}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {image.user.name}
+                      </a>{' '}
+                      on{' '}
+                      <a
+                        href={image.links.html}
+                        title="Unsplash"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Unsplash
+                      </a>
+                    </Paragraph>
+                  </StyledMindscapeGridItemCredit>
+                </StyledMindscapeGridItem>
+              ))}
+
+              <Waypoint onEnter={() => page < pages && setPage(page + 1)} />
+            </StyledMindscapeGrid>
+            <>
+              {MyUnsplashCollectionPhotos.isFetching && (
+                <StyledMindscapeGridInfiniteScrollLoading>
+                  <Paragraph>&bull; &bull; &bull;</Paragraph>
+                </StyledMindscapeGridInfiniteScrollLoading>
+              )}
+            </>
+          </>
         )}
       </>
     </Layout>

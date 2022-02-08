@@ -31,3 +31,11 @@ export const StyledMindscapeGridItem = styled.div`
     bottom: 1.5%;
   }
 `;
+
+export const StyledMindscapeGridInfiniteScrollLoading = styled.div`
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
