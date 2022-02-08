@@ -18,7 +18,7 @@ const SEO = ({ seo }: SEOProps) => {
         content={
           seo?.description
             ? seo.description
-            : `A design engineer, bookworm, and UX writer obsessed with crafting beautiful interfaces and experiences through the combination of writing & design, interested in NFTs, blockchain technology, content writing, Mythology (mainly Greek and Egyptian), Sci-Fi, and anime.`
+            : `Designer, Engineer, Writer, Advocate`
         }
       />
       <meta
@@ -33,7 +33,7 @@ const SEO = ({ seo }: SEOProps) => {
         content={
           seo?.description
             ? seo.description
-            : `A design engineer, bookworm, and UX writer obsessed with crafting beautiful interfaces and experiences through the combination of writing & design, interested in NFTs, blockchain technology, content writing, Mythology (mainly Greek and Egyptian), Sci-Fi, and anime.`
+            : `Designer, Engineer, Writer, Advocate`
         }
       />
       <meta
@@ -56,7 +56,7 @@ const SEO = ({ seo }: SEOProps) => {
         content={
           seo?.description
             ? seo.description
-            : `A design engineer, bookworm, and UX writer obsessed with crafting beautiful interfaces and experiences through the combination of writing & design, interested in NFTs, blockchain technology, content writing, Mythology (mainly Greek and Egyptian), Sci-Fi, and anime.`
+            : `Designer, Engineer, Writer, Advocate`
         }
       />
       <link rel="icon" href="/favicon.png" />

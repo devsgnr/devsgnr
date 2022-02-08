@@ -19,6 +19,9 @@ const NavigationBar = ({ theme }: NavigationBarProps) => {
           </Paragraph>
           <NavigationLinks>
             <Paragraph size="pSmall" weight="normal">
+              <Anchor href="/mindscape" title="Mindscape" />
+            </Paragraph>
+            <Paragraph size="pSmall" weight="normal">
               <Anchor href="/writing" title="Writing" />
             </Paragraph>
             <Paragraph size="pSmall" weight="normal">

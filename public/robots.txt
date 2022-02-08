@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+User-agent: Twitterbot
+Allow: /
+
 Sitemap: https://devsgnr.xyz/sitemap.xml
