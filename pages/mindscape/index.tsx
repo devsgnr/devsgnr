@@ -16,14 +16,12 @@ import {
 } from '../../components/mindscape-grid/styled';
 
 import { Waypoint } from 'react-waypoint';
-import Anchor from '../../components/anchor';
 
 const Mindscape = () => {
   const [id] = useState<string>('DWh7rOjSyvA');
   const [images, setImages] = useState<Array<CollectionPhotos>>([]);
   const [page, setPage] = useState<number>(1);
   const [pages, setPages] = useState<number>(0);
-  const [totalPhotos, setTotalPhotos] = useState<number>(1);
 
   const MyUnsplashCollection = useQuery(['ReturnCollections'], async () => {
     const res: AxiosResponse<CollectionMeta> =
@@ -37,7 +35,6 @@ const Mindscape = () => {
       const res: AxiosResponse<CollectionPhotos[]> =
         await MyUnsplashCollectionsPhotosService(id, page);
 
-      setTotalPhotos(Number(res.headers['x-total']));
       setPages(
         Math.ceil(
           Number(res.headers['x-total']) / Number(res.headers['x-per-page']),
@@ -63,6 +60,17 @@ const Mindscape = () => {
             </Paragraph>
             <Paragraph weight="normal" size="pRegular">
               {MyUnsplashCollection.data.description}
+            </Paragraph>
+            <Paragraph size="pSmall">
+              Powered by{' '}
+              <a
+                href="https://unsplash.com"
+                title="Unsplash"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Unsplash
+              </a>
             </Paragraph>
           </>
         )}
