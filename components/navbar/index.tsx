@@ -14,10 +14,10 @@ const NavigationBar = ({ theme }: NavigationBarProps) => {
     <Navigation theme={theme}>
       <Container>
         <NavigationFlex theme={theme}>
-          <Paragraph size="pSmall" weight="normal">
-            <Anchor href="/" title="Home" />
-          </Paragraph>
           <NavigationLinks>
+            <Paragraph size="pSmall" weight="normal">
+              <Anchor href="/" title="Home" />
+            </Paragraph>
             <Paragraph size="pSmall" weight="normal">
               <Anchor href="/mindscape" title="Mindscape" />
             </Paragraph>
