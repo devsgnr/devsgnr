@@ -1,10 +1,11 @@
 import axios from 'axios';
 import { GraphQLClient } from 'graphql-request';
 
-declare var process: {
+export declare var process: {
   env: {
     NEXT_PUBLIC_CMS_URL: string;
     NEXT_PUBLIC_UNSPLASH_API_KEY: string;
+    NEXT_PUBLIC_COLLECTION_ID: string;
   };
 };
 

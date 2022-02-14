@@ -11,15 +11,18 @@ import { CollectionMeta, CollectionPhotos } from '../../types/unsplash';
 import Image from 'next/image';
 import {
   StyledMindscapeGrid,
+  StyledMindscapeGridDownloadButton,
   StyledMindscapeGridInfiniteScrollLoading,
   StyledMindscapeGridItem,
   StyledMindscapeGridItemCredit,
 } from '../../components/mindscape-grid/styled';
 
 import { Waypoint } from 'react-waypoint';
+import { process } from '../../api/service';
+import { Download } from 'react-feather';
 
 const Mindscape = () => {
-  const [id] = useState<string>('DWh7rOjSyvA');
+  const [id] = useState<string>(process.env.NEXT_PUBLIC_COLLECTION_ID);
   const [images, setImages] = useState<Array<CollectionPhotos>>([]);
   const [page, setPage] = useState<number>(1);
   const [pages, setPages] = useState<number>(0);
@@ -114,7 +117,17 @@ const Mindscape = () => {
                         Unsplash
                       </a>
                     </Paragraph>
-                  </StyledMindscapeGridItemCredit>
+                  </StyledMindscapeGridItemCredit>{' '}
+                  <StyledMindscapeGridDownloadButton>
+                    <a
+                      rel="nofollow noreferrer"
+                      href={`${image.links.download}&force=true`}
+                      target="_blank"
+                      download
+                    >
+                      <Download size={18} />
+                    </a>
+                  </StyledMindscapeGridDownloadButton>
                 </StyledMindscapeGridItem>
               ))}
 

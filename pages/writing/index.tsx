@@ -27,13 +27,10 @@ const Writing = () => {
             <Link key={index} passHref href={`/writing/${item.slug}`}>
               <StyledInternalA href={`/writing/${item.slug}`}>
                 <BlogItem>
-                  <Paragraph size="pRegular" weight="bolder">
+                  <Paragraph size="pRegular" weight="normal">
                     {item.title}
                   </Paragraph>
-                  <Paragraph size="pRegular" weight="normal">
-                    {item.excerpt}
-                  </Paragraph>
-                  <Paragraph size="pSmall" weight="bold">
+                  <Paragraph size="pSmall" weight="normal">
                     {new Date(item.date).toDateString()}
                   </Paragraph>
                 </BlogItem>

@@ -21,6 +21,14 @@ export const StyledMindscapeGridItemCredit = styled.div`
   transition: all ease-in-out 0.2s;
 `;
 
+export const StyledMindscapeGridDownloadButton = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 5.5%;
+  opacity: 0;
+  transition: all ease-in-out 0.2s;
+`;
+
 export const StyledMindscapeGridItem = styled.div`
   overflow: hidden;
   border-radius: 10px;
@@ -29,6 +37,11 @@ export const StyledMindscapeGridItem = styled.div`
   &:hover ${StyledMindscapeGridItemCredit} {
     opacity: 1;
     bottom: 1.5%;
+  }
+
+  &:hover ${StyledMindscapeGridDownloadButton} {
+    opacity: 1;
+    bottom: 4.2%;
   }
 `;
 

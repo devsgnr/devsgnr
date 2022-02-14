@@ -1,7 +1,6 @@
-## **Hi there 👋**
+**Hi there 👋**
 
-### I'm Emmanuel.
-
+I'm Emmanuel.
 A design engineer, system thinker, and writer obsessed with crafting beautiful interfaces and experiences through the combination of writing, design, code & no-code. 😄
 
 If you wish to use my website design, some credit would be nice 😄
@@ -15,7 +14,7 @@ If you wish to use my website design, some credit would be nice 😄
 - 🌱 I’m currently learning Digital Product Design & Content Writing
 - 📫 How to reach me
   - Twitter: [@devsgnr\_](https://twitter.com/devsgnr_)
-  - Email: [ei.watila@gmail.com](mailto:ei.watila@gmail.com)
+  - Email: [hi@devsgnr.xyz](mailto:hi@devsgnr.xyz)
 
 <!--
 **devsgnr/devsgnr** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
