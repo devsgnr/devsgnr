@@ -1,5 +1,5 @@
 import React from 'react';
-import { Twitter } from 'react-feather';
+import * as Icon from 'react-feather';
 import Anchor from '../anchor';
 import Container from '../container/styled';
 import { Paragraph } from '../typography/styled';
@@ -14,28 +14,12 @@ const NavigationBar = ({ theme }: NavigationBarProps) => {
     <Navigation theme={theme}>
       <Container>
         <NavigationFlex theme={theme}>
-          <Paragraph size="pSmall" weight="normal">
-            <Anchor href="/" title="Home" />
-          </Paragraph>
           <NavigationLinks>
             <Paragraph size="pSmall" weight="normal">
+              <Anchor href="/" title="Home" />
+            </Paragraph>
+            <Paragraph size="pSmall" weight="normal">
               <Anchor href="/writing" title="Writing" />
-            </Paragraph>
-            <Paragraph size="pSmall" weight="normal">
-              <Anchor
-                href="https://read.cv/devsgnr_"
-                target="_blank"
-                title="Resume"
-              />
-            </Paragraph>
-            <Paragraph size="pSmall" weight="normal">
-              <Anchor
-                href="https://twitter.com/devsgnr_"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Twitter />
-              </Anchor>
             </Paragraph>
           </NavigationLinks>
         </NavigationFlex>

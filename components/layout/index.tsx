@@ -1,6 +1,5 @@
 import React, { ReactChild } from 'react';
 import { ISeo } from '../../types/seo';
-import Anchor from '../anchor';
 import Container from '../container/styled';
 import Divider from '../divider/styled';
 import NavigationBar from '../navbar';
