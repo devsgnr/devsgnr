@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { GraphQLClient } from 'graphql-request';
 
+// Reason: For preventing `maybe be undefined error` being thrown on 16:42
 export declare var process: {
   env: {
     NEXT_PUBLIC_CMS_URL: string;

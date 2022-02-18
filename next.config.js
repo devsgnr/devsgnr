@@ -4,6 +4,10 @@ const nextConfig = {
   images: {
     domains: ['images.unsplash.com'],
   },
+  compiler: {
+    styledComponents: true,
+  },
+  swcMinify: true,
 };
 
 module.exports = nextConfig;

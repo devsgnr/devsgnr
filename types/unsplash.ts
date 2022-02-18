@@ -8,7 +8,8 @@ export interface CollectionPhotos {
   blur_hash: string;
   color: string;
   created_at: string;
-  height: 5803;
+  height: number;
+  width: number;
   id: string;
   liked_by_user: boolean;
   likes: number;
@@ -42,5 +43,4 @@ export interface CollectionPhotos {
       self: string;
     };
   };
-  width: number;
 }
