@@ -42,14 +42,14 @@ const Layout = ({ isLoading, isError, children, seo }: LayoutProps) => {
           </Container>
         </StyledSplashScreen>
       ) : (
-        <>
+        <div>
           <SEO seo={seo} />
           <NavigationBar theme={'dark'} />
           <Container>
             {children}
             <Divider />
           </Container>
-        </>
+        </div>
       )}
     </>
   );

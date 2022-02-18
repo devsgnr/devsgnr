@@ -66,48 +66,14 @@ export const Paragraph = styled.div<TypographyParagraphProps>`
     }
   }
 
-  ul li {
-    list-style-type: none;
-    position: relative;
-    padding-bottom: 20px;
-    padding-left: 15px;
-
-    ::after {
-      position: absolute;
-      top: 0px;
-      left: -19px;
-      content: ' ';
-      width: 1px;
-      height: 100%;
-      background-color: ${THEME.light.opaque};
-      border-radius: 20px;
-    }
-
-    ::before {
-      position: absolute;
-      top: 10px;
-      left: -24px;
-      content: ' ';
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: ${THEME.light.background};
-      z-index: 9;
-      transition: all ease-in-out 0.5s;
-    }
-  }
-
-  @media (max-width: 576px) {
-    line-height: 2.2;
-  }
-
   blockquote {
     margin: 40px 0;
     padding-left: 20px;
     border-left: 3px solid ${THEME.dark.foreground};
   }
 
-  ol li {
+  ol li,
+  ul li {
     margin-bottom: 15px;
   }
 `;
