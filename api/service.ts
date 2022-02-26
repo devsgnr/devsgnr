@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { GraphQLClient } from 'graphql-request';
+import { createApi } from 'unsplash-js';
 
 // Reason: For preventing `maybe be undefined error` being thrown on 16:42
 export declare var process: {
@@ -21,6 +22,10 @@ export const UnsplashAPI = axios.create({
     client_id: unsplash_api_key,
   },
   timeout: 10000,
+});
+
+export const Unsplash = createApi({
+  accessKey: process.env['NEXT_PUBLIC_UNSPLASH_API_KEY'],
 });
 
 export default GraphCMSCLient;

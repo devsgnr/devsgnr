@@ -1,26 +1,30 @@
-import styled from 'styled-components';
+import { createStitches } from '@stitches/react';
 
-const Container = styled.div`
-  padding-right: 25px;
-  padding-left: 25px;
-  margin-right: auto;
-  margin-left: auto;
+export const { styled, css } = createStitches({
+  media: {
+    sm: '(min-width: 576px)',
+    md: '(min-width: 768px)',
+    lg: '(min-width: 992px)',
+    xl: '(min-width: 1200px)',
+  },
+});
 
-  @media (min-width: 576px) {
-    width: 560px;
-  }
+const Container = styled('div', {
+  padding: '0 25px',
+  margin: '0 auto',
 
-  @media (min-width: 768px) {
-    width: 700px;
-  }
-
-  @media (min-width: 992px) {
-    width: 750px;
-  }
-
-  @media (min-width: 1200px) {
-    width: 800px;
-  }
-`;
+  '@sm': {
+    width: '560px',
+  },
+  '@md': {
+    width: '700px',
+  },
+  '@lg': {
+    width: '700px',
+  },
+  '@xl': {
+    width: '800px',
+  },
+});
 
 export default Container;

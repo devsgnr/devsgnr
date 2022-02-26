@@ -44,7 +44,7 @@ const Layout = ({ isLoading, isError, children, seo }: LayoutProps) => {
       ) : (
         <div>
           <SEO seo={seo} />
-          <NavigationBar theme={'dark'} />
+          <NavigationBar />
           <Container>
             {children}
             <Divider />

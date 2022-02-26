@@ -1,7 +1,6 @@
-import styled from 'styled-components';
-import THEME from '../../styles/token/colors';
+import { styled } from '@stitches/react';
 
-export const StyledInternalA = styled.a`
-  text-decoration: none !important;
-  opacity: 1 !important;
-`;
+export const StyledInternalA = styled('a', {
+  textDecoration: 'none !important',
+  opacity: '1 !important',
+});

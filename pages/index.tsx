@@ -17,14 +17,14 @@ const Home = () => {
     <Layout isLoading={FetchHome.isFetching} isError={FetchHome.isError}>
       <>
         {FetchHome.isSuccess && (
-          <>
+          <div data-scroll data-scroll-speed="1">
             <Paragraph size="pRegular" weight="normal">
               {ReactHtmlParser(FetchHome.data.homes[0].about.html)}
             </Paragraph>
             <Paragraph size="pRegular" weight="normal">
               {ReactHtmlParser(FetchHome.data.homes[0].timeline.html)}
             </Paragraph>
-          </>
+          </div>
         )}
       </>
     </Layout>

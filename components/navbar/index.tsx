@@ -1,26 +1,23 @@
 import React from 'react';
 import * as Icon from 'react-feather';
+import TYPOGRAPHY from '../../styles/token/typography';
 import Anchor from '../anchor';
 import Container from '../container/styled';
-import { Paragraph } from '../typography/styled';
+import { AnchorParagraph, Paragraph } from '../typography/styled';
 import Navigation, { NavigationFlex, NavigationLinks } from './styled';
 
-interface NavigationBarProps {
-  theme: string;
-}
-
-const NavigationBar = ({ theme }: NavigationBarProps) => {
+const NavigationBar = () => {
   return (
-    <Navigation theme={theme}>
+    <Navigation>
       <Container>
-        <NavigationFlex theme={theme}>
+        <NavigationFlex>
           <NavigationLinks>
-            <Paragraph size="pSmall" weight="normal">
+            <AnchorParagraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
               <Anchor href="/" title="Home" />
-            </Paragraph>
-            <Paragraph size="pSmall" weight="normal">
+            </AnchorParagraph>
+            <AnchorParagraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
               <Anchor href="/writing" title="Writing" />
-            </Paragraph>
+            </AnchorParagraph>
           </NavigationLinks>
         </NavigationFlex>
       </Container>
