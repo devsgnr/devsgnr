@@ -1,4 +1,4 @@
-import { createStitches } from '@stitches/react';
+import { styled } from '../../stitches.config';
 import THEME from '../../styles/token/colors';
 import TYPOGRAPHY from '../../styles/token/typography';
 
@@ -16,15 +16,6 @@ interface TypographyParagraphProps {
   weight?: TypographyWeight;
 }
 
-export const { styled, css } = createStitches({
-  media: {
-    sm: '(min-width: 576px)',
-    md: '(min-width: 768px)',
-    lg: '(min-width: 992px)',
-    xl: '(min-width: 1200px)',
-  },
-});
-
 export const Paragraph = styled('div', {
   margin: '5px 0',
   fontFamily: TYPOGRAPHY.family.paragraph,
@@ -33,18 +24,18 @@ export const Paragraph = styled('div', {
   lineHeight: 2.2,
 
   a: {
-    // textDecoration: 'underline',
-    // textUnderlineOffset: '4px',
+    textDecoration: 'underline',
+    textUnderlineOffset: '3px',
     fontWeight: TYPOGRAPHY.weight.bold,
     opacity: 0.4,
     padding: '4px 4px',
     borderRadius: '5px',
-    backgroundColor: 'rgba(196, 196, 196, 0.1)',
+    backgroundColor: 'rgba(196, 196, 196, 0.2)',
     transition: 'all ease-in-out 0.2s',
 
     '&:hover': {
       opacity: 1,
-      backgroundColor: 'rgba(196, 196, 196, 0.3)',
+      backgroundColor: 'rgba(196, 196, 196, 0.4)',
       transition: 'all ease-in-out 0.2s',
     },
   },
