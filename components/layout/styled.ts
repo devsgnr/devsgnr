@@ -1,34 +1,33 @@
-import styled from 'styled-components';
+import { styled } from '@stitches/react';
 import THEME from '../../styles/token/colors';
 
 interface StyledLayoutProps {
   theme: string;
 }
 
-export const StyledSplashScreen = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  * {
-    text-align: center;
-  }
-`;
+export const StyledSplashScreen = styled('div', {
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100vh',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 
-const StyledLayout = styled.div<StyledLayoutProps>`
-  width: 100%;
-  min-height: 100vh;
-  background: ${(props) =>
-    props.theme === 'dark' ? THEME.dark.background : THEME.light.background};
+  '*': {
+    textAlign: 'center',
+  },
+});
 
-  * {
-    color: ${(props) =>
-      props.theme === 'dark' ? THEME.dark.foreground : THEME.light.foreground};
-  }
-`;
+const StyledLayout = styled('div', {
+  width: '100%',
+  minHeight: '100vh',
+  background: THEME.dark.background,
+
+  '*': {
+    color: THEME.dark.foreground,
+  },
+});
 
 export default StyledLayout;

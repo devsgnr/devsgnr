@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { createStitches } from '@stitches/react';
 import THEME from '../../styles/token/colors';
 import TYPOGRAPHY from '../../styles/token/typography';
 
@@ -16,64 +16,79 @@ interface TypographyParagraphProps {
   weight?: TypographyWeight;
 }
 
-export const Heading = styled.p<TypographyHeadingProps>`
-  margin: 0;
-  font-family: ${TYPOGRAPHY.family.heading};
-  font-size: ${(props) =>
-    props.size ? TYPOGRAPHY.size[props.size] : TYPOGRAPHY.size['heading1']}px;
-  font-weight: ${(props) => props.weight && TYPOGRAPHY.weight[props.weight]};
-  line-height: 55px;
-  letter-spacing: -1px;
+export const { styled, css } = createStitches({
+  media: {
+    sm: '(min-width: 576px)',
+    md: '(min-width: 768px)',
+    lg: '(min-width: 992px)',
+    xl: '(min-width: 1200px)',
+  },
+});
 
-  &.title {
-    margin: 0 0 100px 0;
+export const Paragraph = styled('div', {
+  margin: '5px 0',
+  fontFamily: TYPOGRAPHY.family.paragraph,
+  fontSize: `${TYPOGRAPHY.size['pRegular']}px`,
+  fontWeight: TYPOGRAPHY.weight['normal'],
+  lineHeight: 2.2,
 
-    @media (max-width: 576px) {
-      margin: 0 0 50px 0;
-    }
-  }
+  a: {
+    // textDecoration: 'underline',
+    // textUnderlineOffset: '4px',
+    fontWeight: TYPOGRAPHY.weight.bold,
+    opacity: 0.4,
+    padding: '4px 4px',
+    borderRadius: '5px',
+    backgroundColor: 'rgba(196, 196, 196, 0.1)',
+    transition: 'all ease-in-out 0.2s',
 
-  @media (max-width: 576px) {
-    font-size: ${TYPOGRAPHY.size['heading3']}px;
-    line-height: 40px;
-  }
-`;
+    '&:hover': {
+      opacity: 1,
+      backgroundColor: 'rgba(196, 196, 196, 0.3)',
+      transition: 'all ease-in-out 0.2s',
+    },
+  },
 
-export const Paragraph = styled.div<TypographyParagraphProps>`
-  margin: 5px 0;
-  font-family: ${TYPOGRAPHY.family.paragraph};
-  font-size: ${(props) =>
-    props.size ? TYPOGRAPHY.size[props.size] : TYPOGRAPHY.size['pRegular']}px;
-  font-weight: ${(props) => props.weight && TYPOGRAPHY.weight[props.weight]};
-  line-height: 2.2;
+  '&.title': {
+    margin: '0 0 100px 0',
 
-  a {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    font-weight: ${TYPOGRAPHY.weight.bold};
-    opacity: 0.4;
+    '@sm': {
+      margin: '0 0 50px 0',
+    },
+  },
 
-    &:hover {
-      opacity: 1;
-    }
-  }
+  blockquote: {
+    margin: '40px 0',
+    paddingLeft: '20px',
+    borderLeft: `3px solid ${THEME.dark.foreground}`,
+  },
 
-  &.title {
-    margin: 0 0 100px 0;
+  ol: {
+    li: {
+      marginBottom: '15px',
+    },
+  },
 
-    @media (max-width: 576px) {
-      margin: 0 0 50px 0;
-    }
-  }
+  ul: {
+    li: {
+      marginBottom: '15px',
+    },
+  },
+});
 
-  blockquote {
-    margin: 40px 0;
-    padding-left: 20px;
-    border-left: 3px solid ${THEME.dark.foreground};
-  }
+export const AnchorParagraph = styled('div', {
+  margin: '5px 0',
+  fontFamily: TYPOGRAPHY.family.paragraph,
+  fontSize: `${TYPOGRAPHY.size['pRegular']}px`,
+  fontWeight: TYPOGRAPHY.weight['normal'],
+  lineHeight: 2.2,
 
-  ol li,
-  ul li {
-    margin-bottom: 15px;
-  }
-`;
+  a: {
+    fontWeight: TYPOGRAPHY.weight.bold,
+    opacity: 0.4,
+
+    '&:hover': {
+      opacity: 1,
+    },
+  },
+});

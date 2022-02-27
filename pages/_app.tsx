@@ -1,8 +1,9 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import React from 'react';
+import React, { useRef } from 'react';
 import StyledLayout from '../components/layout/styled';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { Toaster } from 'react-hot-toast';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient({
@@ -13,7 +14,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <StyledLayout theme={'dark'}>
+      <StyledLayout>
+        <Toaster />
         <Component {...pageProps} />
       </StyledLayout>
     </QueryClientProvider>

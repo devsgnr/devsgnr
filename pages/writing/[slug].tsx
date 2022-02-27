@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useQuery } from 'react-query';
 import { FetchPostService } from '../../api/posts';
 import Layout from '../../components/layout';
-import { Heading, Paragraph } from '../../components/typography/styled';
+import { Paragraph } from '../../components/typography/styled';
 import { IBlogProps } from '../../types/blog';
 import { IPostResponse } from '../../types/response';
 import { ISeo } from '../../types/seo';
@@ -43,11 +43,9 @@ const Slug = () => {
       <>
         {FetchPost.isSuccess && (
           <>
-            <Paragraph className="title" size="pRegular" weight="bolder">
-              {FetchPost.data.post.title}
-            </Paragraph>
+            <Paragraph className="title">{FetchPost.data.post.title}</Paragraph>
 
-            <Paragraph size="pRegular">
+            <Paragraph>
               {ReactHtmlParser(FetchPost.data.post.theProcess.html)}
             </Paragraph>
           </>

@@ -8,6 +8,11 @@ body {
   height: 100%;
 }
 
+* {
+  font-family: 'Inter' !important;
+  font-display: swap;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   background: #151718;

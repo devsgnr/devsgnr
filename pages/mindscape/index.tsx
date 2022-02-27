@@ -20,12 +20,16 @@ import {
 import { Waypoint } from 'react-waypoint';
 import { process } from '../../api/service';
 import { Download } from 'react-feather';
+import MindscapePhoto from '../../components/mindscape-grid';
+import TYPOGRAPHY from '../../styles/token/typography';
 
 const Mindscape = () => {
   const [id] = useState<string>(process.env.NEXT_PUBLIC_COLLECTION_ID);
   const [images, setImages] = useState<Array<CollectionPhotos>>([]);
   const [page, setPage] = useState<number>(1);
   const [pages, setPages] = useState<number>(0);
+
+  const [onHover, setOnHover] = useState<boolean>(false);
 
   const MyUnsplashCollection = useQuery(['ReturnCollections'], async () => {
     const res: AxiosResponse<CollectionMeta> =
@@ -59,13 +63,13 @@ const Mindscape = () => {
       <>
         {MyUnsplashCollection.isSuccess && (
           <>
-            <Paragraph weight="bolder" size="pRegular">
+            <Paragraph css={{ fontWeight: 'bold' }}>
               {MyUnsplashCollection.data.title}
             </Paragraph>
-            <Paragraph weight="normal" size="pRegular">
-              {MyUnsplashCollection.data.description}
-            </Paragraph>
-            <Paragraph size="pSmall">
+            <Paragraph>{MyUnsplashCollection.data.description}</Paragraph>
+            <Paragraph
+              css={{ fontSize: TYPOGRAPHY.size.pSmall, margin: '20px 0' }}
+            >
               Powered by{' '}
               <a
                 href="https://unsplash.com"
@@ -85,50 +89,7 @@ const Mindscape = () => {
           <>
             <StyledMindscapeGrid>
               {images.map((image: CollectionPhotos, index: number) => (
-                <StyledMindscapeGridItem key={index}>
-                  <Image
-                    placeholder="blur"
-                    src={image.urls.regular}
-                    alt={image.user.name}
-                    blurDataURL={image.blur_hash}
-                    width={'100%'}
-                    height={'100%'}
-                    sizes="50vw"
-                    quality={100}
-                  />
-                  <StyledMindscapeGridItemCredit>
-                    <Paragraph size="pSmall">
-                      Image by{' '}
-                      <a
-                        href={image.user.links.html}
-                        title={image.user.name}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {image.user.name}
-                      </a>{' '}
-                      on{' '}
-                      <a
-                        href={image.links.html}
-                        title="Unsplash"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Unsplash
-                      </a>
-                    </Paragraph>
-                  </StyledMindscapeGridItemCredit>{' '}
-                  <StyledMindscapeGridDownloadButton>
-                    <a
-                      rel="nofollow noreferrer"
-                      href={`${image.links.download}&force=true`}
-                      target="_blank"
-                      download
-                    >
-                      <Download size={18} />
-                    </a>
-                  </StyledMindscapeGridDownloadButton>
-                </StyledMindscapeGridItem>
+                <MindscapePhoto key={index} data={image} />
               ))}
 
               <Waypoint onEnter={() => page < pages && setPage(page + 1)} />

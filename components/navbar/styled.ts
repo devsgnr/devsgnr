@@ -1,36 +1,34 @@
-import styled from 'styled-components';
+import { styled } from '@stitches/react';
 import THEME from '../../styles/token/colors';
 
 interface NavigationProps {
   theme: string;
 }
 
-export const NavigationFlex = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-`;
+export const NavigationFlex = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+});
 
-export const NavigationLinks = styled.div`
-  display: flex;
-  align-item: center;
+export const NavigationLinks = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  '*': {
+    padding: '0 5px',
+  },
+});
 
-  * {
-    padding: 0 5px;
-  }
-`;
-
-const Navigation = styled.div<NavigationProps>`
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  width: 100%;
-  padding: 20px 0;
-  margin-bottom: 50px;
-  background-color: ${(props) =>
-    props.theme === 'dark' ? THEME.dark.opaque : THEME.light.opaque};
-  backdrop-filter: blur(8px);
-`;
+const Navigation = styled('div', {
+  position: 'sticky',
+  top: 0,
+  left: 0,
+  zIndex: 999,
+  width: '100%',
+  padding: '20px 0',
+  marginBottom: '50px',
+  backgroundColor: THEME.dark.opaque,
+  backdropFilter: 'blur(8px)',
+});
 
 export default Navigation;
