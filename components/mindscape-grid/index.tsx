@@ -1,4 +1,3 @@
-import image from 'next/image';
 import React, { useState } from 'react';
 import { Download } from 'react-feather';
 import { CollectionPhotos } from '../../types/unsplash';
@@ -80,6 +79,7 @@ const MindscapePhoto = ({ data }: MindscapePhotoProps) => {
                     background: THEME.dark.background,
                     color: THEME.dark.foreground,
                     boxShadow: `0 0 10px 10px ${THEME.dark.opaque}`,
+                    fontSize: TYPOGRAPHY.size.pRegular,
                   },
                 });
               }

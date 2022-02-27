@@ -4,7 +4,7 @@ import Container from '../container/styled';
 import Divider from '../divider/styled';
 import NavigationBar from '../navbar';
 import SEO from '../seo';
-import { Heading, Paragraph } from '../typography/styled';
+import { Paragraph } from '../typography/styled';
 import { StyledSplashScreen } from './styled';
 
 interface LayoutProps {
@@ -20,18 +20,14 @@ const Layout = ({ isLoading, isError, children, seo }: LayoutProps) => {
       {isLoading ? (
         <StyledSplashScreen>
           <Container>
-            <Paragraph size="pRegular" weight="normal">
-              Loading &bull;&bull;&bull;
-            </Paragraph>
+            <Paragraph>Loading &bull;&bull;&bull;</Paragraph>
           </Container>
         </StyledSplashScreen>
       ) : isError ? (
         <StyledSplashScreen>
           <Container>
-            <Heading size="heading1" weight="bolder">
-              Oh! No!!!
-            </Heading>
-            <Paragraph size="pRegular" weight="normal">
+            <Paragraph>Oh! No!!!</Paragraph>
+            <Paragraph>
               {':('} Oops, did someone unplug the cord? maybe you&apos;re
               looking for something that doesn&apos;t exist.{' '}
               <a title="contant" href="mailto:ei.watila@gmail.com">

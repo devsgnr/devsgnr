@@ -10,6 +10,7 @@ body {
 
 * {
   font-family: 'Inter' !important;
+  font-display: swap;
 }
 
 ::-webkit-scrollbar {
