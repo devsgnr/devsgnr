@@ -1,14 +1,5 @@
-import { createStitches } from '@stitches/react';
+import { styled } from '../../stitches.config';
 import THEME from '../../styles/token/colors';
-
-export const { styled, css } = createStitches({
-  media: {
-    sm: '(min-width: 576px)',
-    md: '(min-width: 768px)',
-    lg: '(min-width: 992px)',
-    xl: '(min-width: 1200px)',
-  },
-});
 
 export const StyledMindscapeGrid = styled('div', {
   display: 'grid',
@@ -33,21 +24,24 @@ export const StyledMindscapeGrid = styled('div', {
 
 export const StyledMindscapeGridItemCredit = styled('div', {
   position: 'absolute',
-  bottom: 0,
-  left: '5.5%',
+  bottom: '-50%',
+  left: 0,
   opacity: 0,
   transition: 'all ease-in-out 0.2s',
+  padding: '0 0 15px 20px',
+  width: '100%',
 });
 
-export const StyledMindscapeGridDownloadButton = styled('div', {
+export const StyledMindscapeGridPlusButton = styled('div', {
   position: 'absolute',
-  bottom: 0,
-  right: '5.5%',
+  top: 0,
+  right: '5%',
   padding: '5px 8px',
   opacity: 0,
   transition: 'all ease-in-out 0.2s',
   borderRadius: '5px',
   backgroundColor: 'rgba(196, 196, 196, 0.1)',
+  cursor: 'pointer',
   svg: {
     stroke: THEME.dark.foreground,
     verticalAlign: 'middle',
@@ -57,6 +51,7 @@ export const StyledMindscapeGridDownloadButton = styled('div', {
 
   '&:hover': {
     backgroundColor: 'rgba(196, 196, 196, 0.3)',
+    boxShadow: '0 0 5px 2px rgba(0, 0, 0, 0.1)',
   },
 });
 

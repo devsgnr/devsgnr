@@ -26,6 +26,7 @@ export const UnsplashAPI = axios.create({
 
 export const Unsplash = createApi({
   accessKey: process.env['NEXT_PUBLIC_UNSPLASH_API_KEY'],
+  fetch: fetch,
 });
 
 export default GraphCMSCLient;

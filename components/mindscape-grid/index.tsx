@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
-import { Download } from 'react-feather';
+import * as Icon from 'react-feather';
 import { CollectionPhotos } from '../../types/unsplash';
 import { Paragraph } from '../typography/styled';
 import {
   StyledMindscapeGridItem,
   StyledMindscapeGridItemCredit,
-  StyledMindscapeGridDownloadButton,
 } from './styled';
 import Image from 'next/image';
 import { Unsplash } from '../../api/service';
-import toast from 'react-hot-toast';
-import THEME from '../../styles/token/colors';
 import TYPOGRAPHY from '../../styles/token/typography';
 
 interface MindscapePhotoProps {
@@ -19,6 +16,7 @@ interface MindscapePhotoProps {
 
 const MindscapePhoto = ({ data }: MindscapePhotoProps) => {
   const [onHover, setOnHover] = useState<boolean>(false);
+
   return (
     <StyledMindscapeGridItem
       onMouseEnter={() => setOnHover(true)}
@@ -37,11 +35,11 @@ const MindscapePhoto = ({ data }: MindscapePhotoProps) => {
       <StyledMindscapeGridItemCredit
         css={{
           opacity: onHover ? '1' : '0',
-          bottom: onHover ? '2%' : '0%',
+          bottom: onHover ? '-2%' : '-50%',
         }}
       >
         <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
-          Image by{' '}
+          Photo by{' '}
           <a
             href={data.user.links.html}
             title={data.user.name}
@@ -56,45 +54,22 @@ const MindscapePhoto = ({ data }: MindscapePhotoProps) => {
             title="Unsplash"
             target="_blank"
             rel="noreferrer"
+            onClick={() =>
+              Unsplash.photos
+                .trackDownload({
+                  downloadLocation: data.links.download_location,
+                })
+                .then((res) => {
+                  if (res.type === 'success') {
+                    return;
+                  }
+                })
+            }
           >
             Unsplash
           </a>
         </Paragraph>
       </StyledMindscapeGridItemCredit>{' '}
-      <StyledMindscapeGridDownloadButton
-        css={{
-          opacity: onHover ? '1' : '0',
-          bottom: onHover ? '3.5%' : '0%',
-        }}
-        onClick={() =>
-          Unsplash.photos
-            .trackDownload({
-              downloadLocation: data.links.download_location,
-            })
-            .then((res) => {
-              if (res.type === 'success') {
-                toast.success('Image Downloaded', {
-                  duration: 5000,
-                  style: {
-                    background: THEME.dark.background,
-                    color: THEME.dark.foreground,
-                    boxShadow: `0 0 10px 10px ${THEME.dark.opaque}`,
-                    fontSize: TYPOGRAPHY.size.pRegular,
-                  },
-                });
-              }
-            })
-        }
-      >
-        <a
-          rel="nofollow noreferrer"
-          href={`${data.links.download}&force=true`}
-          target="_blank"
-          download
-        >
-          <Download size={18} />
-        </a>
-      </StyledMindscapeGridDownloadButton>
     </StyledMindscapeGridItem>
   );
 };
