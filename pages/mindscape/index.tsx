@@ -11,7 +11,6 @@ import { CollectionMeta, CollectionPhotos } from '../../types/unsplash';
 import Image from 'next/image';
 import {
   StyledMindscapeGrid,
-  StyledMindscapeGridDownloadButton,
   StyledMindscapeGridInfiniteScrollLoading,
   StyledMindscapeGridItem,
   StyledMindscapeGridItemCredit,

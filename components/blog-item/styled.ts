@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from '../../stitches.config';
 
 const BlogItem = styled('div', {
   padding: '15px 20px',
