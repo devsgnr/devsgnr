@@ -18,6 +18,9 @@ const NavigationBar = () => {
             <AnchorParagraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
               <Anchor href="/writing" title="Writing" />
             </AnchorParagraph>
+            <AnchorParagraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
+              <Anchor href="/mindscape" title="Mindscape" />
+            </AnchorParagraph>
           </NavigationLinks>
         </NavigationFlex>
       </Container>
