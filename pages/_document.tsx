@@ -19,10 +19,7 @@ export default class Document extends NextDocument {
           <meta name="googlebot" content="index,follow" />
           <meta name="theme-color" content="#151718" />
           <meta name="description" content={`Fullstack Digital Creator`} />
-          <meta
-            property="twitter:title"
-            content={'Emmanuel Watila, Designer'}
-          />
+          <meta property="twitter:title" content={'Emmanuel Watila'} />
           <meta
             property="twitter:image"
             content={'https://devsgnr.xyz/seo.png'}
@@ -34,9 +31,9 @@ export default class Document extends NextDocument {
             property="twitter:description"
             content={`Fullstack Digital Creator`}
           />
-          <meta property="og:title" content={'Emmanuel Watila, Designer'} />
+          <meta property="og:title" content={'Emmanuel Watila'} />
           <meta property="og:url" content="https://devsgnr.xyz" />
-          <meta property="og:site_name" content="Emmanuel Watila, Designer" />
+          <meta property="og:site_name" content="Emmanuel Watila" />
           <meta property="og:type" content="website" />
           <meta
             property="og:description"

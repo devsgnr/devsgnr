@@ -2,7 +2,6 @@ import Link from 'next/link';
 import React from 'react';
 import { useQuery } from 'react-query';
 import { FetchPostsService } from '../../api/posts';
-import Anchor from '../../components/anchor';
 import { StyledInternalA } from '../../components/anchor/styled';
 import BlogItem from '../../components/blog-item/styled';
 import Layout from '../../components/layout';
