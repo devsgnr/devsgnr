@@ -9,7 +9,7 @@ interface SEOProps {
 const SEO = ({ seo }: SEOProps) => {
   return (
     <Head>
-      <title>{seo?.title ? seo.title : 'Emmanuel Watila, Designer'}</title>
+      <title>{seo?.title && seo.title}</title>
     </Head>
   );
 };
