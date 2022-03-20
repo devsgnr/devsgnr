@@ -18,7 +18,7 @@ interface TypographyParagraphProps {
 
 export const Paragraph = styled('div', {
   margin: '5px 0',
-  fontFamily: TYPOGRAPHY.family.paragraph,
+  fontFamily: TYPOGRAPHY.family['paragraph'],
   fontSize: `${TYPOGRAPHY.size['pRegular']}px`,
   fontWeight: TYPOGRAPHY.weight['normal'],
   lineHeight: 2.2,
@@ -26,16 +26,12 @@ export const Paragraph = styled('div', {
   a: {
     textDecoration: 'underline',
     textUnderlineOffset: '3px',
-    fontWeight: TYPOGRAPHY.weight.bold,
+    fontWeight: TYPOGRAPHY.weight['bold'],
     opacity: 0.4,
-    padding: '4px 4px',
-    borderRadius: '5px',
-    backgroundColor: 'rgba(196, 196, 196, 0.2)',
     transition: 'all ease-in-out 0.2s',
 
     '&:hover': {
       opacity: 1,
-      backgroundColor: 'rgba(196, 196, 196, 0.4)',
       transition: 'all ease-in-out 0.2s',
     },
   },
@@ -51,7 +47,7 @@ export const Paragraph = styled('div', {
   blockquote: {
     margin: '40px 0',
     paddingLeft: '20px',
-    borderLeft: `3px solid ${THEME.dark.foreground}`,
+    borderLeft: `3px solid ${THEME.dark['foreground']}`,
   },
 
   ol: {
@@ -75,7 +71,7 @@ export const AnchorParagraph = styled('div', {
   lineHeight: 2.2,
 
   a: {
-    fontWeight: TYPOGRAPHY.weight.bold,
+    fontWeight: TYPOGRAPHY.weight['bold'],
     opacity: 0.4,
 
     '&:hover': {
