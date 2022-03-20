@@ -22,7 +22,7 @@ export default class Document extends NextDocument {
           <meta property="twitter:title" content="Emmanuel Watila" />
           <meta
             property="twitter:image"
-            content={'https://devsgnr.xyz/seo.png'}
+            content="https://devsgnr.xyz/seo.png"
           />
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:site" content="@devsgnr_" />
@@ -33,7 +33,7 @@ export default class Document extends NextDocument {
           <meta property="og:site_name" content="Emmanuel Watila" />
           <meta property="og:type" content="website" />
           <meta property="og:description" content="Fullstack Creator" />
-          <meta property="og:image" content={'https://devsgnr.xyz/seo.png'} />
+          <meta property="og:image" content="https://devsgnr.xyz/seo.png" />
           <link rel="icon" href="/favicon.png" />
         </Head>
         <body>

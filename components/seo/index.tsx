@@ -6,12 +6,10 @@ interface SEOProps {
   seo?: ISeo;
 }
 
-const SEO = ({ seo }: SEOProps) => {
-  return (
-    <Head>
-      <title>{seo?.title ? seo.title : 'Emmanuel Watila'}</title>
-    </Head>
-  );
-};
+const SEO = ({ seo }: SEOProps) => (
+  <Head>
+    <title>{seo?.title ? seo.title : 'Emmanuel Watila'}</title>
+  </Head>
+);
 
 export default SEO;

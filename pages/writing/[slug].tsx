@@ -1,4 +1,5 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import ReactHtmlParser from 'react-html-parser';
 import { useQuery } from 'react-query';
 import { FetchPostService } from '../../api/posts';
 import Layout from '../../components/layout';
@@ -6,12 +7,11 @@ import { Paragraph } from '../../components/typography/styled';
 import { IBlogProps } from '../../types/blog';
 import { IPostResponse } from '../../types/response';
 import { ISeo } from '../../types/seo';
-import ReactHtmlParser from 'react-html-parser';
 
 const Slug = () => {
   const [seo, setSeo] = useState<ISeo>({} as ISeo);
 
-  let slug = useRef<string>('');
+  const slug = useRef<string>('');
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
