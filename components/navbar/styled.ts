@@ -1,10 +1,6 @@
 import { styled } from '../../stitches.config';
 import THEME from '../../styles/token/colors';
 
-interface NavigationProps {
-  theme: string;
-}
-
 export const NavigationFlex = styled('div', {
   display: 'flex',
   alignItems: 'center',

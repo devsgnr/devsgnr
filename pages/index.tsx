@@ -1,28 +1,28 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import ReactHtmlParser from 'react-html-parser';
 import { FetchHomesService } from '../api/home';
 import Layout from '../components/layout';
 import { Paragraph } from '../components/typography/styled';
 import { IHomeProps } from '../types/home';
 import { IHomeResponse } from '../types/response';
-import ReactHtmlParser from 'react-html-parser';
 
 const Home = () => {
-  const FetchHome = useQuery('FetchHome', async () => {
+  const fetchHome = useQuery('FetchHome', async () => {
     const res: IHomeResponse<IHomeProps[]> = await FetchHomesService();
     return res;
   });
 
   return (
-    <Layout isLoading={FetchHome.isFetching} isError={FetchHome.isError}>
+    <Layout isLoading={fetchHome.isFetching} isError={fetchHome.isError}>
       <>
-        {FetchHome.isSuccess && (
+        {fetchHome.isSuccess && (
           <>
             <Paragraph>
-              {ReactHtmlParser(FetchHome.data.homes[0].about.html)}
+              {ReactHtmlParser(fetchHome.data.homes[0].about.html)}
             </Paragraph>
             <Paragraph>
-              {ReactHtmlParser(FetchHome.data.homes[0].timeline.html)}
+              {ReactHtmlParser(fetchHome.data.homes[0].timeline.html)}
             </Paragraph>
           </>
         )}

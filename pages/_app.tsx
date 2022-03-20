@@ -1,11 +1,11 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import React, { useRef } from 'react';
-import StyledLayout from '../components/layout/styled';
+import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Toaster } from 'react-hot-toast';
+import StyledLayout from '../components/layout/styled';
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: { refetchOnWindowFocus: false, refetchOnReconnect: false },
@@ -20,6 +20,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       </StyledLayout>
     </QueryClientProvider>
   );
-}
+};
 
 export default MyApp;

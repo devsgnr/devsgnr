@@ -1,12 +1,13 @@
+/* eslint-disable react/jsx-curly-newline */
 import React, { useState } from 'react';
-import * as Icon from 'react-feather';
+import Image from 'next/image';
 import { CollectionPhotos } from '../../types/unsplash';
 import { Paragraph } from '../typography/styled';
 import {
   StyledMindscapeGridItem,
   StyledMindscapeGridItemCredit,
 } from './styled';
-import Image from 'next/image';
+
 import { Unsplash } from '../../api/service';
 import TYPOGRAPHY from '../../styles/token/typography';
 
@@ -27,8 +28,8 @@ const MindscapePhoto = ({ data }: MindscapePhotoProps) => {
         src={data.urls.regular}
         alt={data.user.name}
         blurDataURL={data.blur_hash}
-        width={'100%'}
-        height={'100%'}
+        width="100%"
+        height="100%"
         sizes="50vw"
         quality={100}
       />
@@ -39,7 +40,7 @@ const MindscapePhoto = ({ data }: MindscapePhotoProps) => {
         }}
       >
         <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
-          Photo by{' '}
+          Photo by
           <a
             href={data.user.links.html}
             title={data.user.name}
@@ -47,29 +48,23 @@ const MindscapePhoto = ({ data }: MindscapePhotoProps) => {
             rel="noreferrer"
           >
             {data.user.name}
-          </a>{' '}
-          on{' '}
+          </a>
+          on
           <a
             href={data.links.html}
             title="Unsplash"
             target="_blank"
             rel="noreferrer"
             onClick={() =>
-              Unsplash.photos
-                .trackDownload({
-                  downloadLocation: data.links.download_location,
-                })
-                .then((res) => {
-                  if (res.type === 'success') {
-                    return;
-                  }
-                })
+              Unsplash.photos.trackDownload({
+                downloadLocation: data.links.download_location,
+              })
             }
           >
             Unsplash
           </a>
         </Paragraph>
-      </StyledMindscapeGridItemCredit>{' '}
+      </StyledMindscapeGridItemCredit>
     </StyledMindscapeGridItem>
   );
 };

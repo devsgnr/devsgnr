@@ -1,10 +1,6 @@
 import { styled } from '../../stitches.config';
 import THEME from '../../styles/token/colors';
 
-interface StyledLayoutProps {
-  theme: string;
-}
-
 export const StyledSplashScreen = styled('div', {
   position: 'fixed',
   top: 0,

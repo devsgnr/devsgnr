@@ -13,14 +13,12 @@ const Anchor = ({
   title,
   children,
   ...props
-}: AnchorProps & AnchorHTMLAttributes<HTMLAnchorElement>) => {
-  return (
-    <Link href={href} passHref {...props}>
-      <StyledInternalA title={title} {...props}>
-        {title || children}
-      </StyledInternalA>
-    </Link>
-  );
-};
+}: AnchorProps & AnchorHTMLAttributes<HTMLAnchorElement>) => (
+  <Link href={href} passHref {...props}>
+    <StyledInternalA title={title} {...props}>
+      {title || children}
+    </StyledInternalA>
+  </Link>
+);
 
 export default Anchor;

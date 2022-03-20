@@ -6,27 +6,17 @@ export type TypographyHeadingSize = 'heading1' | 'heading2' | 'heading3';
 export type TypographyParagraphSize = 'pRegular' | 'pSmall';
 export type TypographyWeight = 'normal' | 'bold' | 'bolder';
 
-interface TypographyHeadingProps {
-  size: TypographyHeadingSize;
-  weight: TypographyWeight;
-}
-
-interface TypographyParagraphProps {
-  size?: TypographyParagraphSize;
-  weight?: TypographyWeight;
-}
-
 export const Paragraph = styled('div', {
   margin: '5px 0',
-  fontFamily: TYPOGRAPHY.family['paragraph'],
-  fontSize: `${TYPOGRAPHY.size['pRegular']}px`,
-  fontWeight: TYPOGRAPHY.weight['normal'],
+  fontFamily: TYPOGRAPHY.family.paragraph,
+  fontSize: `${TYPOGRAPHY.size.pRegular}px`,
+  fontWeight: TYPOGRAPHY.weight.normal,
   lineHeight: 2.2,
 
   a: {
     textDecoration: 'underline',
     textUnderlineOffset: '3px',
-    fontWeight: TYPOGRAPHY.weight['bold'],
+    fontWeight: TYPOGRAPHY.weight.bold,
     opacity: 0.4,
     transition: 'all ease-in-out 0.2s',
 
@@ -47,7 +37,7 @@ export const Paragraph = styled('div', {
   blockquote: {
     margin: '40px 0',
     paddingLeft: '20px',
-    borderLeft: `3px solid ${THEME.dark['foreground']}`,
+    borderLeft: `3px solid ${THEME.dark.foreground}`,
   },
 
   ol: {
@@ -66,12 +56,12 @@ export const Paragraph = styled('div', {
 export const AnchorParagraph = styled('div', {
   margin: '5px 0',
   fontFamily: TYPOGRAPHY.family.paragraph,
-  fontSize: `${TYPOGRAPHY.size['pRegular']}px`,
-  fontWeight: TYPOGRAPHY.weight['normal'],
+  fontSize: `${TYPOGRAPHY.size.pRegular}px`,
+  fontWeight: TYPOGRAPHY.weight.normal,
   lineHeight: 2.2,
 
   a: {
-    fontWeight: TYPOGRAPHY.weight['bold'],
+    fontWeight: TYPOGRAPHY.weight.bold,
     opacity: 0.4,
 
     '&:hover': {

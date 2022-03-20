@@ -1,24 +1,19 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
+import { Waypoint } from 'react-waypoint';
+import { AxiosResponse } from 'axios';
 import Layout from '../../components/layout';
 import { Paragraph } from '../../components/typography/styled';
-import { AxiosResponse } from 'axios';
 import {
   MyUnsplashCollectionsPhotosService,
   MyUnsplashCollectionsService,
 } from '../../api/unsplash/collections';
 import { CollectionMeta, CollectionPhotos } from '../../types/unsplash';
-import Image from 'next/image';
 import {
   StyledMindscapeGrid,
   StyledMindscapeGridInfiniteScrollLoading,
-  StyledMindscapeGridItem,
-  StyledMindscapeGridItemCredit,
 } from '../../components/mindscape-grid/styled';
-
-import { Waypoint } from 'react-waypoint';
 import { process } from '../../api/service';
-import { Download } from 'react-feather';
 import MindscapePhoto from '../../components/mindscape-grid';
 import TYPOGRAPHY from '../../styles/token/typography';
 
@@ -27,8 +22,6 @@ const Mindscape = () => {
   const [images, setImages] = useState<Array<CollectionPhotos>>([]);
   const [page, setPage] = useState<number>(1);
   const [pages, setPages] = useState<number>(0);
-
-  const [onHover, setOnHover] = useState<boolean>(false);
 
   const MyUnsplashCollection = useQuery(['ReturnCollections'], async () => {
     const res: AxiosResponse<CollectionMeta> =
@@ -69,7 +62,7 @@ const Mindscape = () => {
             <Paragraph
               css={{ fontSize: TYPOGRAPHY.size.pSmall, margin: '20px 0' }}
             >
-              Powered by{' '}
+              Powered by
               <a
                 href="https://unsplash.com"
                 title="Unsplash"
