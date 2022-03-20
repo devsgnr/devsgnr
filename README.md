@@ -1,7 +1,8 @@
 **Hi there 👋**
 
 I'm Emmanuel.
-A design engineer, system thinker, and writer obsessed with crafting beautiful interfaces and experiences through the combination of writing, design, code & no-code. 😄
+
+A full-stack creator, obsessed with crafting beautiful interfaces and experiences through the combination of writing, design, code, and no-code. 😄
 
 If you wish to use my website design, some credit would be nice 😄
 
