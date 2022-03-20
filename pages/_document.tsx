@@ -18,8 +18,8 @@ export default class Document extends NextDocument {
           <meta name="robots" content="index,follow" />
           <meta name="googlebot" content="index,follow" />
           <meta name="theme-color" content="#151718" />
-          <meta name="description" content={`Fullstack Creator`} />
-          <meta property="twitter:title" content={'Emmanuel Watila'} />
+          <meta name="description" content="Fullstack Creator" />
+          <meta property="twitter:title" content="Emmanuel Watila" />
           <meta
             property="twitter:image"
             content={'https://devsgnr.xyz/seo.png'}
