@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/jsx-curly-newline */
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -40,7 +41,7 @@ const MindscapePhoto = ({ data }: MindscapePhotoProps) => {
         }}
       >
         <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
-          Photo by
+          Photo by{' '}
           <a
             href={data.user.links.html}
             title={data.user.name}
@@ -48,8 +49,8 @@ const MindscapePhoto = ({ data }: MindscapePhotoProps) => {
             rel="noreferrer"
           >
             {data.user.name}
-          </a>
-          on
+          </a>{' '}
+          on{' '}
           <a
             href={data.links.html}
             title="Unsplash"

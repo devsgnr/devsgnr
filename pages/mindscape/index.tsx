@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { Waypoint } from 'react-waypoint';
@@ -62,7 +63,7 @@ const Mindscape = () => {
             <Paragraph
               css={{ fontSize: TYPOGRAPHY.size.pSmall, margin: '20px 0' }}
             >
-              Powered by
+              Powered by{' '}
               <a
                 href="https://unsplash.com"
                 title="Unsplash"
