@@ -2,7 +2,7 @@ import { ITypography } from '../../types/token';
 
 const TYPOGRAPHY: ITypography = {
   family: {
-    heading: 'Inter, sans-serif',
+    heading: 'Oswald, sans-serif',
     paragraph: 'Inter, sans-serif',
   },
   size: {

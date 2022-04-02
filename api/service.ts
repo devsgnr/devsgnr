@@ -1,9 +1,10 @@
+/* eslint-disable camelcase */
 import axios from 'axios';
 import { GraphQLClient } from 'graphql-request';
 import { createApi } from 'unsplash-js';
 
 // Reason: For preventing `maybe be undefined error` being thrown on 16:42
-export declare var process: {
+export declare const process: {
   env: {
     NEXT_PUBLIC_CMS_URL: string;
     NEXT_PUBLIC_UNSPLASH_API_KEY: string;
@@ -11,8 +12,8 @@ export declare var process: {
   };
 };
 
-const cms_url = process.env['NEXT_PUBLIC_CMS_URL'];
-const unsplash_api_key = process.env['NEXT_PUBLIC_UNSPLASH_API_KEY'];
+const cms_url = process.env.NEXT_PUBLIC_CMS_URL;
+const unsplash_api_key = process.env.NEXT_PUBLIC_UNSPLASH_API_KEY;
 
 const GraphCMSCLient = new GraphQLClient(cms_url);
 
@@ -25,8 +26,8 @@ export const UnsplashAPI = axios.create({
 });
 
 export const Unsplash = createApi({
-  accessKey: process.env['NEXT_PUBLIC_UNSPLASH_API_KEY'],
-  fetch: fetch,
+  accessKey: process.env.NEXT_PUBLIC_UNSPLASH_API_KEY,
+  fetch,
 });
 
 export default GraphCMSCLient;

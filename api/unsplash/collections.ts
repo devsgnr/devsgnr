@@ -17,7 +17,7 @@ export const MyUnsplashCollectionsPhotosService = async (
     `/collections/${id}/photos`,
     {
       params: {
-        page: page,
+        page,
       },
     },
   );
