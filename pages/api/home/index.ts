@@ -1,5 +1,5 @@
-import { IHomeProps } from '../../types/home';
-import { IHomeResponse } from '../../types/response';
+import { IHomeProps } from '../../../types/home';
+import { IHomeResponse } from '../../../types/response';
 import GraphCMSCLient from '../service';
 import { Homes } from './queries';
 

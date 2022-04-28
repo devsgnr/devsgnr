@@ -8,7 +8,7 @@ const TYPOGRAPHY: ITypography = {
   size: {
     heading1: 45,
     heading2: 35,
-    heading3: 25,
+    heading3: 30,
     pRegular: 14.2,
     pSmall: 11.5,
   },

@@ -1,16 +1,18 @@
 import React from 'react';
+import { NextPage } from 'next';
 import Anchor from '../components/anchor';
-import { Paragraph } from '../components/typography/styled';
+import { Heading, Paragraph } from '../components/typography/styled';
 import { StyledSplashScreen } from '../components/layout/styled';
 import Container from '../components/container/styled';
 
-const Index = () => (
+const Index: NextPage = () => (
   <StyledSplashScreen>
     <Container>
-      <Paragraph>Ahhhh! 404!!!</Paragraph>
+      <Heading>Ahhhh! 404!!!</Heading>
       <Paragraph>
         I didn&apos;t create the page you&apos;re looking for, let&apos;s get
         you back
+        <> </>
         <u>
           <Anchor href="/" title="home" />
         </u>

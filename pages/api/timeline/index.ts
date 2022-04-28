@@ -1,5 +1,5 @@
-import { ITimelineResponse } from '../../types/response';
-import { ITimelineProps } from '../../types/timeline';
+import { ITimelineResponse } from '../../../types/response';
+import { ITimelineProps } from '../../../types/timeline';
 import GraphCMSCLient from '../service';
 import { Timelines } from './queries';
 
