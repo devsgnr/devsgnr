@@ -1,17 +1,13 @@
-**Hi there 👋**
+# **Hi there 👋**
 
 I'm Emmanuel.
-A design engineer, system thinker, and writer obsessed with crafting beautiful interfaces and experiences through the combination of writing, design, code & no-code. 😄
-
-If you wish to use my website design, some credit would be nice 😄
+A full-stack creator obsessed with crafting beautiful interfaces and experiences through the combination of writing, design, code & no-code. 😄
 
 - 😄 Pronouns: He/Him
 - 🔭 I’m currently working on
-  - Designing, building, and releasing highly-composable UI components in React and Typescript.
-  - Iterating my website design [devsgnr.xyz](https://devsgnr.xyz)
+  - Designing, building, my own startup.
   - Writing articles on my [website](https://devsgnr.xyz/writing) and [Medium](https://medium.com/@devsgnr_)
   - Writing my newsletter [The Melancholic Creative](https://www.getrevue.co/profile/devsgnr)
-- 🌱 I’m currently learning Digital Product Design & Content Writing
 - 📫 How to reach me
   - Twitter: [@devsgnr\_](https://twitter.com/devsgnr_)
   - Email: [hi@devsgnr.xyz](mailto:hi@devsgnr.xyz)
