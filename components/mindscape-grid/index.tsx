@@ -9,7 +9,7 @@ import {
   StyledMindscapeGridItemCredit,
 } from './styled';
 
-import { Unsplash } from '../../api/service';
+import { Unsplash } from '../../pages/api/service';
 import TYPOGRAPHY from '../../styles/token/typography';
 
 interface MindscapePhotoProps {

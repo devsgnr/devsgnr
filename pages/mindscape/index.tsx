@@ -1,24 +1,25 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState } from 'react';
+import { NextPage } from 'next';
 import { useQuery } from 'react-query';
 import { Waypoint } from 'react-waypoint';
 import { AxiosResponse } from 'axios';
 import Layout from '../../components/layout';
-import { Paragraph } from '../../components/typography/styled';
+import { Heading, Paragraph } from '../../components/typography/styled';
 import {
   MyUnsplashCollectionsPhotosService,
   MyUnsplashCollectionsService,
-} from '../../api/unsplash/collections';
+} from '../api/unsplash/collections';
 import { CollectionMeta, CollectionPhotos } from '../../types/unsplash';
 import {
   StyledMindscapeGrid,
   StyledMindscapeGridInfiniteScrollLoading,
 } from '../../components/mindscape-grid/styled';
-import { process } from '../../api/service';
+import { process } from '../api/service';
 import MindscapePhoto from '../../components/mindscape-grid';
 import TYPOGRAPHY from '../../styles/token/typography';
 
-const Mindscape = () => {
+const Mindscape: NextPage = () => {
   const [id] = useState<string>(process.env.NEXT_PUBLIC_COLLECTION_ID);
   const [images, setImages] = useState<Array<CollectionPhotos>>([]);
   const [page, setPage] = useState<number>(1);
@@ -56,9 +57,9 @@ const Mindscape = () => {
       <>
         {MyUnsplashCollection.isSuccess && (
           <>
-            <Paragraph css={{ fontWeight: 'bold' }}>
+            <Heading className="title">
               {MyUnsplashCollection.data.title}
-            </Paragraph>
+            </Heading>
             <Paragraph>{MyUnsplashCollection.data.description}</Paragraph>
             <Paragraph
               css={{ fontSize: TYPOGRAPHY.size.pSmall, margin: '20px 0' }}

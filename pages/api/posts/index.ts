@@ -1,5 +1,5 @@
-import { IBlogProps } from '../../types/blog';
-import { IPostResponse, IPostsResponse } from '../../types/response';
+import { IBlogProps } from '../../../types/blog';
+import { IPostResponse, IPostsResponse } from '../../../types/response';
 import GraphCMSCLient from '../service';
 import { Post, Posts } from './queries';
 

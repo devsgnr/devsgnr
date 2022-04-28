@@ -6,6 +6,35 @@ export type TypographyHeadingSize = 'heading1' | 'heading2' | 'heading3';
 export type TypographyParagraphSize = 'pRegular' | 'pSmall';
 export type TypographyWeight = 'normal' | 'bold' | 'bolder';
 
+export const Heading = styled('div', {
+  margin: 0,
+  fontFamily: TYPOGRAPHY.family.heading,
+  lineHeight: '55px',
+  letterSpacing: '-1px',
+  fontWeight: TYPOGRAPHY.weight.bolder,
+
+  '&.title': {
+    margin: '50px 0 70px 0',
+
+    '@sm': {
+      margin: '100px 0 100px 0',
+    },
+  },
+  '@xl': {
+    fontSize: TYPOGRAPHY.size.heading1,
+  },
+  '@lg': {
+    fontSize: TYPOGRAPHY.size.heading1,
+  },
+  '@md': {
+    fontSize: TYPOGRAPHY.size.heading2,
+  },
+  '@sm': {
+    fontSize: TYPOGRAPHY.size.heading3,
+    lineHeight: '40px',
+  },
+});
+
 export const Paragraph = styled('div', {
   margin: '5px 0',
   fontFamily: TYPOGRAPHY.family.paragraph,

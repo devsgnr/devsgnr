@@ -1,28 +1,32 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
+import { GetServerSidePropsContext, NextPage } from 'next';
+import { ParsedUrlQuery } from 'querystring';
 import ReactHtmlParser from 'react-html-parser';
 import { useQuery } from 'react-query';
-import { FetchPostService } from '../../api/posts';
+import { FetchPostService } from '../api/posts';
 import Layout from '../../components/layout';
-import { Paragraph } from '../../components/typography/styled';
+import { Heading, Paragraph } from '../../components/typography/styled';
 import { IBlogProps } from '../../types/blog';
 import { IPostResponse } from '../../types/response';
 import { ISeo } from '../../types/seo';
 
-const Slug = () => {
+interface WritingSlugProps {
+  params: ParsedUrlQuery;
+}
+
+type ContextType = GetServerSidePropsContext;
+
+export const getServerSideProps = async (context: ContextType) => {
+  const { params } = context;
+  return { props: { params } };
+};
+
+const Slug: NextPage<WritingSlugProps> = ({ params }: WritingSlugProps) => {
   const [seo, setSeo] = useState<ISeo>({} as ISeo);
-
-  const slug = useRef<string>('');
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const pathname = window.location.pathname.split('/');
-      slug.current = pathname[pathname.length - 1];
-    }
-  }, []);
 
   const FetchPost = useQuery('FetchPost', async () => {
     const res: IPostResponse<IBlogProps> = await FetchPostService({
-      slug: slug.current,
+      slug: String(params.slug),
     });
     if (res) {
       setSeo({
@@ -43,7 +47,7 @@ const Slug = () => {
       <>
         {FetchPost.isSuccess && (
           <>
-            <Paragraph className="title">{FetchPost.data.post.title}</Paragraph>
+            <Heading className="title">{FetchPost.data.post.title}</Heading>
 
             <Paragraph>
               {ReactHtmlParser(FetchPost.data.post.theProcess.html)}

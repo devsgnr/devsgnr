@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios';
-import { CollectionMeta } from '../../types/unsplash';
+import { CollectionMeta } from '../../../types/unsplash';
 import { UnsplashAPI } from '../service';
 
 export const MyUnsplashCollectionsService = async (id: string) => {
