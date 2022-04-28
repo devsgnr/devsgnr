@@ -5,7 +5,7 @@ A full-stack creator obsessed with crafting beautiful interfaces and experiences
 
 - 😄 Pronouns: He/Him
 - 🔭 I’m currently working on
-  - Designing, building, my own startup.
+  - Designing and developing my own startup.
   - Writing articles on my [website](https://devsgnr.xyz/writing) and [Medium](https://medium.com/@devsgnr_)
   - Writing my newsletter [The Melancholic Creative](https://www.getrevue.co/profile/devsgnr)
 - 📫 How to reach me
