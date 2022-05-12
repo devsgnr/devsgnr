@@ -11,6 +11,7 @@ import {
 
 import { Unsplash } from '../../pages/api/service';
 import TYPOGRAPHY from '../../styles/token/typography';
+import decodeBlurhash from '../../utils/decodeBlurhash';
 
 interface MindscapePhotoProps {
   data: CollectionPhotos;
@@ -28,7 +29,7 @@ const MindscapePhoto = ({ data }: MindscapePhotoProps) => {
         placeholder="blur"
         src={data.urls.regular}
         alt={data.user.name}
-        blurDataURL={data.blur_hash}
+        blurDataURL={decodeBlurhash(data.blur_hash)}
         width="100%"
         height="100%"
         sizes="50vw"
