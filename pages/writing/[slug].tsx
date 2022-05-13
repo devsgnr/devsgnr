@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { GetServerSidePropsContext, NextPage } from 'next';
+import Image from 'next/image';
 import { ParsedUrlQuery } from 'querystring';
 import ReactHtmlParser from 'react-html-parser';
 import { useQuery } from 'react-query';
@@ -9,6 +10,11 @@ import { Heading, Paragraph } from '../../components/typography/styled';
 import { IBlogProps } from '../../types/blog';
 import { IPostResponse } from '../../types/response';
 import { ISeo } from '../../types/seo';
+import {
+  StyledExternalImageContainer,
+  StyledImageContainer,
+} from '../../components/image/styled';
+import decodeBlurhash from '../../utils/decodeBlurhash';
 
 interface WritingSlugProps {
   params: ParsedUrlQuery;
@@ -48,6 +54,24 @@ const Slug: NextPage<WritingSlugProps> = ({ params }: WritingSlugProps) => {
         {FetchPost.isSuccess && (
           <>
             <Heading className="title">{FetchPost.data.post.title}</Heading>
+
+            <StyledExternalImageContainer>
+              <StyledImageContainer>
+                <Image
+                  placeholder="blur"
+                  blurDataURL={decodeBlurhash('L01yLP9FWBofj[WBj[fQD%-;IUof')}
+                  src={FetchPost.data.post.displayPicture.url}
+                  alt={FetchPost.data.post.slug}
+                  width="100%"
+                  height="50%"
+                  sizes="50vw"
+                  quality={100}
+                />
+              </StyledImageContainer>
+              <Paragraph css={{ fontSize: '11px' }}>
+                {ReactHtmlParser(FetchPost.data.post.imageCredit.html)}
+              </Paragraph>
+            </StyledExternalImageContainer>
 
             <Paragraph>
               {ReactHtmlParser(FetchPost.data.post.theProcess.html)}

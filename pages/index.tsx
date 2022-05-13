@@ -20,9 +20,11 @@ const Home: NextPage = () => {
         {fetchHome.isSuccess && (
           <>
             <Heading className="title">Greeting! &#128075;</Heading>
+
             <Paragraph>
               {ReactHtmlParser(fetchHome.data.homes[0].about.html)}
             </Paragraph>
+
             <Paragraph>
               {ReactHtmlParser(fetchHome.data.homes[0].timeline.html)}
             </Paragraph>
