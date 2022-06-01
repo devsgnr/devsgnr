@@ -11,22 +11,24 @@ import { IHomeResponse } from '../types/response';
 const Home: NextPage = () => {
   const fetchHome = useQuery('FetchHome', async () => {
     const res: IHomeResponse<IHomeProps[]> = await FetchHomesService();
-    return res;
+    return res.homes.find((el: IHomeProps) => res.homes.indexOf(el) === 0);
   });
 
   return (
     <Layout isLoading={fetchHome.isFetching} isError={fetchHome.isError}>
       <>
-        {fetchHome.isSuccess && (
+        {fetchHome.isSuccess && fetchHome.data && (
           <>
-            <Heading className="title">Greeting! &#128075;</Heading>
+            <Heading className="title">
+              Hello, I&apos;m Emmanuel. A full-stack creator, obsessed with
+              crafting beautiful interfaces and experiences through the
+              combination of writing, design, code, and no-code
+            </Heading>
+
+            <Paragraph>{ReactHtmlParser(fetchHome.data.about.html)}</Paragraph>
 
             <Paragraph>
-              {ReactHtmlParser(fetchHome.data.homes[0].about.html)}
-            </Paragraph>
-
-            <Paragraph>
-              {ReactHtmlParser(fetchHome.data.homes[0].timeline.html)}
+              {ReactHtmlParser(fetchHome.data.timeline.html)}
             </Paragraph>
           </>
         )}

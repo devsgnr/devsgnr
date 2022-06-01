@@ -11,7 +11,7 @@ const Container = styled('div', {
     width: '700px',
   },
   '@lg': {
-    width: '700px',
+    width: '800px',
   },
   '@xl': {
     width: '800px',

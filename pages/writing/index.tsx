@@ -21,11 +21,14 @@ const Writing: NextPage = () => {
       <>
         {FetchPosts.isSuccess &&
           FetchPosts.data.posts.map((item: IBlogProps, index: number) => (
-            <Link key={index} passHref href={`/writing/${item.slug}`}>
-              <StyledInternalA href={`/writing/${item.slug}`}>
+            <Link
+              key={index}
+              passHref
+              href={{ pathname: '/writing/[slug]', query: { slug: item.slug } }}
+            >
+              <StyledInternalA>
                 <BlogItem>
                   <Paragraph>{item.title}</Paragraph>
-                  <Paragraph>{new Date(item.date).toDateString()}</Paragraph>
                 </BlogItem>
               </StyledInternalA>
             </Link>
