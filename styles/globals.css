@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;800;900&display=swap');
 @import url('https://rsms.me/inter/inter.css');
+@import url(../public/fonts/open_sauce/stylesheet.css);
+@import url(../public/fonts/open_sauce_one/stylesheet.css);
 
 html {
   font-family: 'Inter', sans-serif;

@@ -10,7 +10,7 @@ const BlogItem = styled('div', {
   justifyContent: 'space-between',
 
   '&:hover': {
-    backgroundColor: 'rgba(196, 196, 196, 0.1)',
+    backgroundColor: 'rgba(196, 196, 196, 0.05)',
   },
 });
 

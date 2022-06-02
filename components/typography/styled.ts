@@ -9,9 +9,23 @@ export type TypographyWeight = 'normal' | 'bold' | 'bolder';
 export const Heading = styled('div', {
   margin: 0,
   fontFamily: TYPOGRAPHY.family.heading,
-  lineHeight: '55px',
-  letterSpacing: '-1px',
-  fontWeight: TYPOGRAPHY.weight.bolder,
+  letterSpacing: '0px',
+  fontWeight: TYPOGRAPHY.weight.normal,
+  fontSize: `${TYPOGRAPHY.size.heading1}px`,
+  lineHeight: 1.55,
+
+  '@xl': {
+    fontSize: `${TYPOGRAPHY.size.heading3}px`,
+  },
+  '@lg': {
+    fontSize: `${TYPOGRAPHY.size.heading3}px`,
+  },
+  '@md': {
+    fontSize: `${TYPOGRAPHY.size.heading2}px`,
+  },
+  '@sm': {
+    fontSize: `${TYPOGRAPHY.size.heading1}px`,
+  },
 
   '&.title': {
     margin: '50px 0 70px 0',
@@ -19,19 +33,6 @@ export const Heading = styled('div', {
     '@sm': {
       margin: '100px 0 100px 0',
     },
-  },
-  '@xl': {
-    fontSize: TYPOGRAPHY.size.heading1,
-  },
-  '@lg': {
-    fontSize: TYPOGRAPHY.size.heading1,
-  },
-  '@md': {
-    fontSize: TYPOGRAPHY.size.heading2,
-  },
-  '@sm': {
-    fontSize: TYPOGRAPHY.size.heading3,
-    lineHeight: '40px',
   },
 });
 

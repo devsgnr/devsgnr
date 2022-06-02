@@ -19,13 +19,13 @@ const Layout = ({ isLoading, isError, children, seo }: LayoutProps) => {
     return (
       <StyledSplashScreen>
         <Container>
-          <Paragraph>Loading &bull;&bull;&bull;</Paragraph>
+          <Paragraph>Emmanuel Watila &trade;</Paragraph>
         </Container>
       </StyledSplashScreen>
     );
   }
 
-  if (!isLoading) {
+  if (!isLoading && !isError) {
     return (
       <div>
         <SEO seo={seo} />

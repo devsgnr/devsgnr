@@ -6,9 +6,9 @@ const TYPOGRAPHY: ITypography = {
     paragraph: 'Inter, sans-serif',
   },
   size: {
-    heading1: 45,
-    heading2: 35,
-    heading3: 30,
+    heading1: 24,
+    heading2: 20,
+    heading3: 18,
     pRegular: 14.2,
     pSmall: 11.5,
   },
