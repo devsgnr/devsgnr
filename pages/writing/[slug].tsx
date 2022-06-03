@@ -1,86 +1,79 @@
-import React, { useState } from 'react';
-import { GetServerSidePropsContext, NextPage } from 'next';
+import React from 'react';
+import { GetStaticPropsContext, NextPage } from 'next';
 import Image from 'next/image';
-import { ParsedUrlQuery } from 'querystring';
 import ReactHtmlParser from 'react-html-parser';
-import { useQuery } from 'react-query';
-import { FetchPostService } from '../api/posts';
+import { FetchPostService, FetchPostsService } from '../api/posts';
 import Layout from '../../components/layout';
 import { Heading, Paragraph } from '../../components/typography/styled';
 import { IBlogProps } from '../../types/blog';
-import { IPostResponse } from '../../types/response';
-import { ISeo } from '../../types/seo';
+import { IPostResponse, IPostsResponse } from '../../types/response';
 import {
   StyledExternalImageContainer,
   StyledImageContainer,
 } from '../../components/image/styled';
-import decodeBlurhash from '../../utils/decodeBlurhash';
 
 interface WritingSlugProps {
-  params: ParsedUrlQuery;
+  data: IBlogProps;
 }
 
-type ContextType = GetServerSidePropsContext;
+type ContextType = GetStaticPropsContext;
 
-export const getServerSideProps = async (context: ContextType) => {
+export const getStaticPaths = async () => {
+  const res: IPostsResponse<IBlogProps[]> = await FetchPostsService();
+  const paths = res.posts.map((post: IBlogProps) => ({
+    params: { slug: post.slug },
+  }));
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async (context: ContextType) => {
   const { params } = context;
-  return { props: { params } };
-};
-
-const Slug: NextPage<WritingSlugProps> = ({ params }: WritingSlugProps) => {
-  const [seo, setSeo] = useState<ISeo>({} as ISeo);
-
-  const FetchPost = useQuery('FetchPost', async () => {
-    const res: IPostResponse<IBlogProps> = await FetchPostService({
-      slug: String(params.slug),
-    });
-    if (res) {
-      setSeo({
-        title: res.post.title,
-        description: res.post.excerpt,
-        image: res.post.displayPicture.url,
-      });
-    }
-    return res;
+  const res: IPostResponse<IBlogProps> = await FetchPostService({
+    slug: String(params?.slug),
   });
-
-  return (
-    <Layout
-      seo={seo}
-      isLoading={FetchPost.isFetching}
-      isError={FetchPost.isError}
-    >
-      <>
-        {FetchPost.isSuccess && (
-          <>
-            <Heading className="title">{FetchPost.data.post.title}</Heading>
-
-            <StyledExternalImageContainer>
-              <StyledImageContainer>
-                <Image
-                  placeholder="blur"
-                  blurDataURL={decodeBlurhash('L01yLP9FWBofj[WBj[fQD%-;IUof')}
-                  src={FetchPost.data.post.displayPicture.url}
-                  alt={FetchPost.data.post.slug}
-                  width="100%"
-                  height="50%"
-                  sizes="50vw"
-                  quality={100}
-                />
-              </StyledImageContainer>
-              <Paragraph css={{ fontSize: '11px' }}>
-                {ReactHtmlParser(FetchPost.data.post.imageCredit.html)}
-              </Paragraph>
-            </StyledExternalImageContainer>
-
-            <Paragraph>
-              {ReactHtmlParser(FetchPost.data.post.theProcess.html)}
-            </Paragraph>
-          </>
-        )}
-      </>
-    </Layout>
-  );
+  return {
+    props: {
+      data: res.post,
+    },
+    revalidate: 3600,
+  };
 };
+
+const Slug: NextPage<WritingSlugProps> = ({ data }: WritingSlugProps) => (
+  <Layout
+    seo={{
+      title: data.title,
+      description: data.excerpt,
+      image: data.displayPicture.url,
+    }}
+  >
+    <>
+      <Heading className="title">{data.title}</Heading>
+
+      <StyledExternalImageContainer>
+        <StyledImageContainer>
+          <Image
+            placeholder="blur"
+            blurDataURL="L01yLP9FWBofj[WBj[fQD%-;IUof"
+            src={data.displayPicture.url}
+            alt={data.slug}
+            width="100%"
+            height="50%"
+            sizes="50vw"
+            quality={100}
+          />
+        </StyledImageContainer>
+        <Paragraph css={{ fontSize: '11px' }}>
+          {ReactHtmlParser(data.imageCredit.html)}
+        </Paragraph>
+      </StyledExternalImageContainer>
+
+      <Paragraph>{ReactHtmlParser(data.theProcess.html)}</Paragraph>
+    </>
+  </Layout>
+);
 
 export default Slug;

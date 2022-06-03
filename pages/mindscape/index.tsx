@@ -50,10 +50,7 @@ const Mindscape: NextPage = () => {
   );
 
   return (
-    <Layout
-      isLoading={images.length === 0}
-      isError={MyUnsplashCollection.isError}
-    >
+    <Layout>
       <>
         {MyUnsplashCollection.isSuccess && (
           <>
