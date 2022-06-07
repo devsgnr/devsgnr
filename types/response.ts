@@ -13,3 +13,7 @@ export interface IHomeResponse<T> {
 export interface ITimelineResponse<T> {
   timelines: T;
 }
+
+export interface IProjectResponse<T> {
+  caseStudies: T;
+}

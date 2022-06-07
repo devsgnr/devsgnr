@@ -4,9 +4,10 @@ import ReactHtmlParser from 'react-html-parser';
 import { gsap, Power3 } from 'gsap';
 import { FetchHomesService } from './api/home';
 import Layout from '../components/layout';
-import { Heading, Paragraph } from '../components/typography/styled';
+import { Paragraph } from '../components/typography/styled';
 import { IHomeProps } from '../types/home';
 import { IHomeResponse } from '../types/response';
+import AnimatedHeading from '../components/animated-heading';
 
 export const getStaticProps = async () => {
   const res: IHomeResponse<IHomeProps[]> = await FetchHomesService();
@@ -27,38 +28,33 @@ interface HomePageProps {
 }
 
 const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
-  const HeaderRef = useRef(null);
+  const ContainerRef = useRef(null);
   const P1Ref = useRef(null);
   const P2Ref = useRef(null);
 
   useEffect(() => {
     gsap
       .timeline()
-      .to(HeaderRef.current, {
-        duration: 0.8,
+      .to(ContainerRef.current, {
+        duration: 0,
         opacity: 1,
-        ease: Power3.easeOut,
+        ease: Power3.easeIn,
       })
-      .to(P1Ref.current, {
-        duration: 0.4,
+      .to([P1Ref.current, P2Ref.current], {
+        duration: 0.6,
         opacity: 1,
-        ease: Power3.easeOut,
-      })
-      .to(P2Ref.current, {
-        duration: 0.2,
-        opacity: 1,
-        ease: Power3.easeOut,
+        ease: Power3.easeIn,
       });
   }, []);
 
   return (
     <Layout>
-      <>
-        <Heading className="title" ref={HeaderRef} css={{ opacity: 0 }}>
+      <div ref={ContainerRef} style={{ opacity: 0 }}>
+        <AnimatedHeading>
           Hello, I&apos;m Emmanuel. A full-stack creator, obsessed with crafting
           beautiful interfaces and experiences through the combination of
           writing, design, code, and no-code
-        </Heading>
+        </AnimatedHeading>
 
         <Paragraph ref={P1Ref} css={{ opacity: 0 }}>
           {ReactHtmlParser(data.about.html)}
@@ -67,7 +63,7 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
         <Paragraph ref={P2Ref} css={{ opacity: 0 }}>
           {ReactHtmlParser(data.timeline.html)}
         </Paragraph>
-      </>
+      </div>
     </Layout>
   );
 };

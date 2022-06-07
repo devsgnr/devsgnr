@@ -12,7 +12,8 @@ export const Heading = styled('div', {
   letterSpacing: '0px',
   fontWeight: TYPOGRAPHY.weight.normal,
   fontSize: `${TYPOGRAPHY.size.heading1}px`,
-  lineHeight: 1.55,
+  lineHeight: 1.85,
+  width: '100%',
 
   '@xl': {
     fontSize: `${TYPOGRAPHY.size.heading3}px`,
@@ -42,6 +43,7 @@ export const Paragraph = styled('div', {
   fontSize: `${TYPOGRAPHY.size.pRegular}px`,
   fontWeight: TYPOGRAPHY.weight.normal,
   lineHeight: 2.2,
+  width: '100%',
 
   a: {
     textDecoration: 'underline',
