@@ -22,7 +22,7 @@ interface HomePageProps {
   data: IProjectProps[];
 }
 
-const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
+const Home: NextPage<HomePageProps> = () => {
   return (
     <Layout>
       <div style={{ padding: '0 50px' }}>

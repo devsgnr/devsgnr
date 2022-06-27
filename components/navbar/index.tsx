@@ -11,7 +11,7 @@ const NavigationBar = () => (
     <Flex>
       <NavigationFlex>
         <AnchorParagraph>
-          <Anchor href="/" title="Emmanuel Watila"></Anchor>
+          <Anchor href="/" title="Emmanuel Watila" />
         </AnchorParagraph>
 
         <Paragraph css={{ fontSize: TYPOGRAPHY.size.pRegular }}>
