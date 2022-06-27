@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import { NextPage } from 'next';
 import Anchor from '../components/anchor';

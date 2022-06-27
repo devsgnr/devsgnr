@@ -10,7 +10,6 @@ import {
 } from './styled';
 
 import { Unsplash } from '../../pages/api/service';
-import TYPOGRAPHY from '../../styles/token/typography';
 import decodeBlurhash from '../../utils/decodeBlurhash';
 
 interface MindscapePhotoProps {
