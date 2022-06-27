@@ -42,7 +42,7 @@ export const Paragraph = styled('div', {
   fontFamily: TYPOGRAPHY.family.paragraph,
   fontSize: `${TYPOGRAPHY.size.pRegular}px`,
   fontWeight: TYPOGRAPHY.weight.normal,
-  lineHeight: 2.2,
+  lineHeight: 1.95,
   width: '100%',
 
   a: {

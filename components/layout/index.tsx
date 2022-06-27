@@ -1,7 +1,5 @@
 import React, { ReactChild } from 'react';
 import { ISeo } from '../../types/seo';
-import Container from '../container/styled';
-import Divider from '../divider/styled';
 import NavigationBar from '../navbar';
 import SEO from '../seo';
 
@@ -15,10 +13,8 @@ const Layout = ({ children, seo }: LayoutProps) => (
     <div>
       <SEO seo={seo} />
       <NavigationBar />
-      <Container>
-        {children}
-        <Divider />
-      </Container>
+
+      {children}
     </div>
   </>
 );

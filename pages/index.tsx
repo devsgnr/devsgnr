@@ -1,17 +1,14 @@
 import React from 'react';
 import { NextPage } from 'next';
-import ReactHtmlParser from 'react-html-parser';
-import { FetchHomesService } from './api/home';
 import Layout from '../components/layout';
-import { Heading, Paragraph } from '../components/typography/styled';
-import { IHomeProps } from '../types/home';
-import { IHomeResponse } from '../types/response';
+import { IProjectResponse } from '../types/response';
+import { FetchProjectsService } from './api/project';
+import { IProjectProps } from '../types/project';
+import { Paragraph } from '../components/typography/styled';
 
 export const getStaticProps = async () => {
-  const res: IHomeResponse<IHomeProps[]> = await FetchHomesService();
-  const data: IHomeProps | undefined = res.homes.find(
-    (el: IHomeProps) => res.homes.indexOf(el) === 0,
-  );
+  const res: IProjectResponse<IProjectProps[]> = await FetchProjectsService();
+  const data: IProjectProps[] | undefined = res.caseStudies;
 
   return {
     props: {
@@ -22,22 +19,24 @@ export const getStaticProps = async () => {
 };
 
 interface HomePageProps {
-  data: IHomeProps;
+  data: IProjectProps[];
 }
 
-const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
+const Home: NextPage<HomePageProps> = () => {
   return (
     <Layout>
-      <div>
-        <Heading className="title">
-          Hello, I&apos;m Emmanuel. A full-stack creator, obsessed with crafting
-          beautiful interfaces and experiences through the combination of
-          writing, design, code, and no-code
-        </Heading>
-
-        <Paragraph>{ReactHtmlParser(data.about.html)}</Paragraph>
-
-        <Paragraph>{ReactHtmlParser(data.timeline.html)}</Paragraph>
+      <div style={{ padding: '0 50px' }}>
+        <Paragraph>Case Studies - Coming soon</Paragraph>
+        {/* {data.map((item: IProjectProps, index: number) => (
+          <Anchor href={item.slug} key={index + item.title} target="_blank">
+            <BlogItem>
+              <Flex>
+                <Paragraph>{item.title}</Paragraph>
+                <Paragraph css={{ textAlign: 'right' }}>{item.date}</Paragraph>
+              </Flex>
+            </BlogItem>
+          </Anchor>
+        ))} */}
       </div>
     </Layout>
   );

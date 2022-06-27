@@ -2,9 +2,26 @@ import { styled } from '../../stitches.config';
 import THEME from '../../styles/token/colors';
 
 export const NavigationFlex = styled('div', {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'flex-end',
+  width: '100%',
+  display: 'grid',
+  gridTemplateColumns: '1fr 0.7fr 0.7fr',
+  alignItems: 'start',
+  justifyContent: 'space-between',
+  gap: '30px',
+  padding: '0px 25px',
+
+  '@sm': {
+    gridTemplateColumns: '1fr',
+  },
+  '@md': {
+    gridTemplateColumns: '1fr',
+  },
+  '@lg': {
+    gridTemplateColumns: '1fr 0.7fr 0.7fr',
+  },
+  '@xl': {
+    gridTemplateColumns: '1fr 0.7fr 0.7fr',
+  },
 });
 
 export const NavigationLinks = styled('div', {
@@ -16,15 +33,10 @@ export const NavigationLinks = styled('div', {
 });
 
 const Navigation = styled('div', {
-  position: 'sticky',
-  top: 0,
-  left: 0,
-  zIndex: 999,
   width: '100%',
   padding: '20px 0',
   marginBottom: '50px',
-  backgroundColor: THEME.dark.opaque,
-  backdropFilter: 'blur(8px)',
+  backgroundColor: THEME.dark.background,
 });
 
 export default Navigation;

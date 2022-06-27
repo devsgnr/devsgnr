@@ -4,8 +4,8 @@ import THEME from '../../styles/token/colors';
 export const StyledMindscapeGrid = styled('div', {
   display: 'grid',
   alignItems: 'flex-start',
-  rowGap: '15px',
-  columnGap: '15px',
+  rowGap: '0px',
+  columnGap: '0px',
   marginTop: '100px',
 
   '@sm': {
@@ -57,12 +57,12 @@ export const StyledMindscapeGridPlusButton = styled('div', {
 
 export const StyledMindscapeGridItem = styled('div', {
   overflow: 'hidden',
-  borderRadius: '10px',
+  borderRadius: '0px',
   position: 'relative',
 });
 
 export const StyledMindscapeGridInfiniteScrollLoading = styled('div', {
-  width: '100%',
+  width: '100% !important',
   padding: '40px 0',
   margin: '20px 0',
   display: 'flex',

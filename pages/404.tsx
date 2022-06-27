@@ -1,18 +1,25 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import { NextPage } from 'next';
 import Anchor from '../components/anchor';
 import { Heading, Paragraph } from '../components/typography/styled';
 import { StyledSplashScreen } from '../components/layout/styled';
 import Container from '../components/container/styled';
+import TYPOGRAPHY from '../styles/token/typography';
 
 const Index: NextPage = () => (
   <StyledSplashScreen>
     <Container>
-      <Heading>Ahhhh! 404!!!</Heading>
+      <Heading
+        css={{
+          fontSize: TYPOGRAPHY.size.headingfooting,
+          fontFamily: TYPOGRAPHY.family.footing,
+        }}
+      >
+        404
+      </Heading>
       <Paragraph>
-        I didn&apos;t create the page you&apos;re looking for, let&apos;s get
-        you back
-        <> </>
+        Page does not exist! Go back{' '}
         <u>
           <Anchor href="/" title="home" />
         </u>

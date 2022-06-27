@@ -8,9 +8,9 @@ const THEME: ITheme = {
     gradient: 'linear-gradient(90deg, #FEE140 0%, #FA709A 100%)',
   },
   dark: {
-    background: '#000000',
+    background: '#0b0b0b',
     foreground: '#c4c4c4',
-    opaque: 'rgba(0, 0, 0, 0.5)',
+    opaque: 'rgba(11, 11, 11, 0.5)',
     gradient: 'linear-gradient(90deg, #FEE140 0%, #FA709A 100%)',
   },
 };
