@@ -4,7 +4,6 @@ import THEME from '../../styles/token/colors';
 export const NavigationFlex = styled('div', {
   width: '100%',
   display: 'grid',
-  gridTemplateColumns: '1fr 0.7fr 0.7fr',
   alignItems: 'start',
   justifyContent: 'space-between',
   gap: '30px',
@@ -14,7 +13,7 @@ export const NavigationFlex = styled('div', {
     gridTemplateColumns: '1fr',
   },
   '@md': {
-    gridTemplateColumns: '1fr',
+    gridTemplateColumns: '1fr 0.7fr 0.7fr',
   },
   '@lg': {
     gridTemplateColumns: '1fr 0.7fr 0.7fr',
