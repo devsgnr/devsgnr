@@ -1,13 +1,13 @@
 # **Hi there 👋**
 
 I'm Emmanuel.
-A full-stack creator obsessed with crafting beautiful interfaces and experiences through the combination of writing, design, code & no-code. 😄
+A visual designer and full-stack creator obsessed with crafting beautiful experiences through interface design, video, photos, writing, code, and graphic design. 😄
 
 
 - 😄 Pronouns: He/Him
 - 🔭 I’m currently working on
   - Designing and developing my own startup.
-  - Writing articles on my [website](https://devsgnr.xyz/writing) and [Medium](https://medium.com/@devsgnr_)
+  - Writing articles on my [Medium](https://medium.com/@devsgnr_)
   - Writing my newsletter [The Melancholic Creative](https://www.getrevue.co/profile/devsgnr)
 - 📫 How to reach me
   - Twitter: [@devsgnr\_](https://twitter.com/devsgnr_)
