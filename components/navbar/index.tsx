@@ -21,11 +21,17 @@ const NavigationBar = () => (
             href="https://www.getrevue.co/profile/devsgnr"
             title="The Melancholic Creative"
             target="_blank"
+            rel="noreferrer"
           >
             writing
           </a>
           ,{' '}
-          <a href="https://github.com/devsgnr" title="Coding" target="_blank">
+          <a
+            href="https://github.com/devsgnr"
+            title="Coding"
+            target="_blank"
+            rel="noreferrer"
+          >
             code
           </a>
           , and{' '}
@@ -33,6 +39,7 @@ const NavigationBar = () => (
             href="https://instagram.com/devsgnr_"
             title="Instagram"
             target="_blank"
+            rel="noreferrer"
           >
             graphic design
           </a>
@@ -48,6 +55,7 @@ const NavigationBar = () => (
             href="https://twitter.com/devsgnr_"
             title="Twitter"
             target="_blank"
+            rel="noreferrer"
           >
             Twitter
           </a>{' '}
@@ -56,6 +64,7 @@ const NavigationBar = () => (
             href="https://instagram.com/devsgnr_"
             title="Instagram"
             target="_blank"
+            rel="noreferrer"
           >
             Instagram
           </a>

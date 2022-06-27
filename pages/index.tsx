@@ -2,12 +2,9 @@ import React from 'react';
 import { NextPage } from 'next';
 import Layout from '../components/layout';
 import { IProjectResponse } from '../types/response';
-import { Flex } from '../components/flex/styled';
 import { FetchProjectsService } from './api/project';
 import { IProjectProps } from '../types/project';
-import BlogItem from '../components/blog-item/styled';
 import { Paragraph } from '../components/typography/styled';
-import Anchor from '../components/anchor';
 
 export const getStaticProps = async () => {
   const res: IProjectResponse<IProjectProps[]> = await FetchProjectsService();
