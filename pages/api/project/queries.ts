@@ -6,6 +6,7 @@ const CaseStudies = gql`
       id
       slug
       title
+      date
       coverPicture {
         url
       }

@@ -17,7 +17,6 @@ import {
 } from '../../components/mindscape-grid/styled';
 import { process } from '../api/service';
 import MindscapePhoto from '../../components/mindscape-grid';
-import TYPOGRAPHY from '../../styles/token/typography';
 
 const Mindscape: NextPage = () => {
   const [id] = useState<string>(process.env.NEXT_PUBLIC_COLLECTION_ID);
@@ -54,23 +53,9 @@ const Mindscape: NextPage = () => {
       <>
         {MyUnsplashCollection.isSuccess && (
           <>
-            <Heading className="title">
+            <Heading className="title" css={{ padding: '0 50px' }}>
               {MyUnsplashCollection.data.title}
             </Heading>
-            <Paragraph>{MyUnsplashCollection.data.description}</Paragraph>
-            <Paragraph
-              css={{ fontSize: TYPOGRAPHY.size.pSmall, margin: '20px 0' }}
-            >
-              Powered by{' '}
-              <a
-                href="https://unsplash.com"
-                title="Unsplash"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Unsplash
-              </a>
-            </Paragraph>
           </>
         )}
       </>
@@ -78,7 +63,7 @@ const Mindscape: NextPage = () => {
       <>
         {images.length > 0 && (
           <>
-            <StyledMindscapeGrid>
+            <StyledMindscapeGrid css={{ padding: '25px 0' }}>
               {images.map((image: CollectionPhotos, index: number) => (
                 <MindscapePhoto key={index} data={image} />
               ))}
@@ -88,7 +73,9 @@ const Mindscape: NextPage = () => {
             <>
               {MyUnsplashCollectionPhotos.isFetching && (
                 <StyledMindscapeGridInfiniteScrollLoading>
-                  <Paragraph>&bull; &bull; &bull;</Paragraph>
+                  <Paragraph css={{ textAlign: 'center' }}>
+                    &bull; &bull; &bull;
+                  </Paragraph>
                 </StyledMindscapeGridInfiniteScrollLoading>
               )}
             </>

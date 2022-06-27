@@ -27,7 +27,7 @@ const MindscapePhoto = ({ data }: MindscapePhotoProps) => {
     >
       <Image
         placeholder="blur"
-        src={data.urls.regular}
+        src={data.urls.full}
         alt={data.user.name}
         blurDataURL={decodeBlurhash(data.blur_hash)}
         width="100%"
@@ -38,10 +38,10 @@ const MindscapePhoto = ({ data }: MindscapePhotoProps) => {
       <StyledMindscapeGridItemCredit
         css={{
           opacity: onHover ? '1' : '0',
-          bottom: onHover ? '-2%' : '-50%',
+          bottom: onHover ? '-1%' : '-50%',
         }}
       >
-        <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
+        <Paragraph>
           Photo by{' '}
           <a
             href={data.user.links.html}

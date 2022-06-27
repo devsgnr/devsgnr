@@ -2,7 +2,6 @@ import { styled } from '../../stitches.config';
 
 const Container = styled('div', {
   padding: '0 25px',
-  margin: '0 auto',
 
   '@sm': {
     width: '420px',

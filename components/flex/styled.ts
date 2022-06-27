@@ -1,23 +1,24 @@
 import { styled } from '../../stitches.config';
 
-const Grid = styled('div', {
-  display: 'grid',
-  gridTemplateColumns: '1fr 1fr',
+const Flex = styled('div', {
+  width: '100%',
+  display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'start',
+  padding: '0px 25px',
 
   '@sm': {
-    gridTemplateColumns: '1fr',
+    flexDirection: 'column',
   },
   '@md': {
-    gridTemplateColumns: '1fr',
+    flexDirection: 'column',
   },
   '@lg': {
-    gridTemplateColumns: '1fr 1fr',
+    flexDirection: 'row',
   },
   '@xl': {
-    gridTemplateColumns: '1fr 1fr',
+    flexDirection: 'row',
   },
 });
 
-export { Grid };
+export { Flex };
