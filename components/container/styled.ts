@@ -15,6 +15,7 @@ const Container = styled('div', {
   '@xl': {
     width: '800px',
   },
+  length: 0,
 });
 
 const FullWidthContainer = styled('div', {
@@ -29,6 +30,7 @@ const FullWidthContainer = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  length: 0,
 });
 
 export { FullWidthContainer };

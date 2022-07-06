@@ -10,16 +10,16 @@ export const NavigationFlex = styled('div', {
   padding: '0px 25px',
 
   '@sm': {
-    gridTemplateColumns: '1fr',
+    gridTemplateColumns: '1fr auto',
   },
   '@md': {
-    gridTemplateColumns: '1fr 0.7fr 0.7fr',
+    gridTemplateColumns: '1fr auto',
   },
   '@lg': {
-    gridTemplateColumns: '1fr 0.7fr 0.7fr',
+    gridTemplateColumns: '1fr auto',
   },
   '@xl': {
-    gridTemplateColumns: '1fr 0.7fr 0.7fr',
+    gridTemplateColumns: '1fr auto',
   },
 });
 
@@ -32,10 +32,14 @@ export const NavigationLinks = styled('div', {
 });
 
 const Navigation = styled('div', {
+  position: 'sticky',
+  top: 0,
+  left: 0,
+  zIndex: 999,
   width: '100%',
   padding: '20px 0',
   marginBottom: '50px',
-  backgroundColor: THEME.dark.background,
+  backgroundColor: 'transparent',
 });
 
 export default Navigation;

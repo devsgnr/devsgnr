@@ -92,6 +92,10 @@ export const AnchorParagraph = styled('div', {
   fontWeight: TYPOGRAPHY.weight.normal,
   lineHeight: 2.2,
 
+  '.blend': {
+    mixBlendMode: 'exclusion',
+  },
+
   a: {
     fontWeight: TYPOGRAPHY.weight.bold,
     opacity: 0.4,
