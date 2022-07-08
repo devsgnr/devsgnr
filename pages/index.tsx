@@ -9,6 +9,8 @@ import { Paragraph } from '../components/typography/styled';
 import BlogItem from '../components/blog-item/styled';
 import { Grid } from '../components/flex/styled';
 import Anchor from '../components/anchor';
+import AnimatedHeading from '../components/animated-heading';
+import TYPOGRAPHY from '../styles/token/typography';
 
 export const getStaticProps = async () => {
   const res: IProjectResponse<IProjectProps[]> = await FetchProjectsService();
@@ -30,27 +32,33 @@ const Home: NextPage<HomePageProps> = ({ data }) => {
   return (
     <Layout>
       <div style={{ padding: '50px' }}>
-        <Paragraph>
-          Front-end developer and visual designer - building some solutions and
-          designing some things
-        </Paragraph>
+        <AnimatedHeading>
+          A front-end developer and designer — designing &amp; building apps and
+          websites that kicks ass
+        </AnimatedHeading>
+
+        <div>
+          <Paragraph>
+            I&apos;m a full-stack developer with focus on front-end development
+            — primarily working with React, Next.js, and Typescript to build
+            solutions that scale.
+          </Paragraph>
+        </div>
       </div>
 
-      <div style={{ padding: '0 20px' }}>
+      <div>
         {data.map((item: IProjectProps, index: number) => (
           <Anchor href={item.slug} key={index + item.title} target="_blank">
             <BlogItem>
               <Grid>
                 <div>
                   <Paragraph>{item.title}</Paragraph>
-                  <Paragraph>
+                  <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
                     {ReactHtmlParser(item.mainContent.html)}
                   </Paragraph>
                 </div>
 
-                <Paragraph css={{ width: 'fit-content' }}>
-                  {item.date}
-                </Paragraph>
+                <Paragraph>{item.date}</Paragraph>
               </Grid>
             </BlogItem>
           </Anchor>

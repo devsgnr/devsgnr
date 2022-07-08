@@ -9,10 +9,10 @@ export type TypographyWeight = 'normal' | 'bold' | 'bolder';
 export const Heading = styled('div', {
   margin: 0,
   fontFamily: TYPOGRAPHY.family.heading,
-  letterSpacing: '0px',
+  letterSpacing: '-1px',
   fontWeight: TYPOGRAPHY.weight.normal,
   fontSize: `${TYPOGRAPHY.size.heading1}px`,
-  lineHeight: 1.85,
+  lineHeight: 1.45,
   width: '100%',
 
   '@xl': {
@@ -91,10 +91,6 @@ export const AnchorParagraph = styled('div', {
   fontSize: `${TYPOGRAPHY.size.pRegular}px`,
   fontWeight: TYPOGRAPHY.weight.normal,
   lineHeight: 2.2,
-
-  '.blend': {
-    mixBlendMode: 'exclusion',
-  },
 
   a: {
     fontWeight: TYPOGRAPHY.weight.bold,

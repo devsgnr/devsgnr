@@ -1,8 +1,7 @@
 import { styled } from '../../stitches.config';
 
 const BlogItem = styled('div', {
-  padding: '25px 20px',
-  margin: '10px 0',
+  padding: '35px 20px',
   width: '100%',
   display: 'flex',
   alignItems: 'center',
@@ -10,9 +9,13 @@ const BlogItem = styled('div', {
   borderBottom: '0.1px solid rgba(196, 196, 196, 0.15)',
 
   '&:hover': {
-    backgroundColor: 'rgba(196, 196, 196, 0.025)',
+    backgroundColor: '#FFF !important',
+    '*': {
+      color: '#000 !important',
+    },
     backgroundSize: 'cover',
     backgroundBlendMode: 'darken',
+    padding: '35px 25px',
   },
 });
 

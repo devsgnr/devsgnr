@@ -20,17 +20,11 @@ const Container = styled('div', {
 
 const FullWidthContainer = styled('div', {
   width: '100%',
-  height: '100vh',
   position: 'relative',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundAttachment: 'fixed',
   backgroundBlendMode: 'difference',
-
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  length: 0,
 });
 
 export { FullWidthContainer };
