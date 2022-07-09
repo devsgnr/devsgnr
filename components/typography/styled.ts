@@ -29,7 +29,7 @@ export const Heading = styled('div', {
   },
 
   '&.title': {
-    margin: '50px 0 70px 0',
+    margin: '150px 0 150px 0',
 
     '@sm': {
       margin: '100px 0 100px 0',

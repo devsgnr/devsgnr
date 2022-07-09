@@ -6,7 +6,7 @@ const BlogItem = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  borderBottom: '0.1px solid rgba(196, 196, 196, 0.15)',
+  borderBottom: '0.1px solid rgba(255, 255, 255, 0.2)',
 
   '&:hover': {
     backgroundColor: '#FFF !important',

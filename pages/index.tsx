@@ -11,6 +11,7 @@ import { Grid } from '../components/flex/styled';
 import Anchor from '../components/anchor';
 import AnimatedHeading from '../components/animated-heading';
 import TYPOGRAPHY from '../styles/token/typography';
+import FooterLinks, { FooterLinkGrid } from '../components/footer-links/styled';
 
 export const getStaticProps = async () => {
   const res: IProjectResponse<IProjectProps[]> = await FetchProjectsService();
@@ -29,6 +30,8 @@ interface HomePageProps {
 }
 
 const Home: NextPage<HomePageProps> = ({ data }) => {
+  const FooterLinkStyle = { fontSize: TYPOGRAPHY.size.pSmall };
+
   return (
     <Layout>
       <div style={{ padding: '50px' }}>
@@ -64,6 +67,39 @@ const Home: NextPage<HomePageProps> = ({ data }) => {
           </Anchor>
         ))}
       </div>
+
+      <footer style={{ padding: '0 20px' }}>
+        <FooterLinkGrid css={{ padding: '100px 25px 25px 25px' }}>
+          <Anchor href="/mindscape">
+            <FooterLinks>
+              <Paragraph css={FooterLinkStyle}>MINDSCAPE</Paragraph>
+            </FooterLinks>
+          </Anchor>
+          <Anchor href="https://instagram.com/devsgnr_" target="_blank">
+            <FooterLinks>
+              <Paragraph css={FooterLinkStyle}>INSTAGRAM</Paragraph>
+            </FooterLinks>
+          </Anchor>
+          <Anchor href="https://twitter.com/devsgnr_" target="_blank">
+            <FooterLinks>
+              <Paragraph css={FooterLinkStyle}>TWITTER</Paragraph>
+            </FooterLinks>
+          </Anchor>
+          <Anchor href="https://linkedin.com/in/eiwatila" target="_blank">
+            <FooterLinks>
+              <Paragraph css={FooterLinkStyle}>LINKEDIN</Paragraph>
+            </FooterLinks>
+          </Anchor>
+          <Anchor
+            href="https://www.getrevue.co/profile/devsgnr"
+            target="_blank"
+          >
+            <FooterLinks>
+              <Paragraph css={FooterLinkStyle}>NEWSLETTER</Paragraph>
+            </FooterLinks>
+          </Anchor>
+        </FooterLinkGrid>
+      </footer>
     </Layout>
   );
 };

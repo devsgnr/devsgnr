@@ -10,7 +10,11 @@ const NavigationBar = () => (
     <Flex>
       <NavigationFlex>
         <AnchorParagraph>
-          <Anchor href="/" title="Emmanuel Watila" />
+          <Anchor
+            href="/"
+            title="Emmanuel Watila"
+            style={{ mixBlendMode: 'difference' }}
+          />
         </AnchorParagraph>
       </NavigationFlex>
     </Flex>

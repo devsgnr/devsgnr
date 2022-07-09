@@ -15,7 +15,7 @@ const Layout = ({ children, seo }: LayoutProps) => (
       <SEO seo={seo} />
       <NavigationBar />
 
-      <FullWidthContainer>{children}</FullWidthContainer>
+      {children}
     </div>
   </>
 );
