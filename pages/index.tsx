@@ -12,6 +12,7 @@ import Anchor from '../components/anchor';
 import AnimatedHeading from '../components/animated-heading';
 import TYPOGRAPHY from '../styles/token/typography';
 import FooterLinks, { FooterLinkGrid } from '../components/footer-links/styled';
+import { CSS } from '@stitches/react';
 
 export const getStaticProps = async () => {
   const res: IProjectResponse<IProjectProps[]> = await FetchProjectsService();
@@ -30,7 +31,7 @@ interface HomePageProps {
 }
 
 const Home: NextPage<HomePageProps> = ({ data }) => {
-  const FooterLinkStyle = { fontSize: TYPOGRAPHY.size.pSmall };
+  const FooterLinkStyle: CSS = { fontSize: TYPOGRAPHY.size.pSmall };
 
   return (
     <Layout>
@@ -69,7 +70,7 @@ const Home: NextPage<HomePageProps> = ({ data }) => {
       </div>
 
       <footer style={{ padding: '0 20px' }}>
-        <FooterLinkGrid css={{ padding: '100px 25px 25px 25px' }}>
+        <FooterLinkGrid css={{ padding: '100px 0 25px 0' }}>
           <Anchor href="/mindscape">
             <FooterLinks>
               <Paragraph css={FooterLinkStyle}>MINDSCAPE</Paragraph>

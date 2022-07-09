@@ -15,7 +15,21 @@ const AnimatedHeading: FC<AnimatedHeadingProps> = ({
     position: 'relative',
     opacity: 0,
     fontSize: TYPOGRAPHY.size.headingfooting,
+
+    '@sm': {
+      fontSize: '7.5vw',
+    },
+    '@md': {
+      fontSize: '6.5vw',
+    },
+    '@lg': {
+      fontSize: TYPOGRAPHY.size.headingfooting,
+    },
+    '@xl': {
+      fontSize: TYPOGRAPHY.size.headingfooting,
+    },
   };
+
   const TextWrapper: React.CSSProperties = {
     display: 'inline-block',
     paddingTop: '0.2em',
