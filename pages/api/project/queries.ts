@@ -2,7 +2,7 @@ import { gql } from 'graphql-request';
 
 const CaseStudies = gql`
   {
-    caseStudies {
+    caseStudies(orderBy: fullDate_DESC) {
       id
       slug
       title

@@ -2,6 +2,7 @@ import React, { FC, useEffect, useRef } from 'react';
 import { CSS } from '@stitches/react';
 import { gsap, Power3 } from 'gsap';
 import { Heading } from '../typography/styled';
+import TYPOGRAPHY from '../../styles/token/typography';
 
 interface AnimatedHeadingProps {
   children: string;
@@ -13,7 +14,22 @@ const AnimatedHeading: FC<AnimatedHeadingProps> = ({
   const Title: CSS = {
     position: 'relative',
     opacity: 0,
+    fontSize: TYPOGRAPHY.size.headingfooting,
+
+    '@sm': {
+      fontSize: '7.5vw',
+    },
+    '@md': {
+      fontSize: '6.5vw',
+    },
+    '@lg': {
+      fontSize: TYPOGRAPHY.size.headingfooting,
+    },
+    '@xl': {
+      fontSize: TYPOGRAPHY.size.headingfooting,
+    },
   };
+
   const TextWrapper: React.CSSProperties = {
     display: 'inline-block',
     paddingTop: '0.2em',

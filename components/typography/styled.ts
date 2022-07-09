@@ -9,10 +9,10 @@ export type TypographyWeight = 'normal' | 'bold' | 'bolder';
 export const Heading = styled('div', {
   margin: 0,
   fontFamily: TYPOGRAPHY.family.heading,
-  letterSpacing: '0px',
+  letterSpacing: '-1px',
   fontWeight: TYPOGRAPHY.weight.normal,
   fontSize: `${TYPOGRAPHY.size.heading1}px`,
-  lineHeight: 1.85,
+  lineHeight: 1.45,
   width: '100%',
 
   '@xl': {
@@ -29,7 +29,7 @@ export const Heading = styled('div', {
   },
 
   '&.title': {
-    margin: '50px 0 70px 0',
+    margin: '150px 0 150px 0',
 
     '@sm': {
       margin: '100px 0 100px 0',

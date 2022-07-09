@@ -26,7 +26,7 @@ const MindscapePhoto = ({ data }: MindscapePhotoProps) => {
     >
       <Image
         placeholder="blur"
-        src={data.urls.full}
+        src={data.urls.regular}
         alt={data.user.name}
         blurDataURL={decodeBlurhash(data.blur_hash)}
         width="100%"

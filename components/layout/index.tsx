@@ -1,4 +1,5 @@
-import React, { ReactChild } from 'react';
+import React, { ReactChild, useEffect, useRef } from 'react';
+import { gsap, Power3 } from 'gsap';
 import { ISeo } from '../../types/seo';
 import NavigationBar from '../navbar';
 import SEO from '../seo';
@@ -8,15 +9,27 @@ interface LayoutProps {
   seo?: ISeo;
 }
 
-const Layout = ({ children, seo }: LayoutProps) => (
-  <>
-    <div>
-      <SEO seo={seo} />
-      <NavigationBar />
+const Layout = ({ children, seo }: LayoutProps) => {
+  const LayoutRef = useRef<HTMLDivElement>(null);
 
-      {children}
-    </div>
-  </>
-);
+  useEffect(() => {
+    gsap.to(LayoutRef.current, {
+      duration: 0,
+      opacity: 1,
+      ease: Power3.easeOut,
+    });
+  }, []);
+
+  return (
+    <>
+      <div ref={LayoutRef}>
+        <SEO seo={seo} />
+        <NavigationBar />
+
+        {children}
+      </div>
+    </>
+  );
+};
 
 export default Layout;

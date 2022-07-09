@@ -8,8 +8,8 @@ const THEME: ITheme = {
     gradient: 'linear-gradient(90deg, #FEE140 0%, #FA709A 100%)',
   },
   dark: {
-    background: '#0b0b0b',
-    foreground: '#c4c4c4',
+    background: '#000000',
+    foreground: '#ffffff',
     opaque: 'rgba(11, 11, 11, 0.5)',
     gradient: 'linear-gradient(90deg, #FEE140 0%, #FA709A 100%)',
   },
