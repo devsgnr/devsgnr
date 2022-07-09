@@ -6,7 +6,6 @@ export const NavigationFlex = styled('div', {
   alignItems: 'start',
   justifyContent: 'space-between',
   gap: '30px',
-  padding: '0px 25px',
 
   '@sm': {
     gridTemplateColumns: '1fr auto',

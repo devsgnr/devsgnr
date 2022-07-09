@@ -14,7 +14,6 @@ const BlogItem = styled('div', {
       color: '#000 !important',
     },
     backgroundSize: 'cover',
-    backgroundBlendMode: 'darken',
     padding: '35px 25px',
   },
 });

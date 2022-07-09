@@ -18,7 +18,6 @@ body {
   padding: 0;
   margin: 0;
   height: 100%;
-  background-blend-mode: difference;
 }
 
 ::-webkit-scrollbar {

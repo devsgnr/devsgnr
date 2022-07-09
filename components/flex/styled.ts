@@ -32,15 +32,19 @@ const Grid = styled('div', {
 
   '@sm': {
     gridTemplateColumns: '1fr',
+    padding: '0px',
   },
   '@md': {
     gridTemplateColumns: 'auto auto',
+    padding: '0px 25px',
   },
   '@lg': {
     gridTemplateColumns: 'auto auto',
+    padding: '0px 25px',
   },
   '@xl': {
     gridTemplateColumns: 'auto auto',
+    padding: '0px 25px',
   },
 });
 

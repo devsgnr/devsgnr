@@ -13,6 +13,8 @@ import Anchor from '../components/anchor';
 import AnimatedHeading from '../components/animated-heading';
 import TYPOGRAPHY from '../styles/token/typography';
 import FooterLinks, { FooterLinkGrid } from '../components/footer-links/styled';
+import { FullWidthContainer } from '../components/container/styled';
+import { ContainerStyle } from '../styles/utils';
 
 export const getStaticProps = async () => {
   const res: IProjectResponse<IProjectProps[]> = await FetchProjectsService();
@@ -35,7 +37,7 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
 
   return (
     <Layout>
-      <div style={{ padding: '50px' }}>
+      <FullWidthContainer css={ContainerStyle}>
         <AnimatedHeading>
           A front-end developer and designer — designing &amp; building apps and
           websites that kicks ass
@@ -48,9 +50,9 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
             solutions that scale.
           </Paragraph>
         </div>
-      </div>
+      </FullWidthContainer>
 
-      <div>
+      <FullWidthContainer css={{ marginTop: '50px' }}>
         {data.map((item: IProjectProps, index: number) => (
           <Anchor href={item.slug} key={index + item.title} target="_blank">
             <BlogItem>
@@ -67,7 +69,7 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
             </BlogItem>
           </Anchor>
         ))}
-      </div>
+      </FullWidthContainer>
 
       <footer style={{ padding: '0 20px' }}>
         <FooterLinkGrid css={{ padding: '100px 0 25px 0' }}>
