@@ -1,6 +1,5 @@
 import React, { ReactChild } from 'react';
 import { ISeo } from '../../types/seo';
-import { FullWidthContainer } from '../container/styled';
 import NavigationBar from '../navbar';
 import SEO from '../seo';
 

@@ -1,5 +1,4 @@
 import { styled } from '../../stitches.config';
-import THEME from '../../styles/token/colors';
 
 export const NavigationFlex = styled('div', {
   width: '100%',

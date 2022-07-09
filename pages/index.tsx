@@ -1,6 +1,7 @@
 import React from 'react';
 import { NextPage } from 'next';
 import ReactHtmlParser from 'react-html-parser';
+import { CSS } from '@stitches/react';
 import Layout from '../components/layout';
 import { IProjectResponse } from '../types/response';
 import { FetchProjectsService } from './api/project';
@@ -12,7 +13,6 @@ import Anchor from '../components/anchor';
 import AnimatedHeading from '../components/animated-heading';
 import TYPOGRAPHY from '../styles/token/typography';
 import FooterLinks, { FooterLinkGrid } from '../components/footer-links/styled';
-import { CSS } from '@stitches/react';
 
 export const getStaticProps = async () => {
   const res: IProjectResponse<IProjectProps[]> = await FetchProjectsService();
@@ -30,7 +30,7 @@ interface HomePageProps {
   data: IProjectProps[];
 }
 
-const Home: NextPage<HomePageProps> = ({ data }) => {
+const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
   const FooterLinkStyle: CSS = { fontSize: TYPOGRAPHY.size.pSmall };
 
   return (

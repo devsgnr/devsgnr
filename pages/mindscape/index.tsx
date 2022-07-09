@@ -5,7 +5,7 @@ import { useQuery } from 'react-query';
 import { Waypoint } from 'react-waypoint';
 import { AxiosResponse } from 'axios';
 import Layout from '../../components/layout';
-import { Heading, Paragraph } from '../../components/typography/styled';
+import { Paragraph } from '../../components/typography/styled';
 import {
   MyUnsplashCollectionsPhotosService,
   MyUnsplashCollectionsService,
