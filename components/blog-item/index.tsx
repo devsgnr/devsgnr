@@ -1,13 +1,13 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import ReactHtmlParser from 'react-html-parser';
+import { CSS } from '@stitches/react';
+import { ArrowUpRight } from 'react-feather';
 import { Grid } from '../flex/styled';
 import Anchor from '../anchor';
 import TYPOGRAPHY from '../../styles/token/typography';
 import { IProjectProps } from '../../types/project';
 import { Paragraph } from '../typography/styled';
 import BlogItem from './styled';
-import { ArrowUpRight } from 'react-feather';
-import { CSS } from '@stitches/react';
 
 interface BlogItemComponentProps {
   data: IProjectProps;
