@@ -75,7 +75,9 @@ const AnimatedHeading: FC<AnimatedHeadingProps> = ({
           <span
             key={index}
             className={`_letter_${index}`}
-            style={{ opacity: 0 }}
+            style={{
+              opacity: 0,
+            }}
           >
             {letter}
           </span>

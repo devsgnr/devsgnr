@@ -1,20 +1,18 @@
 import React from 'react';
 import { NextPage } from 'next';
-import ReactHtmlParser from 'react-html-parser';
 import { CSS } from '@stitches/react';
 import Layout from '../components/layout';
 import { IProjectResponse } from '../types/response';
 import { FetchProjectsService } from './api/project';
 import { IProjectProps } from '../types/project';
 import { Paragraph } from '../components/typography/styled';
-import BlogItem from '../components/blog-item/styled';
-import { Grid } from '../components/flex/styled';
 import Anchor from '../components/anchor';
 import AnimatedHeading from '../components/animated-heading';
 import TYPOGRAPHY from '../styles/token/typography';
 import FooterLinks, { FooterLinkGrid } from '../components/footer-links/styled';
 import { FullWidthContainer } from '../components/container/styled';
 import { ContainerStyle } from '../styles/utils';
+import BlogItemComponent from '../components/blog-item';
 
 export const getStaticProps = async () => {
   const res: IProjectResponse<IProjectProps[]> = await FetchProjectsService();
@@ -54,20 +52,7 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
 
       <FullWidthContainer css={{ marginTop: '50px' }}>
         {data.map((item: IProjectProps, index: number) => (
-          <Anchor href={item.slug} key={index + item.title} target="_blank">
-            <BlogItem>
-              <Grid>
-                <div>
-                  <Paragraph>{item.title}</Paragraph>
-                  <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
-                    {ReactHtmlParser(item.mainContent.html)}
-                  </Paragraph>
-                </div>
-
-                <Paragraph>{item.date}</Paragraph>
-              </Grid>
-            </BlogItem>
-          </Anchor>
+          <BlogItemComponent data={item} key={index} />
         ))}
       </FullWidthContainer>
 

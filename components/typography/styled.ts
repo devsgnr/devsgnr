@@ -91,9 +91,10 @@ export const AnchorParagraph = styled('div', {
   fontSize: `${TYPOGRAPHY.size.pRegular}px`,
   fontWeight: TYPOGRAPHY.weight.normal,
   lineHeight: 2.2,
+  mixBlendMode: 'difference',
 
   a: {
-    fontWeight: TYPOGRAPHY.weight.bold,
+    fontWeight: TYPOGRAPHY.weight.normal,
     opacity: 0.4,
 
     '&:hover': {
