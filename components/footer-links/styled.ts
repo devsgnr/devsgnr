@@ -1,7 +1,8 @@
 import { styled } from '../../stitches.config';
+import THEME from '../../styles/token/colors';
 
 const FooterLinks = styled('div', {
-  padding: '1px 15px',
+  padding: '5px 15px',
   width: 'fit-content',
   display: 'flex',
   alignItems: 'center',
@@ -10,10 +11,11 @@ const FooterLinks = styled('div', {
   borderRadius: '25px',
 
   '&:hover': {
-    backgroundColor: '#FFF !important',
+    backgroundColor: THEME.dark.accent,
     '*': {
-      color: '#000 !important',
+      color: THEME.dark.background,
     },
+    border: `0.1px solid ${THEME.dark.accent}`,
   },
 });
 
@@ -24,6 +26,7 @@ const FooterLinkGrid = styled('div', {
   justifyContent: 'flex-start',
   gap: '10px',
   gridAutoFlow: 'column',
+  padding: '100px 0 25px 0',
 
   '@sm': {
     gridAutoFlow: 'row',
@@ -39,5 +42,22 @@ const FooterLinkGrid = styled('div', {
   },
 });
 
+const FooterContainer = styled('div', {
+  width: '100%',
+
+  '@sm': {
+    padding: '25px',
+  },
+  '@md': {
+    padding: '25px 50px',
+  },
+  '@lg': {
+    padding: '25px 50px',
+  },
+  '@xl': {
+    padding: '25px 50px',
+  },
+});
+
 export default FooterLinks;
-export { FooterLinkGrid };
+export { FooterLinkGrid, FooterContainer };

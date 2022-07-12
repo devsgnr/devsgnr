@@ -1,9 +1,11 @@
+/* eslint-disable react/jsx-curly-newline */
+/* eslint-disable react/jsx-wrap-multilines */
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import React from 'react';
+import React, { Suspense } from 'react';
+import dynamic from 'next/dynamic';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { Toaster } from 'react-hot-toast';
-import StyledLayout from '../components/layout/styled';
+import { LoadingScreen } from '../components/layout/index';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const queryClient = new QueryClient({
@@ -12,12 +14,20 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     },
   });
 
+  const Layout = dynamic(() => import('../components/layout/index'), {
+    suspense: true,
+    ssr: false,
+  });
+
   return (
     <QueryClientProvider client={queryClient}>
-      <StyledLayout>
-        <Toaster />
-        <Component {...pageProps} />
-      </StyledLayout>
+      <Suspense fallback={<LoadingScreen />}>
+        <div>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </div>
+      </Suspense>
     </QueryClientProvider>
   );
 };

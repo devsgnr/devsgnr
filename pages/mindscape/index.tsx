@@ -4,7 +4,6 @@ import { NextPage } from 'next';
 import { useQuery } from 'react-query';
 import { Waypoint } from 'react-waypoint';
 import { AxiosResponse } from 'axios';
-import Layout from '../../components/layout';
 import { Paragraph } from '../../components/typography/styled';
 import {
   MyUnsplashCollectionsPhotosService,
@@ -50,7 +49,7 @@ const Mindscape: NextPage = () => {
   );
 
   return (
-    <Layout>
+    <>
       <>
         {MyUnsplashCollection.isSuccess && (
           <div style={{ padding: '0 50px' }}>
@@ -81,7 +80,7 @@ const Mindscape: NextPage = () => {
           </>
         )}
       </>
-    </Layout>
+    </>
   );
 };
 

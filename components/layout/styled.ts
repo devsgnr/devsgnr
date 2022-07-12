@@ -10,6 +10,8 @@ export const StyledSplashScreen = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  backgroundColor: THEME.dark.accent,
+  color: THEME.dark.background,
 
   '*': {
     textAlign: 'center',
@@ -20,10 +22,6 @@ const StyledLayout = styled('div', {
   width: '100%',
   minHeight: '100vh',
   background: THEME.dark.background,
-
-  '*': {
-    color: THEME.dark.foreground,
-  },
 });
 
 export default StyledLayout;

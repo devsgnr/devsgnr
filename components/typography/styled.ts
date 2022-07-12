@@ -12,20 +12,21 @@ export const Heading = styled('div', {
   letterSpacing: '-1px',
   fontWeight: TYPOGRAPHY.weight.normal,
   fontSize: `${TYPOGRAPHY.size.heading1}px`,
-  lineHeight: 1.45,
+  lineHeight: 1.2,
   width: '100%',
+  color: THEME.dark.foreground,
 
-  '@xl': {
-    fontSize: `${TYPOGRAPHY.size.heading3}px`,
-  },
-  '@lg': {
-    fontSize: `${TYPOGRAPHY.size.heading3}px`,
+  '@sm': {
+    fontSize: '7.5vw',
   },
   '@md': {
-    fontSize: `${TYPOGRAPHY.size.heading2}px`,
+    fontSize: '6.5vw',
   },
-  '@sm': {
-    fontSize: `${TYPOGRAPHY.size.heading1}px`,
+  '@lg': {
+    fontSize: TYPOGRAPHY.size.headingfooting,
+  },
+  '@xl': {
+    fontSize: TYPOGRAPHY.size.headingfooting,
   },
 
   '&.title': {
@@ -44,6 +45,7 @@ export const Paragraph = styled('div', {
   fontWeight: TYPOGRAPHY.weight.normal,
   lineHeight: 1.95,
   width: '100%',
+  color: THEME.dark.foreground,
 
   a: {
     textDecoration: 'underline',
@@ -91,7 +93,6 @@ export const AnchorParagraph = styled('div', {
   fontSize: `${TYPOGRAPHY.size.pRegular}px`,
   fontWeight: TYPOGRAPHY.weight.normal,
   lineHeight: 2.2,
-  mixBlendMode: 'difference',
 
   a: {
     fontWeight: TYPOGRAPHY.weight.normal,

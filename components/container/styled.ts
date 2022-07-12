@@ -24,7 +24,19 @@ const FullWidthContainer = styled('div', {
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundAttachment: 'fixed',
-  backgroundBlendMode: 'difference',
+
+  '@sm': {
+    padding: '25px 20px',
+  },
+  '@md': {
+    padding: '50px',
+  },
+  '@lg': {
+    padding: '50px',
+  },
+  '@xl': {
+    padding: '50px',
+  },
 });
 
 export { FullWidthContainer };

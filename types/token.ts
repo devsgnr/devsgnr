@@ -1,16 +1,14 @@
+export interface IColor {
+  background: string;
+  foreground: string;
+  opaque: string;
+  gradient: string;
+  accent: string;
+}
+
 export interface ITheme {
-  light: {
-    background: string;
-    foreground: string;
-    opaque: string;
-    gradient: string;
-  };
-  dark: {
-    background: string;
-    foreground: string;
-    opaque: string;
-    gradient: string;
-  };
+  light: IColor;
+  dark: IColor;
 }
 
 export interface ITypography {
