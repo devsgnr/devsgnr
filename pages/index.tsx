@@ -1,26 +1,40 @@
 import React from 'react';
 import { NextPage } from 'next';
-import { IProjectResponse } from '../types/response';
+import ReactHtmlParser from 'react-html-parser';
+import { IHomeResponse, IProjectResponse } from '../types/response';
 import { FetchProjectsService } from './api/project';
 import { IProjectProps } from '../types/project';
-import { Paragraph } from '../components/typography/styled';
+import { Heading, Paragraph } from '../components/typography/styled';
 import Anchor from '../components/anchor';
-import AnimatedHeading from '../components/animated-heading';
+import AnimatedHeading, { AnimatedText } from '../components/animated-heading';
 import TYPOGRAPHY from '../styles/token/typography';
 import FooterLinks, {
   FooterContainer,
   FooterLinkGrid,
 } from '../components/footer-links/styled';
-import { FullWidthContainer } from '../components/container/styled';
+import {
+  FullHeightContainer,
+  FullWidthContainer,
+} from '../components/container/styled';
 import BlogItemComponent from '../components/blog-item';
+import { Grid } from '../components/flex/styled';
+import { FetchHomesService } from './api/home';
+import { IHomeProps } from '../types/home';
 
 export const getStaticProps = async () => {
-  const res: IProjectResponse<IProjectProps[]> = await FetchProjectsService();
-  const data: IProjectProps[] | undefined = res.caseStudies;
+  const projects: IProjectResponse<IProjectProps[]> =
+    await FetchProjectsService();
+  const data: IProjectProps[] | undefined = projects.caseStudies;
+
+  const home: IHomeResponse<IHomeProps[]> = await FetchHomesService();
+  const homedata: IHomeProps | undefined = home.homes.find(
+    (el: IHomeProps) => el,
+  );
 
   return {
     props: {
       data,
+      homedata,
     },
     revalidate: 3600,
   };
@@ -28,9 +42,10 @@ export const getStaticProps = async () => {
 
 interface HomePageProps {
   data: IProjectProps[];
+  homedata: IHomeProps;
 }
 
-const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
+const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
   const FooterLinkStyle: React.CSSProperties = {
     fontSize: TYPOGRAPHY.size.pSmall,
     fontFamily: TYPOGRAPHY.family.paragraph,
@@ -38,26 +53,45 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
 
   return (
     <div>
-      <FullWidthContainer>
-        <div style={{ padding: '100px 0' }}>
+      <FullHeightContainer>
+        <div>
           <AnimatedHeading>A front-end developer —</AnimatedHeading>
           <AnimatedHeading>
             Designing &amp; building websites that kicks ass
           </AnimatedHeading>
+          <div style={{ marginTop: '10px' }}>
+            <AnimatedText>
+              I&apos;m a full-stack developer with focus on front-end & creative
+              development — primarily working with React & Next.js.
+            </AnimatedText>
+          </div>
         </div>
 
-        <div>
-          <Paragraph>
-            I&apos;m a full-stack developer with focus on front-end & creative
-            development — primarily working with React & Next.js.
+        <Grid style={{ alignSelf: 'end' }}>
+          <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
+            &copy;2022
           </Paragraph>
-        </div>
+        </Grid>
+      </FullHeightContainer>
+
+      <FullWidthContainer>
+        <Grid>
+          <Paragraph>{homedata.title}</Paragraph>
+          <Paragraph>{ReactHtmlParser(homedata.about.html)}</Paragraph>
+          <Paragraph>{ReactHtmlParser(homedata.timeline.html)}</Paragraph>
+        </Grid>
       </FullWidthContainer>
 
-      <div style={{ marginTop: '50px' }}>
-        {data.map((item: IProjectProps, index: number) => (
-          <BlogItemComponent data={item} key={index} />
-        ))}
+      <div style={{ marginTop: '150px' }}>
+        <FullWidthContainer>
+          <Heading>Selected works</Heading>
+        </FullWidthContainer>
+
+        <div>
+          {data.map((item: IProjectProps, index: number) => (
+            <BlogItemComponent data={item} key={index} />
+          ))}
+        </div>
       </div>
 
       <FooterContainer>

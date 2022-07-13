@@ -9,15 +9,14 @@ export type TypographyWeight = 'normal' | 'bold' | 'bolder';
 export const Heading = styled('div', {
   margin: 0,
   fontFamily: TYPOGRAPHY.family.heading,
-  letterSpacing: '-1px',
+  letterSpacing: '0px',
   fontWeight: TYPOGRAPHY.weight.normal,
-  fontSize: `${TYPOGRAPHY.size.heading1}px`,
   lineHeight: 1.2,
   width: '100%',
   color: THEME.dark.foreground,
 
   '@sm': {
-    fontSize: '7.5vw',
+    fontSize: '7.3vw',
   },
   '@md': {
     fontSize: '6.5vw',
@@ -43,14 +42,28 @@ export const Paragraph = styled('div', {
   fontFamily: TYPOGRAPHY.family.paragraph,
   fontSize: `${TYPOGRAPHY.size.pRegular}px`,
   fontWeight: TYPOGRAPHY.weight.normal,
-  lineHeight: 1.95,
+  lineHeight: 1.75,
   width: '100%',
   color: THEME.dark.foreground,
+
+  '@sm': {
+    fontSize: '15.6px',
+  },
+  '@md': {
+    fontSize: '15.6px',
+  },
+  '@lg': {
+    fontSize: TYPOGRAPHY.size.pRegular,
+  },
+  '@xl': {
+    fontSize: TYPOGRAPHY.size.pRegular,
+  },
 
   a: {
     textDecoration: 'underline',
     textUnderlineOffset: '3px',
     fontWeight: TYPOGRAPHY.weight.bold,
+    color: THEME.dark.foreground,
     opacity: 0.4,
     transition: 'all ease-in-out 0.2s',
 
@@ -76,13 +89,13 @@ export const Paragraph = styled('div', {
 
   ol: {
     li: {
-      marginBottom: '15px',
+      marginBottom: '15.6px',
     },
   },
 
   ul: {
     li: {
-      marginBottom: '15px',
+      marginBottom: '15.6px',
     },
   },
 });
@@ -93,6 +106,19 @@ export const AnchorParagraph = styled('div', {
   fontSize: `${TYPOGRAPHY.size.pRegular}px`,
   fontWeight: TYPOGRAPHY.weight.normal,
   lineHeight: 2.2,
+
+  '@sm': {
+    fontSize: '15.6px',
+  },
+  '@md': {
+    fontSize: '15.6px',
+  },
+  '@lg': {
+    fontSize: TYPOGRAPHY.size.pRegular,
+  },
+  '@xl': {
+    fontSize: TYPOGRAPHY.size.pRegular,
+  },
 
   a: {
     fontWeight: TYPOGRAPHY.weight.normal,

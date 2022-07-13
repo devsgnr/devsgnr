@@ -36,7 +36,6 @@ const Navigation = styled('div', {
   zIndex: 999,
   width: '100%',
   padding: '20px 0',
-  marginBottom: '50px',
   backgroundColor: 'transparent',
 
   '@sm': {

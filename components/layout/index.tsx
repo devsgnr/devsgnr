@@ -16,7 +16,7 @@ const Layout = ({ children, seo }: LayoutProps) => {
 
   useEffect(() => {
     gsap.to(LayoutRef.current, {
-      duration: 0,
+      duration: 1,
       opacity: 1,
       ease: Power3.easeOut,
     });

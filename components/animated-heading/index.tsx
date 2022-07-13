@@ -1,20 +1,16 @@
 import React, { FC, useEffect, useRef } from 'react';
 import { CSS } from '@stitches/react';
 import { gsap, Power4, Power1 } from 'gsap';
-import { Heading } from '../typography/styled';
-import TYPOGRAPHY from '../../styles/token/typography';
+import { Heading, Paragraph } from '../typography/styled';
 
-interface AnimatedHeadingProps {
+interface AnimatedProps {
   children: string;
 }
 
-const AnimatedHeading: FC<AnimatedHeadingProps> = ({
-  children,
-}: AnimatedHeadingProps) => {
+const AnimatedHeading: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
   const Title: CSS = {
     position: 'relative',
     opacity: 0,
-    fontSize: TYPOGRAPHY.size.headingfooting,
   };
 
   const TextWrapper: React.CSSProperties = {
@@ -49,7 +45,7 @@ const AnimatedHeading: FC<AnimatedHeadingProps> = ({
           ease: Power4.easeInOut,
         })
         .to(`._letter_${index}`, {
-          duration: index * 0.01,
+          duration: index * 0.05,
           opacity: 1,
           y: 0,
           ease: Power4.easeInOut,
@@ -66,11 +62,7 @@ const AnimatedHeading: FC<AnimatedHeadingProps> = ({
             className={`_letter_${index}`}
             style={LetterWrapper}
           >
-            {letter === ' ' ? (
-              <span style={{ width: '38px' }}>&nbsp;</span>
-            ) : (
-              letter
-            )}
+            {letter === ' ' ? <span>&nbsp;</span> : letter}
           </span>
         </span>
       ))}
@@ -78,4 +70,64 @@ const AnimatedHeading: FC<AnimatedHeadingProps> = ({
   );
 };
 
+const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
+  const Title: CSS = {
+    position: 'relative',
+    opacity: 0,
+  };
+
+  const TextWrapper: React.CSSProperties = {
+    display: 'inline-block',
+    overflow: 'hidden',
+    position: 'relative',
+  };
+
+  const LetterWrapper: React.CSSProperties = {
+    opacity: 0,
+    display: 'inline-block',
+    transform: 'translate(0px, 40px)',
+  };
+
+  const ParagraphRef = useRef<HTMLDivElement>(null);
+  const textArr: string[] = children.split('');
+
+  useEffect(() => {
+    gsap.to(ParagraphRef.current, {
+      duration: 0,
+      opacity: 1,
+      ease: Power1.easeOut,
+    });
+
+    textArr.forEach((letter: string, index: number) => {
+      gsap
+        .timeline({ delay: index * 0.025 })
+        .from(`._text_${index}`, {
+          duration: 0,
+          opacity: 0,
+          y: `${index + 40}px`,
+          ease: Power4.easeInOut,
+        })
+        .to(`._text_${index}`, {
+          duration: index * 0.005,
+          opacity: 1,
+          y: 0,
+          ease: Power4.easeInOut,
+        });
+    });
+  }, []);
+
+  return (
+    <Paragraph ref={ParagraphRef} css={Title}>
+      {textArr.map((letter: string, index: number) => (
+        <span key={index} style={TextWrapper}>
+          <span key={index} className={`_text_${index}`} style={LetterWrapper}>
+            {letter === ' ' ? <span>&nbsp;</span> : letter}
+          </span>
+        </span>
+      ))}
+    </Paragraph>
+  );
+};
+
 export default AnimatedHeading;
+export { AnimatedText };

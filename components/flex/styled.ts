@@ -27,24 +27,19 @@ const Grid = styled('div', {
   display: 'grid',
   alignItems: 'start',
   justifyContent: 'space-between',
-  gap: '30px',
-  padding: '0px 25px',
+  gap: '10%',
 
   '@sm': {
-    gridTemplateColumns: '1fr',
-    padding: '0px',
+    gridAutoFlow: 'row',
   },
   '@md': {
-    gridTemplateColumns: 'auto auto',
-    padding: '0px 25px',
+    gridAutoFlow: 'column',
   },
   '@lg': {
-    gridTemplateColumns: 'auto auto',
-    padding: '0px 25px',
+    gridAutoFlow: 'column',
   },
   '@xl': {
-    gridTemplateColumns: 'auto auto',
-    padding: '0px 25px',
+    gridAutoFlow: 'column',
   },
 });
 

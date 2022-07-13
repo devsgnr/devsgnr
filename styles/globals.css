@@ -1,5 +1,5 @@
 @import url(../public/neue-montreal/stylesheet.css);
-@import url(../public/open_sauce_sans/stylesheet.css);
+@import url(../public/migra/stylesheet.css);
 
 html,
 body {
@@ -39,4 +39,8 @@ svg {
 img {
   width: 100%;
   object-fit: cover;
+}
+
+p {
+  margin: 0 !important;
 }
