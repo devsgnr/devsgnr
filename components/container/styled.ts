@@ -41,7 +41,7 @@ const FullWidthContainer = styled('div', {
 
 const FullHeightContainer = styled('div', {
   width: '100%',
-  height: '85vh',
+  height: '90vh',
   position: 'relative',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',

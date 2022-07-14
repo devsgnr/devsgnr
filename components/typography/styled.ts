@@ -33,7 +33,7 @@ export const Heading = styled('div', {
       fontSize: '6.5vw',
     },
     '@md': {
-      fontSize: '6.5vw',
+      fontSize: '7.2vw',
     },
     '@lg': {
       fontSize: TYPOGRAPHY.size.headingfooting,
@@ -62,10 +62,10 @@ export const Paragraph = styled('div', {
   color: THEME.dark.foreground,
 
   '@sm': {
-    fontSize: '15.6px',
+    fontSize: '17px',
   },
   '@md': {
-    fontSize: '15.6px',
+    fontSize: '17px',
   },
   '@lg': {
     fontSize: TYPOGRAPHY.size.pRegular,

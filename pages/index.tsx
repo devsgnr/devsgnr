@@ -84,7 +84,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
 
       <div style={{ marginTop: '150px' }}>
         <FullWidthContainer>
-          <Heading>Selected works</Heading>
+          <Heading className="big">Selected works</Heading>
         </FullWidthContainer>
 
         <div>
