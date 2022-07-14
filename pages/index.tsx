@@ -55,14 +55,12 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
     <div>
       <FullHeightContainer>
         <div>
-          <AnimatedHeading target="first-heading">
-            A front-end developer —
-          </AnimatedHeading>
+          <AnimatedHeading>A front-end developer —</AnimatedHeading>
           <AnimatedHeading target="second-heading">
             Designing &amp; building websites that kicks ass
           </AnimatedHeading>
           <div style={{ marginTop: '10px' }}>
-            <AnimatedText target="text-under-heading">
+            <AnimatedText>
               I&apos;m a full-stack developer with focus on front-end & creative
               development
             </AnimatedText>
@@ -86,9 +84,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
 
       <div style={{ marginTop: '150px' }}>
         <FullWidthContainer>
-          <AnimatedHeading target="selected-works-heading">
-            Selected works
-          </AnimatedHeading>
+          <Heading>Selected works</Heading>
         </FullWidthContainer>
 
         <div>

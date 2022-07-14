@@ -1,15 +1,14 @@
 import React, { FC, useEffect, useRef } from 'react';
 import { CSS } from '@stitches/react';
 import { gsap, Power4, Power1 } from 'gsap';
-import { Heading } from '../typography/styled';
-import AnimatedText from './animated-text';
+import { Paragraph } from '../typography/styled';
 
 interface AnimatedProps {
   children: string;
   target?: string;
 }
 
-const AnimatedHeading: FC<AnimatedProps> = ({
+const AnimatedText: FC<AnimatedProps> = ({
   children,
   target,
 }: AnimatedProps) => {
@@ -30,18 +29,18 @@ const AnimatedHeading: FC<AnimatedProps> = ({
     transform: 'translate(0px, 40px)',
   };
 
-  const HeadingRef = useRef<HTMLDivElement>(null);
+  const ParagraphRef = useRef<HTMLDivElement>(null);
   const textArr: string[] = children.split('');
 
   useEffect(() => {
-    if (HeadingRef.current) {
-      const elem = HeadingRef.current;
+    if (ParagraphRef.current) {
+      const elem = ParagraphRef.current;
 
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.intersectionRatio > 0) {
-              gsap.to(HeadingRef.current, {
+              gsap.to(ParagraphRef.current, {
                 duration: 0,
                 opacity: 1,
                 ease: Power1.easeOut,
@@ -49,15 +48,15 @@ const AnimatedHeading: FC<AnimatedProps> = ({
 
               textArr.forEach((letter: string, index: number) => {
                 gsap
-                  .timeline({ delay: index * 0.05 })
-                  .from(`._letter_${index}`, {
+                  .timeline({ delay: index * 0.025 })
+                  .from(`._text_${index}`, {
                     duration: 0,
                     opacity: 0,
                     y: `${index + 40}px`,
                     ease: Power4.easeInOut,
                   })
-                  .to(`._letter_${index}`, {
-                    duration: index * 0.05,
+                  .to(`._text_${index}`, {
+                    duration: index * 0.025,
                     opacity: 1,
                     y: 0,
                     ease: Power4.easeInOut,
@@ -74,24 +73,19 @@ const AnimatedHeading: FC<AnimatedProps> = ({
 
       observer.observe(elem);
     }
-  }, [HeadingRef]);
+  }, []);
 
   return (
-    <Heading ref={HeadingRef} css={Title} className="big" id={target}>
+    <Paragraph ref={ParagraphRef} css={Title} id={target}>
       {textArr.map((letter: string, index: number) => (
         <span key={index} style={TextWrapper}>
-          <span
-            key={index}
-            className={`_letter_${index}`}
-            style={LetterWrapper}
-          >
+          <span key={index} className={`_text_${index}`} style={LetterWrapper}>
             {letter === ' ' ? <span>&nbsp;</span> : letter}
           </span>
         </span>
       ))}
-    </Heading>
+    </Paragraph>
   );
 };
 
-export default AnimatedHeading;
-export { AnimatedText };
+export default AnimatedText;
