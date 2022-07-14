@@ -3,8 +3,6 @@ import { gsap, Power3 } from 'gsap';
 import { ISeo } from '../../types/seo';
 import NavigationBar from '../navbar';
 import SEO from '../seo';
-import { Paragraph } from '../typography/styled';
-import { StyledSplashScreen } from './styled';
 
 interface LayoutProps {
   children: ReactChild | ReactChild[];
@@ -23,7 +21,7 @@ const Layout = ({ children, seo }: LayoutProps) => {
   }, []);
 
   return (
-    <div ref={LayoutRef}>
+    <div ref={LayoutRef} id="main">
       <SEO seo={seo} />
       <NavigationBar />
 
@@ -32,11 +30,4 @@ const Layout = ({ children, seo }: LayoutProps) => {
   );
 };
 
-const LoadingScreen = () => (
-  <StyledSplashScreen>
-    <Paragraph>Loading...</Paragraph>
-  </StyledSplashScreen>
-);
-
 export default Layout;
-export { LoadingScreen };

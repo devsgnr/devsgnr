@@ -19,7 +19,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "utils/decodeBlurhash.js"
+    "utils/decodeBlurhash.js",
+    "utils/isInView.ts"
   ],
   "exclude": ["node_modules"]
 }

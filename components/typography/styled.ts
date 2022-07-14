@@ -16,16 +16,31 @@ export const Heading = styled('div', {
   color: THEME.dark.foreground,
 
   '@sm': {
-    fontSize: '7.3vw',
+    fontSize: TYPOGRAPHY.size.heading3,
   },
   '@md': {
-    fontSize: '6.5vw',
+    fontSize: TYPOGRAPHY.size.heading2,
   },
   '@lg': {
-    fontSize: TYPOGRAPHY.size.headingfooting,
+    fontSize: TYPOGRAPHY.size.heading1,
   },
   '@xl': {
-    fontSize: TYPOGRAPHY.size.headingfooting,
+    fontSize: TYPOGRAPHY.size.heading1,
+  },
+
+  '&.big': {
+    '@sm': {
+      fontSize: '6.5vw',
+    },
+    '@md': {
+      fontSize: '6.5vw',
+    },
+    '@lg': {
+      fontSize: TYPOGRAPHY.size.headingfooting,
+    },
+    '@xl': {
+      fontSize: TYPOGRAPHY.size.headingfooting,
+    },
   },
 
   '&.title': {

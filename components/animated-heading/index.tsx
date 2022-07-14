@@ -2,12 +2,17 @@ import React, { FC, useEffect, useRef } from 'react';
 import { CSS } from '@stitches/react';
 import { gsap, Power4, Power1 } from 'gsap';
 import { Heading, Paragraph } from '../typography/styled';
+import isInViewport from '../../utils/isInView';
 
 interface AnimatedProps {
   children: string;
+  target?: string;
 }
 
-const AnimatedHeading: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
+const AnimatedHeading: FC<AnimatedProps> = ({
+  children,
+  target,
+}: AnimatedProps) => {
   const Title: CSS = {
     position: 'relative',
     opacity: 0,
@@ -27,6 +32,8 @@ const AnimatedHeading: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
 
   const HeadingRef = useRef<HTMLDivElement>(null);
   const textArr: string[] = children.split('');
+
+  const isInView = isInViewport(target);
 
   useEffect(() => {
     gsap.to(HeadingRef.current, {
@@ -51,10 +58,10 @@ const AnimatedHeading: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
           ease: Power4.easeInOut,
         });
     });
-  }, []);
+  }, [isInView === true]);
 
   return (
-    <Heading ref={HeadingRef} css={Title}>
+    <Heading ref={HeadingRef} css={Title} className="big" id={target}>
       {textArr.map((letter: string, index: number) => (
         <span key={index} style={TextWrapper}>
           <span
@@ -70,7 +77,10 @@ const AnimatedHeading: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
   );
 };
 
-const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
+const AnimatedText: FC<AnimatedProps> = ({
+  children,
+  target,
+}: AnimatedProps) => {
   const Title: CSS = {
     position: 'relative',
     opacity: 0,
@@ -90,6 +100,8 @@ const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
 
   const ParagraphRef = useRef<HTMLDivElement>(null);
   const textArr: string[] = children.split('');
+
+  const isInView = isInViewport(target);
 
   useEffect(() => {
     gsap.to(ParagraphRef.current, {
@@ -114,10 +126,10 @@ const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
           ease: Power4.easeInOut,
         });
     });
-  }, []);
+  }, [isInView === true]);
 
   return (
-    <Paragraph ref={ParagraphRef} css={Title}>
+    <Paragraph ref={ParagraphRef} css={Title} id={target}>
       {textArr.map((letter: string, index: number) => (
         <span key={index} style={TextWrapper}>
           <span key={index} className={`_text_${index}`} style={LetterWrapper}>
