@@ -36,8 +36,20 @@ const Navigation = styled('div', {
   zIndex: 999,
   width: '100%',
   padding: '20px 0',
-  marginBottom: '50px',
   backgroundColor: 'transparent',
+
+  '@sm': {
+    padding: '25px',
+  },
+  '@md': {
+    padding: '25px 50px',
+  },
+  '@lg': {
+    padding: '25px 50px',
+  },
+  '@xl': {
+    padding: '25px 50px',
+  },
 });
 
 export default Navigation;

@@ -3,15 +3,18 @@ import THEME from '../../styles/token/colors';
 
 export const StyledSplashScreen = styled('div', {
   position: 'fixed',
-  top: 0,
+  top: '-100%',
   left: 0,
+  zIndex: 9999,
   width: '100%',
   height: '100vh',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  backgroundColor: THEME.dark.accent,
 
   '*': {
+    color: THEME.dark.background,
     textAlign: 'center',
   },
 });
@@ -20,10 +23,6 @@ const StyledLayout = styled('div', {
   width: '100%',
   minHeight: '100vh',
   background: THEME.dark.background,
-
-  '*': {
-    color: THEME.dark.foreground,
-  },
 });
 
 export default StyledLayout;

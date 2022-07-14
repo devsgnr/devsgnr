@@ -30,6 +30,9 @@ export const StyledMindscapeGridItemCredit = styled('div', {
   transition: 'all ease-in-out 0.2s',
   padding: '0 0 15px 20px',
   width: '100%',
+  '*': {
+    color: THEME.dark.foreground,
+  },
 });
 
 export const StyledMindscapeGridPlusButton = styled('div', {

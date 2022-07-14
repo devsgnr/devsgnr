@@ -4,7 +4,6 @@ import { NextPage } from 'next';
 import { useQuery } from 'react-query';
 import { Waypoint } from 'react-waypoint';
 import { AxiosResponse } from 'axios';
-import Layout from '../../components/layout';
 import { Paragraph } from '../../components/typography/styled';
 import {
   MyUnsplashCollectionsPhotosService,
@@ -18,6 +17,7 @@ import {
 import { process } from '../api/service';
 import MindscapePhoto from '../../components/mindscape-grid';
 import AnimatedHeading from '../../components/animated-heading';
+import { FullWidthContainer } from '../../components/container/styled';
 
 const Mindscape: NextPage = () => {
   const [id] = useState<string>(process.env.NEXT_PUBLIC_COLLECTION_ID);
@@ -50,14 +50,16 @@ const Mindscape: NextPage = () => {
   );
 
   return (
-    <Layout>
-      <>
-        {MyUnsplashCollection.isSuccess && (
-          <div style={{ padding: '0 50px' }}>
-            <AnimatedHeading>{MyUnsplashCollection.data.title}</AnimatedHeading>
-          </div>
-        )}
-      </>
+    <>
+      <div style={{ paddingTop: '50px' }}>
+        <FullWidthContainer>
+          {MyUnsplashCollection.isSuccess && (
+            <AnimatedHeading target="mindscape-heading">
+              {MyUnsplashCollection.data.title}
+            </AnimatedHeading>
+          )}
+        </FullWidthContainer>
+      </div>
 
       <>
         {images.length > 0 && (
@@ -81,7 +83,7 @@ const Mindscape: NextPage = () => {
           </>
         )}
       </>
-    </Layout>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
-import { CSS } from '@stitches/react';
+import { css } from '../stitches.config';
 
-const ContainerStyle: CSS = {
+const ContainerStyle = css({
   '@sm': {
     padding: '25px 20px',
   },
@@ -13,9 +13,9 @@ const ContainerStyle: CSS = {
   '@xl': {
     padding: '50px',
   },
-};
+});
 
-const NavigationContainerStyle: CSS = {
+const NavigationContainerStyle = css({
   '@sm': {
     padding: '25px',
   },
@@ -28,6 +28,6 @@ const NavigationContainerStyle: CSS = {
   '@xl': {
     padding: '25px 50px',
   },
-};
+});
 
 export { ContainerStyle, NavigationContainerStyle };

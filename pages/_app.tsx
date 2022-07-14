@@ -2,8 +2,7 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { Toaster } from 'react-hot-toast';
-import StyledLayout from '../components/layout/styled';
+import Layout from '../components/layout';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const queryClient = new QueryClient({
@@ -14,10 +13,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <StyledLayout>
-        <Toaster />
+      <Layout>
         <Component {...pageProps} />
-      </StyledLayout>
+      </Layout>
     </QueryClientProvider>
   );
 };

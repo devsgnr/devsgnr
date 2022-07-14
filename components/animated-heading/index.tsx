@@ -1,90 +1,97 @@
 import React, { FC, useEffect, useRef } from 'react';
 import { CSS } from '@stitches/react';
-import { gsap, Power3 } from 'gsap';
+import { gsap, Power4, Power1 } from 'gsap';
 import { Heading } from '../typography/styled';
-import TYPOGRAPHY from '../../styles/token/typography';
+import AnimatedText from './animated-text';
 
-interface AnimatedHeadingProps {
+interface AnimatedProps {
   children: string;
+  target?: string;
 }
 
-const AnimatedHeading: FC<AnimatedHeadingProps> = ({
+const AnimatedHeading: FC<AnimatedProps> = ({
   children,
-}: AnimatedHeadingProps) => {
+  target,
+}: AnimatedProps) => {
   const Title: CSS = {
     position: 'relative',
     opacity: 0,
-    fontSize: TYPOGRAPHY.size.headingfooting,
-
-    '@sm': {
-      fontSize: '7.5vw',
-    },
-    '@md': {
-      fontSize: '6.5vw',
-    },
-    '@lg': {
-      fontSize: TYPOGRAPHY.size.headingfooting,
-    },
-    '@xl': {
-      fontSize: TYPOGRAPHY.size.headingfooting,
-    },
   };
 
   const TextWrapper: React.CSSProperties = {
     display: 'inline-block',
-    paddingTop: '0.2em',
-    paddingRight: '0.05em',
-    paddingBottom: '0.1em',
     overflow: 'hidden',
     position: 'relative',
+  };
+
+  const LetterWrapper: React.CSSProperties = {
+    opacity: 0,
+    display: 'inline-block',
+    transform: 'translate(0px, 40px)',
   };
 
   const HeadingRef = useRef<HTMLDivElement>(null);
   const textArr: string[] = children.split('');
 
   useEffect(() => {
-    gsap.to(HeadingRef.current, {
-      duration: 0,
-      opacity: 1,
-      ease: Power3.easeOut,
-    });
+    if (HeadingRef.current) {
+      const elem = HeadingRef.current;
 
-    textArr.forEach((letter: string, index: number) => {
-      gsap
-        .timeline({ delay: index * 0.01 })
-        .from(`._letter_${index}`, {
-          duration: 0,
-          opacity: 0,
-          zoom: 1.5,
-          ease: Power3.easeIn,
-        })
-        .to(`._letter_${index}`, {
-          duration: 0.1,
-          opacity: 1,
-          zoom: 1,
-          ease: Power3.easeIn,
-          stagger: 0.5,
-        });
-    });
-  }, []);
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.intersectionRatio > 0) {
+              gsap.to(HeadingRef.current, {
+                duration: 0,
+                opacity: 1,
+                ease: Power1.easeOut,
+              });
+
+              textArr.forEach((letter: string, index: number) => {
+                gsap
+                  .timeline({ delay: index * 0.05 })
+                  .from(`._letter_${index}`, {
+                    duration: 0,
+                    opacity: 0,
+                    y: `${index + 40}px`,
+                    ease: Power4.easeInOut,
+                  })
+                  .to(`._letter_${index}`, {
+                    duration: index * 0.05,
+                    opacity: 1,
+                    y: 0,
+                    ease: Power4.easeInOut,
+                  });
+              });
+              observer.unobserve(elem);
+            }
+          });
+        },
+        {
+          threshold: 1,
+        },
+      );
+
+      observer.observe(elem);
+    }
+  }, [HeadingRef]);
 
   return (
-    <Heading className="title" ref={HeadingRef} css={Title}>
-      <div className="letters" style={TextWrapper}>
-        {textArr.map((letter: string, index: number) => (
+    <Heading ref={HeadingRef} css={Title} className="big" id={target}>
+      {textArr.map((letter: string, index: number) => (
+        <span key={index} style={TextWrapper}>
           <span
             key={index}
             className={`_letter_${index}`}
-            style={{
-              opacity: 0,
-            }}
+            style={LetterWrapper}
           >
-            {letter}
+            {letter === ' ' ? <span>&nbsp;</span> : letter}
           </span>
-        ))}
-      </div>
+        </span>
+      ))}
     </Heading>
   );
 };
 
 export default AnimatedHeading;
+export { AnimatedText };

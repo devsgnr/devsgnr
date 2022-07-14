@@ -6,7 +6,7 @@ import { Grid } from '../flex/styled';
 import Anchor from '../anchor';
 import TYPOGRAPHY from '../../styles/token/typography';
 import { IProjectProps } from '../../types/project';
-import { Paragraph } from '../typography/styled';
+import { Heading, Paragraph } from '../typography/styled';
 import BlogItem from './styled';
 
 interface BlogItemComponentProps {
@@ -25,7 +25,7 @@ const BlogItemComponent: FC<BlogItemComponentProps> = ({
       <BlogItem css={Relative}>
         <Grid>
           <div>
-            <Paragraph>{data.title}</Paragraph>
+            <Heading css={{ marginBottom: '20px' }}>{data.title}</Heading>
             <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
               {ReactHtmlParser(data.mainContent.html)}
             </Paragraph>
