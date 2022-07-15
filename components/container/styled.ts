@@ -20,7 +20,6 @@ const Container = styled('div', {
 
 const FullWidthContainer = styled('div', {
   width: '100%',
-  position: 'relative',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundAttachment: 'fixed',
@@ -41,8 +40,7 @@ const FullWidthContainer = styled('div', {
 
 const FullHeightContainer = styled('div', {
   width: '100%',
-  height: '65vh',
-  position: 'relative',
+  height: 'auto',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundAttachment: 'fixed',
@@ -52,15 +50,19 @@ const FullHeightContainer = styled('div', {
 
   '@sm': {
     padding: '25px 20px',
+    height: '90vh',
   },
   '@md': {
     padding: '25px 50px',
+    height: '55vh',
   },
   '@lg': {
     padding: '25px 50px',
+    height: '55vh',
   },
   '@xl': {
     padding: '25px 50px',
+    height: '75vh',
   },
 });
 

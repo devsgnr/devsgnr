@@ -16,7 +16,7 @@ import {
 } from '../../components/mindscape-grid/styled';
 import { process } from '../api/service';
 import MindscapePhoto from '../../components/mindscape-grid';
-import AnimatedHeading from '../../components/animated-heading';
+import AnimatedHeading from '../../components/animated';
 import { FullWidthContainer } from '../../components/container/styled';
 
 const Mindscape: NextPage = () => {

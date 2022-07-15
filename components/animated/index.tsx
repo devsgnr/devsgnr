@@ -4,6 +4,7 @@ import { gsap, Power4, Power1 } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { Heading } from '../typography/styled';
 import AnimatedText from './animated-text';
+import AnimatedDiv from './animated-div';
 
 interface AnimatedProps {
   children: string;
@@ -74,4 +75,4 @@ const AnimatedHeading: FC<AnimatedProps> = ({
 };
 
 export default AnimatedHeading;
-export { AnimatedText };
+export { AnimatedText, AnimatedDiv };

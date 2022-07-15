@@ -6,7 +6,10 @@ import { FetchProjectsService } from './api/project';
 import { IProjectProps } from '../types/project';
 import { Heading, Paragraph } from '../components/typography/styled';
 import Anchor from '../components/anchor';
-import AnimatedHeading, { AnimatedText } from '../components/animated-heading';
+import AnimatedHeading, {
+  AnimatedDiv,
+  AnimatedText,
+} from '../components/animated';
 import TYPOGRAPHY from '../styles/token/typography';
 import FooterLinks, {
   FooterContainer,
@@ -68,31 +71,41 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
             </AnimatedText>
           </div>
         </div>
-
-        <Grid style={{ alignSelf: 'end', justifyContent: 'end' }}>
-          <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
-            &copy;2022
-          </Paragraph>
-        </Grid>
       </FullHeightContainer>
 
       <FullWidthContainer>
         <Grid>
-          <Heading>{homedata.title}</Heading>
-          <Paragraph>{ReactHtmlParser(homedata.about.html)}</Paragraph>
-          <Paragraph>{ReactHtmlParser(homedata.timeline.html)}</Paragraph>
+          <div>
+            <AnimatedDiv target="about" index={1}>
+              <Heading>{homedata.title}</Heading>
+            </AnimatedDiv>
+          </div>
+
+          <div>
+            <AnimatedDiv target="about" index={2}>
+              <Paragraph>{ReactHtmlParser(homedata.about.html)}</Paragraph>
+            </AnimatedDiv>
+          </div>
+
+          <div>
+            <AnimatedDiv target="about" index={3}>
+              <Paragraph>{ReactHtmlParser(homedata.timeline.html)}</Paragraph>
+            </AnimatedDiv>
+          </div>
         </Grid>
       </FullWidthContainer>
 
-      <FullWidthContainer css={{ marginBottom: '100px' }}>
+      <FullWidthContainer css={{ marginBottom: '100px', marginTop: '100px' }}>
         <Grid>
           <Heading className="big">
             A human with a knack for making things look pretty, who stumbled
             upon coding and design and never looked back —
           </Heading>
-          <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
-            Where passion and creative meet
-          </Paragraph>
+          <AnimatedDiv index={1}>
+            <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
+              Where passion and creativity meet
+            </Paragraph>
+          </AnimatedDiv>
         </Grid>
       </FullWidthContainer>
 

@@ -11,7 +11,7 @@ const TYPOGRAPHY: ITypography = {
     heading2: 24,
     heading3: 20,
     headingfooting: '5.0vw',
-    pRegular: 19,
+    pRegular: 18,
     pSmall: 14,
   },
   weight: {

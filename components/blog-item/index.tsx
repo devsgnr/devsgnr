@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-curly-newline */
 import React, { FC } from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import { CSS } from '@stitches/react';
