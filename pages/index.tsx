@@ -54,20 +54,22 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
   return (
     <div>
       <FullHeightContainer>
-        <div>
-          <AnimatedHeading>A front-end developer —</AnimatedHeading>
+        <div style={{ marginTop: '100px' }}>
+          <AnimatedHeading target="first-heading">
+            A front-end developer —
+          </AnimatedHeading>
           <AnimatedHeading target="second-heading">
             Designing &amp; building websites that kicks ass
           </AnimatedHeading>
           <div style={{ marginTop: '10px' }}>
             <AnimatedText>
-              I&apos;m a full-stack developer with focus on front-end & creative
+              I&apos;m a full-stack developer, focusing on front-end & creative
               development
             </AnimatedText>
           </div>
         </div>
 
-        <Grid style={{ alignSelf: 'end' }}>
+        <Grid style={{ alignSelf: 'end', justifyContent: 'end' }}>
           <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
             &copy;2022
           </Paragraph>
@@ -82,9 +84,23 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
         </Grid>
       </FullWidthContainer>
 
+      <FullWidthContainer css={{ marginBottom: '100px' }}>
+        <Grid>
+          <Heading className="big">
+            A human with a knack for making things look pretty, who stumbled
+            upon coding and design and never looked back —
+          </Heading>
+          <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
+            Where passion and creative meet
+          </Paragraph>
+        </Grid>
+      </FullWidthContainer>
+
       <div style={{ marginTop: '150px' }}>
         <FullWidthContainer>
-          <Heading className="big">Selected works</Heading>
+          <AnimatedHeading target="selected-works-heading">
+            Selected works
+          </AnimatedHeading>
         </FullWidthContainer>
 
         <div>

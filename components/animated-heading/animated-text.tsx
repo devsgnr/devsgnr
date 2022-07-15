@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useRef } from 'react';
 import { CSS } from '@stitches/react';
 import { gsap, Power4, Power1 } from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { Paragraph } from '../typography/styled';
 
 interface AnimatedProps {
@@ -33,53 +34,36 @@ const AnimatedText: FC<AnimatedProps> = ({
   const textArr: string[] = children.split('');
 
   useEffect(() => {
-    if (ParagraphRef.current) {
-      const elem = ParagraphRef.current;
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(ParagraphRef.current, {
+      duration: 0,
+      opacity: 1,
+      ease: Power1.easeOut,
+    });
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.intersectionRatio > 0) {
-              gsap.to(ParagraphRef.current, {
-                duration: 0,
-                opacity: 1,
-                ease: Power1.easeOut,
-              });
-
-              textArr.forEach((letter: string, index: number) => {
-                gsap
-                  .timeline({ delay: index * 0.025 })
-                  .from(`._text_${index}`, {
-                    duration: 0,
-                    opacity: 0,
-                    y: `${index + 40}px`,
-                    ease: Power4.easeInOut,
-                  })
-                  .to(`._text_${index}`, {
-                    duration: index * 0.025,
-                    opacity: 1,
-                    y: 0,
-                    ease: Power4.easeInOut,
-                  });
-              });
-              observer.unobserve(elem);
-            }
+    textArr.forEach((letter: string, index: number) => {
+      ScrollTrigger.batch(`._text_${target}_${index}.in_view`, {
+        onEnter: (batch) => {
+          gsap.to(batch, {
+            duration: index * 0.025,
+            opacity: 1,
+            y: 0,
+            ease: Power4.easeInOut,
           });
         },
-        {
-          threshold: 1,
-        },
-      );
-
-      observer.observe(elem);
-    }
+      });
+    });
   }, []);
 
   return (
     <Paragraph ref={ParagraphRef} css={Title} id={target}>
       {textArr.map((letter: string, index: number) => (
         <span key={index} style={TextWrapper}>
-          <span key={index} className={`_text_${index}`} style={LetterWrapper}>
+          <span
+            key={index}
+            className={`_text_${target}_${index} in_view`}
+            style={LetterWrapper}
+          >
             {letter === ' ' ? <span>&nbsp;</span> : letter}
           </span>
         </span>

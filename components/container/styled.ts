@@ -41,11 +41,12 @@ const FullWidthContainer = styled('div', {
 
 const FullHeightContainer = styled('div', {
   width: '100%',
-  height: '90vh',
+  height: '65vh',
   position: 'relative',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundAttachment: 'fixed',
+  backgroundPosition: 'center',
   display: 'grid',
   gridTemplateColumns: '1fr',
 
