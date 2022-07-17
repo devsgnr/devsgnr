@@ -55,11 +55,11 @@ const FullHeightContainer = styled('div', {
   },
   '@md': {
     padding: '25px 50px',
-    height: '55vh',
+    height: '85vh',
   },
   '@lg': {
     padding: '25px 50px',
-    height: '55vh',
+    height: '85vh',
   },
   '@xl': {
     padding: '25px 50px',
