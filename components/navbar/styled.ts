@@ -33,7 +33,7 @@ const Navigation = styled('div', {
   position: 'fixed',
   top: 0,
   left: 0,
-  zIndex: 999,
+  zIndex: 9999999,
   width: '100%',
   padding: '20px 0',
   backgroundColor: 'transparent',

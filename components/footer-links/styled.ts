@@ -2,7 +2,7 @@ import { styled } from '../../stitches.config';
 import THEME from '../../styles/token/colors';
 
 const FooterLinks = styled('div', {
-  padding: '1px 15px',
+  padding: '3px 15px 0px 15px',
   width: 'fit-content',
   display: 'flex',
   alignItems: 'center',
@@ -39,9 +39,6 @@ const FooterLinks = styled('div', {
   },
 
   '&:hover': {
-    '*': {
-      color: THEME.dark.background,
-    },
     border: `0.1px solid ${THEME.dark.accent}`,
     transition: 'all ease-in-out 0.2s',
   },

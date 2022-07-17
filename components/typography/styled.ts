@@ -11,7 +11,7 @@ export const Heading = styled('div', {
   fontFamily: TYPOGRAPHY.family.heading,
   letterSpacing: '0px',
   fontWeight: TYPOGRAPHY.weight.normal,
-  lineHeight: 1.2,
+  lineHeight: 1.1,
   width: '100%',
   color: THEME.dark.foreground,
 

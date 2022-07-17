@@ -38,15 +38,15 @@ const BlogItem = styled('div', {
     },
   },
   '@lg': {
-    padding: '35px 50px',
+    padding: '55px 50px',
     '&:hover': {
-      padding: '35px 60px',
+      padding: '55px 60px',
     },
   },
   '@xl': {
-    padding: '35px 50px',
+    padding: '55px 50px',
     '&:hover': {
-      padding: '35px 60px',
+      padding: '55px 60px',
     },
   },
 
@@ -56,9 +56,6 @@ const BlogItem = styled('div', {
     },
 
     backgroundColor: THEME.dark.accent,
-    '*': {
-      color: THEME.dark.background,
-    },
     backgroundSize: 'cover',
     borderBottomColor: THEME.dark.accent,
     transition: 'all ease-in-out 0.3s',

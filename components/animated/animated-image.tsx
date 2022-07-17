@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useRef } from 'react';
 import { gsap, Power4, Power1 } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import THEME from '../../styles/token/colors';
 
 interface AnimatedProps {
   children: React.ReactNode;
@@ -15,12 +16,15 @@ const AnimatedImageContainer: FC<AnimatedProps> = ({
 }: AnimatedProps) => {
   const OuterDivWrapper: React.CSSProperties = {
     overflow: 'hidden',
+    position: 'relative',
     opacity: 0,
   };
 
   const InnerDiv: React.CSSProperties = {
-    opacity: 0,
-    transform: 'translate(0, 100%)',
+    opacity: 1,
+    transform: 'scale(2)',
+    position: 'relative',
+    overflow: 'hidden',
   };
 
   const divRef = useRef<HTMLDivElement>(null);
@@ -33,13 +37,46 @@ const AnimatedImageContainer: FC<AnimatedProps> = ({
       ease: Power1.easeOut,
     });
 
+    gsap.set(`.container_after_${target}_${index}.in_view`, {
+      content: ' ',
+      width: '100%',
+      height: '100%',
+      backgroundColor: THEME.dark.background,
+      position: 'absolute',
+      top: '0%',
+      left: '0%',
+      zIndex: 99999,
+    });
+
+    gsap.set(`.container_before_${target}_${index}.in_view`, {
+      content: ' ',
+      width: '100%',
+      height: '100%',
+      backgroundColor: THEME.dark.accent,
+      position: 'absolute',
+      top: '0%',
+      left: '0%',
+      zIndex: 9999,
+    });
+
     ScrollTrigger.batch(`._${target}_${index}.in_view`, {
       interval: 0.5,
       onEnter: (batch) => {
+        gsap.to(`.container_after_${target}_${index}.in_view`, {
+          duration: index * 1.5,
+          top: '-100%',
+          ease: Power4.easeInOut,
+        });
+        gsap.to(`.container_before_${target}_${index}.in_view`, {
+          delay: index * 0.5,
+          duration: index * 1.5,
+          top: '-100%',
+          ease: Power4.easeInOut,
+        });
         gsap.to(batch, {
-          duration: index * 0.75,
+          duration: index * 2.5,
           opacity: 1,
-          y: 0,
+          transform: 'scale(1)',
           ease: Power4.easeInOut,
         });
       },
@@ -48,6 +85,8 @@ const AnimatedImageContainer: FC<AnimatedProps> = ({
 
   return (
     <div ref={divRef} style={OuterDivWrapper}>
+      <span className={`container_after_${target}_${index} in_view`} />
+      <span className={`container_before_${target}_${index} in_view`} />
       <div style={InnerDiv} className={`_${target}_${index} in_view`}>
         {children}
       </div>

@@ -24,7 +24,6 @@ import {
   FullWidthContainer,
 } from '../components/container/styled';
 import BlogItemComponent from '../components/blog-item';
-import { Grid } from '../components/flex/styled';
 import { FetchHomesService } from './api/home';
 import { IHomeProps } from '../types/home';
 
@@ -57,28 +56,18 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
 
   return (
     <div>
-      <FullHeightContainer style={{ marginTop: '100px' }}>
+      <FullHeightContainer className="mt-28">
         <div>
           <AnimatedHeading target="first-heading">
-            Creative Developer —
+            Creative Developer
           </AnimatedHeading>
-          <AnimatedHeading target="second-heading">
-            Designing &amp; building awesome digital experiences
-          </AnimatedHeading>
-          <div className="mt-7">
-            <AnimatedText>
-              I&apos;m a full-stack developer, focusing on front-end & creative
-              development
-            </AnimatedText>
-          </div>
-        </div>
-        <div className="grid grid-cols-2 justify-between content-end pb-5">
-          <div>
+
+          <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 mt-3">
             <AnimatedImageContainer target="me" index={1}>
               <Image
                 src="/me.png"
                 width="100%"
-                height="35%"
+                height="40%"
                 sizes="50vw"
                 quality={100}
                 objectFit="cover"
@@ -86,15 +75,30 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
               />
             </AnimatedImageContainer>
           </div>
-
-          <div className="justify-self-end self-end">
-            <AnimatedText>{`${new Date().getFullYear()}`}</AnimatedText>
+        </div>
+        <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 justify-between content-end pb-5">
+          <div className="self-end">
+            <AnimatedDiv target="bi-line" index={1}>
+              <Paragraph>
+                A developer, designer, writer and reader — focusing on front-end
+                & creative development. Helping individuals scale their digital
+                presense through user centric experiences
+              </Paragraph>
+            </AnimatedDiv>
+          </div>
+          <div>
+            <AnimatedDiv target="bi-line" index={2}>
+              <Heading className="big text-right">Emmanuel</Heading>
+            </AnimatedDiv>
+            <AnimatedDiv target="bi-line" index={3}>
+              <Heading className="big text-right">Watila</Heading>
+            </AnimatedDiv>
           </div>
         </div>
       </FullHeightContainer>
 
       <FullWidthContainer>
-        <Grid>
+        <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 justify-between align-start gap-16">
           <div>
             <AnimatedDiv target="about" index={1}>
               <Heading>{homedata.title}</Heading>
@@ -112,31 +116,40 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
               <Paragraph>{ReactHtmlParser(homedata.timeline.html)}</Paragraph>
             </AnimatedDiv>
           </div>
-        </Grid>
+        </div>
       </FullWidthContainer>
 
       <FullWidthContainer className="mt-10 mb-10">
-        <Grid>
-          <Heading className="big">
-            A human with a knack for making things look pretty, who stumbled
-            upon coding and design and never looked back —
-          </Heading>
-          <AnimatedDiv index={1}>
-            <Paragraph>Where passion and creativity meet</Paragraph>
-          </AnimatedDiv>
-        </Grid>
+        <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 justify-between content-end mb-48">
+          <div className="col-span-2">
+            <AnimatedDiv target="knack-heading" index={1}>
+              <Heading className="big">
+                A human with a knack for making things look pretty, who stumbled
+                upon coding and design and never looked back —
+              </Heading>
+            </AnimatedDiv>
+          </div>
 
-        <div className="grid grid-cols-2 justify-between content-end pt-5 mt-10">
-          <div className="justify-self-start self-start">
+          <div className="col-auto justify-self-end">
+            <AnimatedDiv target="knack-bi-line" index={2}>
+              <Paragraph className="opacity-50">
+                Where passion and creativity meet...
+              </Paragraph>
+            </AnimatedDiv>
+          </div>
+        </div>
+
+        <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 justify-between content-end pt-5 mt-10">
+          <div className="justify-self-start self-start opcaity-50">
             <AnimatedText>{`${new Date().getFullYear()}`}</AnimatedText>
           </div>
 
           <div>
-            <AnimatedImageContainer target="me" index={1}>
+            <AnimatedImageContainer target="me_two" index={1}>
               <Image
-                src="/me.png"
+                src="/me_two.png"
                 width="100%"
-                height="35%"
+                height="45%"
                 sizes="50vw"
                 quality={100}
                 objectFit="cover"
@@ -149,6 +162,11 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
 
       <div className="mt-10">
         <FullWidthContainer>
+          <AnimatedDiv target="selected-works-by-line" index={2}>
+            <Paragraph className="opacity-50 mb-5">
+              Things I&apos;ve enjoyed working on...
+            </Paragraph>
+          </AnimatedDiv>
           <AnimatedHeading target="selected-works-heading">
             Selected works
           </AnimatedHeading>
@@ -159,6 +177,21 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
             <BlogItemComponent data={item} key={index} />
           ))}
         </div>
+      </div>
+
+      <div className="mt-10">
+        <FullWidthContainer>
+          <AnimatedDiv target="selected-works-by-line" index={2}>
+            <Paragraph className="opacity-50 mb-5">
+              Things I can do for you...?
+            </Paragraph>
+          </AnimatedDiv>
+          <AnimatedHeading target="selected-works-heading">
+            Let&apos;s see
+          </AnimatedHeading>
+        </FullWidthContainer>
+
+        <div />
       </div>
 
       <FooterContainer>
