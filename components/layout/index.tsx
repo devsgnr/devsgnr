@@ -3,6 +3,7 @@ import { gsap, Power3 } from 'gsap';
 import { ISeo } from '../../types/seo';
 import NavigationBar from '../navbar';
 import SEO from '../seo';
+import StyledLayout from './styled';
 
 interface LayoutProps {
   children: ReactChild | ReactChild[];
@@ -21,12 +22,12 @@ const Layout = ({ children, seo }: LayoutProps) => {
   }, []);
 
   return (
-    <div ref={LayoutRef} id="main">
+    <StyledLayout ref={LayoutRef} id="main">
       <SEO seo={seo} />
       <NavigationBar />
 
       <div>{children}</div>
-    </div>
+    </StyledLayout>
   );
 };
 

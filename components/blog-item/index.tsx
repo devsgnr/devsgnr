@@ -1,7 +1,7 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable react/jsx-curly-newline */
 import React, { FC } from 'react';
 import ReactHtmlParser from 'react-html-parser';
-import { CSS } from '@stitches/react';
 import { ArrowUpRight } from 'react-feather';
 import { Grid } from '../flex/styled';
 import Anchor from '../anchor';
@@ -17,13 +17,9 @@ interface BlogItemComponentProps {
 const BlogItemComponent: FC<BlogItemComponentProps> = ({
   data,
 }: BlogItemComponentProps) => {
-  const Relative: CSS = {
-    position: 'relative',
-  };
-
   return (
     <Anchor href={data.slug} target="_blank">
-      <BlogItem css={Relative}>
+      <BlogItem>
         <Grid>
           <div>
             <Heading css={{ marginBottom: '20px' }}>{data.title}</Heading>

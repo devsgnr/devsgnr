@@ -14,14 +14,12 @@ const AnimatedText: FC<AnimatedProps> = ({
   target,
 }: AnimatedProps) => {
   const Title: CSS = {
-    position: 'relative',
     opacity: 0,
   };
 
   const TextWrapper: React.CSSProperties = {
     display: 'inline-block',
     overflow: 'hidden',
-    position: 'relative',
   };
 
   const LetterWrapper: React.CSSProperties = {

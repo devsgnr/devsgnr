@@ -2,6 +2,7 @@ import { styled } from '../../stitches.config';
 
 const Container = styled('div', {
   padding: '0 25px',
+  margin: '0 auto',
 
   '@sm': {
     width: '420px',
@@ -10,16 +11,17 @@ const Container = styled('div', {
     width: '700px',
   },
   '@lg': {
-    width: '800px',
+    width: '1000px',
   },
   '@xl': {
-    width: '800px',
+    width: '1000px',
   },
   length: 0,
 });
 
 const FullWidthContainer = styled('div', {
   width: '100%',
+  height: '100%',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundAttachment: 'fixed',
@@ -40,7 +42,6 @@ const FullWidthContainer = styled('div', {
 
 const FullHeightContainer = styled('div', {
   width: '100%',
-  height: 'auto',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundAttachment: 'fixed',
@@ -62,7 +63,7 @@ const FullHeightContainer = styled('div', {
   },
   '@xl': {
     padding: '25px 50px',
-    height: '75vh',
+    height: '90vh',
   },
 });
 

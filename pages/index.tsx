@@ -1,6 +1,9 @@
+/* eslint-disable arrow-body-style */
 import React from 'react';
 import { NextPage } from 'next';
 import ReactHtmlParser from 'react-html-parser';
+import Image from 'next/image';
+import { useLocomotiveScroll } from 'react-locomotive-scroll';
 import { IHomeResponse, IProjectResponse } from '../types/response';
 import { FetchProjectsService } from './api/project';
 import { IProjectProps } from '../types/project';
@@ -8,10 +11,11 @@ import { Heading, Paragraph } from '../components/typography/styled';
 import Anchor from '../components/anchor';
 import AnimatedHeading, {
   AnimatedDiv,
+  AnimatedImageContainer,
+  AnimatedLink,
   AnimatedText,
 } from '../components/animated';
-import TYPOGRAPHY from '../styles/token/typography';
-import FooterLinks, {
+import {
   FooterContainer,
   FooterLinkGrid,
 } from '../components/footer-links/styled';
@@ -49,26 +53,42 @@ interface HomePageProps {
 }
 
 const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
-  const FooterLinkStyle: React.CSSProperties = {
-    fontSize: TYPOGRAPHY.size.pSmall,
-    fontFamily: TYPOGRAPHY.family.paragraph,
-  };
+  useLocomotiveScroll();
 
   return (
     <div>
-      <FullHeightContainer>
-        <div style={{ marginTop: '100px' }}>
+      <FullHeightContainer style={{ marginTop: '100px' }}>
+        <div>
           <AnimatedHeading target="first-heading">
-            A front-end developer —
+            Creative Developer —
           </AnimatedHeading>
           <AnimatedHeading target="second-heading">
-            Designing &amp; building websites that kicks ass
+            Designing &amp; building awesome digital experiences
           </AnimatedHeading>
-          <div style={{ marginTop: '10px' }}>
+          <div className="mt-7">
             <AnimatedText>
               I&apos;m a full-stack developer, focusing on front-end & creative
               development
             </AnimatedText>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 justify-between content-end pb-5">
+          <div>
+            <AnimatedImageContainer target="me" index={1}>
+              <Image
+                src="/me.png"
+                width="100%"
+                height="35%"
+                sizes="50vw"
+                quality={100}
+                objectFit="cover"
+                alt="Emmanuel Watila"
+              />
+            </AnimatedImageContainer>
+          </div>
+
+          <div className="justify-self-end self-end">
+            <AnimatedText>{`${new Date().getFullYear()}`}</AnimatedText>
           </div>
         </div>
       </FullHeightContainer>
@@ -95,16 +115,14 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
         </Grid>
       </FullWidthContainer>
 
-      <FullWidthContainer css={{ marginBottom: '100px', marginTop: '100px' }}>
+      <FullWidthContainer className="mt-10 mb-10">
         <Grid>
           <Heading className="big">
             A human with a knack for making things look pretty, who stumbled
             upon coding and design and never looked back —
           </Heading>
           <AnimatedDiv index={1}>
-            <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
-              Where passion and creativity meet
-            </Paragraph>
+            <Paragraph>Where passion and creativity meet</Paragraph>
           </AnimatedDiv>
         </Grid>
       </FullWidthContainer>
@@ -126,32 +144,22 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
       <FooterContainer>
         <FooterLinkGrid>
           <Anchor href="/mindscape">
-            <FooterLinks>
-              <div style={FooterLinkStyle}>MINDSCAPE</div>
-            </FooterLinks>
+            <AnimatedLink>MINDSCAPE</AnimatedLink>
           </Anchor>
           <Anchor href="https://instagram.com/devsgnr_" target="_blank">
-            <FooterLinks>
-              <div style={FooterLinkStyle}>INSTAGRAM</div>
-            </FooterLinks>
+            <AnimatedLink>INSTAGRAM</AnimatedLink>
           </Anchor>
           <Anchor href="https://twitter.com/devsgnr_" target="_blank">
-            <FooterLinks>
-              <div style={FooterLinkStyle}>TWITTER</div>
-            </FooterLinks>
+            <AnimatedLink>TWITTER</AnimatedLink>
           </Anchor>
           <Anchor href="https://linkedin.com/in/eiwatila" target="_blank">
-            <FooterLinks>
-              <div style={FooterLinkStyle}>LINKEDIN</div>
-            </FooterLinks>
+            <AnimatedLink>LINKEDIN</AnimatedLink>
           </Anchor>
           <Anchor
             href="https://www.getrevue.co/profile/devsgnr"
             target="_blank"
           >
-            <FooterLinks>
-              <div style={FooterLinkStyle}>NEWSLETTER</div>
-            </FooterLinks>
+            <AnimatedLink>NEWSLETTER</AnimatedLink>
           </Anchor>
         </FooterLinkGrid>
       </FooterContainer>

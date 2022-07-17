@@ -5,6 +5,8 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { Heading } from '../typography/styled';
 import AnimatedText from './animated-text';
 import AnimatedDiv from './animated-div';
+import AnimatedLink from './animated-link';
+import AnimatedImageContainer from './animated-image';
 
 interface AnimatedProps {
   children: string;
@@ -16,20 +18,21 @@ const AnimatedHeading: FC<AnimatedProps> = ({
   target,
 }: AnimatedProps) => {
   const Title: CSS = {
-    position: 'relative',
     opacity: 0,
+    height: 'fit-content',
   };
 
   const TextWrapper: React.CSSProperties = {
     display: 'inline-block',
     overflow: 'hidden',
-    position: 'relative',
+    height: 'fit-content',
   };
 
   const LetterWrapper: React.CSSProperties = {
     opacity: 0,
     display: 'inline-block',
     transform: 'translate(0px, 40px)',
+    height: 'fit-content',
   };
 
   const HeadingRef = useRef<HTMLDivElement>(null);
@@ -75,4 +78,4 @@ const AnimatedHeading: FC<AnimatedProps> = ({
 };
 
 export default AnimatedHeading;
-export { AnimatedText, AnimatedDiv };
+export { AnimatedText, AnimatedDiv, AnimatedLink, AnimatedImageContainer };

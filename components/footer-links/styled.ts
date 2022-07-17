@@ -2,20 +2,48 @@ import { styled } from '../../stitches.config';
 import THEME from '../../styles/token/colors';
 
 const FooterLinks = styled('div', {
-  padding: '5px 15px',
+  padding: '4.5px 15px',
   width: 'fit-content',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   border: '0.1px solid rgba(255, 255, 255, 0.5)',
   borderRadius: '25px',
+  overflow: 'hidden',
+  position: 'relative',
+
+  '&.container': {
+    ':after': {
+      content: ' ',
+      width: '100%',
+      height: '100%',
+      backgroundColor: THEME.dark.accent,
+      position: 'absolute',
+      bottom: '-100%',
+      left: 0,
+      zIndex: -1,
+      transition: 'all ease-in-out 0.2s',
+    },
+    '&:hover': {
+      ':after': {
+        bottom: '0%',
+      },
+      transition: 'all ease-in-out 0.2s',
+    },
+  },
+
+  '&.in_view': {
+    '&:after': {
+      display: 'none !important',
+    },
+  },
 
   '&:hover': {
-    backgroundColor: THEME.dark.accent,
     '*': {
       color: THEME.dark.background,
     },
     border: `0.1px solid ${THEME.dark.accent}`,
+    transition: 'all ease-in-out 0.2s',
   },
 });
 

@@ -37,6 +37,7 @@ const Navigation = styled('div', {
   width: '100%',
   padding: '20px 0',
   backgroundColor: 'transparent',
+  mixBlendMode: 'difference',
 
   '@sm': {
     padding: '25px',

@@ -3,7 +3,6 @@ import { styled } from '../../stitches.config';
 export const StyledImageContainer = styled('div', {
   overflow: 'hidden',
   borderRadius: '10px',
-  position: 'relative',
   margin: '10px 0',
 });
 
