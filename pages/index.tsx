@@ -122,7 +122,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
       <FullWidthContainer className="mt-10 mb-10">
         <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 justify-between content-end mb-48">
           <div className="col-span-2">
-            <AnimatedDiv target="knack-heading" index={1}>
+            <AnimatedDiv target="knack-heading" index={2}>
               <Heading className="big">
                 A human with a knack for making things look pretty, who stumbled
                 upon coding and design and never looked back —
