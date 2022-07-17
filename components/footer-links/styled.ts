@@ -2,7 +2,7 @@ import { styled } from '../../stitches.config';
 import THEME from '../../styles/token/colors';
 
 const FooterLinks = styled('div', {
-  padding: '4.5px 15px',
+  padding: '1px 15px',
   width: 'fit-content',
   display: 'flex',
   alignItems: 'center',

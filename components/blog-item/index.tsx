@@ -9,6 +9,7 @@ import TYPOGRAPHY from '../../styles/token/typography';
 import { IProjectProps } from '../../types/project';
 import { Heading, Paragraph } from '../typography/styled';
 import BlogItem from './styled';
+import { AnimatedDiv } from '../animated';
 
 interface BlogItemComponentProps {
   data: IProjectProps;
@@ -22,17 +23,21 @@ const BlogItemComponent: FC<BlogItemComponentProps> = ({
       <BlogItem>
         <Grid>
           <div>
-            <Heading css={{ marginBottom: '20px' }}>{data.title}</Heading>
-            <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
-              {ReactHtmlParser(data.mainContent.html)}
-            </Paragraph>
+            <AnimatedDiv target="project-title" index={1}>
+              <Heading css={{ marginBottom: '20px' }}>{data.title}</Heading>
+            </AnimatedDiv>
+            <AnimatedDiv target="project-description" index={1}>
+              <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
+                {ReactHtmlParser(data.mainContent.html)}
+              </Paragraph>
+            </AnimatedDiv>
           </div>
 
-          <div>
+          <AnimatedDiv target="project-link-icon" index={2}>
             <Paragraph>
               <ArrowUpRight size={24} />
             </Paragraph>
-          </div>
+          </AnimatedDiv>
         </Grid>
       </BlogItem>
     </Anchor>

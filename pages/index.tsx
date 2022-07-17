@@ -125,9 +125,29 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
             <Paragraph>Where passion and creativity meet</Paragraph>
           </AnimatedDiv>
         </Grid>
+
+        <div className="grid grid-cols-2 justify-between content-end pt-5 mt-10">
+          <div className="justify-self-start self-start">
+            <AnimatedText>{`${new Date().getFullYear()}`}</AnimatedText>
+          </div>
+
+          <div>
+            <AnimatedImageContainer target="me" index={1}>
+              <Image
+                src="/me.png"
+                width="100%"
+                height="35%"
+                sizes="50vw"
+                quality={100}
+                objectFit="cover"
+                alt="Emmanuel Watila"
+              />
+            </AnimatedImageContainer>
+          </div>
+        </div>
       </FullWidthContainer>
 
-      <div style={{ marginTop: '150px' }}>
+      <div className="mt-10">
         <FullWidthContainer>
           <AnimatedHeading target="selected-works-heading">
             Selected works

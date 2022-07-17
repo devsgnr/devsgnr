@@ -37,7 +37,7 @@ const AnimatedImageContainer: FC<AnimatedProps> = ({
       interval: 0.5,
       onEnter: (batch) => {
         gsap.to(batch, {
-          duration: index * 1,
+          duration: index * 0.75,
           opacity: 1,
           y: 0,
           ease: Power4.easeInOut,
