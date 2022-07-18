@@ -51,7 +51,7 @@ const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
   const handleMouseLeave = () => {
     textArr.forEach((letter: string, index: number) => {
       gsap.set(`._link_${children}_${index}.in_view`, {
-        y: '100%',
+        y: '-100%',
       });
       gsap
         .timeline({ delay: index * 0.05 })

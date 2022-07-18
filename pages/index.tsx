@@ -116,7 +116,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
       </FullWidthContainer>
 
       <FullWidthContainer className="mt-10 mb-10">
-        <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 justify-between content-end mb-56">
+        <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 justify-between content-end mb-64">
           <div className="col-span-2">
             <AnimatedDiv target="knack-heading" index={2}>
               <Heading className="big">
@@ -135,7 +135,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
           </div>
         </div>
 
-        <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 justify-between content-end pt-5 mt-10">
+        <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 justify-between content-end pt-5">
           <div className="justify-self-start self-start opcaity-50">
             <AnimatedText>{`${new Date().getFullYear()}`}</AnimatedText>
           </div>

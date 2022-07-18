@@ -13,7 +13,7 @@ const FooterLinks = styled('div', {
   position: 'relative',
 
   '&.container': {
-    ':after': {
+    '&:after': {
       content: ' ',
       width: '100%',
       height: '100%',
@@ -25,7 +25,7 @@ const FooterLinks = styled('div', {
       transition: 'all ease-in-out 0.2s',
     },
     '&:hover': {
-      ':after': {
+      '&:after': {
         bottom: '0%',
       },
       transition: 'all ease-in-out 0.2s',
