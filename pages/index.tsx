@@ -3,7 +3,6 @@ import React from 'react';
 import { NextPage } from 'next';
 import ReactHtmlParser from 'react-html-parser';
 import Image from 'next/image';
-import { useLocomotiveScroll } from 'react-locomotive-scroll';
 import { IHomeResponse, IProjectResponse } from '../types/response';
 import { FetchProjectsService } from './api/project';
 import { IProjectProps } from '../types/project';
@@ -51,8 +50,6 @@ interface HomePageProps {
 }
 
 const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
-  useLocomotiveScroll();
-
   return (
     <div>
       <FullHeightContainer className="mt-24">

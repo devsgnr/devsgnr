@@ -6,7 +6,7 @@ import { FooterContainer, FooterLinkGrid } from './styled';
 const Footer = () => (
   <FooterContainer>
     <FooterLinkGrid>
-      <Anchor href="https://read.cv/devsgnr_">
+      <Anchor href="https://read.cv/devsgnr_" target="_blank">
         <AnimatedLink>RESUME</AnimatedLink>
       </Anchor>
       <Anchor href="https://instagram.com/devsgnr_" target="_blank">
