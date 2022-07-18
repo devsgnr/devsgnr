@@ -62,10 +62,10 @@ export const Paragraph = styled('div', {
   color: THEME.dark.foreground,
 
   '@sm': {
-    fontSize: '17px',
+    fontSize: '15px',
   },
   '@md': {
-    fontSize: '17px',
+    fontSize: '15px',
   },
   '@lg': {
     fontSize: TYPOGRAPHY.size.pRegular,

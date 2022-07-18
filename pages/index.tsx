@@ -56,7 +56,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
 
   return (
     <div>
-      <FullHeightContainer className="mt-28">
+      <FullHeightContainer className="mt-24">
         <div>
           <AnimatedHeading target="first-heading">
             Creative Developer
@@ -76,7 +76,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
             </AnimatedImageContainer>
           </div>
         </div>
-        <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 justify-between content-end pb-5">
+        <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 justify-between content-end pb-7">
           <div className="self-end">
             <AnimatedDiv target="bi-line" index={1}>
               <Paragraph>
@@ -86,7 +86,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
               </Paragraph>
             </AnimatedDiv>
           </div>
-          <div>
+          <div className="justify-self-end self-end xl:mt-0 lg:mt-0 md:mt-5 sm:mt-5">
             <AnimatedDiv target="bi-line" index={2}>
               <Heading className="big text-right">Emmanuel</Heading>
             </AnimatedDiv>
@@ -98,7 +98,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
       </FullHeightContainer>
 
       <FullWidthContainer>
-        <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 justify-between align-start gap-16">
+        <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 justify-between align-start gap-16">
           <div>
             <AnimatedDiv target="about" index={1}>
               <Heading>{homedata.title}</Heading>
@@ -112,7 +112,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
           </div>
 
           <div>
-            <AnimatedDiv target="about" index={3}>
+            <AnimatedDiv target="about" index={2}>
               <Paragraph>{ReactHtmlParser(homedata.timeline.html)}</Paragraph>
             </AnimatedDiv>
           </div>
@@ -120,7 +120,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
       </FullWidthContainer>
 
       <FullWidthContainer className="mt-10 mb-10">
-        <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 justify-between content-end mb-48">
+        <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 justify-between content-end mb-56">
           <div className="col-span-2">
             <AnimatedDiv target="knack-heading" index={2}>
               <Heading className="big">
@@ -132,8 +132,8 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
 
           <div className="col-auto justify-self-end">
             <AnimatedDiv target="knack-bi-line" index={2}>
-              <Paragraph className="opacity-50">
-                Where passion and creativity meet...
+              <Paragraph className="opacity-50 xl:mt-0 lg:mt-0 md:mt-10 sm:mt-10">
+                Where passion and creativity meet
               </Paragraph>
             </AnimatedDiv>
           </div>
@@ -163,8 +163,8 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
       <div className="mt-10">
         <FullWidthContainer>
           <AnimatedDiv target="selected-works-by-line" index={2}>
-            <Paragraph className="opacity-50 mb-5">
-              Things I&apos;ve enjoyed working on...
+            <Paragraph className="opacity-50 mb-1">
+              Things I&apos;ve enjoyed working on
             </Paragraph>
           </AnimatedDiv>
           <AnimatedHeading target="selected-works-heading">
@@ -182,8 +182,8 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
       <div className="mt-10">
         <FullWidthContainer>
           <AnimatedDiv target="selected-works-by-line" index={2}>
-            <Paragraph className="opacity-50 mb-5">
-              Things I can do for you...?
+            <Paragraph className="opacity-50 mb-1">
+              Things I can do for you?
             </Paragraph>
           </AnimatedDiv>
           <AnimatedHeading target="selected-works-heading">
