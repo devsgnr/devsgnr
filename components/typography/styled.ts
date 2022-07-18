@@ -121,6 +121,25 @@ export const AnchorParagraph = styled('div', {
   fontSize: `${TYPOGRAPHY.size.pRegular}px`,
   fontWeight: TYPOGRAPHY.weight.normal,
   lineHeight: 2.2,
+  position: 'relative',
+
+  '&:after': {
+    content: ' ',
+    width: '0%',
+    height: '2.5px',
+    backgroundColor: THEME.dark.foreground,
+    position: 'absolute',
+    bottom: '10%',
+    left: 0,
+    zIndex: 99999999,
+    transition: 'all ease-in-out 0.2s',
+  },
+
+  '&:hover': {
+    '&:after': {
+      width: '100%',
+    },
+  },
 
   '@sm': {
     fontSize: '15.6px',

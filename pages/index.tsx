@@ -7,18 +7,16 @@ import { useLocomotiveScroll } from 'react-locomotive-scroll';
 import { IHomeResponse, IProjectResponse } from '../types/response';
 import { FetchProjectsService } from './api/project';
 import { IProjectProps } from '../types/project';
-import { Heading, Paragraph } from '../components/typography/styled';
-import Anchor from '../components/anchor';
+import {
+  AnchorParagraph,
+  Heading,
+  Paragraph,
+} from '../components/typography/styled';
 import AnimatedHeading, {
   AnimatedDiv,
   AnimatedImageContainer,
-  AnimatedLink,
   AnimatedText,
 } from '../components/animated';
-import {
-  FooterContainer,
-  FooterLinkGrid,
-} from '../components/footer-links/styled';
 import {
   FullHeightContainer,
   FullWidthContainer,
@@ -26,6 +24,7 @@ import {
 import BlogItemComponent from '../components/blog-item';
 import { FetchHomesService } from './api/home';
 import { IHomeProps } from '../types/home';
+import Anchor from '../components/anchor';
 
 export const getStaticProps = async () => {
   const projects: IProjectResponse<IProjectProps[]> =
@@ -98,20 +97,20 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
       </FullHeightContainer>
 
       <FullWidthContainer>
-        <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 justify-between align-start gap-16">
-          <div>
+        <div className="grid xl:grid-cols-7 lg:grid-cols-7 md:grid-cols-2 sm:grid-cols-1 justify-between align-start gap-16">
+          <div className="col-span-1">
             <AnimatedDiv target="about" index={1}>
               <Heading>{homedata.title}</Heading>
             </AnimatedDiv>
           </div>
 
-          <div>
+          <div className="col-span-3">
             <AnimatedDiv target="about" index={2}>
               <Paragraph>{ReactHtmlParser(homedata.about.html)}</Paragraph>
             </AnimatedDiv>
           </div>
 
-          <div>
+          <div className="col-span-3">
             <AnimatedDiv target="about" index={2}>
               <Paragraph>{ReactHtmlParser(homedata.timeline.html)}</Paragraph>
             </AnimatedDiv>
@@ -183,39 +182,20 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
         <FullWidthContainer>
           <AnimatedDiv target="selected-works-by-line" index={2}>
             <Paragraph className="opacity-50 mb-1">
-              Things I can do for you?
+              Like what you see so far? Let&apos;s talk
             </Paragraph>
           </AnimatedDiv>
-          <AnimatedHeading target="selected-works-heading">
-            Let&apos;s see
-          </AnimatedHeading>
+          <div className="w-fit">
+            <AnchorParagraph>
+              <Anchor href="mailto:hi@devsgnr.xyz">
+                <AnimatedHeading target="selected-works-heading">
+                  hi@devsgnr.xyz
+                </AnimatedHeading>
+              </Anchor>
+            </AnchorParagraph>
+          </div>
         </FullWidthContainer>
-
-        <div />
       </div>
-
-      <FooterContainer>
-        <FooterLinkGrid>
-          <Anchor href="/mindscape">
-            <AnimatedLink>MINDSCAPE</AnimatedLink>
-          </Anchor>
-          <Anchor href="https://instagram.com/devsgnr_" target="_blank">
-            <AnimatedLink>INSTAGRAM</AnimatedLink>
-          </Anchor>
-          <Anchor href="https://twitter.com/devsgnr_" target="_blank">
-            <AnimatedLink>TWITTER</AnimatedLink>
-          </Anchor>
-          <Anchor href="https://linkedin.com/in/eiwatila" target="_blank">
-            <AnimatedLink>LINKEDIN</AnimatedLink>
-          </Anchor>
-          <Anchor
-            href="https://www.getrevue.co/profile/devsgnr"
-            target="_blank"
-          >
-            <AnimatedLink>NEWSLETTER</AnimatedLink>
-          </Anchor>
-        </FooterLinkGrid>
-      </FooterContainer>
     </div>
   );
 };
