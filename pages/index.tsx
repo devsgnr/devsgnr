@@ -6,11 +6,7 @@ import Image from 'next/image';
 import { IHomeResponse, IProjectResponse } from '../types/response';
 import { FetchProjectsService } from './api/project';
 import { IProjectProps } from '../types/project';
-import {
-  AnchorParagraph,
-  Heading,
-  Paragraph,
-} from '../components/typography/styled';
+import { Heading, Paragraph } from '../components/typography/styled';
 import AnimatedHeading, {
   AnimatedDiv,
   AnimatedImageContainer,
@@ -23,7 +19,6 @@ import {
 import BlogItemComponent from '../components/blog-item';
 import { FetchHomesService } from './api/home';
 import { IHomeProps } from '../types/home';
-import Anchor from '../components/anchor';
 
 export const getStaticProps = async () => {
   const projects: IProjectResponse<IProjectProps[]> =
@@ -173,25 +168,6 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
             <BlogItemComponent data={item} key={index} />
           ))}
         </div>
-      </div>
-
-      <div className="mt-10">
-        <FullWidthContainer>
-          <AnimatedDiv target="selected-works-by-line" index={2}>
-            <Paragraph className="opacity-50 mb-1">
-              Like what you see so far? Let&apos;s talk
-            </Paragraph>
-          </AnimatedDiv>
-          <div className="w-fit">
-            <AnchorParagraph>
-              <Anchor href="mailto:hi@devsgnr.xyz">
-                <AnimatedHeading target="selected-works-heading">
-                  hi@devsgnr.xyz
-                </AnimatedHeading>
-              </Anchor>
-            </AnchorParagraph>
-          </div>
-        </FullWidthContainer>
       </div>
     </div>
   );

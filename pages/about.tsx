@@ -6,11 +6,7 @@ import Image from 'next/image';
 import { IServiceResponse } from '../types/response';
 import { FetchServicesService } from './api/services';
 import { IServiceProps } from '../types/services';
-import {
-  AnchorParagraph,
-  Heading,
-  Paragraph,
-} from '../components/typography/styled';
+import { Heading, Paragraph } from '../components/typography/styled';
 import AnimatedHeading, {
   AnimatedDiv,
   AnimatedImageContainer,
@@ -19,7 +15,6 @@ import {
   FullHeightContainer,
   FullWidthContainer,
 } from '../components/container/styled';
-import Anchor from '../components/anchor';
 
 export const getStaticProps = async () => {
   const services: IServiceResponse<IServiceProps[]> =
@@ -50,11 +45,11 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
           </AnimatedDiv>
         </div>
 
-        <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 self-end content-end mt-3">
-          <AnimatedDiv target="hero-by-line" index={2}>
-            <Paragraph className="opacity-50 mb-1">
-              Curious creative developer based in Nigeria — collaborating with
-              individuals and agencies
+        <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 self-end content-end mb-5">
+          <AnimatedDiv target="hero-by-line" index={3}>
+            <Paragraph>
+              Curious creative developer — collaborating with individuals and
+              agencies on world-class digital experiences and strategies.
             </Paragraph>
           </AnimatedDiv>
 
@@ -62,7 +57,7 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
             <Image
               src="/desk.png"
               width="100%"
-              height="50%"
+              height="45%"
               sizes="50vw"
               quality={100}
               objectFit="cover"
@@ -100,23 +95,6 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
             </div>
           </AnimatedDiv>
         ))}
-      </FullWidthContainer>
-
-      <FullWidthContainer className="mt-10">
-        <AnimatedDiv target="selected-works-by-line" index={2}>
-          <Paragraph className="opacity-50 mb-1">
-            Wanna work together? Let&apos;s talk
-          </Paragraph>
-        </AnimatedDiv>
-        <div className="w-fit">
-          <AnchorParagraph>
-            <Anchor href="mailto:hi@devsgnr.xyz">
-              <AnimatedHeading target="selected-works-heading">
-                hi@devsgnr.xyz
-              </AnimatedHeading>
-            </Anchor>
-          </AnchorParagraph>
-        </div>
       </FullWidthContainer>
     </div>
   );

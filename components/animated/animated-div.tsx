@@ -34,9 +34,10 @@ const AnimatedDiv: FC<AnimatedProps> = ({
     });
 
     ScrollTrigger.batch(`._${target}_${index}.in_view`, {
+      interval: 0.25,
       onEnter: (batch) => {
         gsap.to(batch, {
-          duration: index * 0.5,
+          duration: index * 0.25,
           opacity: 1,
           y: 0,
           ease: Power4.easeInOut,

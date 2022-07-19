@@ -7,6 +7,7 @@ import AnimatedText from './animated-text';
 import AnimatedDiv from './animated-div';
 import AnimatedLink from './animated-link';
 import AnimatedImageContainer from './animated-image';
+import AnimatedCirle from './animated-circle';
 
 interface AnimatedProps {
   children: string;
@@ -78,4 +79,10 @@ const AnimatedHeading: FC<AnimatedProps> = ({
 };
 
 export default AnimatedHeading;
-export { AnimatedText, AnimatedDiv, AnimatedLink, AnimatedImageContainer };
+export {
+  AnimatedText,
+  AnimatedDiv,
+  AnimatedLink,
+  AnimatedImageContainer,
+  AnimatedCirle,
+};
