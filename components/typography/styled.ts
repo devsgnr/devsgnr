@@ -68,7 +68,7 @@ export const Paragraph = styled('div', {
     fontSize: '15px',
   },
   '@lg': {
-    fontSize: TYPOGRAPHY.size.pRegular,
+    fontSize: '15px',
   },
   '@xl': {
     fontSize: TYPOGRAPHY.size.pRegular,

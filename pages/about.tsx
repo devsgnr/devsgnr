@@ -36,7 +36,7 @@ interface HomePageProps {
 const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
   return (
     <div>
-      <FullHeightContainer className="mt-24">
+      <FullHeightContainer className="mt-24 mb-24">
         <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 justify-end mt-3">
           <AnimatedDiv target="intro_line" index={2}>
             <Heading className="big">
@@ -47,9 +47,12 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
 
         <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 self-end content-end mb-5">
           <AnimatedDiv target="hero-by-line" index={3}>
-            <Paragraph>
-              Curious creative developer — collaborating with individuals and
-              agencies on world-class digital experiences and strategies.
+            <Paragraph className="opacity-50">
+              Curious creative developer —
+            </Paragraph>
+            <Paragraph className="opacity-50">
+              Collaborating with individuals and agencies on world-class digital
+              experiences and strategies.
             </Paragraph>
           </AnimatedDiv>
 
@@ -68,12 +71,12 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
       </FullHeightContainer>
 
       <FullWidthContainer className="mt-10">
-        <AnimatedDiv target="selected-works-by-line" index={2}>
+        <AnimatedDiv target="things-i-can-do-by-line" index={3}>
           <Paragraph className="opacity-50 mb-1">
             Things I can do for you
           </Paragraph>
         </AnimatedDiv>
-        <AnimatedHeading target="selected-works-heading">
+        <AnimatedHeading target="things-i-can-do-heading">
           Stacks &amp; Skills
         </AnimatedHeading>
       </FullWidthContainer>

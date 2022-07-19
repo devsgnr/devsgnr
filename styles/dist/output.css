@@ -662,6 +662,10 @@ video {
   margin-bottom: 1.25rem;
 }
 
+.mb-24 {
+  margin-bottom: 6rem;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -734,6 +738,14 @@ video {
 
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-24 {
+  gap: 6rem;
+}
+
+.gap-32 {
+  gap: 8rem;
 }
 
 .self-start {

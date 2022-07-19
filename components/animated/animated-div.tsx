@@ -6,12 +6,14 @@ interface AnimatedProps {
   children: React.ReactNode;
   index: number;
   target?: string;
+  className?: string;
 }
 
 const AnimatedDiv: FC<AnimatedProps> = ({
   children,
   index,
   target,
+  className,
 }: AnimatedProps) => {
   const OuterDivWrapper: React.CSSProperties = {
     overflow: 'hidden',
@@ -34,20 +36,21 @@ const AnimatedDiv: FC<AnimatedProps> = ({
     });
 
     ScrollTrigger.batch(`._${target}_${index}.in_view`, {
-      interval: 0.25,
+      start: 'top 110%',
       onEnter: (batch) => {
         gsap.to(batch, {
-          duration: index * 0.25,
+          duration: index * 0.5,
           opacity: 1,
           y: 0,
           ease: Power4.easeInOut,
+          stagger: 0.25,
         });
       },
     });
   }, []);
 
   return (
-    <div ref={divRef} style={OuterDivWrapper}>
+    <div ref={divRef} style={OuterDivWrapper} className={className}>
       <div style={InnerDiv} className={`_${target}_${index} in_view`}>
         {children}
       </div>

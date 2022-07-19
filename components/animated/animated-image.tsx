@@ -52,7 +52,7 @@ const AnimatedImageContainer: FC<AnimatedProps> = ({
       content: ' ',
       width: '100%',
       height: '100%',
-      backgroundColor: THEME.dark.accent,
+      backgroundColor: THEME.dark.foreground,
       position: 'absolute',
       top: '0%',
       left: '0%',
@@ -68,7 +68,7 @@ const AnimatedImageContainer: FC<AnimatedProps> = ({
           ease: Power4.easeInOut,
         });
         gsap.to(`.container_before_${target}_${index}.in_view`, {
-          delay: index * 0.5,
+          delay: index * 0.25,
           duration: index * 1.5,
           top: '-100%',
           ease: Power4.easeInOut,
