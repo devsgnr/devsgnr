@@ -36,7 +36,7 @@ interface HomePageProps {
 const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
   return (
     <div>
-      <FullHeightContainer className="mt-24 mb-24">
+      <FullHeightContainer className="mt-5 mb-24">
         <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 justify-end mt-3">
           <AnimatedDiv target="intro_line" index={2}>
             <Heading className="big">
@@ -45,14 +45,11 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
           </AnimatedDiv>
         </div>
 
-        <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 self-end content-end mb-5">
+        <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 self-end content-end mb-5 gap-12">
           <AnimatedDiv target="hero-by-line" index={3}>
-            <Paragraph className="opacity-50">
-              Curious creative developer —
-            </Paragraph>
-            <Paragraph className="opacity-50">
-              Collaborating with individuals and agencies on world-class digital
-              experiences and strategies.
+            <Paragraph className="opacity-50 xl:w-3/4 lg:w-3/4 md:w-full sm:w-full">
+              Curious creative developer — Collaborating with individuals and
+              agencies on world-class digital experiences and strategies.
             </Paragraph>
           </AnimatedDiv>
 
@@ -81,23 +78,34 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
         </AnimatedHeading>
       </FullWidthContainer>
 
-      <FullWidthContainer className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-col-1 gap-16 mt-10">
-        {data.map((item: IServiceProps, index: number) => (
-          <AnimatedDiv target="services" index={index + 1} key={index}>
-            <div className="flex items-start gap-5">
-              <Paragraph className="w-fit opacity-50 m-0">
-                {`${index + 1}.`}
-              </Paragraph>
-              <div>
-                <Heading className="p-0 mb-8">{item.title}</Heading>
-                <hr className="opacity-10" />
-                <Paragraph className="mt-5">
-                  {ReactHtmlParser(item.description.html)}
-                </Paragraph>
-              </div>
-            </div>
-          </AnimatedDiv>
-        ))}
+      <FullWidthContainer>
+        <hr className="opacity-50" />
+        <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-col-1 gap-16 mt-10">
+          <div className="col-span-2">
+            <AnimatedDiv target="services-heading" index={3}>
+              <Heading>Skills</Heading>
+            </AnimatedDiv>
+          </div>
+
+          <div>
+            {data.map((item: IServiceProps, index: number) => (
+              <AnimatedDiv target="services" index={3} key={index}>
+                <div className="flex items-start gap-5 mb-16">
+                  <Paragraph className="w-fit opacity-50 m-0">
+                    {`${index + 1}.`}
+                  </Paragraph>
+                  <div>
+                    <Heading className="p-0 mb-8">{item.title}</Heading>
+                    <hr className="opacity-20" />
+                    <Paragraph className="mt-5">
+                      {ReactHtmlParser(item.description.html)}
+                    </Paragraph>
+                  </div>
+                </div>
+              </AnimatedDiv>
+            ))}
+          </div>
+        </div>
       </FullWidthContainer>
     </div>
   );

@@ -8,6 +8,7 @@ import AnimatedDiv from './animated-div';
 import AnimatedLink from './animated-link';
 import AnimatedImageContainer from './animated-image';
 import AnimatedCirle from './animated-circle';
+import AnimatedMarquee from './animated-marquee';
 
 interface AnimatedProps {
   children: string;
@@ -85,4 +86,5 @@ export {
   AnimatedLink,
   AnimatedImageContainer,
   AnimatedCirle,
+  AnimatedMarquee,
 };

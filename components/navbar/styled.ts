@@ -30,7 +30,7 @@ export const NavigationLinks = styled('div', {
 });
 
 const Navigation = styled('div', {
-  position: 'fixed',
+  position: 'sticky',
   top: 0,
   left: 0,
   zIndex: 9999999,

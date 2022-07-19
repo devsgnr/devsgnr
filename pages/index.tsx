@@ -47,7 +47,7 @@ interface HomePageProps {
 const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
   return (
     <div>
-      <FullHeightContainer className="mt-24 mb-24">
+      <FullHeightContainer className="mt-5 mb-24">
         <div>
           <AnimatedHeading target="first-heading">
             Creative Developer
@@ -90,17 +90,23 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
 
       <FullWidthContainer>
         <div className="grid xl:grid-cols-7 lg:grid-cols-7 md:grid-cols-2 sm:grid-cols-1 justify-between align-start gap-32">
-          <AnimatedDiv target="about" index={1} className="col-span-1">
-            <Heading>{homedata.title}</Heading>
+          <AnimatedDiv
+            target="about"
+            index={1}
+            className="xl:col-span-4 lg:col-span-4 md:col-span-full sm:col-span-full"
+          >
+            <Heading className="big">{homedata.title}</Heading>
           </AnimatedDiv>
 
-          <AnimatedDiv target="about" index={2} className="col-span-3">
-            <Paragraph>{ReactHtmlParser(homedata.about.html)}</Paragraph>
-          </AnimatedDiv>
+          <div className="xl:col-span-3 lg:col-span-3 md:col-span-full sm:col-span-full">
+            <AnimatedDiv target="about" index={2} className="mb-16">
+              <Paragraph>{ReactHtmlParser(homedata.about.html)}</Paragraph>
+            </AnimatedDiv>
 
-          <AnimatedDiv target="about" index={3} className="col-span-3">
-            <Paragraph>{ReactHtmlParser(homedata.timeline.html)}</Paragraph>
-          </AnimatedDiv>
+            <AnimatedDiv target="about" index={3} className="mb-16">
+              <Paragraph>{ReactHtmlParser(homedata.timeline.html)}</Paragraph>
+            </AnimatedDiv>
+          </div>
         </div>
       </FullWidthContainer>
 

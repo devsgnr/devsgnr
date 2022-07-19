@@ -38,15 +38,15 @@ const BlogItem = styled('div', {
     },
   },
   '@lg': {
-    padding: '75px 50px',
+    padding: '85px 50px',
     '&:hover': {
-      padding: '75px 60px',
+      padding: '85px 60px',
     },
   },
   '@xl': {
-    padding: '75px 50px',
+    padding: '85px 50px',
     '&:hover': {
-      padding: '75px 60px',
+      padding: '85px 60px',
     },
   },
 
