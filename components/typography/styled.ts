@@ -11,7 +11,7 @@ export const Heading = styled('div', {
   fontFamily: TYPOGRAPHY.family.heading,
   letterSpacing: '0px',
   fontWeight: TYPOGRAPHY.weight.normal,
-  lineHeight: 1.3,
+  lineHeight: 1.5,
   width: '100%',
   color: THEME.dark.foreground,
 
@@ -123,24 +123,6 @@ export const AnchorParagraph = styled('div', {
   lineHeight: 2.2,
   position: 'relative',
 
-  '&:after': {
-    content: ' ',
-    width: '0%',
-    height: '1px',
-    backgroundColor: THEME.dark.foreground,
-    position: 'absolute',
-    bottom: '18%',
-    left: 0,
-    zIndex: 99999999,
-    transition: 'all ease-in-out 0.2s',
-  },
-
-  '&:hover': {
-    '&:after': {
-      width: '100%',
-    },
-  },
-
   '@sm': {
     fontSize: '15px',
   },
@@ -155,10 +137,27 @@ export const AnchorParagraph = styled('div', {
   },
 
   a: {
+    display: 'inline-block',
+    position: 'relative',
     fontWeight: TYPOGRAPHY.weight.normal,
     opacity: 0.4,
 
+    '&:after': {
+      content: ' ',
+      width: '0%',
+      height: '1.25px',
+      backgroundColor: THEME.dark.foreground,
+      position: 'absolute',
+      bottom: '25%',
+      left: 0,
+      zIndex: 99999999,
+      transition: 'all ease-in-out 0.2s',
+    },
+
     '&:hover': {
+      '&:after': {
+        width: '100%',
+      },
       opacity: 1,
     },
   },

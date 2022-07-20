@@ -53,16 +53,17 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
             Creative Developer
           </AnimatedHeading>
 
-          <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 mt-3">
+          <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
             <AnimatedImageContainer target="me" index={1}>
               <Image
                 src="/me.png"
                 width="100%"
-                height="40%"
+                height="35%"
                 sizes="50vw"
                 quality={100}
                 objectFit="cover"
                 alt="Emmanuel Watila"
+                priority
               />
             </AnimatedImageContainer>
           </div>
@@ -100,7 +101,9 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
 
           <div className="xl:col-span-3 lg:col-span-3 md:col-span-full sm:col-span-full">
             <AnimatedDiv target="about" index={2} className="mb-16">
-              <Paragraph>{ReactHtmlParser(homedata.about.html)}</Paragraph>
+              <Paragraph className="xl:indent-32 lg:indent-32 md:indent-16 sm:indent-0">
+                {ReactHtmlParser(homedata.about.html)}
+              </Paragraph>
             </AnimatedDiv>
 
             <AnimatedDiv target="about" index={3} className="mb-16">
@@ -145,6 +148,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
                 quality={100}
                 objectFit="cover"
                 alt="Emmanuel Watila"
+                priority
               />
             </AnimatedImageContainer>
           </div>

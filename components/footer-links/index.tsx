@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React from 'react';
+import TYPOGRAPHY from '../../styles/token/typography';
 import Anchor from '../anchor';
 import AnimatedHeading, {
   AnimatedCirle,
@@ -41,26 +42,46 @@ const Footer = () => {
       </FullWidthContainer>
 
       <FooterContainer>
-        <FooterLinkGrid>
-          <Anchor href="https://read.cv/devsgnr_" target="_blank">
-            <AnimatedLink>RESUME</AnimatedLink>
-          </Anchor>
-          <Anchor href="https://instagram.com/devsgnr_" target="_blank">
-            <AnimatedLink>INSTAGRAM</AnimatedLink>
-          </Anchor>
-          <Anchor href="https://twitter.com/devsgnr_" target="_blank">
-            <AnimatedLink>TWITTER</AnimatedLink>
-          </Anchor>
-          <Anchor href="https://linkedin.com/in/eiwatila" target="_blank">
-            <AnimatedLink>LINKEDIN</AnimatedLink>
-          </Anchor>
-          <Anchor
-            href="https://www.getrevue.co/profile/devsgnr"
-            target="_blank"
-          >
-            <AnimatedLink>NEWSLETTER</AnimatedLink>
-          </Anchor>
-        </FooterLinkGrid>
+        <div className="grid grid-cols-2 justify-between items-end">
+          <div>
+            <Paragraph
+              className="opacity-50"
+              css={{ fontSize: TYPOGRAPHY.size.pSmall }}
+            >
+              Info &amp; Socials
+            </Paragraph>
+            <FooterLinkGrid>
+              <Anchor href="https://read.cv/devsgnr_" target="_blank">
+                <AnimatedLink>RESUME</AnimatedLink>
+              </Anchor>
+              <Anchor href="https://instagram.com/devsgnr_" target="_blank">
+                <AnimatedLink>INSTAGRAM</AnimatedLink>
+              </Anchor>
+              <Anchor href="https://twitter.com/devsgnr_" target="_blank">
+                <AnimatedLink>TWITTER</AnimatedLink>
+              </Anchor>
+              <Anchor href="https://linkedin.com/in/eiwatila" target="_blank">
+                <AnimatedLink>LINKEDIN</AnimatedLink>
+              </Anchor>
+              <Anchor
+                href="https://www.getrevue.co/profile/devsgnr"
+                target="_blank"
+              >
+                <AnimatedLink>NEWSLETTER</AnimatedLink>
+              </Anchor>
+            </FooterLinkGrid>
+          </div>
+
+          <div className="justify-self-end">
+            <Paragraph
+              className="opacity-50"
+              css={{ fontSize: TYPOGRAPHY.size.pSmall }}
+            >
+              Design &amp; Development by
+            </Paragraph>
+            <Paragraph className="mb-0">Emmanuel Watila</Paragraph>
+          </div>
+        </div>
       </FooterContainer>
     </>
   );

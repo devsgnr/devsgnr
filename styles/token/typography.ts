@@ -10,7 +10,7 @@ const TYPOGRAPHY: ITypography = {
     heading1: 28,
     heading2: 24,
     heading3: 20,
-    headingfooting: '4vw',
+    headingfooting: '4.2vw',
     pRegular: 20,
     pSmall: 12.5,
   },

@@ -15,6 +15,7 @@ import {
   FullHeightContainer,
   FullWidthContainer,
 } from '../components/container/styled';
+import TYPOGRAPHY from '../styles/token/typography';
 
 export const getStaticProps = async () => {
   const services: IServiceResponse<IServiceProps[]> =
@@ -62,41 +63,62 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
               quality={100}
               objectFit="cover"
               alt="Emmanuel Watila"
+              priority
             />
           </AnimatedImageContainer>
         </div>
       </FullHeightContainer>
 
-      <FullWidthContainer className="mt-10">
-        <AnimatedDiv target="things-i-can-do-by-line" index={3}>
-          <Paragraph className="opacity-50 mb-1">
-            Things I can do for you
-          </Paragraph>
-        </AnimatedDiv>
-        <AnimatedHeading target="things-i-can-do-heading">
-          Stacks &amp; Skills
-        </AnimatedHeading>
+      <FullWidthContainer className="mt-10 mb-24">
+        <div className="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-1 sm:grid-col-1 gap-16 mt-10">
+          <div className="col-span-2">
+            <AnimatedDiv target="things-i-can-do-by-line" index={3}>
+              <Paragraph className="opacity-50 mb-1">
+                Hello, I&apos;m Emmanuel - nice to meet you
+              </Paragraph>
+            </AnimatedDiv>
+          </div>
+          <div className="col-span-2">
+            <AnimatedDiv target="quirky-by-line" index={3}>
+              <Heading className="xl:indent-36 lg:indent-36 md:indent-16 sm:indent-0">
+                I&apos;m a very quirky human, based in Nigeria, collaborating
+                with agencies and individuals around the world. I try to read as
+                often as I can, I try to write when I have something to say, I
+                watch Netflix and Prime Video a little too much, but most
+                importantly I take my craft to heart and make sure I&apos;m not
+                just delivering the fancy but also the value.
+              </Heading>
+            </AnimatedDiv>
+          </div>
+        </div>
       </FullWidthContainer>
 
       <FullWidthContainer>
-        <hr className="opacity-50" />
-        <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-col-1 gap-16 mt-10">
+        <div className="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-1 sm:grid-col-1 gap-16 mt-10">
           <div className="col-span-2">
-            <AnimatedDiv target="services-heading" index={3}>
-              <Heading>Skills</Heading>
+            <AnimatedDiv target="things-i-can-do-by-line" index={3}>
+              <Paragraph className="opacity-50 mb-1">
+                Things I can do for you
+              </Paragraph>
             </AnimatedDiv>
+            <AnimatedHeading target="things-i-can-do-heading">
+              Stacks &amp; Skills
+            </AnimatedHeading>
           </div>
 
-          <div>
+          <div className="col-span-2">
             {data.map((item: IServiceProps, index: number) => (
               <AnimatedDiv target="services" index={3} key={index}>
-                <div className="flex items-start gap-5 mb-16">
-                  <Paragraph className="w-fit opacity-50 m-0">
+                <div className="flex items-start gap-2 mb-16">
+                  <Paragraph
+                    css={{ fontSize: TYPOGRAPHY.size.pSmall }}
+                    className="w-fit opacity-50 m-0"
+                  >
                     {`${index + 1}.`}
                   </Paragraph>
                   <div>
                     <Heading className="p-0 mb-8">{item.title}</Heading>
-                    <hr className="opacity-20" />
+
                     <Paragraph className="mt-5">
                       {ReactHtmlParser(item.description.html)}
                     </Paragraph>

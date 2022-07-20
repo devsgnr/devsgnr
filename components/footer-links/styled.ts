@@ -51,7 +51,6 @@ const FooterLinkGrid = styled('div', {
   justifyContent: 'flex-start',
   gap: '10px',
   gridAutoFlow: 'column',
-  padding: '100px 0 25px 0',
 
   '@sm': {
     gridAutoFlow: 'row',
@@ -71,16 +70,16 @@ const FooterContainer = styled('div', {
   width: '100%',
 
   '@sm': {
-    padding: '25px',
+    padding: '50px 25px',
   },
   '@md': {
-    padding: '25px 50px',
+    padding: '100px 50px 50px 50px',
   },
   '@lg': {
-    padding: '25px 50px',
+    padding: '100px 50px 50px 50px',
   },
   '@xl': {
-    padding: '25px 50px',
+    padding: '100px 50px 50px 50px',
   },
 });
 

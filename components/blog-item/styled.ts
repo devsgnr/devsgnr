@@ -13,14 +13,14 @@ const BlogItem = styled('div', {
   overflow: 'hidden',
   zIndex: 999,
 
-  ':after': {
+  '&:after': {
     content: ' ',
     width: '100%',
     height: '100%',
     backgroundColor: THEME.dark.accent,
     position: 'absolute',
-    left: '-100%',
-    top: 0,
+    left: 0,
+    bottom: '-100%',
     zIndex: -1,
     transition: 'all ease-in-out 0.3s',
   },
@@ -51,11 +51,10 @@ const BlogItem = styled('div', {
   },
 
   '&:hover': {
-    ':after': {
-      left: '0%',
+    '&:after': {
+      bottom: '0%',
     },
 
-    backgroundColor: THEME.dark.accent,
     backgroundSize: 'cover',
     borderBottomColor: THEME.dark.accent,
     transition: 'all ease-in-out 0.3s',

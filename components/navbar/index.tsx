@@ -13,11 +13,11 @@ const NavigationBar = () => (
         </Anchor>
       </Paragraph>
 
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-2">
         <AnchorParagraph>
           <Anchor href="/about">About</Anchor>
         </AnchorParagraph>
-        <Paragraph>,</Paragraph>
+        <Paragraph css={{ pointerEvents: 'none' }}>—</Paragraph>
         <AnchorParagraph>
           <Anchor href="mailto:hi@devsgnr.xyz">Contact</Anchor>
         </AnchorParagraph>
