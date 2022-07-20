@@ -3,7 +3,7 @@ import { styled } from '../../stitches.config';
 export const NavigationFlex = styled('div', {
   width: '100%',
   display: 'grid',
-  alignItems: 'start',
+  alignItems: 'center',
   justifyContent: 'space-between',
   gap: '30px',
 
@@ -33,10 +33,11 @@ const Navigation = styled('div', {
   position: 'sticky',
   top: 0,
   left: 0,
-  zIndex: 999,
+  zIndex: 9999999,
   width: '100%',
   padding: '20px 0',
   backgroundColor: 'transparent',
+  mixBlendMode: 'difference',
 
   '@sm': {
     padding: '25px',

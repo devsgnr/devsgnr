@@ -2,17 +2,17 @@ import { ITypography } from '../../types/token';
 
 const TYPOGRAPHY: ITypography = {
   family: {
-    heading: 'migraextralight, sans-serif',
+    heading: 'pp_neue_montrealbook, sans-serif',
     paragraph: 'pp_neue_montrealbook, sans-serif',
-    footing: 'pp_neue_montrealbook, sans-serif',
+    footing: 'migra_italicextralight_italic, sans-serif',
   },
   size: {
     heading1: 28,
     heading2: 24,
     heading3: 20,
-    headingfooting: '5.0vw',
-    pRegular: 19,
-    pSmall: 14,
+    headingfooting: '4.2vw',
+    pRegular: 20,
+    pSmall: 12.5,
   },
   weight: {
     normal: 400,

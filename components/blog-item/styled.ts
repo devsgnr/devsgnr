@@ -9,6 +9,21 @@ const BlogItem = styled('div', {
   borderBottom: `1px solid ${THEME.dark.opaque}`,
   backgroundColor: THEME.dark.background,
   transition: 'all ease-in-out 0.2s',
+  position: 'relative',
+  overflow: 'hidden',
+  zIndex: 999,
+
+  '&:after': {
+    content: ' ',
+    width: '100%',
+    height: '100%',
+    backgroundColor: THEME.dark.accent,
+    position: 'absolute',
+    left: 0,
+    bottom: '-100%',
+    zIndex: -1,
+    transition: 'all ease-in-out 0.3s',
+  },
 
   '@sm': {
     padding: '35px 20px',
@@ -23,26 +38,26 @@ const BlogItem = styled('div', {
     },
   },
   '@lg': {
-    padding: '35px 50px',
+    padding: '85px 50px',
     '&:hover': {
-      padding: '35px 60px',
+      padding: '85px 60px',
     },
   },
   '@xl': {
-    padding: '35px 50px',
+    padding: '85px 50px',
     '&:hover': {
-      padding: '35px 60px',
+      padding: '85px 60px',
     },
   },
 
   '&:hover': {
-    backgroundColor: THEME.dark.accent,
-    '*': {
-      color: THEME.dark.background,
+    '&:after': {
+      bottom: '0%',
     },
+
     backgroundSize: 'cover',
     borderBottomColor: THEME.dark.accent,
-    transition: 'all ease-in-out 0.2s',
+    transition: 'all ease-in-out 0.3s',
   },
 });
 

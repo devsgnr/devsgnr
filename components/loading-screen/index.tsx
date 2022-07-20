@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useRef } from 'react';
 import { gsap, Power4 } from 'gsap';
-import { AnimatedText } from '../animated-heading';
+import { AnimatedText } from '../animated';
 import { StyledSplashScreen } from '../layout/styled';
 
 interface LoadingScreenProps {

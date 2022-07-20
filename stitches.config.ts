@@ -4,7 +4,7 @@ export const { styled, css, getCssText } = createStitches({
   media: {
     sm: '(min-width: 320px)',
     md: '(min-width: 768px)',
-    lg: '(min-width: 992px)',
-    xl: '(min-width: 1200px)',
+    lg: '(min-width: 1024px)',
+    xl: '(min-width: 1280px)',
   },
 });

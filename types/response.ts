@@ -17,3 +17,7 @@ export interface ITimelineResponse<T> {
 export interface IProjectResponse<T> {
   caseStudies: T;
 }
+
+export interface IServiceResponse<T> {
+  services: T;
+}

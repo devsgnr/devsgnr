@@ -11,7 +11,7 @@ export const Heading = styled('div', {
   fontFamily: TYPOGRAPHY.family.heading,
   letterSpacing: '0px',
   fontWeight: TYPOGRAPHY.weight.normal,
-  lineHeight: 1.2,
+  lineHeight: 1.5,
   width: '100%',
   color: THEME.dark.foreground,
 
@@ -62,13 +62,13 @@ export const Paragraph = styled('div', {
   color: THEME.dark.foreground,
 
   '@sm': {
-    fontSize: '17px',
+    fontSize: '15px',
   },
   '@md': {
-    fontSize: '17px',
+    fontSize: '15px',
   },
   '@lg': {
-    fontSize: TYPOGRAPHY.size.pRegular,
+    fontSize: '15px',
   },
   '@xl': {
     fontSize: TYPOGRAPHY.size.pRegular,
@@ -121,12 +121,13 @@ export const AnchorParagraph = styled('div', {
   fontSize: `${TYPOGRAPHY.size.pRegular}px`,
   fontWeight: TYPOGRAPHY.weight.normal,
   lineHeight: 2.2,
+  position: 'relative',
 
   '@sm': {
-    fontSize: '15.6px',
+    fontSize: '15px',
   },
   '@md': {
-    fontSize: '15.6px',
+    fontSize: '15px',
   },
   '@lg': {
     fontSize: TYPOGRAPHY.size.pRegular,
@@ -136,10 +137,27 @@ export const AnchorParagraph = styled('div', {
   },
 
   a: {
+    display: 'inline-block',
+    position: 'relative',
     fontWeight: TYPOGRAPHY.weight.normal,
     opacity: 0.4,
 
+    '&:after': {
+      content: ' ',
+      width: '0%',
+      height: '1.25px',
+      backgroundColor: THEME.dark.foreground,
+      position: 'absolute',
+      bottom: '25%',
+      left: 0,
+      zIndex: 99999999,
+      transition: 'all ease-in-out 0.2s',
+    },
+
     '&:hover': {
+      '&:after': {
+        width: '100%',
+      },
       opacity: 1,
     },
   },
