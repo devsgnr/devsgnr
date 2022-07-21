@@ -25,11 +25,11 @@ const Layout = ({ children, seo }: LayoutProps) => {
   return (
     <StyledLayout ref={LayoutRef} id="main">
       <SEO seo={seo} />
-      <NavigationBar />
+      {/* <NavigationBar /> */}
 
       <div>
         <>{children}</>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </StyledLayout>
   );

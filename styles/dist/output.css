@@ -611,18 +611,6 @@ video {
   grid-column: auto;
 }
 
-.col-span-full {
-  grid-column: 1 / -1;
-}
-
-.col-span-1 {
-  grid-column: span 1 / span 1;
-}
-
-.col-span-3 {
-  grid-column: span 3 / span 3;
-}
-
 .m-0 {
   margin: 0px;
 }
@@ -665,14 +653,6 @@ video {
 
 .mb-64 {
   margin-bottom: 16rem;
-}
-
-.mt-24 {
-  margin-top: 6rem;
-}
-
-.mt-16 {
-  margin-top: 4rem;
 }
 
 .mb-0 {
@@ -741,20 +721,16 @@ video {
   gap: 4rem;
 }
 
-.gap-5 {
-  gap: 1.25rem;
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .gap-32 {
   gap: 8rem;
 }
 
-.gap-2 {
-  gap: 0.5rem;
-}
-
-.gap-1 {
-  gap: 0.25rem;
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .self-start {
@@ -793,26 +769,6 @@ video {
   text-align: right;
 }
 
-.indent-12 {
-  text-indent: 3rem;
-}
-
-.indent-24 {
-  text-indent: 6rem;
-}
-
-.indent-64 {
-  text-indent: 16rem;
-}
-
-.indent-48 {
-  text-indent: 12rem;
-}
-
-.indent-36 {
-  text-indent: 9rem;
-}
-
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -820,10 +776,6 @@ video {
 
 .opacity-50 {
   opacity: 0.5;
-}
-
-.opacity-20 {
-  opacity: 0.2;
 }
 
 .blur {
@@ -1004,17 +956,5 @@ video {
 
   .xl\:indent-32 {
     text-indent: 8rem;
-  }
-
-  .xl\:indent-48 {
-    text-indent: 12rem;
-  }
-
-  .xl\:indent-52 {
-    text-indent: 13rem;
-  }
-
-  .xl\:indent-64 {
-    text-indent: 16rem;
   }
 }

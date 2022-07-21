@@ -9,6 +9,7 @@
     "tailwinds": "yarn tailwindcss -i ./styles/input.css -o ./styles/dist/output.css --watch"
   },
   "dependencies": {
+    "@barba/core": "^2.9.7",
     "@stitches/react": "^1.2.8",
     "@types/animejs": "^3.1.4",
     "animejs": "^3.2.1",
