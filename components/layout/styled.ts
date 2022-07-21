@@ -3,7 +3,7 @@ import THEME from '../../styles/token/colors';
 
 export const StyledSplashScreen = styled('div', {
   position: 'fixed',
-  top: '-100%',
+  top: 0,
   left: 0,
   zIndex: 9999,
   width: '100%',
@@ -14,7 +14,7 @@ export const StyledSplashScreen = styled('div', {
   backgroundColor: THEME.dark.accent,
 
   '*': {
-    color: THEME.dark.background,
+    color: THEME.dark.foreground,
     textAlign: 'center',
   },
 });
