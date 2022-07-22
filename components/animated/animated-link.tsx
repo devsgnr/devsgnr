@@ -40,10 +40,11 @@ const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
       gsap
         .timeline({ delay: index * 0.05 })
         .to(`._link_${children}_${index}.in_view`, {
-          duration: index * 0.05,
+          duration: 0.05,
           opacity: 1,
           y: '0%',
           ease: Power4.easeInOut,
+          stagger: 1.5,
         });
     });
   };
@@ -60,6 +61,7 @@ const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
           opacity: 1,
           y: 0,
           ease: Power4.easeInOut,
+          stagger: 1.5,
         });
     });
   };

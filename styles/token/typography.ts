@@ -7,7 +7,7 @@ const TYPOGRAPHY: ITypography = {
     footing: 'migra_italicextralight_italic, sans-serif',
   },
   size: {
-    heading1: 28,
+    heading1: 38,
     heading2: 24,
     heading3: 20,
     headingfooting: '4.2vw',

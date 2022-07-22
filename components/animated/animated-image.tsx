@@ -18,11 +18,12 @@ const AnimatedImageContainer: FC<AnimatedProps> = ({
     overflow: 'hidden',
     position: 'relative',
     opacity: 0,
+    borderRadius: '10px',
   };
 
   const InnerDiv: React.CSSProperties = {
     opacity: 1,
-    transform: 'scale(2)',
+    transform: 'rotateZ(10deg) scale(2)',
     position: 'relative',
     overflow: 'hidden',
   };
@@ -52,7 +53,7 @@ const AnimatedImageContainer: FC<AnimatedProps> = ({
       content: ' ',
       width: '100%',
       height: '100%',
-      backgroundColor: THEME.dark.foreground,
+      backgroundColor: THEME.dark.accent,
       position: 'absolute',
       top: '0%',
       left: '0%',
@@ -61,9 +62,10 @@ const AnimatedImageContainer: FC<AnimatedProps> = ({
 
     ScrollTrigger.batch(`._${target}_${index}.in_view`, {
       interval: 0.5,
+      start: 'top 80%',
       onEnter: (batch) => {
         gsap.to(`.container_after_${target}_${index}.in_view`, {
-          duration: index * 1.5,
+          duration: index * 1,
           top: '-100%',
           ease: Power4.easeInOut,
         });
@@ -77,14 +79,27 @@ const AnimatedImageContainer: FC<AnimatedProps> = ({
           duration: index * 2.5,
           opacity: 1,
           transform: 'scale(1)',
+          rotationZ: 0,
           ease: Power4.easeInOut,
         });
+      },
+    });
+
+    gsap.to(`._${target}_${index}.in_view`, {
+      y: '-px',
+      scrollTrigger: {
+        trigger: `._container_${target}_${index}.in_view`,
+        scrub: 1,
       },
     });
   }, []);
 
   return (
-    <div ref={divRef} style={OuterDivWrapper}>
+    <div
+      ref={divRef}
+      style={OuterDivWrapper}
+      className={`_container_${target}_${index} in_view`}
+    >
       <span className={`container_after_${target}_${index} in_view`} />
       <span className={`container_before_${target}_${index} in_view`} />
       <div style={InnerDiv} className={`_${target}_${index} in_view`}>

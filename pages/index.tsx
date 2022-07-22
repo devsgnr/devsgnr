@@ -9,8 +9,8 @@ import { IProjectProps } from '../types/project';
 import { Heading, Paragraph } from '../components/typography/styled';
 import AnimatedHeading, {
   AnimatedDiv,
+  AnimatedHeadingWords,
   AnimatedImageContainer,
-  AnimatedText,
 } from '../components/animated';
 import {
   FullHeightContainer,
@@ -47,18 +47,20 @@ interface HomePageProps {
 const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
   return (
     <div>
-      <FullHeightContainer className="mt-5 mb-24">
-        <div>
-          <AnimatedHeading target="first-heading">
-            Creative Developer
-          </AnimatedHeading>
+      <FullHeightContainer className="flex flex-col justify-between pt-12">
+        <div className="grid grid-cols-5">
+          <div className="col-start-1 col-end-4 big">
+            <AnimatedHeading target="first-heading">
+              Creative Developer
+            </AnimatedHeading>
+          </div>
 
-          <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
+          <div className="col-start-5 col-end-5">
             <AnimatedImageContainer target="me" index={1}>
               <Image
                 src="/me.png"
                 width="100%"
-                height="35%"
+                height="45%"
                 sizes="50vw"
                 quality={100}
                 objectFit="cover"
@@ -68,23 +70,14 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
             </AnimatedImageContainer>
           </div>
         </div>
-        <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 justify-between content-end pb-7">
-          <div className="self-end">
-            <AnimatedDiv target="bi-line" index={1}>
-              <Paragraph>
-                A developer, designer, writer and reader — focusing on front-end
-                & creative development. Helping individuals scale their digital
-                presense through user centric experiences
-              </Paragraph>
-            </AnimatedDiv>
-          </div>
-          <div className="justify-self-end self-end xl:mt-0 lg:mt-0 md:mt-5 sm:mt-5">
-            <AnimatedDiv target="bi-line" index={2}>
-              <Heading className="big text-right">Emmanuel</Heading>
-            </AnimatedDiv>
-            <AnimatedDiv target="bi-line" index={3}>
-              <Heading className="big text-right">Watila</Heading>
-            </AnimatedDiv>
+
+        <div className="w-full">
+          <div className="grid grid-cols-3">
+            <Paragraph className="opacity-50 col-span-2">Welcome...</Paragraph>
+            <AnimatedHeadingWords target="first-heading" className="col-span-2">
+              Adding value to teams &amp; individuals — Building visual
+              appealing &amp; performant websites
+            </AnimatedHeadingWords>
           </div>
         </div>
       </FullHeightContainer>
@@ -93,52 +86,42 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
         <div className="grid xl:grid-cols-7 lg:grid-cols-7 md:grid-cols-2 sm:grid-cols-1 justify-between align-start gap-32">
           <AnimatedDiv
             target="about"
-            index={1}
-            className="xl:col-span-4 lg:col-span-4 md:col-span-full sm:col-span-full"
+            index={2}
+            className="xl:col-span-4 lg:col-span-4 md:col-span-4 sm:col-span-full"
           >
             <Heading className="big">{homedata.title}</Heading>
           </AnimatedDiv>
 
-          <div className="xl:col-span-3 lg:col-span-3 md:col-span-full sm:col-span-full">
-            <AnimatedDiv target="about" index={2} className="mb-16">
-              <Paragraph className="xl:indent-32 lg:indent-32 md:indent-16 sm:indent-0">
-                {ReactHtmlParser(homedata.about.html)}
-              </Paragraph>
+          <div className="xl:col-span-3 lg:col-span-3 md:col-span-3 sm:col-span-full">
+            <AnimatedDiv target="about" index={3} className="mb-16">
+              <Paragraph>{ReactHtmlParser(homedata.about.html)}</Paragraph>
             </AnimatedDiv>
 
-            <AnimatedDiv target="about" index={3} className="mb-16">
+            <AnimatedDiv target="about" index={4} className="mb-16">
               <Paragraph>{ReactHtmlParser(homedata.timeline.html)}</Paragraph>
             </AnimatedDiv>
           </div>
         </div>
       </FullWidthContainer>
 
-      <FullWidthContainer className="mt-10 mb-10">
-        <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 justify-between content-end mb-64">
-          <div className="col-span-2">
-            <AnimatedDiv target="knack-heading" index={3}>
-              <Heading className="big">
-                A human with a knack for making things look pretty, who stumbled
-                upon coding and design and never looked back —
-              </Heading>
-            </AnimatedDiv>
+      <FullWidthContainer className="mt-10 mb-32">
+        <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1 justify-between content-end relative">
+          <div className="col-span-3 z-50 mix-blend-difference">
+            <AnimatedHeadingWords className="big">
+              A human with a knack for making things look pretty, who stumbled
+              upon coding and design and never looked back
+            </AnimatedHeadingWords>
           </div>
 
-          <div className="col-auto justify-self-end">
+          <div className="col-start-5 col-end-5 justify-self-end text-right">
             <AnimatedDiv target="knack-bi-line" index={3}>
               <Paragraph className="opacity-50 xl:mt-0 lg:mt-0 md:mt-10 sm:mt-10">
                 Where passion and creativity meet
               </Paragraph>
             </AnimatedDiv>
           </div>
-        </div>
 
-        <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 justify-between content-end pt-5">
-          <div className="justify-self-start self-start opcaity-50">
-            <AnimatedText>{`${new Date().getFullYear()}`}</AnimatedText>
-          </div>
-
-          <div>
+          <div className="xl:col-start-3 lg:col-start-3 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-full justify-self-end w-full xl:absolute lg:absolute md:static sm:static top-52 right-0 z-0">
             <AnimatedImageContainer target="me_two" index={1}>
               <Image
                 src="/me_two.png"

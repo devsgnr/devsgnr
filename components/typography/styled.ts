@@ -11,7 +11,7 @@ export const Heading = styled('div', {
   fontFamily: TYPOGRAPHY.family.heading,
   letterSpacing: '0px',
   fontWeight: TYPOGRAPHY.weight.normal,
-  lineHeight: 1.5,
+  lineHeight: 1.25,
   width: '100%',
   color: THEME.dark.foreground,
 
@@ -145,10 +145,10 @@ export const AnchorParagraph = styled('div', {
     '&:after': {
       content: ' ',
       width: '0%',
-      height: '1.25px',
+      height: '2.5px',
       backgroundColor: THEME.dark.foreground,
       position: 'absolute',
-      bottom: '25%',
+      bottom: '45%',
       left: 0,
       zIndex: 99999999,
       transition: 'all ease-in-out 0.2s',

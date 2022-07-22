@@ -22,7 +22,7 @@ const Footer = () => {
             target={`footer-by-line-${path === '' ? 'home' : path}`}
             index={3}
           >
-            <Paragraph className="opacity-50 mb-1">
+            <Paragraph className="opacity-50 mb-3">
               Wanna work together? Let&apos;s talk
             </Paragraph>
           </AnimatedDiv>
@@ -42,8 +42,8 @@ const Footer = () => {
       </FullWidthContainer>
 
       <FooterContainer>
-        <div className="grid grid-cols-2 justify-between items-end">
-          <div>
+        <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 justify-between items-end">
+          <div className="col-span-2">
             <Paragraph
               className="opacity-50"
               css={{ fontSize: TYPOGRAPHY.size.pSmall }}
@@ -72,7 +72,7 @@ const Footer = () => {
             </FooterLinkGrid>
           </div>
 
-          <div className="justify-self-end">
+          <div className="xl:m-0 lg:m-0 md:mt-10 sm:mt-10">
             <Paragraph
               className="opacity-50"
               css={{ fontSize: TYPOGRAPHY.size.pSmall }}

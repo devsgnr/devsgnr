@@ -9,6 +9,7 @@ import { IServiceProps } from '../types/services';
 import { Heading, Paragraph } from '../components/typography/styled';
 import AnimatedHeading, {
   AnimatedDiv,
+  AnimatedHeadingWords,
   AnimatedImageContainer,
 } from '../components/animated';
 import {
@@ -39,11 +40,9 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
     <div>
       <FullHeightContainer className="mt-5 mb-24">
         <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 justify-end mt-3">
-          <AnimatedDiv target="intro_line" index={2}>
-            <Heading className="big">
-              Helping you build the next best digital experience
-            </Heading>
-          </AnimatedDiv>
+          <AnimatedHeadingWords target="about-heading" className="big">
+            Helping you build the next best digital experience
+          </AnimatedHeadingWords>
         </div>
 
         <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 self-end content-end mb-5 gap-12">
@@ -79,7 +78,7 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
             </AnimatedDiv>
           </div>
           <div className="col-span-2">
-            <AnimatedDiv target="quirky-by-line" index={3}>
+            <AnimatedDiv target="quirky-by-line" index={1}>
               <Heading className="xl:indent-36 lg:indent-36 md:indent-16 sm:indent-0">
                 I&apos;m a very quirky human, based in Nigeria, collaborating
                 with agencies and individuals around the world. I try to read as
@@ -108,7 +107,7 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
 
           <div className="col-span-2">
             {data.map((item: IServiceProps, index: number) => (
-              <AnimatedDiv target="services" index={3} key={index}>
+              <AnimatedDiv target="services" index={index + 1} key={index}>
                 <div className="flex items-start gap-2 mb-16">
                   <Paragraph
                     css={{ fontSize: TYPOGRAPHY.size.pSmall }}
