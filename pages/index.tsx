@@ -9,6 +9,7 @@ import { IProjectProps } from '../types/project';
 import { Heading, Paragraph } from '../components/typography/styled';
 import AnimatedHeading, {
   AnimatedDiv,
+  AnimatedHeadingWords,
   AnimatedImageContainer,
   AnimatedText,
 } from '../components/animated';
@@ -19,6 +20,7 @@ import {
 import BlogItemComponent from '../components/blog-item';
 import { FetchHomesService } from './api/home';
 import { IHomeProps } from '../types/home';
+import TYPOGRAPHY from '../styles/token/typography';
 
 export const getStaticProps = async () => {
   const projects: IProjectResponse<IProjectProps[]> =
@@ -47,18 +49,27 @@ interface HomePageProps {
 const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
   return (
     <div>
-      <FullHeightContainer className="mt-5 mb-24">
-        <div>
-          <AnimatedHeading target="first-heading">
-            Creative Developer
-          </AnimatedHeading>
+      <FullHeightContainer className="flex flex-col justify-between pt-6">
+        <div className="grid xl:grid-cols-5 lg:grid-col-5 md:grid-cols-1 sm:grid-cols-1 xl:h-full lg:h-full md:h-auto sm:h-auto">
+          <div className="col-start-1 col-end-4 big grid grid-cols-1">
+            <AnimatedHeading target="first-heading">
+              Creative Developer
+            </AnimatedHeading>
+            <div className="self-end mb-5">
+              <AnimatedDiv target="heading-by-line" index={2}>
+                <AnimatedHeadingWords>
+                  Designer, Developer, Writer &amp; Reader
+                </AnimatedHeadingWords>
+              </AnimatedDiv>
+            </div>
+          </div>
 
-          <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
+          <div className="xl:col-start-4 lg:col-start-4 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-fulls">
             <AnimatedImageContainer target="me" index={1}>
               <Image
                 src="/me.png"
                 width="100%"
-                height="35%"
+                height="45%"
                 sizes="50vw"
                 quality={100}
                 objectFit="cover"
@@ -68,77 +79,73 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
             </AnimatedImageContainer>
           </div>
         </div>
-        <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 justify-between content-end pb-7">
-          <div className="self-end">
-            <AnimatedDiv target="bi-line" index={1}>
-              <Paragraph>
-                A developer, designer, writer and reader — focusing on front-end
-                & creative development. Helping individuals scale their digital
-                presense through user centric experiences
-              </Paragraph>
-            </AnimatedDiv>
-          </div>
-          <div className="justify-self-end self-end xl:mt-0 lg:mt-0 md:mt-5 sm:mt-5">
-            <AnimatedDiv target="bi-line" index={2}>
-              <Heading className="big text-right">Emmanuel</Heading>
-            </AnimatedDiv>
-            <AnimatedDiv target="bi-line" index={3}>
-              <Heading className="big text-right">Watila</Heading>
-            </AnimatedDiv>
+
+        <div className="w-full">
+          <hr className="opacity-30" />
+          <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1 mt-5">
+            <div className="opacity-50 col-span-1">
+              <AnimatedText>Welcome...</AnimatedText>
+            </div>
+
+            <AnimatedHeadingWords target="first-heading" className="col-span-3">
+              Adding value to teams &amp; individuals — Building visual
+              appealing &amp; performant digital interfaces.
+            </AnimatedHeadingWords>
+
+            <Paragraph
+              css={{ fontSize: TYPOGRAPHY.size.pSmall }}
+              className="opacity-50 justify-self-end self-end w-fit"
+            >
+              Scroll down
+            </Paragraph>
           </div>
         </div>
       </FullHeightContainer>
 
       <FullWidthContainer>
-        <div className="grid xl:grid-cols-7 lg:grid-cols-7 md:grid-cols-2 sm:grid-cols-1 justify-between align-start gap-32">
+        <div className="grid xl:grid-cols-7 lg:grid-cols-7 md:grid-cols-2 sm:grid-cols-1 justify-between items-start relative">
           <AnimatedDiv
             target="about"
             index={1}
-            className="xl:col-span-4 lg:col-span-4 md:col-span-full sm:col-span-full"
+            className="xl:col-span-3 lg:col-span-2 md:col-span-4 sm:col-span-full"
           >
-            <Heading className="big">{homedata.title}</Heading>
+            <Heading className="opacity-50 sticky">{homedata.title}</Heading>
           </AnimatedDiv>
 
-          <div className="xl:col-span-3 lg:col-span-3 md:col-span-full sm:col-span-full">
+          <div className="xl:col-span-3 lg:col-span-3 md:col-span-3 sm:col-span-full">
             <AnimatedDiv target="about" index={2} className="mb-16">
-              <Paragraph className="xl:indent-32 lg:indent-32 md:indent-16 sm:indent-0">
+              <Paragraph className="leading-normal">
                 {ReactHtmlParser(homedata.about.html)}
               </Paragraph>
             </AnimatedDiv>
 
             <AnimatedDiv target="about" index={3} className="mb-16">
-              <Paragraph>{ReactHtmlParser(homedata.timeline.html)}</Paragraph>
+              <Paragraph className="leading-normal">
+                {ReactHtmlParser(homedata.timeline.html)}
+              </Paragraph>
             </AnimatedDiv>
           </div>
         </div>
       </FullWidthContainer>
 
-      <FullWidthContainer className="mt-10 mb-10">
-        <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 justify-between content-end mb-64">
-          <div className="col-span-2">
-            <AnimatedDiv target="knack-heading" index={3}>
-              <Heading className="big">
-                A human with a knack for making things look pretty, who stumbled
-                upon coding and design and never looked back —
-              </Heading>
-            </AnimatedDiv>
+      <FullWidthContainer className="mt-10 mb-32">
+        <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1 justify-between content-end relative">
+          <div className="col-span-3 z-50 mix-blend-difference">
+            <AnimatedHeadingWords className="big">
+              A human with a knack for making things look pretty, who stumbled
+              upon coding and design
+            </AnimatedHeadingWords>
           </div>
 
-          <div className="col-auto justify-self-end">
+          <div className="xl:col-start-4 lg:col-start-4 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-full justify-self-end text-right gap-5">
             <AnimatedDiv target="knack-bi-line" index={3}>
-              <Paragraph className="opacity-50 xl:mt-0 lg:mt-0 md:mt-10 sm:mt-10">
+              <Paragraph className="opacity-50 xl:mt-0 lg:mt-0 md:mb-10 sm:mb-10">
                 Where passion and creativity meet
               </Paragraph>
             </AnimatedDiv>
           </div>
-        </div>
 
-        <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 justify-between content-end pt-5">
-          <div className="justify-self-start self-start opcaity-50">
-            <AnimatedText>{`${new Date().getFullYear()}`}</AnimatedText>
-          </div>
-
-          <div>
+          <div className="xl:col-start-3 lg:col-start-3 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-full justify-self-end w-full xl:absolute lg:absolute md:static sm:static top-32 right-0 z-0">
             <AnimatedImageContainer target="me_two" index={1}>
               <Image
                 src="/me_two.png"
@@ -155,23 +162,24 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
         </div>
       </FullWidthContainer>
 
-      <div className="mt-10">
-        <FullWidthContainer>
-          <AnimatedDiv target="selected-works-by-line" index={3}>
-            <Paragraph className="opacity-50 mb-1">
-              Things I&apos;ve enjoyed working on
-            </Paragraph>
-          </AnimatedDiv>
-          <AnimatedHeading target="selected-works-heading">
-            Selected works
-          </AnimatedHeading>
+      <div className="mt-32 mb-32">
+        <FullWidthContainer className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1">
+          <div className="xl:col-span-full lg:col-span-full md:col-span-full sm:col-span-full">
+            <AnimatedDiv target="selected-works-by-line" index={3}>
+              <Paragraph className="opacity-50 mb-1">
+                Things I&apos;ve enjoyed working on
+              </Paragraph>
+            </AnimatedDiv>
+            <AnimatedHeading target="selected-works-heading">
+              Selected works
+            </AnimatedHeading>
+          </div>
+          <div className="xl:col-start-3 xl:col-end-6 lg:col-start-3 lg:col-end-6 md:col-span-full sm:col-span-full">
+            {data.map((item: IProjectProps, index: number) => (
+              <BlogItemComponent data={item} key={index} />
+            ))}
+          </div>
         </FullWidthContainer>
-
-        <div>
-          {data.map((item: IProjectProps, index: number) => (
-            <BlogItemComponent data={item} key={index} />
-          ))}
-        </div>
       </div>
     </div>
   );

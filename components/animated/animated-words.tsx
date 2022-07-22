@@ -3,22 +3,17 @@ import { CSS } from '@stitches/react';
 import { gsap, Power4, Power1 } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { Heading } from '../typography/styled';
-import AnimatedText from './animated-text';
-import AnimatedDiv from './animated-div';
-import AnimatedLink from './animated-link';
-import AnimatedImageContainer from './animated-image';
-import AnimatedCirle from './animated-circle';
-import AnimatedMarquee from './animated-marquee';
-import AnimatedHeadingWords from './animated-words';
 
 interface AnimatedProps {
   children: string;
   target?: string;
+  className?: string;
 }
 
-const AnimatedHeading: FC<AnimatedProps> = ({
+const AnimatedHeadingWords: FC<AnimatedProps> = ({
   children,
   target,
+  className,
 }: AnimatedProps) => {
   const Title: CSS = {
     opacity: 0,
@@ -39,7 +34,7 @@ const AnimatedHeading: FC<AnimatedProps> = ({
   };
 
   const HeadingRef = useRef<HTMLDivElement>(null);
-  const textArr: string[] = children.split('');
+  const textArr: string[] = children.split(' ');
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -50,10 +45,11 @@ const AnimatedHeading: FC<AnimatedProps> = ({
     });
 
     textArr.forEach((letter: string, index: number) => {
-      ScrollTrigger.batch(`._letter_${target}_${index}.in_view`, {
-        onEnter: (batch) => {
-          gsap.to(batch, {
-            duration: index * 0.05,
+      ScrollTrigger.batch(HeadingRef.current, {
+        start: 'top 95%',
+        onEnter: () => {
+          gsap.to(`._letter_${target}_${index}.in_view`, {
+            duration: (index + 0.5) * 0.15,
             opacity: 1,
             y: 0,
             ease: Power4.easeInOut,
@@ -64,7 +60,7 @@ const AnimatedHeading: FC<AnimatedProps> = ({
   }, [HeadingRef]);
 
   return (
-    <Heading ref={HeadingRef} css={Title} className="big">
+    <Heading ref={HeadingRef} css={Title} className={className}>
       {textArr.map((letter: string, index: number) => (
         <span key={index} style={TextWrapper} id={target}>
           <span
@@ -72,7 +68,8 @@ const AnimatedHeading: FC<AnimatedProps> = ({
             className={`_letter_${target}_${index} in_view`}
             style={LetterWrapper}
           >
-            {letter === ' ' ? <span>&nbsp;</span> : letter}
+            {letter}
+            {index !== textArr.length - 1 ? <span>&nbsp;</span> : null}
           </span>
         </span>
       ))}
@@ -80,13 +77,4 @@ const AnimatedHeading: FC<AnimatedProps> = ({
   );
 };
 
-export default AnimatedHeading;
-export {
-  AnimatedText,
-  AnimatedDiv,
-  AnimatedLink,
-  AnimatedImageContainer,
-  AnimatedCirle,
-  AnimatedMarquee,
-  AnimatedHeadingWords,
-};
+export default AnimatedHeadingWords;

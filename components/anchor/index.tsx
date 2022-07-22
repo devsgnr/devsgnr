@@ -15,7 +15,7 @@ const Anchor = ({
   ...props
 }: AnchorProps & AnchorHTMLAttributes<HTMLAnchorElement>) => (
   <Link href={href} passHref {...props}>
-    <StyledInternalA title={title} {...props}>
+    <StyledInternalA title={title} {...props} className="anchor">
       {title || children}
     </StyledInternalA>
   </Link>

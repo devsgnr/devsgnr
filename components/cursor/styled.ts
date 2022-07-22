@@ -14,17 +14,33 @@ const CursorContainer = styled('div', {
 
 const Cursor = styled('div', {
   margin: 'auto auto',
-  width: '20px',
-  height: '20px',
-  border: `2px solid ${THEME.dark.foreground}`,
+  backgroundColor: THEME.dark.foreground,
   borderRadius: '50%',
-  position: 'absolute',
-  top: '5%',
-  right: '20%',
-  zIndex: 9999,
-  transition: 'all ease-in-out 0.3s',
   willChange: 'transform',
   transformStyle: 'preserve-3d',
+  width: '15px',
+  height: '15px',
+  position: 'absolute',
+  top: '-10px',
+  left: '-10px',
+  transform: 'translateX(-10px) translateY(-10px)',
+  pointerEvents: 'none',
+  zIndex: 9999,
+  transition: 'opacity .6s ease-in-out',
+  mixBlendMode: 'difference',
+
+  '@sm': {
+    display: 'none',
+  },
+  '@md': {
+    display: 'none',
+  },
+  '@lg': {
+    display: 'initial',
+  },
+  '@xl': {
+    display: 'initial',
+  },
 });
 
 export default Cursor;

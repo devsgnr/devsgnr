@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useRef } from 'react';
-import { gsap, Power4, Power1 } from 'gsap';
+import { gsap, Power1 } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 interface AnimatedProps {
@@ -16,13 +16,12 @@ const AnimatedDiv: FC<AnimatedProps> = ({
   className,
 }: AnimatedProps) => {
   const OuterDivWrapper: React.CSSProperties = {
-    overflow: 'hidden',
-    opacity: 0,
+    opacity: 1,
   };
 
   const InnerDiv: React.CSSProperties = {
-    opacity: 0,
-    transform: 'translate(0, 100%)',
+    opacity: 1,
+    transform: 'translate(0%, 90%)',
   };
 
   const divRef = useRef<HTMLDivElement>(null);
@@ -35,16 +34,11 @@ const AnimatedDiv: FC<AnimatedProps> = ({
       ease: Power1.easeOut,
     });
 
-    ScrollTrigger.batch(`._${target}_${index}.in_view`, {
-      start: 'top 110%',
-      onEnter: (batch) => {
-        gsap.to(batch, {
-          duration: index * 0.5,
-          opacity: 1,
-          y: 0,
-          ease: Power4.easeInOut,
-          stagger: 0.25,
-        });
+    gsap.to(`._${target}_${index}.in_view`, {
+      y: '-px',
+      scrollTrigger: {
+        trigger: `._${target}_${index}.in_view`,
+        scrub: 1,
       },
     });
   }, []);

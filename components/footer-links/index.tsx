@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React from 'react';
+import THEME from '../../styles/token/colors';
 import TYPOGRAPHY from '../../styles/token/typography';
 import Anchor from '../anchor';
 import AnimatedHeading, {
@@ -22,7 +23,7 @@ const Footer = () => {
             target={`footer-by-line-${path === '' ? 'home' : path}`}
             index={3}
           >
-            <Paragraph className="opacity-50 mb-1">
+            <Paragraph className="opacity-50 mb-3">
               Wanna work together? Let&apos;s talk
             </Paragraph>
           </AnimatedDiv>
@@ -35,15 +36,17 @@ const Footer = () => {
         <div className="flex xl:justify-end lg:justify-end md:justify-start sm:justify-start xl:m-0 lg:m-0 md:mt-10 sm:mt-10">
           <Anchor href="mailto:hi@devsgnr.xyz">
             <AnimatedCirle target="click-me" index={1}>
-              <Paragraph>Email me</Paragraph>
+              <Paragraph css={{ color: THEME.dark.background }}>
+                Email me
+              </Paragraph>
             </AnimatedCirle>
           </Anchor>
         </div>
       </FullWidthContainer>
 
       <FooterContainer>
-        <div className="grid grid-cols-2 justify-between items-end">
-          <div>
+        <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 justify-between items-end">
+          <div className="col-span-2">
             <Paragraph
               className="opacity-50"
               css={{ fontSize: TYPOGRAPHY.size.pSmall }}
@@ -72,7 +75,7 @@ const Footer = () => {
             </FooterLinkGrid>
           </div>
 
-          <div className="justify-self-end">
+          <div className="xl:m-0 lg:m-0 md:mt-10 sm:mt-10">
             <Paragraph
               className="opacity-50"
               css={{ fontSize: TYPOGRAPHY.size.pSmall }}

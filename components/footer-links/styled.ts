@@ -39,6 +39,9 @@ const FooterLinks = styled('div', {
   },
 
   '&:hover': {
+    '*': {
+      color: THEME.dark.background,
+    },
     border: `0.1px solid ${THEME.dark.accent}`,
     transition: 'all ease-in-out 0.2s',
   },
