@@ -11,7 +11,6 @@ import AnimatedHeading, {
   AnimatedDiv,
   AnimatedHeadingWords,
   AnimatedImageContainer,
-  AnimatedLink,
   AnimatedText,
 } from '../components/animated';
 import {
@@ -21,7 +20,6 @@ import {
 import BlogItemComponent from '../components/blog-item';
 import { FetchHomesService } from './api/home';
 import { IHomeProps } from '../types/home';
-import Anchor from '../components/anchor';
 import TYPOGRAPHY from '../styles/token/typography';
 
 export const getStaticProps = async () => {
