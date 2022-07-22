@@ -33,36 +33,27 @@ const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
   const textArr: string[] = children.split('');
 
   const handleMouseEnter = () => {
-    textArr.forEach((letter: string, index: number) => {
-      gsap.set(`._link_${children}_${index}.in_view`, {
-        y: '100%',
-      });
-      gsap
-        .timeline({ delay: index * 0.05 })
-        .to(`._link_${children}_${index}.in_view`, {
-          duration: 0.05,
-          opacity: 1,
-          y: '0%',
-          ease: Power4.easeInOut,
-          stagger: 1.5,
-        });
+    gsap.set(`._link_${children}_container.in_view`, {
+      y: '100%',
+    });
+    gsap.to(`._link_${children}_container.in_view`, {
+      duration: 0.5,
+      opacity: 1,
+      y: '0%',
+      ease: Power4.easeInOut,
     });
   };
 
   const handleMouseLeave = () => {
-    textArr.forEach((letter: string, index: number) => {
-      gsap.set(`._link_${children}_${index}.in_view`, {
-        y: '-100%',
-      });
-      gsap
-        .timeline({ delay: index * 0.05 })
-        .to(`._link_${children}_${index}.in_view`, {
-          duration: index * 0.05,
-          opacity: 1,
-          y: 0,
-          ease: Power4.easeInOut,
-          stagger: 1.5,
-        });
+    gsap.set(`._link_${children}_container.in_view`, {
+      y: '-100%',
+    });
+    gsap.to(`._link_${children}_container.in_view`, {
+      duration: 0.5,
+      opacity: 1,
+      y: 0,
+      ease: Power4.easeInOut,
+      stagger: 1.5,
     });
   };
 
@@ -75,7 +66,7 @@ const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
       onMouseLeave={() => handleMouseLeave()}
       className="container"
     >
-      <div>
+      <div className={`_link_${children}_container in_view`}>
         {textArr.map((letter: string, index: number) => (
           <span key={index} style={TextWrapper}>
             <span

@@ -79,33 +79,35 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
           </div>
           <div className="col-span-2">
             <AnimatedDiv target="quirky-by-line" index={1}>
-              <Heading className="xl:indent-36 lg:indent-36 md:indent-16 sm:indent-0">
+              <Paragraph className="xl:indent-36 lg:indent-36 md:indent-16 sm:indent-0">
                 I&apos;m a very quirky human, based in Nigeria, collaborating
                 with agencies and individuals around the world. I try to read as
                 often as I can, I try to write when I have something to say, I
                 watch Netflix and Prime Video a little too much, but most
                 importantly I take my craft to heart and make sure I&apos;m not
                 just delivering the fancy but also the value.
-              </Heading>
+              </Paragraph>
             </AnimatedDiv>
           </div>
         </div>
       </FullWidthContainer>
 
       <FullWidthContainer>
-        <div className="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-1 sm:grid-col-1 gap-16 mt-10">
+        <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-col-1 gap-16 mt-10">
           <div className="col-span-2">
             <AnimatedDiv target="things-i-can-do-by-line" index={3}>
               <Paragraph className="opacity-50 mb-1">
                 Things I can do for you
               </Paragraph>
             </AnimatedDiv>
-            <AnimatedHeading target="things-i-can-do-heading">
-              Stacks &amp; Skills
-            </AnimatedHeading>
+            <AnimatedDiv target="stacks-by-line" index={3}>
+              <AnimatedHeading target="things-i-can-do-heading">
+                Stacks &amp; Skills
+              </AnimatedHeading>
+            </AnimatedDiv>
           </div>
 
-          <div className="col-span-2">
+          <div className="col-span-3">
             {data.map((item: IServiceProps, index: number) => (
               <AnimatedDiv target="services" index={index + 1} key={index}>
                 <div className="flex items-start gap-2 mb-16">
@@ -116,11 +118,11 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
                     {`${index + 1}.`}
                   </Paragraph>
                   <div>
-                    <Heading className="p-0 mb-8">{item.title}</Heading>
+                    <Paragraph className="p-0 mb-8">{item.title}</Paragraph>
 
-                    <Paragraph className="mt-5">
+                    <Heading className="mt-5 leading-relaxed">
                       {ReactHtmlParser(item.description.html)}
-                    </Paragraph>
+                    </Heading>
                   </div>
                 </div>
               </AnimatedDiv>

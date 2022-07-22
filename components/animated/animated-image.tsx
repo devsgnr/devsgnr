@@ -85,10 +85,10 @@ const AnimatedImageContainer: FC<AnimatedProps> = ({
       },
     });
 
-    gsap.to(`._${target}_${index}.in_view`, {
+    gsap.to(divRef.current, {
       y: '-px',
       scrollTrigger: {
-        trigger: `._container_${target}_${index}.in_view`,
+        trigger: divRef.current,
         scrub: 1,
       },
     });

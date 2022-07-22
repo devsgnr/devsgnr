@@ -48,14 +48,14 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
   return (
     <div>
       <FullHeightContainer className="flex flex-col justify-between pt-12">
-        <div className="grid grid-cols-5">
+        <div className="grid xl:grid-cols-5 lg:grid-col-5 md:grid-cols-1 sm:grid-cols-1">
           <div className="col-start-1 col-end-4 big">
             <AnimatedHeading target="first-heading">
               Creative Developer
             </AnimatedHeading>
           </div>
 
-          <div className="col-start-5 col-end-5">
+          <div className="xl:col-start-4 lg:col-start-4 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-fulls">
             <AnimatedImageContainer target="me" index={1}>
               <Image
                 src="/me.png"
@@ -72,7 +72,8 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
         </div>
 
         <div className="w-full">
-          <div className="grid grid-cols-3">
+          <hr className="opacity-30" />
+          <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 mt-5">
             <Paragraph className="opacity-50 col-span-2">Welcome...</Paragraph>
             <AnimatedHeadingWords target="first-heading" className="col-span-2">
               Adding value to teams &amp; individuals — Building visual
@@ -86,19 +87,23 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
         <div className="grid xl:grid-cols-7 lg:grid-cols-7 md:grid-cols-2 sm:grid-cols-1 justify-between align-start gap-32">
           <AnimatedDiv
             target="about"
-            index={2}
-            className="xl:col-span-4 lg:col-span-4 md:col-span-4 sm:col-span-full"
+            index={1}
+            className="xl:col-span-2 lg:col-span-2 md:col-span-4 sm:col-span-full"
           >
-            <Heading className="big">{homedata.title}</Heading>
+            <Paragraph className="opacity-50">{homedata.title}</Paragraph>
           </AnimatedDiv>
 
-          <div className="xl:col-span-3 lg:col-span-3 md:col-span-3 sm:col-span-full">
-            <AnimatedDiv target="about" index={3} className="mb-16">
-              <Paragraph>{ReactHtmlParser(homedata.about.html)}</Paragraph>
+          <div className="xl:col-span-5 lg:col-span-5 md:col-span-3 sm:col-span-full">
+            <AnimatedDiv target="about" index={2} className="mb-16">
+              <Heading className="leading-normal">
+                {ReactHtmlParser(homedata.about.html)}
+              </Heading>
             </AnimatedDiv>
 
-            <AnimatedDiv target="about" index={4} className="mb-16">
-              <Paragraph>{ReactHtmlParser(homedata.timeline.html)}</Paragraph>
+            <AnimatedDiv target="about" index={3} className="mb-16">
+              <Heading className="leading-normal">
+                {ReactHtmlParser(homedata.timeline.html)}
+              </Heading>
             </AnimatedDiv>
           </div>
         </div>
@@ -113,7 +118,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
             </AnimatedHeadingWords>
           </div>
 
-          <div className="col-start-5 col-end-5 justify-self-end text-right">
+          <div className="xl:col-start-4 lg:col-start-4 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-full justify-self-end text-right">
             <AnimatedDiv target="knack-bi-line" index={3}>
               <Paragraph className="opacity-50 xl:mt-0 lg:mt-0 md:mt-10 sm:mt-10">
                 Where passion and creativity meet
@@ -138,7 +143,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
         </div>
       </FullWidthContainer>
 
-      <div className="mt-10">
+      <div className="mt-32">
         <FullWidthContainer>
           <AnimatedDiv target="selected-works-by-line" index={3}>
             <Paragraph className="opacity-50 mb-1">

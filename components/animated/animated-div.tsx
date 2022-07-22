@@ -21,7 +21,7 @@ const AnimatedDiv: FC<AnimatedProps> = ({
 
   const InnerDiv: React.CSSProperties = {
     opacity: 1,
-    transform: 'translate(0, 100%)',
+    transform: 'translate(0%, 60%)',
   };
 
   const divRef = useRef<HTMLDivElement>(null);
@@ -38,7 +38,7 @@ const AnimatedDiv: FC<AnimatedProps> = ({
       y: '-px',
       scrollTrigger: {
         trigger: `._${target}_${index}.in_view`,
-        scrub: 0.5,
+        scrub: 1,
       },
     });
   }, []);
