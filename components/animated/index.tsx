@@ -60,14 +60,6 @@ const AnimatedHeading: FC<AnimatedProps> = ({
           });
         },
       });
-
-      gsap.to('big', {
-        y: '-px',
-        scrollTrigger: {
-          trigger: 'big',
-          scrub: 1,
-        },
-      });
     });
   }, [HeadingRef]);
 

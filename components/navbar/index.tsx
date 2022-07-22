@@ -8,9 +8,7 @@ const NavigationBar = () => (
   <Navigation>
     <NavigationFlex>
       <Paragraph>
-        <Anchor href="/">
-          <>Emmanuel Watila</>
-        </Anchor>
+        <Anchor href="/">E — W</Anchor>
       </Paragraph>
 
       <div className="flex items-center gap-2">

@@ -49,7 +49,7 @@ const AnimatedHeadingWords: FC<AnimatedProps> = ({
         start: 'top 95%',
         onEnter: () => {
           gsap.to(`._letter_${target}_${index}.in_view`, {
-            duration: (index + 0.5) * 0.095,
+            duration: (index + 0.5) * 0.15,
             opacity: 1,
             y: 0,
             ease: Power4.easeInOut,

@@ -1,27 +1,31 @@
-import React, { useRef } from 'react';
-import Cursor, { CursorContainer } from './styled';
+import gsap, { Linear } from 'gsap';
+import React, { useEffect, useRef } from 'react';
+import Cursor from './styled';
 
 const MouseCursor = () => {
   const CursorRef = useRef<HTMLDivElement>(null);
-  const CursorContainerRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseEvent = (
-    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-  ) => {
-    if (CursorRef.current) {
-      CursorRef.current.style.transform = `translate3d(${e.movementX}vw, ${e.movementY}vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`;
-      CursorRef.current.style.willChange = 'transform';
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('mousemove', (e) => {
+        gsap.to(CursorRef.current, {
+          duration: 0.25,
+          x: e.pageX,
+          y: e.pageY,
+          ease: Linear.easeInOut,
+        });
+      });
+
+      window.addEventListener('wheel', (e) => {
+        gsap.to(CursorRef.current, {
+          x: e.pageX,
+          y: e.pageY,
+        });
+      });
     }
-  };
+  }, []);
 
-  return (
-    <CursorContainer
-      ref={CursorContainerRef}
-      onMouseMove={(e) => handleMouseEvent(e)}
-    >
-      <Cursor ref={CursorRef} />
-    </CursorContainer>
-  );
+  return <Cursor ref={CursorRef} className="cursor" />;
 };
 
 export default MouseCursor;

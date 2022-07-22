@@ -14,6 +14,9 @@ const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
     fontSize: TYPOGRAPHY.size.pSmall,
     position: 'relative',
     zIndex: 9,
+    transform: 'translate(0, 0) scale3d(1, 1, 1)',
+    transformStyle: 'preserve-3d',
+    willChange: 'transform',
   };
 
   const TextWrapper: React.CSSProperties = {
@@ -53,7 +56,6 @@ const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
       opacity: 1,
       y: 0,
       ease: Power4.easeInOut,
-      stagger: 1.5,
     });
   };
 
@@ -64,7 +66,7 @@ const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
       id={children}
       onMouseEnter={() => handleMouseEnter()}
       onMouseLeave={() => handleMouseLeave()}
-      className="container"
+      className={`container ${children}_container`}
     >
       <div className={`_link_${children}_container in_view`}>
         {textArr.map((letter: string, index: number) => (

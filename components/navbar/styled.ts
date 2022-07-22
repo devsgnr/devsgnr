@@ -40,16 +40,16 @@ const Navigation = styled('div', {
   mixBlendMode: 'difference',
 
   '@sm': {
-    padding: '25px',
+    padding: '15px',
   },
   '@md': {
-    padding: '25px 50px',
+    padding: '15px 50px',
   },
   '@lg': {
-    padding: '25px 50px',
+    padding: '15px 50px',
   },
   '@xl': {
-    padding: '25px 50px',
+    padding: '15px 50px',
   },
 });
 

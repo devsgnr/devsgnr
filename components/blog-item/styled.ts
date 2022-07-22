@@ -8,7 +8,7 @@ const BlogItem = styled('div', {
   justifyContent: 'space-between',
   borderBottom: `1px solid ${THEME.dark.opaque}`,
   backgroundColor: THEME.dark.background,
-  transition: 'all ease-in-out 0.2s',
+  transition: 'all ease-in-out 0.15s',
   position: 'relative',
   overflow: 'hidden',
   zIndex: 999,
@@ -22,37 +22,28 @@ const BlogItem = styled('div', {
     left: 0,
     bottom: '-100%',
     zIndex: -1,
-    transition: 'all ease-in-out 0.3s',
+    transition: 'all ease-in-out 0.15s',
   },
 
   '@sm': {
     padding: '35px 20px',
-    '&:hover': {
-      padding: '35px 35px',
-    },
   },
   '@md': {
     padding: '35px 50px',
-    '&:hover': {
-      padding: '35px 60px',
-    },
   },
   '@lg': {
-    padding: '85px 50px',
-    '&:hover': {
-      padding: '85px 60px',
-    },
+    padding: '15px 50px',
   },
   '@xl': {
-    padding: '85px 50px',
-    '&:hover': {
-      padding: '85px 60px',
-    },
+    padding: '15px 50px',
   },
 
   '&:hover': {
     '&:after': {
       bottom: '0%',
+    },
+    '*': {
+      color: THEME.dark.background,
     },
 
     backgroundSize: 'cover',

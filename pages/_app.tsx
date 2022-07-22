@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import '../styles/dist/output.css';
 import '../public/neue-montreal/stylesheet.css';
 import '../public/migra/stylesheet.css';
+import MouseCursor from '../components/cursor';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const queryClient = new QueryClient({
@@ -17,6 +18,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <QueryClientProvider client={queryClient}>
       <Layout>
+        <MouseCursor />
         <Component {...pageProps} />
       </Layout>
     </QueryClientProvider>

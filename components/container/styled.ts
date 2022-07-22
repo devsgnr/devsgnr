@@ -63,7 +63,7 @@ const FullHeightContainer = styled('div', {
   },
   '@xl': {
     padding: '25px 50px',
-    height: '85vh',
+    height: '90vh',
   },
 });
 

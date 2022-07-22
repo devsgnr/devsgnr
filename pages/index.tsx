@@ -49,12 +49,19 @@ interface HomePageProps {
 const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
   return (
     <div>
-      <FullHeightContainer className="flex flex-col justify-between pt-12">
-        <div className="grid xl:grid-cols-5 lg:grid-col-5 md:grid-cols-1 sm:grid-cols-1">
-          <div className="col-start-1 col-end-4 big">
+      <FullHeightContainer className="flex flex-col justify-between pt-6">
+        <div className="grid xl:grid-cols-5 lg:grid-col-5 md:grid-cols-1 sm:grid-cols-1 xl:h-full lg:h-full md:h-auto sm:h-auto">
+          <div className="col-start-1 col-end-4 big grid grid-cols-1">
             <AnimatedHeading target="first-heading">
               Creative Developer
             </AnimatedHeading>
+            <div className="self-end mb-5">
+              <AnimatedDiv target="heading-by-line" index={2}>
+                <AnimatedHeadingWords>
+                  Designer, Developer, Writer &amp; Reader
+                </AnimatedHeadingWords>
+              </AnimatedDiv>
+            </div>
           </div>
 
           <div className="xl:col-start-4 lg:col-start-4 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-fulls">
@@ -82,7 +89,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
 
             <AnimatedHeadingWords target="first-heading" className="col-span-3">
               Adding value to teams &amp; individuals — Building visual
-              appealing &amp; performant websites
+              appealing &amp; performant digital interfaces.
             </AnimatedHeadingWords>
 
             <Paragraph
@@ -96,26 +103,26 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
       </FullHeightContainer>
 
       <FullWidthContainer>
-        <div className="grid xl:grid-cols-7 lg:grid-cols-7 md:grid-cols-2 sm:grid-cols-1 justify-between align-start gap-32">
+        <div className="grid xl:grid-cols-7 lg:grid-cols-7 md:grid-cols-2 sm:grid-cols-1 justify-between items-start relative">
           <AnimatedDiv
             target="about"
             index={1}
-            className="xl:col-span-2 lg:col-span-2 md:col-span-4 sm:col-span-full"
+            className="xl:col-span-3 lg:col-span-2 md:col-span-4 sm:col-span-full"
           >
-            <Paragraph className="opacity-50">{homedata.title}</Paragraph>
+            <Heading className="opacity-50 sticky">{homedata.title}</Heading>
           </AnimatedDiv>
 
-          <div className="xl:col-span-5 lg:col-span-5 md:col-span-3 sm:col-span-full">
+          <div className="xl:col-span-3 lg:col-span-3 md:col-span-3 sm:col-span-full">
             <AnimatedDiv target="about" index={2} className="mb-16">
-              <Heading className="leading-normal">
+              <Paragraph className="leading-normal">
                 {ReactHtmlParser(homedata.about.html)}
-              </Heading>
+              </Paragraph>
             </AnimatedDiv>
 
             <AnimatedDiv target="about" index={3} className="mb-16">
-              <Heading className="leading-normal">
+              <Paragraph className="leading-normal">
                 {ReactHtmlParser(homedata.timeline.html)}
-              </Heading>
+              </Paragraph>
             </AnimatedDiv>
           </div>
         </div>
@@ -126,13 +133,13 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
           <div className="col-span-3 z-50 mix-blend-difference">
             <AnimatedHeadingWords className="big">
               A human with a knack for making things look pretty, who stumbled
-              upon coding and design and never looked back
+              upon coding and design
             </AnimatedHeadingWords>
           </div>
 
-          <div className="xl:col-start-4 lg:col-start-4 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-full justify-self-end text-right">
+          <div className="xl:col-start-4 lg:col-start-4 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-full justify-self-end text-right gap-5">
             <AnimatedDiv target="knack-bi-line" index={3}>
-              <Paragraph className="opacity-50 xl:mt-0 lg:mt-0 md:mt-10 sm:mt-10">
+              <Paragraph className="opacity-50 xl:mt-0 lg:mt-0 md:mb-10 sm:mb-10">
                 Where passion and creativity meet
               </Paragraph>
             </AnimatedDiv>
@@ -155,23 +162,24 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
         </div>
       </FullWidthContainer>
 
-      <div className="mt-32">
-        <FullWidthContainer>
-          <AnimatedDiv target="selected-works-by-line" index={3}>
-            <Paragraph className="opacity-50 mb-1">
-              Things I&apos;ve enjoyed working on
-            </Paragraph>
-          </AnimatedDiv>
-          <AnimatedHeading target="selected-works-heading">
-            Selected works
-          </AnimatedHeading>
+      <div className="mt-32 mb-32">
+        <FullWidthContainer className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1">
+          <div className="xl:col-span-full lg:col-span-full md:col-span-full sm:col-span-full">
+            <AnimatedDiv target="selected-works-by-line" index={3}>
+              <Paragraph className="opacity-50 mb-1">
+                Things I&apos;ve enjoyed working on
+              </Paragraph>
+            </AnimatedDiv>
+            <AnimatedHeading target="selected-works-heading">
+              Selected works
+            </AnimatedHeading>
+          </div>
+          <div className="xl:col-start-3 xl:col-end-6 lg:col-start-3 lg:col-end-6 md:col-span-full sm:col-span-full">
+            {data.map((item: IProjectProps, index: number) => (
+              <BlogItemComponent data={item} key={index} />
+            ))}
+          </div>
         </FullWidthContainer>
-
-        <div>
-          {data.map((item: IProjectProps, index: number) => (
-            <BlogItemComponent data={item} key={index} />
-          ))}
-        </div>
       </div>
     </div>
   );

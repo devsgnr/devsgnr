@@ -18,7 +18,6 @@ const AnimatedImageContainer: FC<AnimatedProps> = ({
     overflow: 'hidden',
     position: 'relative',
     opacity: 0,
-    borderRadius: '10px',
   };
 
   const InnerDiv: React.CSSProperties = {
@@ -53,7 +52,7 @@ const AnimatedImageContainer: FC<AnimatedProps> = ({
       content: ' ',
       width: '100%',
       height: '100%',
-      backgroundColor: THEME.dark.accent,
+      backgroundColor: THEME.dark.foreground,
       position: 'absolute',
       top: '0%',
       left: '0%',

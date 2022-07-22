@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React from 'react';
+import THEME from '../../styles/token/colors';
 import TYPOGRAPHY from '../../styles/token/typography';
 import Anchor from '../anchor';
 import AnimatedHeading, {
@@ -35,7 +36,9 @@ const Footer = () => {
         <div className="flex xl:justify-end lg:justify-end md:justify-start sm:justify-start xl:m-0 lg:m-0 md:mt-10 sm:mt-10">
           <Anchor href="mailto:hi@devsgnr.xyz">
             <AnimatedCirle target="click-me" index={1}>
-              <Paragraph>Email me</Paragraph>
+              <Paragraph css={{ color: THEME.dark.background }}>
+                Email me
+              </Paragraph>
             </AnimatedCirle>
           </Anchor>
         </div>
