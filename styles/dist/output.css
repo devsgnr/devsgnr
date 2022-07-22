@@ -643,6 +643,14 @@ video {
   top: 13rem;
 }
 
+.top-48 {
+  top: 12rem;
+}
+
+.top-32 {
+  top: 8rem;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -1120,6 +1128,14 @@ video {
     grid-column-start: 4;
   }
 
+  .lg\:col-start-5 {
+    grid-column-start: 5;
+  }
+
+  .lg\:col-start-6 {
+    grid-column-start: 6;
+  }
+
   .lg\:col-end-4 {
     grid-column-end: 4;
   }
@@ -1208,6 +1224,10 @@ video {
 
   .xl\:col-start-4 {
     grid-column-start: 4;
+  }
+
+  .xl\:col-start-5 {
+    grid-column-start: 5;
   }
 
   .xl\:col-end-4 {

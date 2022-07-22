@@ -11,6 +11,8 @@ import AnimatedHeading, {
   AnimatedDiv,
   AnimatedHeadingWords,
   AnimatedImageContainer,
+  AnimatedLink,
+  AnimatedText,
 } from '../components/animated';
 import {
   FullHeightContainer,
@@ -19,6 +21,8 @@ import {
 import BlogItemComponent from '../components/blog-item';
 import { FetchHomesService } from './api/home';
 import { IHomeProps } from '../types/home';
+import Anchor from '../components/anchor';
+import TYPOGRAPHY from '../styles/token/typography';
 
 export const getStaticProps = async () => {
   const projects: IProjectResponse<IProjectProps[]> =
@@ -73,12 +77,22 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
 
         <div className="w-full">
           <hr className="opacity-30" />
-          <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 mt-5">
-            <Paragraph className="opacity-50 col-span-2">Welcome...</Paragraph>
-            <AnimatedHeadingWords target="first-heading" className="col-span-2">
+          <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1 mt-5">
+            <div className="opacity-50 col-span-1">
+              <AnimatedText>Welcome...</AnimatedText>
+            </div>
+
+            <AnimatedHeadingWords target="first-heading" className="col-span-3">
               Adding value to teams &amp; individuals — Building visual
               appealing &amp; performant websites
             </AnimatedHeadingWords>
+
+            <Paragraph
+              css={{ fontSize: TYPOGRAPHY.size.pSmall }}
+              className="opacity-50 justify-self-end self-end w-fit"
+            >
+              Scroll down
+            </Paragraph>
           </div>
         </div>
       </FullHeightContainer>
@@ -126,7 +140,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
             </AnimatedDiv>
           </div>
 
-          <div className="xl:col-start-3 lg:col-start-3 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-full justify-self-end w-full xl:absolute lg:absolute md:static sm:static top-52 right-0 z-0">
+          <div className="xl:col-start-3 lg:col-start-3 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-full justify-self-end w-full xl:absolute lg:absolute md:static sm:static top-32 right-0 z-0">
             <AnimatedImageContainer target="me_two" index={1}>
               <Image
                 src="/me_two.png"
