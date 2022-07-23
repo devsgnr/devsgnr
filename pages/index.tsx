@@ -58,7 +58,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
             <div className="self-end">
               <AnimatedDiv target="heading-by-line" index={2}>
                 <AnimatedHeadingWords>
-                  Designer &amp; Developer
+                  Creating new perspectives
                 </AnimatedHeadingWords>
               </AnimatedDiv>
             </div>
@@ -84,7 +84,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
           <hr className="opacity-30" />
           <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1 mt-5">
             <div className="opacity-50 col-span-1">
-              <AnimatedText>Welcome...</AnimatedText>
+              <AnimatedText>Welcome</AnimatedText>
             </div>
 
             <AnimatedHeadingWords target="first-heading" className="col-span-3">

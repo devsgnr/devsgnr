@@ -703,6 +703,10 @@ video {
   display: inline-block;
 }
 
+.inline {
+  display: inline;
+}
+
 .flex {
   display: flex;
 }
@@ -795,6 +799,10 @@ video {
 
 .text-right {
   text-align: right;
+}
+
+.indent-8 {
+  text-indent: 2rem;
 }
 
 .leading-relaxed {

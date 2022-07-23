@@ -53,7 +53,7 @@ const AnimatedHeading: FC<AnimatedProps> = ({
       ScrollTrigger.batch(`._letter_${target}_${index}.in_view`, {
         onEnter: (batch) => {
           gsap.to(batch, {
-            duration: index * 0.07,
+            duration: index * 0.1,
             opacity: 1,
             y: 0,
             ease: Power4.easeInOut,

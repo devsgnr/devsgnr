@@ -129,7 +129,7 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
             </AnimatedDiv>
           </div>
 
-          <div className="col-start-4 col-end-6">
+          <div className="xl:col-start-4 lg:col-start-4 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-full">
             {data.map((item: IServiceProps, index: number) => (
               <AnimatedDiv target="services" index={index + 1} key={index}>
                 <div className="flex items-start gap-2 mb-16">
