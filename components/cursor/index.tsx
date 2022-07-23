@@ -9,7 +9,7 @@ const MouseCursor = () => {
     if (typeof window !== 'undefined') {
       window.addEventListener('mousemove', (e) => {
         gsap.to(CursorRef.current, {
-          duration: 0.25,
+          duration: 0.1,
           x: e.pageX,
           y: e.pageY,
           ease: Linear.easeInOut,

@@ -48,7 +48,7 @@ const AnimatedHeadingWords: FC<AnimatedProps> = ({
       ScrollTrigger.batch(HeadingRef.current, {
         start: 'top 95%',
         onEnter: () => {
-          gsap.to(`._letter_${target}_${index}.in_view`, {
+          gsap.to(`._word_${target}_${index}.in_view`, {
             duration: (index + 0.5) * 0.15,
             opacity: 1,
             y: 0,
@@ -65,7 +65,7 @@ const AnimatedHeadingWords: FC<AnimatedProps> = ({
         <span key={index} style={TextWrapper} id={target}>
           <span
             key={index}
-            className={`_letter_${target}_${index} in_view`}
+            className={`_word_${target}_${index} in_view`}
             style={LetterWrapper}
           >
             {letter}

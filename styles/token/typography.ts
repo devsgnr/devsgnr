@@ -2,7 +2,7 @@ import { ITypography } from '../../types/token';
 
 const TYPOGRAPHY: ITypography = {
   family: {
-    heading: 'migraextralight, sans-serif',
+    heading: 'pp_neue_montrealbook, sans-serif',
     paragraph: 'pp_neue_montrealbook, sans-serif',
     footing: 'migra_italicextralight_italic, sans-serif',
   },

@@ -53,12 +53,12 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
         <div className="grid xl:grid-cols-5 lg:grid-col-5 md:grid-cols-1 sm:grid-cols-1 xl:h-full lg:h-full md:h-auto sm:h-auto">
           <div className="col-start-1 col-end-4 big grid grid-cols-1">
             <AnimatedHeading target="first-heading">
-              Creative Developer
+              Emmanuel Watila
             </AnimatedHeading>
-            <div className="self-end mb-5">
+            <div className="self-end">
               <AnimatedDiv target="heading-by-line" index={2}>
                 <AnimatedHeadingWords>
-                  Designer, Developer, Writer &amp; Reader
+                  Designer &amp; Developer
                 </AnimatedHeadingWords>
               </AnimatedDiv>
             </div>
@@ -80,7 +80,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
           </div>
         </div>
 
-        <div className="w-full">
+        <div className="w-full mt-5">
           <hr className="opacity-30" />
           <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1 mt-5">
             <div className="opacity-50 col-span-1">
@@ -88,7 +88,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
             </div>
 
             <AnimatedHeadingWords target="first-heading" className="col-span-3">
-              Adding value to teams &amp; individuals — Building visual
+              Adding value to teams &amp; individuals — by building visual
               appealing &amp; performant digital interfaces.
             </AnimatedHeadingWords>
 
@@ -167,11 +167,11 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
           <div className="xl:col-span-full lg:col-span-full md:col-span-full sm:col-span-full">
             <AnimatedDiv target="selected-works-by-line" index={3}>
               <Paragraph className="opacity-50 mb-1">
-                Things I&apos;ve enjoyed working on
+                I&apos;m looking to collaborate, here are some...
               </Paragraph>
             </AnimatedDiv>
             <AnimatedHeading target="selected-works-heading">
-              Selected works
+              Expirements
             </AnimatedHeading>
           </div>
           <div className="xl:col-start-3 xl:col-end-6 lg:col-start-3 lg:col-end-6 md:col-span-full sm:col-span-full">

@@ -18,11 +18,12 @@ const AnimatedImageContainer: FC<AnimatedProps> = ({
     overflow: 'hidden',
     position: 'relative',
     opacity: 0,
+    transform: 'translate(0%, -30%)',
   };
 
   const InnerDiv: React.CSSProperties = {
     opacity: 1,
-    transform: 'rotateZ(10deg) scale(2)',
+    transform: 'rotateZ(5deg) scale(2)',
     position: 'relative',
     overflow: 'hidden',
   };
@@ -85,7 +86,7 @@ const AnimatedImageContainer: FC<AnimatedProps> = ({
     });
 
     gsap.to(divRef.current, {
-      y: '-px',
+      y: '+px',
       scrollTrigger: {
         trigger: divRef.current,
         scrub: 1,
