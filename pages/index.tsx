@@ -58,7 +58,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
             <div className="self-end">
               <AnimatedDiv target="heading-by-line" index={2}>
                 <AnimatedHeadingWords>
-                  Creating new perspectives
+                  Creative developer - creating new perspectives
                 </AnimatedHeadingWords>
               </AnimatedDiv>
             </div>
@@ -102,7 +102,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
         </div>
       </FullHeightContainer>
 
-      <FullWidthContainer>
+      <FullWidthContainer className="mt-16">
         <div className="grid xl:grid-cols-7 lg:grid-cols-7 md:grid-cols-2 sm:grid-cols-1 justify-between items-start relative">
           <AnimatedDiv
             target="about"
@@ -112,19 +112,19 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
             <Heading className="opacity-50 sticky">{homedata.title}</Heading>
           </AnimatedDiv>
 
-          <div className="xl:col-span-3 lg:col-span-3 md:col-span-3 sm:col-span-full">
-            <AnimatedDiv target="about" index={2} className="mb-16">
-              <Paragraph className="leading-normal">
-                {ReactHtmlParser(homedata.about.html)}
-              </Paragraph>
-            </AnimatedDiv>
+          <AnimatedDiv
+            target="about"
+            index={2}
+            className="xl:col-span-3 lg:col-span-3 md:col-span-3 sm:col-span-full mb-16"
+          >
+            <Paragraph className="leading-normal mb-16">
+              {ReactHtmlParser(homedata.about.html)}
+            </Paragraph>
 
-            <AnimatedDiv target="about" index={3} className="mb-16">
-              <Paragraph className="leading-normal">
-                {ReactHtmlParser(homedata.timeline.html)}
-              </Paragraph>
-            </AnimatedDiv>
-          </div>
+            <Paragraph className="leading-normal mb-16">
+              {ReactHtmlParser(homedata.timeline.html)}
+            </Paragraph>
+          </AnimatedDiv>
         </div>
       </FullWidthContainer>
 
@@ -167,19 +167,20 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
           <div className="xl:col-span-full lg:col-span-full md:col-span-full sm:col-span-full">
             <AnimatedDiv target="selected-works-by-line" index={3}>
               <Paragraph className="opacity-50 mb-1">
-                I&apos;m looking to collaborate, here are some...
+                Working with amazing individuals &amp; teams
               </Paragraph>
             </AnimatedDiv>
             <AnimatedHeading target="selected-works-heading">
-              Expirements
+              Selected works
             </AnimatedHeading>
           </div>
-          <div className="xl:col-start-3 xl:col-end-6 lg:col-start-3 lg:col-end-6 md:col-span-full sm:col-span-full">
-            {data.map((item: IProjectProps, index: number) => (
-              <BlogItemComponent data={item} key={index} />
-            ))}
-          </div>
         </FullWidthContainer>
+
+        <div>
+          {data.map((item: IProjectProps, index: number) => (
+            <BlogItemComponent data={item} key={index} />
+          ))}
+        </div>
       </div>
     </div>
   );

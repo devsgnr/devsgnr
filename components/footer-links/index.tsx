@@ -24,20 +24,26 @@ const Footer = () => {
             index={3}
           >
             <Paragraph className="opacity-50 mb-3">
-              Wanna work together? Let&apos;s talk
+              Wanna work together?
             </Paragraph>
           </AnimatedDiv>
           <div className="w-fit">
             <AnimatedHeading target="footer-heading">
-              hi@devsgnr.xyz
+              Let&apos;s start that project!
             </AnimatedHeading>
           </div>
         </div>
         <div className="flex xl:justify-end lg:justify-end md:justify-start sm:justify-start xl:m-0 lg:m-0 md:mt-10 sm:mt-10">
           <Anchor href="mailto:hi@devsgnr.xyz">
             <AnimatedCirle target="click-me" index={1}>
-              <Paragraph css={{ color: THEME.dark.background }}>
-                Email me
+              <Paragraph
+                className="text-center"
+                css={{
+                  color: THEME.dark.background,
+                  fontSize: TYPOGRAPHY.size.pSmall,
+                }}
+              >
+                Let&apos;s collaborate
               </Paragraph>
             </AnimatedCirle>
           </Anchor>

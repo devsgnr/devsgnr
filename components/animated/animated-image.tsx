@@ -19,6 +19,7 @@ const AnimatedImageContainer: FC<AnimatedProps> = ({
     position: 'relative',
     opacity: 0,
     transform: 'translate(0%, -30%)',
+    borderRadius: '15px',
   };
 
   const InnerDiv: React.CSSProperties = {

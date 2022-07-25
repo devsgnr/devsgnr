@@ -9,11 +9,11 @@ const THEME: ITheme = {
     accent: '#008DD5',
   },
   dark: {
-    background: '#000',
-    foreground: '#d3d5d5',
+    background: '#111111',
+    foreground: '#8e8e93',
     opaque: 'rgba(255, 255, 255, 0.1)',
     gradient: 'linear-gradient(90deg, #FEE140 0%, #FA709A 100%)',
-    accent: '#d3d5d5',
+    accent: '#9BC53D',
   },
 };
 

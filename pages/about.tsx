@@ -43,19 +43,21 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
         <div className="grid xl:grid-cols-5 lg:grid-col-5 md:grid-cols-1 sm:grid-cols-1 xl:h-full lg:h-full md:h-auto sm:h-auto">
           <div className="col-start-1 col-end-4 big grid grid-cols-1">
             <AnimatedHeadingWords className="big" target="first-heading">
-              Emmanuel Watila —
+              Bringing a new perspective to your creative projects
             </AnimatedHeadingWords>
             <div className="self-end mb-5">
               <AnimatedDiv target="heading-by-line" index={2}>
-                <AnimatedHeadingWords>Curious developer</AnimatedHeadingWords>
+                <AnimatedHeadingWords>
+                  Curious developer, even more curious human
+                </AnimatedHeadingWords>
               </AnimatedDiv>
             </div>
           </div>
 
           <div className="xl:col-start-4 lg:col-start-4 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-fulls">
-            <AnimatedImageContainer target="me" index={1}>
+            <AnimatedImageContainer target="me_three" index={1}>
               <Image
-                src="/me.png"
+                src="/me_three.png"
                 width="100%"
                 height="45%"
                 sizes="50vw"
@@ -72,12 +74,12 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
           <hr className="opacity-30" />
           <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1 mt-5">
             <div className="opacity-50 col-span-1">
-              <AnimatedText>My Personal Side...</AnimatedText>
+              <AnimatedText>Evergreen learner</AnimatedText>
             </div>
 
             <AnimatedHeadingWords target="first-heading" className="col-span-3">
-              Adding value to teams &amp; individuals — Building visual
-              appealing &amp; performant digital interfaces.
+              I&apos;m not your ordinary human - I take your project from idea
+              to cool websites.
             </AnimatedHeadingWords>
 
             <Paragraph
@@ -129,7 +131,7 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
             </AnimatedDiv>
           </div>
 
-          <div className="xl:col-start-4 lg:col-start-4 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-full">
+          <div className="xl:col-start-4 lg:col-start-4 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-full flex flex-wrap">
             {data.map((item: IServiceProps, index: number) => (
               <AnimatedDiv target="services" index={index + 1} key={index}>
                 <div className="flex items-start gap-2 mb-16">

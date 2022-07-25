@@ -32,10 +32,10 @@ const BlogItem = styled('div', {
     padding: '35px 50px',
   },
   '@lg': {
-    padding: '15px 50px',
+    padding: '55px 50px',
   },
   '@xl': {
-    padding: '15px 50px',
+    padding: '55px 50px',
   },
 
   '&:hover': {
