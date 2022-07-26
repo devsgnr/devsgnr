@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React from 'react';
+import { PenTool } from 'react-feather';
 import THEME from '../../styles/token/colors';
 import TYPOGRAPHY from '../../styles/token/typography';
 import Anchor from '../anchor';
@@ -39,11 +40,11 @@ const Footer = () => {
               <Paragraph
                 className="text-center"
                 css={{
-                  color: THEME.dark.background,
+                  color: THEME.light.background,
                   fontSize: TYPOGRAPHY.size.pSmall,
                 }}
               >
-                Let&apos;s collaborate
+                <PenTool />
               </Paragraph>
             </AnimatedCirle>
           </Anchor>

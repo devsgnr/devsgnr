@@ -2,7 +2,6 @@
 import React from 'react';
 import { NextPage } from 'next';
 import ReactHtmlParser from 'react-html-parser';
-import Image from 'next/image';
 import { IHomeResponse, IProjectResponse } from '../types/response';
 import { FetchProjectsService } from './api/project';
 import { IProjectProps } from '../types/project';
@@ -11,7 +10,7 @@ import AnimatedHeading, {
   AnimatedDiv,
   AnimatedHeadingWords,
   AnimatedImageContainer,
-  AnimatedText,
+  AnimatedLink,
 } from '../components/animated';
 import {
   FullHeightContainer,
@@ -20,7 +19,7 @@ import {
 import BlogItemComponent from '../components/blog-item';
 import { FetchHomesService } from './api/home';
 import { IHomeProps } from '../types/home';
-import TYPOGRAPHY from '../styles/token/typography';
+import Anchor from '../components/anchor';
 
 export const getStaticProps = async () => {
   const projects: IProjectResponse<IProjectProps[]> =
@@ -49,64 +48,26 @@ interface HomePageProps {
 const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
   return (
     <div>
-      <FullHeightContainer className="flex flex-col justify-between pt-6">
-        <div className="grid xl:grid-cols-5 lg:grid-col-5 md:grid-cols-1 sm:grid-cols-1 xl:h-full lg:h-full md:h-auto sm:h-auto">
-          <div className="col-start-1 col-end-4 big grid grid-cols-1">
-            <AnimatedHeading target="first-heading">
-              Emmanuel Watila
-            </AnimatedHeading>
-            <div className="self-end">
-              <AnimatedDiv target="heading-by-line" index={2}>
-                <AnimatedHeadingWords>
-                  Creative developer - creating new perspectives
-                </AnimatedHeadingWords>
-              </AnimatedDiv>
-            </div>
-          </div>
-
-          <div className="xl:col-start-4 lg:col-start-4 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-fulls">
-            <AnimatedImageContainer target="me" index={1}>
-              <Image
-                src="/me.png"
-                width="100%"
-                height="45%"
-                sizes="50vw"
-                quality={100}
-                objectFit="cover"
-                alt="Emmanuel Watila"
-                priority
-              />
-            </AnimatedImageContainer>
-          </div>
+      <FullHeightContainer className="mt-3">
+        <div className="flex flex-wrap justify-between items-center mb-8">
+          <AnimatedHeadingWords className="big w-fit h-fit">
+            Front-end Developer &amp; Designer
+          </AnimatedHeadingWords>
+          <Anchor href="#" className="h-fit">
+            <AnimatedLink>SEE MORE</AnimatedLink>
+          </Anchor>
         </div>
 
-        <div className="w-full mt-5">
-          <hr className="opacity-30" />
-          <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1 mt-5">
-            <div className="opacity-50 col-span-1">
-              <AnimatedText>Welcome</AnimatedText>
-            </div>
-
-            <AnimatedHeadingWords target="first-heading" className="col-span-3">
-              Adding value to teams &amp; individuals — by building visual
-              appealing &amp; performant digital interfaces.
-            </AnimatedHeadingWords>
-
-            <Paragraph
-              css={{ fontSize: TYPOGRAPHY.size.pSmall }}
-              className="opacity-50 justify-self-end self-end w-fit"
-            >
-              Scroll down
-            </Paragraph>
-          </div>
-        </div>
+        <AnimatedImageContainer className="" target="me" index={1}>
+          <img src="/me.png" alt="Emmanuel Watila" />
+        </AnimatedImageContainer>
       </FullHeightContainer>
 
       <FullWidthContainer className="mt-16">
         <div className="grid xl:grid-cols-7 lg:grid-cols-7 md:grid-cols-2 sm:grid-cols-1 justify-between items-start relative">
           <AnimatedDiv
             target="about"
-            index={1}
+            index={2}
             className="xl:col-span-3 lg:col-span-2 md:col-span-4 sm:col-span-full"
           >
             <Heading className="opacity-50 sticky">{homedata.title}</Heading>
@@ -115,8 +76,13 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
           <AnimatedDiv
             target="about"
             index={2}
-            className="xl:col-span-3 lg:col-span-3 md:col-span-3 sm:col-span-full mb-16"
+            className="xl:col-start-4 xl:col-end-7 lg:col-start-4 lg:col-end-7 md:col-span-full sm:col-span-full mb-16"
           >
+            <Heading className="indent-32 mb-16">
+              Creating new perspectives - and adding values to individuals and
+              teams by building visually appealing and performant websites.
+            </Heading>
+
             <Paragraph className="leading-normal mb-16">
               {ReactHtmlParser(homedata.about.html)}
             </Paragraph>
@@ -128,10 +94,10 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
         </div>
       </FullWidthContainer>
 
-      <FullWidthContainer className="mt-10 mb-32">
+      <FullWidthContainer className="mt-10 mb-38">
         <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1 justify-between content-end relative">
           <div className="col-span-3 z-50 mix-blend-difference">
-            <AnimatedHeadingWords className="big">
+            <AnimatedHeadingWords className="text-white big">
               A human with a knack for making things look pretty, who stumbled
               upon coding and design
             </AnimatedHeadingWords>
@@ -145,18 +111,9 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
             </AnimatedDiv>
           </div>
 
-          <div className="xl:col-start-3 lg:col-start-3 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-full justify-self-end w-full xl:absolute lg:absolute md:static sm:static top-32 right-0 z-0">
+          <div className="xl:col-start-3 lg:col-start-3 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-full justify-self-end w-full">
             <AnimatedImageContainer target="me_two" index={1}>
-              <Image
-                src="/me_two.png"
-                width="100%"
-                height="45%"
-                sizes="50vw"
-                quality={100}
-                objectFit="cover"
-                alt="Emmanuel Watila"
-                priority
-              />
+              <img src="/me_two.png" alt="Emmanuel Watila" />
             </AnimatedImageContainer>
           </div>
         </div>

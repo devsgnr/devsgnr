@@ -21,7 +21,7 @@ const AnimatedDiv: FC<AnimatedProps> = ({
 
   const InnerDiv: React.CSSProperties = {
     opacity: 1,
-    transform: 'translate(0%, 50%)',
+    transform: 'translate(0%, 30%)',
   };
 
   const divRef = useRef<HTMLDivElement>(null);

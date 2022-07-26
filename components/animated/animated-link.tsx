@@ -14,9 +14,6 @@ const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
     fontSize: TYPOGRAPHY.size.pSmall,
     position: 'relative',
     zIndex: 9,
-    transform: 'translate(0, 0) scale3d(1, 1, 1)',
-    transformStyle: 'preserve-3d',
-    willChange: 'transform',
   };
 
   const TextWrapper: React.CSSProperties = {
@@ -34,28 +31,33 @@ const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
 
   const ParagraphRef = useRef<HTMLDivElement>(null);
   const textArr: string[] = children.split('');
+  const identifier: string = children.replace(' ', '_');
 
   const handleMouseEnter = () => {
-    gsap.set(`._link_${children}_container.in_view`, {
-      y: '100%',
-    });
-    gsap.to(`._link_${children}_container.in_view`, {
-      duration: 0.5,
-      opacity: 1,
-      y: '0%',
-      ease: Power4.easeInOut,
+    textArr.forEach((letter: string, index: number) => {
+      gsap.set(`._link_${identifier}_${index}.in_view`, {
+        y: '100%',
+      });
+      gsap.to(`._link_${identifier}_${index}.in_view`, {
+        duration: (index + 1) * 0.12,
+        opacity: 1,
+        y: '0%',
+        ease: Power4.easeInOut,
+      });
     });
   };
 
   const handleMouseLeave = () => {
-    gsap.set(`._link_${children}_container.in_view`, {
-      y: '-100%',
-    });
-    gsap.to(`._link_${children}_container.in_view`, {
-      duration: 0.5,
-      opacity: 1,
-      y: 0,
-      ease: Power4.easeInOut,
+    textArr.forEach((letter: string, index: number) => {
+      gsap.set(`._link_${identifier}_${index}.in_view`, {
+        y: '-100%',
+      });
+      gsap.to(`._link_${identifier}_${index}.in_view`, {
+        duration: (index + 1) * 0.12,
+        opacity: 1,
+        y: '0%',
+        ease: Power4.easeInOut,
+      });
     });
   };
 
@@ -63,17 +65,17 @@ const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
     <FooterLinks
       ref={ParagraphRef}
       style={Title}
-      id={children}
+      id={identifier}
       onMouseEnter={() => handleMouseEnter()}
       onMouseLeave={() => handleMouseLeave()}
-      className={`container ${children}_container`}
+      className={`container ${identifier}_container`}
     >
-      <div className={`_link_${children}_container in_view`}>
+      <div>
         {textArr.map((letter: string, index: number) => (
           <span key={index} style={TextWrapper}>
             <span
               key={index}
-              className={`_link_${children}_${index} in_view`}
+              className={`_link_${identifier}_${index} in_view`}
               style={LetterWrapper}
             >
               {letter === ' ' ? <span>&nbsp;</span> : letter}

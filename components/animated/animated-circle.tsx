@@ -6,20 +6,22 @@ interface AnimatedProps {
   children: React.ReactNode;
   index: number;
   target?: string;
+  className?: string;
 }
 
 const AnimatedDiv: FC<AnimatedProps> = ({
   children,
   index,
   target,
+  className,
 }: AnimatedProps) => {
   const OuterDivWrapper: React.CSSProperties = {
     width: '180px',
     height: '180px',
     overflow: 'hidden',
     borderRadius: '50%',
-    backgroundColor: THEME.dark.accent,
-    color: THEME.dark.foreground,
+    backgroundColor: THEME.light.foreground,
+    color: THEME.light.background,
     padding: '30px',
     transform: 'rotateZ(0deg) scale(1)',
     display: 'flex',
@@ -38,24 +40,16 @@ const AnimatedDiv: FC<AnimatedProps> = ({
   }, []);
 
   const handleMouseEnter = () => {
-    gsap.set(`._${target}_${index}.in_view`, {
-      rotationZ: '0deg',
-    });
     gsap.to(`._${target}_${index}.in_view`, {
       duration: 0.5,
-      rotationZ: '-45deg',
-      transform: 'scale(1.05)',
+      transform: 'scale(0.8)',
       ease: Power1.easeOut,
     });
   };
 
   const handleMouseLeave = () => {
-    gsap.set(`._${target}_${index}.in_view`, {
-      rotationZ: '-45deg',
-    });
     gsap.to(`._${target}_${index}.in_view`, {
       duration: 0.5,
-      rotationZ: '0deg',
       transform: 'scale(1)',
       ease: Power1.easeOut,
     });
@@ -65,11 +59,11 @@ const AnimatedDiv: FC<AnimatedProps> = ({
     <div
       ref={divRef}
       style={OuterDivWrapper}
-      className={`_${target}_${index} in_view`}
+      className={`_${target}_${index} in_view ${className}`}
       onMouseOverCapture={() => handleMouseEnter()}
       onMouseOutCapture={() => handleMouseLeave()}
     >
-      <div>{children}</div>
+      <div className="pointer-events-none">{children}</div>
     </div>
   );
 };

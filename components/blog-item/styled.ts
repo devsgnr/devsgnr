@@ -6,23 +6,21 @@ const BlogItem = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  borderBottom: `1px solid ${THEME.dark.opaque}`,
-  backgroundColor: THEME.dark.background,
+  borderTop: `1px solid ${THEME.light.opaque}`,
+  backgroundColor: 'transparent',
   transition: 'all ease-in-out 0.15s',
   position: 'relative',
-  overflow: 'hidden',
   zIndex: 999,
 
-  '&:after': {
-    content: ' ',
-    width: '100%',
-    height: '100%',
-    backgroundColor: THEME.dark.accent,
+  '.image': {
+    width: '300px',
+    height: '300px',
     position: 'absolute',
-    left: 0,
-    bottom: '-100%',
-    zIndex: -1,
-    transition: 'all ease-in-out 0.15s',
+    transform: 'translateX(10px) translateY(10px)',
+    pointerEvents: 'none',
+    zIndex: 999,
+    willChange: 'transform',
+    backgroundSize: 'cover',
   },
 
   '@sm': {
@@ -32,22 +30,14 @@ const BlogItem = styled('div', {
     padding: '35px 50px',
   },
   '@lg': {
-    padding: '55px 50px',
+    padding: '75px 50px',
   },
   '@xl': {
-    padding: '55px 50px',
+    padding: '75px 50px',
   },
 
   '&:hover': {
-    '&:after': {
-      bottom: '0%',
-    },
-    '*': {
-      color: THEME.dark.background,
-    },
-
     backgroundSize: 'cover',
-    borderBottomColor: THEME.dark.accent,
     transition: 'all ease-in-out 0.3s',
   },
 });

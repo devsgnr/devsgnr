@@ -1,20 +1,22 @@
 import React, { FC, useEffect, useRef } from 'react';
-import { gsap, Linear, Power1 } from 'gsap';
+import { gsap, Power1 } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 interface AnimatedProps {
-  children: React.ReactNode;
-  speed: number;
+  children: React.ReactNode[];
 }
 
-const AnimatedMarquee: FC<AnimatedProps> = ({
-  children,
-  speed,
-}: AnimatedProps) => {
+const AnimatedMarquee: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
   const OuterDivWrapper: React.CSSProperties = {
+    margin: 'auto',
     position: 'relative',
     overflow: 'hidden',
-    opacity: 1,
+  };
+
+  const InnerDiv: React.CSSProperties = {
+    width: '100%',
+    position: 'relative',
+    left: '-50px',
   };
 
   const divRef = useRef<HTMLDivElement>(null);
@@ -27,17 +29,16 @@ const AnimatedMarquee: FC<AnimatedProps> = ({
       ease: Power1.easeOut,
     });
 
-    gsap.set('._marquee.in_view', {
-      x: -500,
+    gsap.set('.marquee_item', {
+      x: (i) => i * 700,
     });
 
-    gsap.to('._marquee.in_view', {
-      duration: speed * 5.5,
-      opacity: 1,
-      x: '-=500',
-      ease: Linear.easeInOut,
+    gsap.to('.marquee_item', {
+      duration: 15.5,
+      x: '+=700',
+      ease: 'none',
       modifiers: {
-        x: gsap.utils.unitize((x) => parseFloat(x) % 500),
+        x: gsap.utils.unitize((x) => parseFloat(x) % 400),
       },
       repeat: -1,
     });
@@ -45,7 +46,9 @@ const AnimatedMarquee: FC<AnimatedProps> = ({
 
   return (
     <div ref={divRef} style={OuterDivWrapper} className="flex gap-5">
-      {children}
+      <div style={InnerDiv} className="marquee in_view w-fit flex gap-4">
+        {children}
+      </div>
     </div>
   );
 };

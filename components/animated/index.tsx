@@ -10,6 +10,7 @@ import AnimatedImageContainer from './animated-image';
 import AnimatedCirle from './animated-circle';
 import AnimatedMarquee from './animated-marquee';
 import AnimatedHeadingWords from './animated-words';
+import AnimatedNoiseOverlay from './animated-noise';
 
 interface AnimatedProps {
   children: string;
@@ -89,4 +90,5 @@ export {
   AnimatedCirle,
   AnimatedMarquee,
   AnimatedHeadingWords,
+  AnimatedNoiseOverlay,
 };

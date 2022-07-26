@@ -11,10 +11,10 @@ export const StyledSplashScreen = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  backgroundColor: THEME.dark.accent,
+  backgroundColor: THEME.light.accent,
 
   '*': {
-    color: THEME.dark.foreground,
+    color: THEME.light.foreground,
     textAlign: 'center',
   },
 });
@@ -22,7 +22,7 @@ export const StyledSplashScreen = styled('div', {
 const StyledLayout = styled('div', {
   width: '100%',
   minHeight: '100vh',
-  background: THEME.dark.background,
+  background: THEME.light.background,
 });
 
 export default StyledLayout;

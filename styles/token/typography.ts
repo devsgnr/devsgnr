@@ -11,11 +11,11 @@ const TYPOGRAPHY: ITypography = {
     heading2: 24,
     heading3: 20,
     headingfooting: '4.2vw',
-    pRegular: 20,
+    pRegular: 18,
     pSmall: 13,
   },
   weight: {
-    normal: 400,
+    normal: 300,
     bold: 500,
     bolder: 700,
   },

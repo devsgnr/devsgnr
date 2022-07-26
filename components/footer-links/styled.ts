@@ -7,17 +7,18 @@ const FooterLinks = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  border: '0.1px solid rgba(255, 255, 255, 0.5)',
+  border: `1px solid ${THEME.light.foreground}`,
   borderRadius: '25px',
   overflow: 'hidden',
   position: 'relative',
+  color: THEME.light.foreground,
 
   '&.container': {
     '&:after': {
       content: ' ',
       width: '100%',
       height: '100%',
-      backgroundColor: THEME.dark.accent,
+      backgroundColor: THEME.light.foreground,
       position: 'absolute',
       bottom: '-100%',
       left: 0,
@@ -40,9 +41,8 @@ const FooterLinks = styled('div', {
 
   '&:hover': {
     '*': {
-      color: THEME.dark.background,
+      color: THEME.light.background,
     },
-    border: `0.1px solid ${THEME.dark.accent}`,
     transition: 'all ease-in-out 0.2s',
   },
 });

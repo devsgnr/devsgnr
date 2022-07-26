@@ -11,9 +11,9 @@ export const Heading = styled('div', {
   fontFamily: TYPOGRAPHY.family.heading,
   letterSpacing: '0px',
   fontWeight: TYPOGRAPHY.weight.normal,
-  lineHeight: 1.2,
+  lineHeight: 1.1,
   width: '100%',
-  color: THEME.dark.foreground,
+  color: THEME.light.foreground,
 
   '@sm': {
     fontSize: TYPOGRAPHY.size.heading3,
@@ -33,7 +33,7 @@ export const Heading = styled('div', {
       fontSize: '6.5vw',
     },
     '@md': {
-      fontSize: '7.2vw',
+      fontSize: '5.2vw',
     },
     '@lg': {
       fontSize: TYPOGRAPHY.size.headingfooting,
@@ -59,7 +59,7 @@ export const Paragraph = styled('div', {
   fontWeight: TYPOGRAPHY.weight.normal,
   lineHeight: 1.75,
   width: '100%',
-  color: THEME.dark.foreground,
+  color: THEME.light.foreground,
 
   '@sm': {
     fontSize: '15px',
@@ -68,7 +68,7 @@ export const Paragraph = styled('div', {
     fontSize: '15px',
   },
   '@lg': {
-    fontSize: '15px',
+    fontSize: TYPOGRAPHY.size.pRegular,
   },
   '@xl': {
     fontSize: TYPOGRAPHY.size.pRegular,
@@ -78,7 +78,7 @@ export const Paragraph = styled('div', {
     textDecoration: 'underline',
     textUnderlineOffset: '3px',
     fontWeight: TYPOGRAPHY.weight.bold,
-    color: THEME.dark.foreground,
+    color: THEME.light.foreground,
     opacity: 0.4,
     transition: 'all ease-in-out 0.2s',
 
@@ -99,7 +99,7 @@ export const Paragraph = styled('div', {
   blockquote: {
     margin: '40px 0',
     paddingLeft: '20px',
-    borderLeft: `3px solid ${THEME.dark.foreground}`,
+    borderLeft: `3px solid ${THEME.light.foreground}`,
   },
 
   ol: {
@@ -142,22 +142,7 @@ export const AnchorParagraph = styled('div', {
     fontWeight: TYPOGRAPHY.weight.normal,
     opacity: 0.4,
 
-    '&:after': {
-      content: ' ',
-      width: '0%',
-      height: '2.5px',
-      backgroundColor: THEME.dark.foreground,
-      position: 'absolute',
-      bottom: '45%',
-      left: 0,
-      zIndex: 99999999,
-      transition: 'all ease-in-out 0.2s',
-    },
-
     '&:hover': {
-      '&:after': {
-        width: '100%',
-      },
       opacity: 1,
     },
   },

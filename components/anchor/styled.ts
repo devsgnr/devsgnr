@@ -4,5 +4,5 @@ import THEME from '../../styles/token/colors';
 export const StyledInternalA = styled('a', {
   textDecoration: 'none !important',
   opacity: '1 !important',
-  color: THEME.dark.foreground,
+  color: THEME.light.background,
 });

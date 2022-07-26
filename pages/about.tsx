@@ -2,16 +2,14 @@
 import React from 'react';
 import { NextPage } from 'next';
 import ReactHtmlParser from 'react-html-parser';
-import Image from 'next/image';
 import { IServiceResponse } from '../types/response';
 import { FetchServicesService } from './api/services';
 import { IServiceProps } from '../types/services';
-import { Paragraph } from '../components/typography/styled';
+import { Paragraph, Heading } from '../components/typography/styled';
 import AnimatedHeading, {
   AnimatedDiv,
   AnimatedHeadingWords,
   AnimatedImageContainer,
-  AnimatedText,
 } from '../components/animated';
 import {
   FullHeightContainer,
@@ -39,60 +37,17 @@ interface HomePageProps {
 const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
   return (
     <div>
-      <FullHeightContainer className="flex flex-col justify-between pt-6">
-        <div className="grid xl:grid-cols-5 lg:grid-col-5 md:grid-cols-1 sm:grid-cols-1 xl:h-full lg:h-full md:h-auto sm:h-auto">
-          <div className="col-start-1 col-end-4 big grid grid-cols-1">
-            <AnimatedHeadingWords className="big" target="first-heading">
-              Bringing a new perspective to your creative projects
-            </AnimatedHeadingWords>
-            <div className="self-end mb-5">
-              <AnimatedDiv target="heading-by-line" index={2}>
-                <AnimatedHeadingWords>
-                  Curious developer, even more curious human
-                </AnimatedHeadingWords>
-              </AnimatedDiv>
-            </div>
-          </div>
+      <FullHeightContainer className="mt-3">
+        <AnimatedHeadingWords className="big mb-8" target="first-heading">
+          Creative a new perspective
+        </AnimatedHeadingWords>
 
-          <div className="xl:col-start-4 lg:col-start-4 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-fulls">
-            <AnimatedImageContainer target="me_three" index={1}>
-              <Image
-                src="/me_three.png"
-                width="100%"
-                height="45%"
-                sizes="50vw"
-                quality={100}
-                objectFit="cover"
-                alt="Emmanuel Watila"
-                priority
-              />
-            </AnimatedImageContainer>
-          </div>
-        </div>
-
-        <div className="w-full">
-          <hr className="opacity-30" />
-          <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1 mt-5">
-            <div className="opacity-50 col-span-1">
-              <AnimatedText>Evergreen learner</AnimatedText>
-            </div>
-
-            <AnimatedHeadingWords target="first-heading" className="col-span-3">
-              I&apos;m not your ordinary human - I take your project from idea
-              to cool websites.
-            </AnimatedHeadingWords>
-
-            <Paragraph
-              css={{ fontSize: TYPOGRAPHY.size.pSmall }}
-              className="opacity-50 justify-self-end self-end w-fit"
-            >
-              Scroll down
-            </Paragraph>
-          </div>
-        </div>
+        <AnimatedImageContainer target="me_three" index={1}>
+          <img src="https://i.imgur.com/P2Fptsu.gif" alt="Emmanuel Watila" />
+        </AnimatedImageContainer>
       </FullHeightContainer>
 
-      <FullWidthContainer className="mt-10 mb-24">
+      <FullWidthContainer className="mb-8">
         <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-col-1 gap-16 mt-10">
           <div className="col-span-2">
             <AnimatedDiv target="things-i-can-do-by-line" index={3}>
@@ -103,6 +58,15 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
           </div>
           <div className="col-span-2">
             <AnimatedDiv target="quirky-by-line" index={1}>
+              <Heading className="indent-32 mb-16">
+                Hey! I&apos;m Emmanuel, a twenty-two year old, front-end
+                creative devloper building cool websites. Currently based in
+                Nigeria - working remotely.
+              </Heading>
+              <Heading className="mb-16">
+                Curious developer, and a more curious human. I&apos;m
+                extraordinary - I take your project from idea to cool websites.
+              </Heading>
               <Paragraph className="xl:indent-36 lg:indent-36 md:indent-16 sm:indent-0">
                 I&apos;m a very quirky human, based in Nigeria, collaborating
                 with agencies and individuals around the world. I try to read as

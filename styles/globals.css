@@ -1,6 +1,7 @@
-* {
+/* * {
   cursor: none;
-}
+} */
+
 html,
 body {
   padding: 0;
@@ -43,4 +44,22 @@ img {
 
 p {
   margin: 0 !important;
+}
+
+.marquee-container {
+  overflow: hidden;
+}
+
+.marquee {
+  transform: translateX(100%);
+  animation: cssmarquee 10s linear infinite;
+}
+
+@keyframes cssmarquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
