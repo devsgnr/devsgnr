@@ -1,17 +1,11 @@
 import { styled } from '../../stitches.config';
-import THEME from '../../styles/token/colors';
 
 const BlogItem = styled('div', {
   width: '100%',
   height: '100%',
-  borderTop: `1px solid ${THEME.light.opaque}`,
   transition: 'all ease-in-out 0.15s',
   position: 'relative',
   zIndex: 999,
-
-  '&:last-child': {
-    borderBottom: `1px solid ${THEME.light.opaque}`,
-  },
 
   '.overlay': {
     height: '50vh',

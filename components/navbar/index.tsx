@@ -7,7 +7,9 @@ import Navigation, { NavigationFlex } from './styled';
 const NavigationBar = () => (
   <Navigation>
     <NavigationFlex>
-      <Anchor href="/">E — W</Anchor>
+      <AnchorParagraph>
+        <Anchor href="/">E — W</Anchor>
+      </AnchorParagraph>
 
       <div className="flex items-center gap-2">
         <AnchorParagraph>

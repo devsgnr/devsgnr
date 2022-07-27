@@ -43,13 +43,13 @@ const Navigation = styled('div', {
     padding: '20px',
   },
   '@md': {
-    padding: '15px 50px',
+    padding: '20px 50px',
   },
   '@lg': {
-    padding: '15px 50px',
+    padding: '20px 50px',
   },
   '@xl': {
-    padding: '15px 50px',
+    padding: '20px 50px',
   },
 });
 

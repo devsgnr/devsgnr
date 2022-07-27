@@ -38,7 +38,7 @@ const About: NextPage<AboutPageProps> = ({ data }: AboutPageProps) => {
   return (
     <div>
       <FullHeightContainer className="mt-3 mb-8">
-        <AnimatedHeadingWords className="mb-8 h-fit" target="about-heading">
+        <AnimatedHeadingWords className="mb-8 h-fit big" target="about-heading">
           Creating a new perspective
         </AnimatedHeadingWords>
 
@@ -57,19 +57,19 @@ const About: NextPage<AboutPageProps> = ({ data }: AboutPageProps) => {
       <FullWidthContainer className="mt-8 mb-8">
         <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-col-1 gap-16 mt-10">
           <div className="col-span-2">
-            <AnimatedDiv target="things-i-can-do-by-line" index={3}>
+            <AnimatedDiv>
               <Paragraph className="opacity-50 mb-1">
                 Hello - nice to meet you
               </Paragraph>
             </AnimatedDiv>
           </div>
 
-          <Heading className="col-span-3 leading-normal mb-8">
+          <Heading className="col-span-2 leading-normal mb-8">
             Hey! I&apos;m Emmanuel, a twenty-two years old, creative web
             developer and looming creative director building cool and performant
             websites. Currently based in Nigeria - and working remotely.
           </Heading>
-          <Heading className="col-span-3 leading-normal mb-8">
+          <Heading className="col-span-2 leading-normal mb-8">
             More developer than human. I&apos;m extraordinary and love working
             with extraordinary brands, individuals and teams, to produce
             interactive web experiences that will delight thier audience.
@@ -87,24 +87,19 @@ const About: NextPage<AboutPageProps> = ({ data }: AboutPageProps) => {
       <FullWidthContainer>
         <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-col-1 xl:gap-16 lg:gap-16 md:gap-8 sm:gap-2 mt-10 h-full">
           <div className="col-start-1 col-end-3">
-            <AnimatedDiv target="things-i-can-do-by-line" index={3}>
+            <AnimatedDiv>
               <Paragraph className="opacity-50 mb-1">
                 Things I can do for you
               </Paragraph>
             </AnimatedDiv>
-            <AnimatedDiv target="stacks-by-line" index={3}>
+            <AnimatedDiv>
               <Heading>Stacks &amp; Skills</Heading>
             </AnimatedDiv>
           </div>
 
           <>
             {data.map((item: IServiceProps, index: number) => (
-              <AnimatedDiv
-                className="col-span-2 flex flex-wrap"
-                target="services"
-                index={index + 1}
-                key={index}
-              >
+              <AnimatedDiv className="col-span-2 flex flex-wrap" key={index}>
                 <div className="flex items-start gap-2 mb-16">
                   <Paragraph
                     css={{ fontSize: TYPOGRAPHY.size.pSmall }}

@@ -50,7 +50,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
     <div>
       <FullHeightContainer className="mt-3">
         <div className="flex justify-between items-center mb-8 h-fit">
-          <AnimatedHeadingWords className="w-fit h-fit">
+          <AnimatedHeadingWords className="w-fit h-fit big">
             Front-end Developer &amp; Designer
           </AnimatedHeadingWords>
           <Anchor className="h-fit" href="/work">
@@ -69,19 +69,11 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
 
       <FullWidthContainer className="mt-16" id="about">
         <div className="grid xl:grid-cols-7 lg:grid-cols-7 md:grid-cols-2 sm:grid-cols-1 justify-between items-start relative">
-          <AnimatedDiv
-            target="about"
-            index={2}
-            className="xl:col-span-3 lg:col-span-2 md:col-span-4 sm:col-span-full"
-          >
+          <AnimatedDiv className="xl:col-span-3 lg:col-span-2 md:col-span-4 sm:col-span-full">
             <Heading className="opacity-50 sticky">{homedata.title}</Heading>
           </AnimatedDiv>
 
-          <AnimatedDiv
-            target="about"
-            index={2}
-            className="xl:col-start-4 xl:col-end-7 lg:col-start-4 lg:col-end-7 md:col-span-full sm:col-span-full mb-16"
-          >
+          <AnimatedDiv className="xl:col-start-4 xl:col-end-7 lg:col-start-4 lg:col-end-7 md:col-span-full sm:col-span-full mb-16">
             <Heading className="indent-32 mb-16">
               Creating new perspectives - and adding values to individuals and
               teams by building visually appealing and performant websites.
@@ -108,7 +100,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
           </div>
 
           <div className="xl:col-start-4 lg:col-start-4 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-full justify-self-end text-right gap-5">
-            <AnimatedDiv target="knack-bi-line" index={3}>
+            <AnimatedDiv>
               <Paragraph className="opacity-50 xl:mt-0 lg:mt-0 md:mb-10 sm:mb-10">
                 Where passion and creativity meet
               </Paragraph>
@@ -126,7 +118,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
       <div className="mt-32 mb-32">
         <FullWidthContainer className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1">
           <div className="xl:col-span-full lg:col-span-full md:col-span-full sm:col-span-full">
-            <AnimatedDiv target="selected-works-by-line" index={3}>
+            <AnimatedDiv>
               <Paragraph className="opacity-50 mb-1">
                 Working with amazing individuals &amp; teams
               </Paragraph>
@@ -137,9 +129,9 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
           </div>
         </FullWidthContainer>
 
-        <div>
+        <div className="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-1 sm:grid-cols-1">
           {data.map((item: IProjectProps, index: number) => (
-            <BlogItemComponent data={item} key={index} />
+            <BlogItemComponent className="col-span-2" data={item} key={index} />
           ))}
         </div>
       </div>
