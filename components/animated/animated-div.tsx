@@ -21,7 +21,6 @@ const AnimatedDiv: FC<AnimatedProps> = ({
 
   const InnerDiv: React.CSSProperties = {
     opacity: 1,
-    transform: 'translate(0%, 30%)',
   };
 
   const divRef = useRef<HTMLDivElement>(null);
@@ -32,14 +31,6 @@ const AnimatedDiv: FC<AnimatedProps> = ({
       duration: 0,
       opacity: 1,
       ease: Power1.easeOut,
-    });
-
-    gsap.to(`._${target}_${index}.in_view`, {
-      y: '-px',
-      scrollTrigger: {
-        trigger: `._${target}_${index}.in_view`,
-        scrub: 1,
-      },
     });
   }, []);
 

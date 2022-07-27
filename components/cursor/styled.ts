@@ -13,16 +13,18 @@ const CursorContainer = styled('div', {
 });
 
 const Cursor = styled('div', {
-  margin: 'auto auto',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
   border: `1px solid ${THEME.light.background}`,
   borderRadius: '50%',
   willChange: 'transform',
   transformStyle: 'preserve-3d',
-  width: '30px',
-  height: '30px',
+  width: '15px',
+  height: '15px',
   position: 'absolute',
-  top: '-15px',
-  left: '-15px',
+  top: '-7.5px',
+  left: '-7.5px',
   transform: 'translateX(-10px) translateY(-10px)',
   pointerEvents: 'none',
   zIndex: 9999,

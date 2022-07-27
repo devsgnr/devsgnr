@@ -62,22 +62,22 @@ const Footer = () => {
             </Paragraph>
             <FooterLinkGrid>
               <Anchor href="https://read.cv/devsgnr_" target="_blank">
-                <AnimatedLink>RESUME</AnimatedLink>
+                <AnimatedLink identifier="RESUME">RESUME</AnimatedLink>
               </Anchor>
               <Anchor href="https://instagram.com/devsgnr_" target="_blank">
-                <AnimatedLink>INSTAGRAM</AnimatedLink>
+                <AnimatedLink identifier="INSTAGRAM">INSTAGRAM</AnimatedLink>
               </Anchor>
               <Anchor href="https://twitter.com/devsgnr_" target="_blank">
-                <AnimatedLink>TWITTER</AnimatedLink>
+                <AnimatedLink identifier="TWITTER">TWITTER</AnimatedLink>
               </Anchor>
               <Anchor href="https://linkedin.com/in/eiwatila" target="_blank">
-                <AnimatedLink>LINKEDIN</AnimatedLink>
+                <AnimatedLink identifier="LINKEDIN">LINKEDIN</AnimatedLink>
               </Anchor>
               <Anchor
                 href="https://www.getrevue.co/profile/devsgnr"
                 target="_blank"
               >
-                <AnimatedLink>NEWSLETTER</AnimatedLink>
+                <AnimatedLink identifier="NEWSLETTER">NEWSLETTER</AnimatedLink>
               </Anchor>
             </FooterLinkGrid>
           </div>

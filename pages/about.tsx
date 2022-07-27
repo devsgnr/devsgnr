@@ -6,7 +6,7 @@ import { IServiceResponse } from '../types/response';
 import { FetchServicesService } from './api/services';
 import { IServiceProps } from '../types/services';
 import { Paragraph, Heading } from '../components/typography/styled';
-import AnimatedHeading, {
+import {
   AnimatedDiv,
   AnimatedHeadingWords,
   AnimatedImageContainer,
@@ -30,58 +30,59 @@ export const getStaticProps = async () => {
   };
 };
 
-interface HomePageProps {
+interface AboutPageProps {
   data: IServiceProps[];
 }
 
-const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
+const About: NextPage<AboutPageProps> = ({ data }: AboutPageProps) => {
   return (
     <div>
-      <FullHeightContainer className="mt-3">
-        <AnimatedHeadingWords className="big mb-8" target="first-heading">
-          Creative a new perspective
+      <FullHeightContainer className="mt-3 mb-8">
+        <AnimatedHeadingWords className="mb-8 h-fit" target="about-heading">
+          Creating a new perspective
         </AnimatedHeadingWords>
 
-        <AnimatedImageContainer target="me_three" index={1}>
+        <AnimatedImageContainer
+          className="xl:self-start lg:self-start md:self-end sm:self-end"
+          target="me_three"
+          index={1}
+        >
           <img src="https://i.imgur.com/P2Fptsu.gif" alt="Emmanuel Watila" />
         </AnimatedImageContainer>
       </FullHeightContainer>
 
-      <FullWidthContainer className="mb-8">
+      <FullWidthContainer className="mt-8 mb-8">
         <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-col-1 gap-16 mt-10">
           <div className="col-span-2">
             <AnimatedDiv target="things-i-can-do-by-line" index={3}>
               <Paragraph className="opacity-50 mb-1">
-                Hello, I&apos;m Emmanuel - nice to meet you
+                Hello - nice to meet you
               </Paragraph>
             </AnimatedDiv>
           </div>
-          <div className="col-span-2">
-            <AnimatedDiv target="quirky-by-line" index={1}>
-              <Heading className="indent-32 mb-16">
-                Hey! I&apos;m Emmanuel, a twenty-two year old, front-end
-                creative devloper building cool websites. Currently based in
-                Nigeria - working remotely.
-              </Heading>
-              <Heading className="mb-16">
-                Curious developer, and a more curious human. I&apos;m
-                extraordinary - I take your project from idea to cool websites.
-              </Heading>
-              <Paragraph className="xl:indent-36 lg:indent-36 md:indent-16 sm:indent-0">
-                I&apos;m a very quirky human, based in Nigeria, collaborating
-                with agencies and individuals around the world. I try to read as
-                often as I can, I try to write when I have something to say, I
-                watch Netflix and Prime Video a little too much, but most
-                importantly I take my craft to heart and make sure I&apos;m not
-                just delivering the fancy but also the value.
-              </Paragraph>
-            </AnimatedDiv>
-          </div>
+
+          <Heading className="col-span-3 leading-normal mb-8">
+            Hey! I&apos;m Emmanuel, a twenty-two years old, creative web
+            developer and looming creative director building cool and performant
+            websites. Currently based in Nigeria - and working remotely.
+          </Heading>
+          <Heading className="col-span-3 leading-normal mb-8">
+            More developer than human. I&apos;m extraordinary and love working
+            with extraordinary brands, individuals and teams, to produce
+            interactive web experiences that will delight thier audience.
+          </Heading>
+          <Paragraph className="col-span-2">
+            Quirky, human, and creative genius who reads and would love to read
+            more mythology, who writes when he has something to write, and who
+            watches Netflix and Prime Video a little too much, but most
+            importantly who take his craft to heart and focus on delivering the
+            best web experience out there.
+          </Paragraph>
         </div>
       </FullWidthContainer>
 
       <FullWidthContainer>
-        <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-col-1 gap-16 mt-10 h-full">
+        <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-col-1 xl:gap-16 lg:gap-16 md:gap-8 sm:gap-2 mt-10 h-full">
           <div className="col-start-1 col-end-3">
             <AnimatedDiv target="things-i-can-do-by-line" index={3}>
               <Paragraph className="opacity-50 mb-1">
@@ -89,15 +90,18 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
               </Paragraph>
             </AnimatedDiv>
             <AnimatedDiv target="stacks-by-line" index={3}>
-              <AnimatedHeading target="things-i-can-do-heading">
-                Stacks &amp; Skills
-              </AnimatedHeading>
+              <Heading>Stacks &amp; Skills</Heading>
             </AnimatedDiv>
           </div>
 
-          <div className="xl:col-start-4 lg:col-start-4 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-full flex flex-wrap">
+          <>
             {data.map((item: IServiceProps, index: number) => (
-              <AnimatedDiv target="services" index={index + 1} key={index}>
+              <AnimatedDiv
+                className="col-span-2 flex flex-wrap"
+                target="services"
+                index={index + 1}
+                key={index}
+              >
                 <div className="flex items-start gap-2 mb-16">
                   <Paragraph
                     css={{ fontSize: TYPOGRAPHY.size.pSmall }}
@@ -106,7 +110,7 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
                     {`${index + 1}.`}
                   </Paragraph>
                   <div>
-                    <Paragraph className="p-0 mb-8">{item.title}</Paragraph>
+                    <Heading className="p-0 mb-1">{item.title}</Heading>
 
                     <Paragraph className="mt-5 leading-relaxed">
                       {ReactHtmlParser(item.description.html)}
@@ -115,11 +119,11 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
                 </div>
               </AnimatedDiv>
             ))}
-          </div>
+          </>
         </div>
       </FullWidthContainer>
     </div>
   );
 };
 
-export default Home;
+export default About;

@@ -2,7 +2,7 @@ export interface IProjectProps {
   id: string;
   slug: string;
   title: string;
-  date: string;
+  role: string;
   coverPicture: {
     url: string;
   };

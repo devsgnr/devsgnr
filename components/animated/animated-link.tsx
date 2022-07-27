@@ -5,9 +5,13 @@ import FooterLinks from '../footer-links/styled';
 
 interface AnimatedProps {
   children: string;
+  identifier?: string;
 }
 
-const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
+const AnimatedText: FC<AnimatedProps> = ({
+  children,
+  identifier,
+}: AnimatedProps) => {
   const Title: React.CSSProperties = {
     opacity: 1,
     fontFamily: TYPOGRAPHY.family.paragraph,
@@ -31,7 +35,6 @@ const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
 
   const ParagraphRef = useRef<HTMLDivElement>(null);
   const textArr: string[] = children.split('');
-  const identifier: string = children.replace(' ', '_');
 
   const handleMouseEnter = () => {
     textArr.forEach((letter: string, index: number) => {
@@ -39,7 +42,7 @@ const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
         y: '100%',
       });
       gsap.to(`._link_${identifier}_${index}.in_view`, {
-        duration: (index + 1) * 0.12,
+        duration: (index + 1) * 0.1,
         opacity: 1,
         y: '0%',
         ease: Power4.easeInOut,
@@ -53,7 +56,7 @@ const AnimatedText: FC<AnimatedProps> = ({ children }: AnimatedProps) => {
         y: '-100%',
       });
       gsap.to(`._link_${identifier}_${index}.in_view`, {
-        duration: (index + 1) * 0.12,
+        duration: (index + 1) * 0.1,
         opacity: 1,
         y: '0%',
         ease: Power4.easeInOut,

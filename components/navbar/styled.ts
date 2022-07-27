@@ -40,7 +40,7 @@ const Navigation = styled('div', {
   mixBlendMode: 'difference',
 
   '@sm': {
-    padding: '15px',
+    padding: '20px',
   },
   '@md': {
     padding: '15px 50px',

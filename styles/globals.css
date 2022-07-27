@@ -1,6 +1,6 @@
-/* * {
+* {
   cursor: none;
-} */
+}
 
 html,
 body {
@@ -8,6 +8,7 @@ body {
   margin: 0;
   height: 100%;
   background: #000000;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {

@@ -49,21 +49,25 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
   return (
     <div>
       <FullHeightContainer className="mt-3">
-        <div className="flex flex-wrap justify-between items-center mb-8">
-          <AnimatedHeadingWords className="big w-fit h-fit">
+        <div className="flex justify-between items-center mb-8 h-fit">
+          <AnimatedHeadingWords className="w-fit h-fit">
             Front-end Developer &amp; Designer
           </AnimatedHeadingWords>
-          <Anchor href="#" className="h-fit">
-            <AnimatedLink>SEE MORE</AnimatedLink>
+          <Anchor className="h-fit" href="#about">
+            <AnimatedLink identifier="SEE_MORE_HOME">SEE MORE</AnimatedLink>
           </Anchor>
         </div>
 
-        <AnimatedImageContainer className="" target="me" index={1}>
+        <AnimatedImageContainer
+          className="xl:self-start lg:self-start md:self-end sm:self-end"
+          target="me"
+          index={1}
+        >
           <img src="/me.png" alt="Emmanuel Watila" />
         </AnimatedImageContainer>
       </FullHeightContainer>
 
-      <FullWidthContainer className="mt-16">
+      <FullWidthContainer className="mt-16" id="about">
         <div className="grid xl:grid-cols-7 lg:grid-cols-7 md:grid-cols-2 sm:grid-cols-1 justify-between items-start relative">
           <AnimatedDiv
             target="about"
