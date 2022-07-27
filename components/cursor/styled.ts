@@ -16,6 +16,7 @@ const Cursor = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  backgroundColor: THEME.light.background,
   border: `1px solid ${THEME.light.background}`,
   borderRadius: '50%',
   willChange: 'transform',

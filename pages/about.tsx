@@ -47,7 +47,10 @@ const About: NextPage<AboutPageProps> = ({ data }: AboutPageProps) => {
           target="me_three"
           index={1}
         >
-          <img src="https://i.imgur.com/P2Fptsu.gif" alt="Emmanuel Watila" />
+          <img
+            src="https://media.graphassets.com/5Kt5hh1wSHW91i8EDsmr"
+            alt="Emmanuel Watila"
+          />
         </AnimatedImageContainer>
       </FullHeightContainer>
 
