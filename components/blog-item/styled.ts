@@ -3,37 +3,43 @@ import THEME from '../../styles/token/colors';
 
 const BlogItem = styled('div', {
   width: '100%',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
+  height: '100%',
   borderTop: `1px solid ${THEME.light.opaque}`,
-  backgroundColor: 'transparent',
   transition: 'all ease-in-out 0.15s',
   position: 'relative',
   zIndex: 999,
 
-  '.image': {
-    width: '300px',
-    height: '300px',
-    position: 'absolute',
-    transform: 'translateX(10px) translateY(10px)',
-    pointerEvents: 'none',
-    zIndex: 999,
-    willChange: 'transform',
+  '&:last-child': {
+    borderBottom: `1px solid ${THEME.light.opaque}`,
+  },
+
+  '.overlay': {
+    height: '50vh',
+    width: '100%',
+    borderRadius: '20px',
+    backgroundAttachment: 'fixed',
     backgroundSize: 'cover',
   },
 
+  '.content': {
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: '20px',
+  },
+
   '@sm': {
-    padding: '35px 20px',
+    padding: '35px',
   },
   '@md': {
-    padding: '35px 50px',
+    padding: '35px',
   },
   '@lg': {
-    padding: '75px 50px',
+    padding: '35px 35px',
   },
   '@xl': {
-    padding: '75px 50px',
+    padding: '35px 35px',
   },
 
   '&:hover': {

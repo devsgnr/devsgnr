@@ -53,8 +53,8 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
           <AnimatedHeadingWords className="w-fit h-fit">
             Front-end Developer &amp; Designer
           </AnimatedHeadingWords>
-          <Anchor className="h-fit" href="#about">
-            <AnimatedLink identifier="SEE_MORE_HOME">SEE MORE</AnimatedLink>
+          <Anchor className="h-fit" href="/work">
+            <AnimatedLink identifier="SEE_MORE_HOME">SEE WORK</AnimatedLink>
           </Anchor>
         </div>
 
@@ -101,7 +101,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
       <FullWidthContainer className="mt-10 mb-38">
         <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1 justify-between content-end relative">
           <div className="col-span-3 z-50 mix-blend-difference">
-            <AnimatedHeadingWords className="text-white big">
+            <AnimatedHeadingWords className="leadning-5 text-white big">
               A human with a knack for making things look pretty, who stumbled
               upon coding and design
             </AnimatedHeadingWords>

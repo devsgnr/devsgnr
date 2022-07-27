@@ -1,5 +1,16 @@
-* {
-  cursor: none;
+@import url('https://rsms.me/inter/inter.css');
+
+html {
+  font-family: 'Inter', sans-serif;
+  /* font-feature-settings: 'cv11'; */
+  font-display: swap;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', sans-serif;
+    font-display: swap;
+  }
 }
 
 html,
@@ -8,7 +19,6 @@ body {
   margin: 0;
   height: 100%;
   background: #000000;
-  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {

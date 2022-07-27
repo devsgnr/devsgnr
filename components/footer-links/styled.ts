@@ -12,6 +12,7 @@ const FooterLinks = styled('div', {
   overflow: 'hidden',
   position: 'relative',
   color: THEME.light.foreground,
+  letterSpacing: '-0.9px',
 
   '&.container': {
     '&:after': {

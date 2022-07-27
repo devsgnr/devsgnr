@@ -9,9 +9,9 @@ export type TypographyWeight = 'normal' | 'bold' | 'bolder';
 export const Heading = styled('div', {
   margin: 0,
   fontFamily: TYPOGRAPHY.family.heading,
-  letterSpacing: '0px',
+  letterSpacing: '-2.2px',
   fontWeight: TYPOGRAPHY.weight.normal,
-  lineHeight: 1.1,
+  lineHeight: 1.2,
   width: '100%',
   color: THEME.light.foreground,
 
@@ -58,6 +58,7 @@ export const Paragraph = styled('div', {
   fontSize: `${TYPOGRAPHY.size.pRegular}px`,
   fontWeight: TYPOGRAPHY.weight.normal,
   lineHeight: 1.75,
+  letterSpacing: '-0.9px',
   width: '100%',
   color: THEME.light.foreground,
 
@@ -80,6 +81,7 @@ export const Paragraph = styled('div', {
     fontWeight: TYPOGRAPHY.weight.bold,
     color: THEME.light.foreground,
     opacity: 0.4,
+    letterSpacing: '-0.9px',
     transition: 'all ease-in-out 0.2s',
 
     '&:hover': {
@@ -120,7 +122,8 @@ export const AnchorParagraph = styled('div', {
   fontFamily: TYPOGRAPHY.family.paragraph,
   fontSize: `${TYPOGRAPHY.size.pRegular}px`,
   fontWeight: TYPOGRAPHY.weight.normal,
-  lineHeight: 2.2,
+  letterSpacing: '-0.9px',
+  lineHeight: 1.75,
   position: 'relative',
 
   '@sm': {
@@ -141,6 +144,7 @@ export const AnchorParagraph = styled('div', {
     position: 'relative',
     fontWeight: TYPOGRAPHY.weight.normal,
     opacity: 0.4,
+    letterSpacing: '-0.9px',
 
     '&:hover': {
       opacity: 1,

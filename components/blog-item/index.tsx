@@ -17,20 +17,34 @@ const BlogItemComponent: FC<BlogItemComponentProps> = ({
 }: BlogItemComponentProps) => {
   return (
     <BlogItem>
-      <div>
-        <Heading>{data.title}</Heading>
-        <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
-          {data.role}
-        </Paragraph>
-      </div>
-      <div>
-        {data.slug === '#' ? (
-          <></>
-        ) : (
-          <Anchor href={data.slug} target="_blank">
-            <AnimatedLink identifier={data.id}>VIEW PROJECT</AnimatedLink>
-          </Anchor>
-        )}
+      <div
+        style={{
+          backgroundImage: `url(${data.coverPicture.url})`,
+        }}
+        className="overlay"
+      />
+      <div className="content">
+        <div>
+          <Heading>{data.title}</Heading>
+          <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
+            {data.role}
+          </Paragraph>
+        </div>
+        <div>
+          {data.slug === '#' ? (
+            <Anchor
+              href={data.slug}
+              className="opacity-50 pointer-events-none"
+              target="_blank"
+            >
+              <AnimatedLink identifier={data.id}>IN PROGRESS</AnimatedLink>
+            </Anchor>
+          ) : (
+            <Anchor href={data.slug} target="_blank">
+              <AnimatedLink identifier={data.id}>VIEW PROJECT</AnimatedLink>
+            </Anchor>
+          )}
+        </div>
       </div>
     </BlogItem>
   );

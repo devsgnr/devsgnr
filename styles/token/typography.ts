@@ -2,8 +2,8 @@ import { ITypography } from '../../types/token';
 
 const TYPOGRAPHY: ITypography = {
   family: {
-    heading: 'pp_neue_montrealbook, sans-serif',
-    paragraph: 'pp_neue_montrealbook, sans-serif',
+    heading: 'Inter, sans-serif',
+    paragraph: 'Inter, sans-serif',
     footing: 'migra_italicextralight_italic, sans-serif',
   },
   size: {
@@ -15,7 +15,7 @@ const TYPOGRAPHY: ITypography = {
     pSmall: 13,
   },
   weight: {
-    normal: 300,
+    normal: 400,
     bold: 500,
     bolder: 700,
   },
