@@ -35,7 +35,7 @@ const Footer = () => {
               <Paragraph
                 className="text-center"
                 css={{
-                  color: THEME.light.background,
+                  color: THEME.dark.background,
                   fontSize: TYPOGRAPHY.size.pSmall,
                 }}
               >

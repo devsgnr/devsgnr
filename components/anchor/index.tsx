@@ -29,10 +29,10 @@ const Anchor = ({
   const reduceCursorScale = () => {
     gsap.to('.cursor', {
       duration: 0.25,
-      width: '15px',
-      height: '15px',
-      top: '-7.5px',
-      left: '-7.5px',
+      width: '25px',
+      height: '25px',
+      top: '-12.5px',
+      left: '-12.5px',
       ease: Power4.easeInOut,
     });
   };

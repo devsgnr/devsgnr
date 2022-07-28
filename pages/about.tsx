@@ -47,10 +47,7 @@ const About: NextPage<AboutPageProps> = ({ data }: AboutPageProps) => {
           target="me_three"
           index={1}
         >
-          <img
-            src="https://media.graphassets.com/5Kt5hh1wSHW91i8EDsmr"
-            alt="Emmanuel Watila"
-          />
+          <img src="/about.gif" alt="Emmanuel Watila" />
         </AnimatedImageContainer>
       </FullHeightContainer>
 
@@ -64,18 +61,20 @@ const About: NextPage<AboutPageProps> = ({ data }: AboutPageProps) => {
             </AnimatedDiv>
           </div>
 
-          <Heading className="col-span-2 leading-normal mb-8">
-            Hey! I&apos;m Emmanuel, a twenty-two years old, creative web
-            developer and looming creative director building cool and performant
-            websites. Currently based in Nigeria - and working remotely.
+          <Heading className="col-span-3 leading-normal mb-8">
+            Hey! I&apos;m Emmanuel, a twenty-two years old, front-end web
+            developer and looming creative developer building cool and
+            performant websites. Currently based in Nigeria - and working
+            remotely.
           </Heading>
-          <Heading className="col-span-2 leading-normal mb-8">
-            More developer than human. I&apos;m extraordinary and love working
-            with extraordinary brands, individuals and teams, to produce
-            interactive web experiences that will delight thier audience.
+          <Heading className="col-span-3 leading-normal mb-8">
+            A rare hybrid of developer and human. I&apos;m extraordinary and
+            love working with extraordinary brands, individuals and teams, to
+            produce interactive and immersive web experiences that will delight
+            audiences.
           </Heading>
           <Paragraph className="col-span-2">
-            Quirky, human, and creative genius who reads and would love to read
+            Quirky human and creative genius who reads and would love to read
             more mythology, who writes when he has something to write, and who
             watches Netflix and Prime Video a little too much, but most
             importantly who take his craft to heart and focus on delivering the
@@ -97,7 +96,7 @@ const About: NextPage<AboutPageProps> = ({ data }: AboutPageProps) => {
             </AnimatedDiv>
           </div>
 
-          <>
+          <div className="col-span-2">
             {data.map((item: IServiceProps, index: number) => (
               <AnimatedDiv className="col-span-2 flex flex-wrap" key={index}>
                 <div className="flex items-start gap-2 mb-16">
@@ -117,7 +116,7 @@ const About: NextPage<AboutPageProps> = ({ data }: AboutPageProps) => {
                 </div>
               </AnimatedDiv>
             ))}
-          </>
+          </div>
         </div>
       </FullWidthContainer>
     </div>

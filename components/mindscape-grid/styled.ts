@@ -31,7 +31,7 @@ export const StyledMindscapeGridItemCredit = styled('div', {
   padding: '0 0 15px 20px',
   width: '100%',
   '*': {
-    color: THEME.light.foreground,
+    color: THEME.dark.foreground,
   },
 });
 
@@ -46,7 +46,7 @@ export const StyledMindscapeGridPlusButton = styled('div', {
   backgroundColor: 'rgba(196, 196, 196, 0.1)',
   cursor: 'pointer',
   svg: {
-    stroke: THEME.light.foreground,
+    stroke: THEME.dark.foreground,
     verticalAlign: 'middle',
   },
   display: 'flex',

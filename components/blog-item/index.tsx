@@ -29,7 +29,10 @@ const BlogItemComponent: FC<BlogItemComponentProps> = ({
         <div className="content">
           <div>
             <Heading>{data.title}</Heading>
-            <Paragraph css={{ fontSize: TYPOGRAPHY.size.pSmall }}>
+            <Paragraph
+              className="opacity-50"
+              css={{ fontSize: TYPOGRAPHY.size.pSmall }}
+            >
               {data.role}
             </Paragraph>
           </div>

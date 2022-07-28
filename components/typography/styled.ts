@@ -9,11 +9,11 @@ export type TypographyWeight = 'normal' | 'bold' | 'bolder';
 export const Heading = styled('div', {
   margin: 0,
   fontFamily: TYPOGRAPHY.family.heading,
-  letterSpacing: '-1px',
+  letterSpacing: '0',
   fontWeight: TYPOGRAPHY.weight.normal,
-  lineHeight: 1.2,
+  lineHeight: 1.3,
   width: '100%',
-  color: THEME.light.foreground,
+  color: THEME.dark.foreground,
 
   '@sm': {
     fontSize: TYPOGRAPHY.size.heading3,
@@ -59,7 +59,7 @@ export const Paragraph = styled('div', {
   fontWeight: TYPOGRAPHY.weight.normal,
   lineHeight: 1.75,
   width: '100%',
-  color: THEME.light.foreground,
+  color: THEME.dark.foreground,
 
   '@sm': {
     fontSize: '15px',
@@ -78,7 +78,7 @@ export const Paragraph = styled('div', {
     textDecoration: 'underline',
     textUnderlineOffset: '3px',
     fontWeight: TYPOGRAPHY.weight.bold,
-    color: THEME.light.foreground,
+    color: THEME.dark.foreground,
     opacity: 0.4,
     transition: 'all ease-in-out 0.2s',
 
@@ -99,7 +99,7 @@ export const Paragraph = styled('div', {
   blockquote: {
     margin: '40px 0',
     paddingLeft: '20px',
-    borderLeft: `3px solid ${THEME.light.foreground}`,
+    borderLeft: `3px solid ${THEME.dark.foreground}`,
   },
 
   ol: {

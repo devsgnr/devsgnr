@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import Layout from '../components/layout';
 import '../styles/dist/output.css';
 import '../public/neue-montreal/stylesheet.css';
-import '../public/migra/stylesheet.css';
 import '../public/telegraf/stylesheet.css';
 import MouseCursor from '../components/cursor';
 

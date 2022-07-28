@@ -1,8 +1,7 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import { NextPage } from 'next';
-import ReactHtmlParser from 'react-html-parser';
-import { IHomeResponse, IProjectResponse } from '../types/response';
+import { IProjectResponse } from '../types/response';
 import { FetchProjectsService } from './api/project';
 import { IProjectProps } from '../types/project';
 import { Heading, Paragraph } from '../components/typography/styled';
@@ -17,24 +16,17 @@ import {
   FullWidthContainer,
 } from '../components/container/styled';
 import BlogItemComponent from '../components/blog-item';
-import { FetchHomesService } from './api/home';
-import { IHomeProps } from '../types/home';
 import Anchor from '../components/anchor';
+import ThreeDBoxScene from '../components/3dScenes/box';
 
 export const getStaticProps = async () => {
   const projects: IProjectResponse<IProjectProps[]> =
     await FetchProjectsService();
   const data: IProjectProps[] | undefined = projects.caseStudies;
 
-  const home: IHomeResponse<IHomeProps[]> = await FetchHomesService();
-  const homedata: IHomeProps | undefined = home.homes.find(
-    (el: IHomeProps) => el,
-  );
-
   return {
     props: {
       data,
-      homedata,
     },
     revalidate: 3600,
   };
@@ -42,20 +34,16 @@ export const getStaticProps = async () => {
 
 interface HomePageProps {
   data: IProjectProps[];
-  homedata: IHomeProps;
 }
 
-const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
+const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
   return (
     <div>
       <FullHeightContainer className="mt-3">
-        <div className="flex justify-between items-center mb-8 h-fit">
+        <div className="mb-1 h-fit">
           <AnimatedHeadingWords className="w-fit h-fit big">
             Front-end Developer &amp; Designer
           </AnimatedHeadingWords>
-          <Anchor className="h-fit" href="/work">
-            <AnimatedLink identifier="SEE_MORE_HOME">SEE WORK</AnimatedLink>
-          </Anchor>
         </div>
 
         <AnimatedImageContainer
@@ -65,12 +53,21 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
         >
           <img src="/me.png" alt="Emmanuel Watila" />
         </AnimatedImageContainer>
+
+        <div className="flex justify-between items-center mt-8 mb-8 h-fit">
+          <div>
+            <ThreeDBoxScene />
+          </div>
+          <Anchor className="h-fit mb-6" href="/work">
+            <AnimatedLink identifier="SEE_MORE_HOME">SEE WORK</AnimatedLink>
+          </Anchor>
+        </div>
       </FullHeightContainer>
 
       <FullWidthContainer className="mt-16" id="about">
         <div className="grid xl:grid-cols-7 lg:grid-cols-7 md:grid-cols-2 sm:grid-cols-1 justify-between items-start relative">
           <AnimatedDiv className="xl:col-span-3 lg:col-span-2 md:col-span-4 sm:col-span-full">
-            <Heading className="opacity-50 sticky">{homedata.title}</Heading>
+            <Heading className="opacity-50 sticky">About</Heading>
           </AnimatedDiv>
 
           <AnimatedDiv className="xl:col-start-4 xl:col-end-7 lg:col-start-4 lg:col-end-7 md:col-span-full sm:col-span-full mb-16">
@@ -80,11 +77,27 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
             </Heading>
 
             <Paragraph className="leading-normal mb-16">
-              {ReactHtmlParser(homedata.about.html)}
+              A designer &amp; front-end developer with 4+ years of experience
+              designing and developing consumer-facing digital interfaces. I
+              harness my passion for design, code and the web to helping propel
+              ideas forward to fruition
             </Paragraph>
 
             <Paragraph className="leading-normal mb-16">
-              {ReactHtmlParser(homedata.timeline.html)}
+              I&apos;m currently helping various teams and individuals with
+              creative projects in the fields of interface design, creative
+              development and content creation. These days you&apos;ll find me
+              focusing on improving my creative development skills from
+              uncoventional layouts, WebGL(Three.js) and various animation
+              methods.
+            </Paragraph>
+
+            <Paragraph className="leading-normal mb-16">
+              Over the years, I have worked with a couple of agencies shipping
+              delighful front-end experiences that scale for; early-stage
+              startups, SMEs, and academia, while that was fun, I wanted to work
+              on new &amp; exciting creative websites projects to level up, so
+              here we are.
             </Paragraph>
           </AnimatedDiv>
         </div>
@@ -93,7 +106,7 @@ const Home: NextPage<HomePageProps> = ({ data, homedata }: HomePageProps) => {
       <FullWidthContainer className="mt-10 mb-38">
         <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1 justify-between content-end relative">
           <div className="col-span-3 z-50 mix-blend-difference">
-            <AnimatedHeadingWords className="leadning-5 text-white big">
+            <AnimatedHeadingWords className="text-white big">
               A human with a knack for making things look pretty, who stumbled
               upon coding and design
             </AnimatedHeadingWords>
