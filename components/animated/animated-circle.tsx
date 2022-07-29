@@ -20,8 +20,8 @@ const AnimatedDiv: FC<AnimatedProps> = ({
     height: '180px',
     overflow: 'hidden',
     borderRadius: '50%',
-    backgroundColor: THEME.light.foreground,
-    color: THEME.light.background,
+    backgroundColor: THEME.dark.foreground,
+    color: THEME.dark.background,
     padding: '30px',
     transform: 'rotateZ(0deg) scale(1)',
     display: 'flex',
@@ -39,8 +39,12 @@ const AnimatedDiv: FC<AnimatedProps> = ({
     });
   }, []);
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => {
     gsap.to(`._${target}_${index}.in_view`, {
+      y: e.movementY,
+      x: e.movementX,
       duration: 0.5,
       transform: 'scale(0.8)',
       ease: Power1.easeOut,
@@ -60,7 +64,7 @@ const AnimatedDiv: FC<AnimatedProps> = ({
       ref={divRef}
       style={OuterDivWrapper}
       className={`_${target}_${index} in_view ${className}`}
-      onMouseOverCapture={() => handleMouseEnter()}
+      onMouseOverCapture={(e) => handleMouseEnter(e)}
       onMouseOutCapture={() => handleMouseLeave()}
     >
       <div className="pointer-events-none">{children}</div>

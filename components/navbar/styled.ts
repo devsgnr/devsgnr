@@ -30,7 +30,7 @@ export const NavigationLinks = styled('div', {
 });
 
 const Navigation = styled('div', {
-  position: 'sticky',
+  position: 'fixed',
   top: 0,
   left: 0,
   zIndex: 9999999,
@@ -43,13 +43,13 @@ const Navigation = styled('div', {
     padding: '20px',
   },
   '@md': {
-    padding: '15px 50px',
+    padding: '20px 50px',
   },
   '@lg': {
-    padding: '15px 50px',
+    padding: '20px 50px',
   },
   '@xl': {
-    padding: '15px 50px',
+    padding: '20px 50px',
   },
 });
 

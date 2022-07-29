@@ -607,6 +607,22 @@ video {
   position: sticky;
 }
 
+.left-2 {
+  left: 0.5rem;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.bottom-12 {
+  bottom: 3rem;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -617,6 +633,10 @@ video {
 
 .col-span-3 {
   grid-column: span 3 / span 3;
+}
+
+.col-span-4 {
+  grid-column: span 4 / span 4;
 }
 
 .col-start-1 {
@@ -657,6 +677,10 @@ video {
 
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .mt-16 {
@@ -705,10 +729,18 @@ video {
   height: 100%;
 }
 
+.h-2\/4 {
+  height: 50%;
+}
+
 .w-fit {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.w-3\/4 {
+  width: 75%;
 }
 
 .w-full {
@@ -737,6 +769,14 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .justify-between {
@@ -831,6 +871,10 @@ video {
 }
 
 @media (min-width: 320px) {
+  .sm\:static {
+    position: static;
+  }
+
   .sm\:col-span-full {
     grid-column: 1 / -1;
   }
@@ -861,6 +905,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:static {
+    position: static;
+  }
+
   .md\:col-span-4 {
     grid-column: span 4 / span 4;
   }
@@ -899,12 +947,20 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .lg\:absolute {
+    position: absolute;
+  }
+
   .lg\:col-span-2 {
     grid-column: span 2 / span 2;
   }
 
   .lg\:col-span-full {
     grid-column: 1 / -1;
+  }
+
+  .lg\:col-span-1 {
+    grid-column: span 1 / span 1;
   }
 
   .lg\:col-start-4 {
@@ -939,6 +995,10 @@ video {
     grid-template-columns: repeat(7, minmax(0, 1fr));
   }
 
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -957,12 +1017,20 @@ video {
 }
 
 @media (min-width: 1280px) {
+  .xl\:absolute {
+    position: absolute;
+  }
+
   .xl\:col-span-3 {
     grid-column: span 3 / span 3;
   }
 
   .xl\:col-span-full {
     grid-column: 1 / -1;
+  }
+
+  .xl\:col-span-1 {
+    grid-column: span 1 / span 1;
   }
 
   .xl\:col-start-4 {
@@ -995,6 +1063,10 @@ video {
 
   .xl\:grid-cols-7 {
     grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .xl\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .xl\:grid-cols-3 {

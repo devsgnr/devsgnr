@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+/* eslint-disable arrow-body-style */
 import React from 'react';
 import { PenTool } from 'react-feather';
 import THEME from '../../styles/token/colors';
@@ -14,16 +14,11 @@ import { Paragraph } from '../typography/styled';
 import { FooterContainer, FooterLinkGrid } from './styled';
 
 const Footer = () => {
-  const { pathname } = useRouter();
-  const path = pathname.split('/')[1];
   return (
     <>
       <FullWidthContainer className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 justify-between items-start mt-10">
         <div className="col-span-2">
-          <AnimatedDiv
-            target={`footer-by-line-${path === '' ? 'home' : path}`}
-            index={3}
-          >
+          <AnimatedDiv>
             <Paragraph className="opacity-50 mb-3">
               Wanna work together?
             </Paragraph>
@@ -40,7 +35,7 @@ const Footer = () => {
               <Paragraph
                 className="text-center"
                 css={{
-                  color: THEME.light.background,
+                  color: THEME.dark.background,
                   fontSize: TYPOGRAPHY.size.pSmall,
                 }}
               >

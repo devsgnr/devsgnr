@@ -20,7 +20,8 @@
     "**/*.ts",
     "**/*.tsx",
     "utils/decodeBlurhash.js",
-    "utils/isInView.ts"
+    "utils/isInView.ts",
+    "components/3dScenes/box.jsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -6,11 +6,7 @@ import { IServiceResponse } from '../types/response';
 import { FetchServicesService } from './api/services';
 import { IServiceProps } from '../types/services';
 import { Paragraph, Heading } from '../components/typography/styled';
-import {
-  AnimatedDiv,
-  AnimatedHeadingWords,
-  AnimatedImageContainer,
-} from '../components/animated';
+import { AnimatedDiv, AnimatedImageContainer } from '../components/animated';
 import {
   FullHeightContainer,
   FullWidthContainer,
@@ -37,27 +33,20 @@ interface AboutPageProps {
 const About: NextPage<AboutPageProps> = ({ data }: AboutPageProps) => {
   return (
     <div>
-      <FullHeightContainer className="mt-3 mb-8">
-        <AnimatedHeadingWords className="mb-8 h-fit" target="about-heading">
-          Creating a new perspective
-        </AnimatedHeadingWords>
-
+      <FullHeightContainer className="mt-16 mb-8">
         <AnimatedImageContainer
           className="xl:self-start lg:self-start md:self-end sm:self-end"
           target="me_three"
           index={1}
         >
-          <img
-            src="https://media.graphassets.com/5Kt5hh1wSHW91i8EDsmr"
-            alt="Emmanuel Watila"
-          />
+          <img src="/about.gif" alt="Emmanuel Watila" />
         </AnimatedImageContainer>
       </FullHeightContainer>
 
       <FullWidthContainer className="mt-8 mb-8">
         <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-col-1 gap-16 mt-10">
           <div className="col-span-2">
-            <AnimatedDiv target="things-i-can-do-by-line" index={3}>
+            <AnimatedDiv>
               <Paragraph className="opacity-50 mb-1">
                 Hello - nice to meet you
               </Paragraph>
@@ -65,17 +54,19 @@ const About: NextPage<AboutPageProps> = ({ data }: AboutPageProps) => {
           </div>
 
           <Heading className="col-span-3 leading-normal mb-8">
-            Hey! I&apos;m Emmanuel, a twenty-two years old, creative web
-            developer and looming creative director building cool and performant
-            websites. Currently based in Nigeria - and working remotely.
+            Hey! I&apos;m Emmanuel, a twenty-two years old, front-end web
+            developer and looming creative developer building cool and
+            performant websites. Currently based in Nigeria - and working
+            remotely.
           </Heading>
           <Heading className="col-span-3 leading-normal mb-8">
-            More developer than human. I&apos;m extraordinary and love working
-            with extraordinary brands, individuals and teams, to produce
-            interactive web experiences that will delight thier audience.
+            A rare hybrid of developer and human. I&apos;m extraordinary and
+            love working with extraordinary brands, individuals and teams, to
+            produce interactive and immersive web experiences that will delight
+            audiences.
           </Heading>
           <Paragraph className="col-span-2">
-            Quirky, human, and creative genius who reads and would love to read
+            Quirky human and creative genius who reads and would love to read
             more mythology, who writes when he has something to write, and who
             watches Netflix and Prime Video a little too much, but most
             importantly who take his craft to heart and focus on delivering the
@@ -87,24 +78,19 @@ const About: NextPage<AboutPageProps> = ({ data }: AboutPageProps) => {
       <FullWidthContainer>
         <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-col-1 xl:gap-16 lg:gap-16 md:gap-8 sm:gap-2 mt-10 h-full">
           <div className="col-start-1 col-end-3">
-            <AnimatedDiv target="things-i-can-do-by-line" index={3}>
+            <AnimatedDiv>
               <Paragraph className="opacity-50 mb-1">
                 Things I can do for you
               </Paragraph>
             </AnimatedDiv>
-            <AnimatedDiv target="stacks-by-line" index={3}>
+            <AnimatedDiv>
               <Heading>Stacks &amp; Skills</Heading>
             </AnimatedDiv>
           </div>
 
-          <>
+          <div className="col-span-2">
             {data.map((item: IServiceProps, index: number) => (
-              <AnimatedDiv
-                className="col-span-2 flex flex-wrap"
-                target="services"
-                index={index + 1}
-                key={index}
-              >
+              <AnimatedDiv className="col-span-2 flex flex-wrap" key={index}>
                 <div className="flex items-start gap-2 mb-16">
                   <Paragraph
                     css={{ fontSize: TYPOGRAPHY.size.pSmall }}
@@ -122,7 +108,7 @@ const About: NextPage<AboutPageProps> = ({ data }: AboutPageProps) => {
                 </div>
               </AnimatedDiv>
             ))}
-          </>
+          </div>
         </div>
       </FullWidthContainer>
     </div>
