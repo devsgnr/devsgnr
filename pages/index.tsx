@@ -9,14 +9,12 @@ import AnimatedHeading, {
   AnimatedDiv,
   AnimatedHeadingWords,
   AnimatedImageContainer,
-  AnimatedLink,
 } from '../components/animated';
 import {
   FullHeightContainer,
   FullWidthContainer,
 } from '../components/container/styled';
 import BlogItemComponent from '../components/blog-item';
-import Anchor from '../components/anchor';
 import ThreeDBoxScene from '../components/3dScenes/box';
 
 export const getStaticProps = async () => {
@@ -39,28 +37,14 @@ interface HomePageProps {
 const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
   return (
     <div>
-      <FullHeightContainer className="mt-3">
-        <div className="mb-1 h-fit">
+      <FullHeightContainer className="flex justify-center items-center mt-3">
+        <div className="w-full h-full absolute top-0 left-0 left-2">
+          <ThreeDBoxScene />
+        </div>
+        <div className="mb-1 h-fit mix-blend-difference">
           <AnimatedHeadingWords className="w-fit h-fit big">
             Front-end Developer &amp; Designer
           </AnimatedHeadingWords>
-        </div>
-
-        <AnimatedImageContainer
-          className="xl:self-start lg:self-start md:self-end sm:self-end"
-          target="me"
-          index={1}
-        >
-          <img src="/me.png" alt="Emmanuel Watila" />
-        </AnimatedImageContainer>
-
-        <div className="flex justify-between items-center mt-8 mb-8 h-fit">
-          <div>
-            <ThreeDBoxScene />
-          </div>
-          <Anchor className="h-fit mb-6" href="/work">
-            <AnimatedLink identifier="SEE_MORE_HOME">SEE WORK</AnimatedLink>
-          </Anchor>
         </div>
       </FullHeightContainer>
 
@@ -105,14 +89,13 @@ const Home: NextPage<HomePageProps> = ({ data }: HomePageProps) => {
 
       <FullWidthContainer className="mt-10 mb-38">
         <div className="grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-1 sm:grid-cols-1 justify-between content-end relative">
-          <div className="col-span-3 z-50 mix-blend-difference">
+          <div className="col-span-4 z-50 mix-blend-difference">
             <AnimatedHeadingWords className="text-white big">
-              A human with a knack for making things look pretty, who stumbled
-              upon coding and design
+              A knack for making things look pretty using coding and design
             </AnimatedHeadingWords>
           </div>
 
-          <div className="xl:col-start-4 lg:col-start-4 xl:col-end-6 lg:col-end-6 md:col-span-full sm:col-span-full justify-self-end text-right gap-5">
+          <div className="xl:col-span-1 lg:col-span-1 md:col-span-full sm:col-span-full justify-self-end text-right gap-5">
             <AnimatedDiv>
               <Paragraph className="opacity-50 xl:mt-0 lg:mt-0 md:mb-10 sm:mb-10">
                 Where passion and creativity meet

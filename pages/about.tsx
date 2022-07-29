@@ -37,11 +37,7 @@ interface AboutPageProps {
 const About: NextPage<AboutPageProps> = ({ data }: AboutPageProps) => {
   return (
     <div>
-      <FullHeightContainer className="mt-3 mb-8">
-        <AnimatedHeadingWords className="mb-8 h-fit big" target="about-heading">
-          Creating a new perspective
-        </AnimatedHeadingWords>
-
+      <FullHeightContainer className="mt-16 mb-8">
         <AnimatedImageContainer
           className="xl:self-start lg:self-start md:self-end sm:self-end"
           target="me_three"
