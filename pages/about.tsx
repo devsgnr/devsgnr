@@ -6,11 +6,7 @@ import { IServiceResponse } from '../types/response';
 import { FetchServicesService } from './api/services';
 import { IServiceProps } from '../types/services';
 import { Paragraph, Heading } from '../components/typography/styled';
-import {
-  AnimatedDiv,
-  AnimatedHeadingWords,
-  AnimatedImageContainer,
-} from '../components/animated';
+import { AnimatedDiv, AnimatedImageContainer } from '../components/animated';
 import {
   FullHeightContainer,
   FullWidthContainer,
